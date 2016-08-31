@@ -6,10 +6,15 @@
 
 <tiles-definitions>
     <definition name="adminMain" template="/WEB-INF/views/template_admin/layout.jsp">
-    	<put-attribute name="title" value="wedding 관리자"/>
+    	<put-attribute name="title" value="관리자"/>
     	<put-attribute name="header" value="/WEB-INF/views/template_admin/header.jsp"/>
     	<put-attribute name="body" value="/WEB-INF/views/admin/home.jsp"/>
     </definition>
+    <definition name="adminPageError" extends="adminMain">
+		<put-attribute name="title" value="에러페이지"/>
+		<put-attribute name="body" value="/WEB-INF/views/error/adminPageError.jsp"/>
+	</definition>
+    
 </tiles-definitions>
 
 
