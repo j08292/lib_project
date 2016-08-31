@@ -26,7 +26,7 @@ public class SpeechListController {
 	@Resource
 	private SpeechService speechService;
 	
-	@RequestMapping("/main/speech/list.do")
+	@RequestMapping("/speech/list.do")
 	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1") int currentPage, 
 			@RequestParam(value="keyfield",defaultValue="") String keyfield,
 			@RequestParam(value="keyword",defaultValue="") String keyword){
@@ -56,7 +56,7 @@ public class SpeechListController {
 		}
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("boardList");
+		mav.setViewName("userSpeechList");
 		mav.addObject("count",count);
 		mav.addObject("list",list);
 		mav.addObject("pagingHtml",page.getPagingHtml());

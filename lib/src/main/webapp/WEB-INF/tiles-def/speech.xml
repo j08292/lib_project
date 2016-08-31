@@ -9,9 +9,13 @@
 		<put-attribute name="title" value="강연 등록"/>
 		<put-attribute name="body" value="/WEB-INF/views/speech/speechWrite.jsp"/>
 	</definition>
-    <definition name="adminSpeechList" extends="speechWrite">
+    <!-- <definition name="adminSpeechList" extends="speechWrite">
 		<put-attribute name="title" value="강연 목록"/>
 		<put-attribute name="body" value="/WEB-INF/views/speech/adminSpeechList.jsp"/>
+	</definition> -->
+	<definition name="userSpeechList" extends="main">
+		<put-attribute name="title" value="강연 목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/speech/userSpeechList.jsp"/>
 	</definition>
 </tiles-definitions>
 

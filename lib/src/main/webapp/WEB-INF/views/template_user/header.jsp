@@ -284,6 +284,7 @@
 									</li>
 								</ul>
 							</li>
+							<li class="mega-menu"><a href="${pageContext.request.contextPath}/speech/list.do"><div>강연</div></a>
 							<li class="mega-menu"><a href="#"><div>Pages</div></a>
 								<div class="mega-menu-content style-2 col-4 clearfix">
 									<ul>

@@ -22,13 +22,6 @@
 			</li>
 		</ul>
 	</form>
-	<table>
-		<tr>
-			<td class="align-right">
-				<input type="button" value="글쓰기" onclick="location.href='write.do'">
-			</td>
-		</tr>
-	</table>
 	<c:if test="${count == 0}">
 	<div class="align-center">등록된 게시물이 없습니다.</div>
 	</c:if>
@@ -37,21 +30,24 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>번호</th>
-					<th>제목</th>
-					<th>ID</th>
-					<th>날짜</th>
+					<th>강연번호</th>
+					<th>강연제목</th>
+					<th>강연날짜</th>
+					<th>장소</th>
+					<th>참여금액</th>
+					<!-- <th>인원</th> -->
 					<th>조회수</th>
 				</tr>
 			</thead>
 			<c:forEach var="article" items="${list}">
 			<tbody>
 				<tr>
-					<td>${article.seq}</td>
-					<td><a href="detail.do?seq=${article.seq}">${article.title}</a></td>
-					<td>${article.id}</td>
-					<td>${article.regdate}</td>
-					<td>${article.hit}</td>
+					<td>${article.speech_num}</td>
+					<td><a href="detail.do?seq=${article.speech_num}">${article.speech_title}</a></td>
+					<td>${article.speech_date}</td>
+					<td>${article.speech_location}</td>
+					<td>${article.speech_price}</td>
+					<td>${article.speech_hit}</td>
 				</tr>
 			</tbody>
 			</c:forEach>

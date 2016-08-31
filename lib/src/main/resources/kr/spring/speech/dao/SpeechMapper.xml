@@ -4,7 +4,6 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="kr.spring.speech.dao.SpeechMapper">  
 	<select id="list" parameterType="map" resultType="speechCommand">
-		
 		SELECT
 		  speech_num,
 		  mem_id,
@@ -17,7 +16,7 @@
 		  speech_price,
 		  speech_date,
 		  speech_hit,
-		  speech_regdate,
+		  speech_regdate
 		FROM (SELECT 
 				a.*,
 				rownum rnum
