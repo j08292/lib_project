@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.speech.dao.SpeechMapper">  
+	<select id="list" parameterType="map" resultType="speechCommand">
+		
+		SELECT
+		  speech_num,
+		  mem_id,
+		  <![CDATA[
+		  REPLACE(REPLACE(speech_title,'<','&lt;'),'>','&gt;') speech_title,
+		  ]]>
+		  speech_content,
+		  speech_people,
+		  speech_location,
+		  speech_price,
+		  speech_date,
+		  speech_hit,
+		  speech_regdate,
+		FROM (SELECT 
+				a.*,
+				rownum rnum
+			  FROM (SELECT
+			  			*
+			  		FROM speech
+			  		<where>
+			  			<if test="keyword!='' and keyfield=='speech_title'">
+			  				speech_title like '%' || #{keyword} || '%'
+			  			</if>
+			  			<if test="keyword!='' and keyfield=='speech_content'">
+			  				speech_content like '%' || #{keyword} || '%'
+			  			</if>
+			  			<if test="keyword!='' and keyfield=='speech_location'">
+			  				speech_location like '%' || #{keyword} || '%'
+			  			</if>
+			  			<if test="keyword!='' and keyfield=='speech_date'">
+			  				speech_date like '%' || #{keyword} || '%'
+			  			</if>
+			  		</where>
+			  		ORDER BY speech_num DESC)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
+	<select id="getRowCount" parameterType="map" resultType="Integer">
+		SELECT
+		  count(*)
+		FROM speech
+		<where>
+  			<if test="keyword!='' and keyfield=='speech_title'">
+  				speech_title like '%' || #{keyword} || '%'
+  			</if>
+  			<if test="keyword!='' and keyfield=='speech_content'">
+  				speech_content like '%' || #{keyword} || '%'
+  			</if>
+  			<if test="keyword!='' and keyfield=='speech_location'">
+			  				speech_location like '%' || #{keyword} || '%'
+			  			</if>
+			  			<if test="keyword!='' and keyfield=='speech_date'">
+			  				speech_date like '%' || #{keyword} || '%'
+			  			</if>
+  		</where>
+	</select>
+
+</mapper>

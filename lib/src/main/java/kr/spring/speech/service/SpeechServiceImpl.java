@@ -18,20 +18,17 @@ public class SpeechServiceImpl implements SpeechService{
 	
 	@Override
 	public List<SpeechCommand> list(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return null;
+		return speechMapper.list(map);
 	}
 
 	@Override
 	public int getRowCount(Map<String, Object> map) {
-		// TODO Auto-generated method stub
-		return 0;
+		return speechMapper.getRowCount(map);
 	}
 
 	@Override
 	public void insert(SpeechCommand speech) {
-		// TODO Auto-generated method stub
-		
+		speechMapper.insert(speech);
 	}
 
 	@Override
