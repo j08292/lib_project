@@ -5,7 +5,7 @@
 	<div class="align-center">
 		게시판에 오류가 발생했습니다. 관리자에게 문의하시기 바랍니다.
 		<br>
-		<a href="${pageContext.request.contextPath}/main/main.do">메인으로</a>
+		<a href="${pageContext.request.contextPath}/admin/main.do">메인으로</a>
 	</div>
 </div>
 <%
