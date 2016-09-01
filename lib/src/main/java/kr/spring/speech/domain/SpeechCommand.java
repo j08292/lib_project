@@ -17,6 +17,14 @@ public class SpeechCommand {
 	private Date speech_regdate;
 	@NotEmpty
 	private String speech_location;
+	private String speech_location2;
+	public String getSpeech_location2() {
+		return speech_location2;
+	}
+	public void setSpeech_location2(String speech_location2) {
+		this.speech_location2 = speech_location2;
+	}
+
 	private int speech_price;
 	@NotEmpty
 	private String mem_id;
@@ -81,12 +89,12 @@ public class SpeechCommand {
 	public void setMem_id(String mem_id) {
 		this.mem_id = mem_id;
 	}
-	
 	@Override
 	public String toString() {
 		return "SpeechCommand [speech_num=" + speech_num + ", speech_title=" + speech_title + ", speech_content="
 				+ speech_content + ", speech_date=" + speech_date + ", speech_people=" + speech_people + ", speech_hit="
 				+ speech_hit + ", speech_regdate=" + speech_regdate + ", speech_location=" + speech_location
-				+ ", speech_price=" + speech_price + ", mem_id=" + mem_id + "]";
+				+ ", speech_location2=" + speech_location2 + ", speech_price=" + speech_price + ", mem_id=" + mem_id
+				+ "]";
 	}
 }
