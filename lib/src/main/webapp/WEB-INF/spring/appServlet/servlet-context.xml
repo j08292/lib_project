@@ -10,7 +10,8 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- 자동 스캔 -->
-	<context:component-scan base-package="kr.spring.speech.controller"/>
+	<context:component-scan base-package="kr.user.speech.controller"/>
+	<context:component-scan base-package="kr.admin.speech.controller"/>
 	<!-- 본 프로젝트에 맞게 자동 스캔 수정할 것 -->
 	
 	<!-- Spring3 Validator -->
@@ -40,7 +41,6 @@
 		<beans:property name="exceptionMappings">
 			<beans:props>
 				<beans:prop key="java.lang.Throwable">pageError</beans:prop>
-				<beans:prop key="java.lang.Throwable">adminPageError</beans:prop>
 			</beans:props>
 		</beans:property>
 	</beans:bean>

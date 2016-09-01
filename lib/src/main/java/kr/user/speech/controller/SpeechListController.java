@@ -1,4 +1,4 @@
-package kr.spring.speech.controller;
+package kr.user.speech.controller;
 
 import java.util.Collections;
 import java.util.HashMap;

@@ -33,14 +33,12 @@ public class SpeechServiceImpl implements SpeechService{
 
 	@Override
 	public SpeechCommand selectSpeech(Integer speech_num) {
-		// TODO Auto-generated method stub
-		return null;
+		return speechMapper.selectSpeech(speech_num);
 	}
 
 	@Override
 	public void updateHit(Integer speech_num) {
-		// TODO Auto-generated method stub
-		
+		speechMapper.updateHit(speech_num);
 	}
 
 	@Override
@@ -53,6 +51,11 @@ public class SpeechServiceImpl implements SpeechService{
 	public void delete(Integer speech_num) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int selectRes(Integer speech_num) {
+		return speechMapper.selectRes(speech_num);
 	}
 
 }

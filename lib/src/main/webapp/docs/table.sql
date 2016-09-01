@@ -7,7 +7,7 @@ create table member(
   mem_address varchar2(100) not null,
   mem_regdate date not null,
   mrt_status number(1) default(0) not null,
-  mrt_level number(1) default(0) not null,
+  mem_level number(1) default(0) not null,
   mem_penalty number(3) default(0) not null
 );
 
@@ -33,13 +33,15 @@ create table speech_reservation(
   speech_state number(1) default 0 not null,
   speech_reserve_date date not null,
   constraint speech_reservation_member_fk1 foreign key(mem_id) references member(mem_id),
-  constraint speech_reservation_speech_fk2 foreign key(speech_num) references speech(speech_num)
+  constraint speech_reservation_speech_fk2 foreign key(speech_num) references speech
+
+(speech_num)
 );
 create sequence speech_reservation_seq;
 
 create table booklist(
   list_num number not null primary key,
-  list_code number(10) not null,
+  list_code varchar2(13) not null,
   list_title varchar2(100) not null,
   list_writer varchar2(50) not null,
   list_publish varchar2(50) not null,
@@ -47,11 +49,11 @@ create table booklist(
   list_filename varchar2(100),
   list_regdate date not null,
   list_grade number(1),
-  mem_id varchar2(20) not null,
-  constraint booklist_member_fk1 foreign key(mem_id) references member(mem_id)  
+  mem_id varchar2(20) not null,   
+  constraint booklist_member_fk1 foreign key(mem_id) references member(mem_id)
 );
-create sequence booklist_seq;
 
+create sequence booklist_seq;
 create table bookrent(
   rent_num number not null primary key,
   list_num number not null,
@@ -61,6 +63,7 @@ create table bookrent(
   constraint bookrent_member_fk1 foreign key(mem_id) references member(mem_id),
   constraint bookrent_booklist_fk2 foreign key(list_num) references booklist(list_num)
 );
+
 create sequence bookrent_seq;
 
 create table wishlist(
@@ -69,8 +72,11 @@ create table wishlist(
   wish_writer varchar2(50) not null,
   wish_publish varchar2(50) not null,
   wish_regdate date not null,
-  wish_status number(1) default 0 not null
+  wish_status number(1) default 0 not null,
+  mem_id varchar2(20) not null,
+  constraint wishlist_member_fk1 foreign key(mem_id) references member(mem_id)
 );
+
 create sequence wishlist_seq;
 
 create table notice(
@@ -82,6 +88,7 @@ create table notice(
   notice_hit number(4) default 0 not null,
   constraint notice_member_fk1 foreign key(mem_id) references member(mem_id)
 );
+
 create sequence notice_seq;
 
 create table review(
@@ -95,6 +102,7 @@ create table review(
   review_dislike number(4) default 0 not null,
   constraint review_member_fk1 foreign key(mem_id) references member(mem_id)
 );
+
 create sequence review_seq;
 
 create table review_reply(
@@ -106,6 +114,7 @@ create table review_reply(
   constraint review_re_member_fk1 foreign key(mem_id) references member(mem_id),
   constraint review_re_review_fk2 foreign key(review_num) references review(review_num)
 );
+
 create sequence review_re_seq;
 
 create table grade(
@@ -118,6 +127,7 @@ create table grade(
   constraint grade_member_fk1 foreign key(mem_id) references member(mem_id),
   constraint grade_booklist_fk2 foreign key(list_num) references booklist(list_num)
 );
+
 create sequence grade_seq;
 
 create table event(
@@ -132,6 +142,7 @@ create table event(
   event_filename varchar2(100),
   constraint event_member_fk1 foreign key(mem_id) references member(mem_id)
 );
+
 create sequence event_seq;
 
 create table qna(
@@ -144,6 +155,7 @@ create table qna(
   qna_hit number(4) default 0 not null,
   constraint qna_member_fk1 foreign key(mem_id) references member(mem_id)
 );
+
 create sequence qna_seq;
 
 create table qna_reply(
@@ -155,6 +167,7 @@ create table qna_reply(
   constraint qna_re_member_fk1 foreign key(mem_id) references member(mem_id),
   constraint qna_re_qna_fk1 foreign key(qna_num) references qna(qna_num)
 );
+
 create sequence qna_re_seq;
 
 create table chat(
@@ -164,4 +177,5 @@ create table chat(
   mem_id varchar2(20) not null,
   constraint chat_member_fk1 foreign key(mem_id) references member(mem_id)
 );
+
 create sequence chat_seq;

@@ -1,4 +1,4 @@
-package kr.spring.speech.controller;
+package kr.admin.speech.controller;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
