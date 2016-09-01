@@ -26,7 +26,7 @@
 	<c:if test="${count > 0}">
 	<div class="table-responsive">
 		<table class="table table-hover">
-			<thead>
+			<thead> 
 				<tr>
 					<th>강연번호</th>
 					<th>강연제목</th>
