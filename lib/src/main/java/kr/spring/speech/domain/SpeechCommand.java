@@ -2,6 +2,7 @@ package kr.spring.speech.domain;
 
 import java.sql.Date;
 
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class SpeechCommand {
@@ -11,13 +12,20 @@ public class SpeechCommand {
 	@NotEmpty
 	private String speech_content;
 	private Date speech_date;
-	@NotEmpty
 	private int speech_people;
 	private int speech_hit;
 	private Date speech_regdate;
 	@NotEmpty
 	private String speech_location;
 	private String speech_location2;
+	private int speech_status;
+	
+	public int getSpeech_status() {
+		return speech_status;
+	}
+	public void setSpeech_status(int speech_status) {
+		this.speech_status = speech_status;
+	}
 	public String getSpeech_location2() {
 		return speech_location2;
 	}
@@ -94,7 +102,7 @@ public class SpeechCommand {
 		return "SpeechCommand [speech_num=" + speech_num + ", speech_title=" + speech_title + ", speech_content="
 				+ speech_content + ", speech_date=" + speech_date + ", speech_people=" + speech_people + ", speech_hit="
 				+ speech_hit + ", speech_regdate=" + speech_regdate + ", speech_location=" + speech_location
-				+ ", speech_location2=" + speech_location2 + ", speech_price=" + speech_price + ", mem_id=" + mem_id
-				+ "]";
+				+ ", speech_location2=" + speech_location2 + ", speech_status=" + speech_status + ", speech_price="
+				+ speech_price + ", mem_id=" + mem_id + "]";
 	}
 }

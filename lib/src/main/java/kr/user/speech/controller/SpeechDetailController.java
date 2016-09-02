@@ -1,10 +1,12 @@
 package kr.user.speech.controller;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,7 +21,7 @@ public class SpeechDetailController {
 	@Resource
 	private SpeechService speechService;
 	
-	@RequestMapping("/speech/detail.do")
+	@RequestMapping(value="/speech/detail.do",method=RequestMethod.GET)
 	public ModelAndView process(@RequestParam("speech_num") int speech_num){
 		
 		if(log.isDebugEnabled()){
@@ -43,5 +45,11 @@ public class SpeechDetailController {
 		mav.addObject("speech",speech);
 		mav.addObject("res",res);
 		return mav;
+	}
+	@RequestMapping(value="/speech/detail.do",method=RequestMethod.POST)
+	public String submit(@RequestParam("seq") int seq, HttpSession session)throws Exception{
+		//신청하기 눌렀을 경우
+		
+		return "redirect:/speech/detail.do";
 	}
 }

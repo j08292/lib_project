@@ -61,5 +61,12 @@
 			  			</if>
   		</where>
 	</select>
-
+<!-- 관리자 리스트 -->
+	<select id="adminList" parameterType="map" resultType="speechCommand">
+		SELECT 
+			s.speech_num,s.speech_title,s.speech_people,count(sr.speech_num) res 
+		FROM speech s, speech_reservation sr 
+		WHERE s.speech_num = sr.speech_num and s.speech_num=#{speech_num}
+		GROUP BY s.speech_num,s.speech_title,s.speech_people
+	</select>
 </mapper>

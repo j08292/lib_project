@@ -43,19 +43,24 @@ public class SpeechServiceImpl implements SpeechService{
 
 	@Override
 	public void update(SpeechCommand speech) {
-		// TODO Auto-generated method stub
-		
+		speechMapper.update(speech);
 	}
 
 	@Override
 	public void delete(Integer speech_num) {
-		// TODO Auto-generated method stub
-		
+		//부모글 삭제
+		speechMapper.delete(speech_num);
 	}
 
 	@Override
 	public int selectRes(Integer speech_num) {
 		return speechMapper.selectRes(speech_num);
+	}
+
+	@Override
+	public void updateStatus(Integer speech_num) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

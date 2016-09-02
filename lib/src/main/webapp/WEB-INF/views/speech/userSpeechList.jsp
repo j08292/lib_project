@@ -25,16 +25,16 @@
 
 	<c:if test="${count > 0}">
 	<div class="table-responsive">
-		<table class="table table-hover">
+		<table class="table table-hover"  style="text-align:center;">
 			<thead>
 				<tr>
-					<th>강연번호</th>
-					<th>강연제목</th>
-					<th>강연날짜</th>
-					<th>장소</th>
-					<th>참여금액</th>
-					<th>최대 참가인원</th>
-					<th>조회수</th>
+					<th style="text-align:center;">강연번호</th>
+					<th style="text-align:center;">강연제목</th>
+					<th style="text-align:center;">강연날짜</th>
+					<th style="text-align:center;">장소</th>
+					<th style="text-align:center;">참여금액</th>
+					<th style="text-align:center;">최대 참가인원</th>
+					<th style="text-align:center;">조회수</th>
 				</tr>
 			</thead>
 			<c:forEach var="article" items="${list}">

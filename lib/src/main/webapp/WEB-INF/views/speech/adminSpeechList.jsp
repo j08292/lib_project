@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<div class="container clearfix">
+<div>
 	<h2><spring:message code="speech.list.title"/></h2>
 	
 	<form action="list.do" id="search_form" method="get">
@@ -18,7 +18,7 @@
 				<input type="submit" value="찾기">
 		</div>
 	</form>
-	
+	<div align="right"><input type="button" value="등록" onclick="location.href='write.do'" class="btn btn-xs btn-primary"></div>
 	<c:if test="${count == 0}">
 	<div align="center">등록된 게시물이 없습니다.</div>
 	</c:if>
@@ -28,25 +28,25 @@
 		<table class="table table-hover">
 			<thead> 
 				<tr>
-					<th>강연번호</th>
-					<th>강연제목</th>
-					<th>강연날짜</th>
-					<th>최대 참가인원</th>
-					<th>예약인원</th>
-					<th>수정/삭제</th>
+					<th style="text-align:center;">강연번호</th>
+					<th style="text-align:center;">강연제목</th>
+					<th style="text-align:center;">강연날짜</th>
+					<th style="text-align:center;">최대 참가인원</th>
+					<th style="text-align:center;">예약인원</th>
+					<th style="text-align:center;">수정/취소</th>
 				</tr>
 			</thead>
 			<c:forEach var="article" items="${list}">
-			<tbody>
+			<tbody style="text-align:center;">
 				<tr>
 					<td>${article.speech_num}</td>
 					<td>${article.speech_title}</td>
 					<td>${article.speech_date}</td>
 					<td>${article.speech_people}</td>
-					<td>글번호불러와서</td>
+					<td><a href="">글번호불러와서</a></td>
 					<td>
-						<a href="update.do?speech_num=${article.speech_num}" class="btn btn-xs btn-primary">수정</a>
-						<a href="delete.do?speech_num=${article.speech_num}" class="btn btn-xs btn-danger">삭제</a>
+						<a href="update.do?speech_num=${article.speech_num}" class="btn btn-xs btn-warning">수정</a>
+						<a href="cancel.do?speech_num=${article.speech_num}" class="btn btn-xs btn-danger">일정취소</a>
 					</td>
 				</tr>
 			</tbody>

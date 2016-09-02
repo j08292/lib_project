@@ -19,6 +19,7 @@ public interface SpeechService {
 	public void updateHit(Integer speech_num);
 	public void update(SpeechCommand speech);
 	public void delete(Integer speech_num);
+	public void updateStatus(Integer speech_num);
 	@Transactional(readOnly=true)
 	public int selectRes(Integer speech_num);
 }

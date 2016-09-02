@@ -14,7 +14,11 @@
                 <a class="navbar-brand" href="${pageContext.request.contextPath}/admin/main.do">관리자 페이지</a>
             </div>
             <!-- Top Menu Items -->
+            	
             <ul class="nav navbar-right top-nav">
+            	<li>
+            		<a href="${pageContext.request.contextPath }/main/main.do">사용자 페이지</a>
+            	</li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>
 						${userId }님
@@ -65,7 +69,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/admin/speech/write.do"><i class="fa fa-fw fa-table"></i> 강연 관리</a>
+                        <a href="${pageContext.request.contextPath}/admin/speech/list.do"><i class="fa fa-fw fa-table"></i> 강연 관리</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#board_manage"><i class="fa fa-fw fa-edit"></i> 게시판 관리  <i class="fa fa-fw fa-caret-down"></i></a>

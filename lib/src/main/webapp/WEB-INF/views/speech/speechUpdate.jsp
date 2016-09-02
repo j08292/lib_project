@@ -3,8 +3,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div>
-	<h2 class="page-header"><spring:message code="speech.write.title"/></h2>
-	<form:form action="write.do" commandName="command" id="register_form">
+	<h2 class="page-header"><spring:message code="speech.update.title"/></h2>
+	<form:form action="update.do" commandName="command" id="update_form">
 		<form:errors element="div" class="error-color"/>
 			<div class="form-group">
 				<label for="speech_title">강연 제목</label>
