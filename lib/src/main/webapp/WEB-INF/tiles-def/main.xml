@@ -6,7 +6,7 @@
 
 <tiles-definitions>
     <definition name="main" template="/WEB-INF/views/template_user/layout.jsp">
-    	<put-attribute name="title" value="wedding"/>
+    	<put-attribute name="title" value="온라인 도서관"/>
     	<put-attribute name="header" value="/WEB-INF/views/template_user/header.jsp"/>
     	<put-attribute name="menu" value="/WEB-INF/views/template_user/menu.jsp"/>
     	<put-attribute name="body" value="/WEB-INF/views/main/home.jsp"/>
