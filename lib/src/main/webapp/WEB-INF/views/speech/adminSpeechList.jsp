@@ -40,9 +40,14 @@
 			<tbody>
 				<tr>
 					<td>${article.speech_num}</td>
-					<td><a href="detail.do?speech_num=${article.speech_num}">${article.speech_title}</a></td>
+					<td>${article.speech_title}</td>
 					<td>${article.speech_date}</td>
 					<td>${article.speech_people}</td>
+					<td>글번호불러와서</td>
+					<td>
+						<a href="update.do?speech_num=${article.speech_num}" class="btn btn-xs btn-primary">수정</a>
+						<a href="delete.do?speech_num=${article.speech_num}" class="btn btn-xs btn-danger">삭제</a>
+					</td>
 				</tr>
 			</tbody>
 			</c:forEach>
