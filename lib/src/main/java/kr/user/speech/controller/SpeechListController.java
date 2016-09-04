@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -26,7 +27,7 @@ public class SpeechListController {
 	@Resource
 	private SpeechService speechService;
 	
-	@RequestMapping("/speech/list.do")
+	@RequestMapping(value="/speech/list.do",method=RequestMethod.GET)
 	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1") int currentPage, 
 			@RequestParam(value="keyfield",defaultValue="") String keyfield,
 			@RequestParam(value="keyword",defaultValue="") String keyword){
@@ -63,6 +64,4 @@ public class SpeechListController {
 		
 		return mav;
 	}
-	
-	
 }

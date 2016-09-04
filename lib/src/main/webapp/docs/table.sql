@@ -13,14 +13,16 @@ create table member(
 
 create table speech( 
   speech_num number not null primary key,
-  speech_title varchar2(20) not null,
+  speech_title varchar2(100) not null,
   speech_content clob not null,
   speech_regdate date not null,
   speech_people number(3) not null,
   speech_hit number(4) default(0),
   speech_date date not null,
   speech_location varchar2(100) not null,
+  speech_location2 varchar2(100),
   speech_price number(5) default(0),
+  speech_status number(1) default(0) not null,
   mem_id varchar2(20) not null,
   constraint speech_fk1 foreign key (mem_id) references member (mem_id)
 );
@@ -30,12 +32,10 @@ create table speech_reservation(
   speech_reserve_num number not null primary key,
   speech_num number not null,
   mem_id varchar2(20) not null,
-  speech_state number(1) default 0 not null,
+  speech_reserve_status number(1) default 0 not null,
   speech_reserve_date date not null,
   constraint speech_reservation_member_fk1 foreign key(mem_id) references member(mem_id),
-  constraint speech_reservation_speech_fk2 foreign key(speech_num) references speech
-
-(speech_num)
+  constraint speech_reservation_speech_fk2 foreign key(speech_num) references speech (speech_num)
 );
 create sequence speech_reservation_seq;
 
@@ -49,6 +49,7 @@ create table booklist(
   list_filename varchar2(100),
   list_regdate date not null,
   list_grade number(1),
+  list_status number(1) default(0) not null,
   mem_id varchar2(20) not null,   
   constraint booklist_member_fk1 foreign key(mem_id) references member(mem_id)
 );

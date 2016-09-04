@@ -40,10 +40,16 @@
 			<tbody style="text-align:center;">
 				<tr>
 					<td>${article.speech_num}</td>
-					<td>${article.speech_title}</td>
+					<td><c:if test="${article.speech_status eq 0}">
+						${article.speech_title}
+						</c:if>
+						<c:if test="${article.speech_status eq 1}">
+						<del>${article.speech_title}</del> (일정 취소)
+						</c:if>
+					</td>
 					<td>${article.speech_date}</td>
 					<td>${article.speech_people}</td>
-					<td><a href="">글번호불러와서</a></td>
+					<td><a href="">예약자수</a></td>
 					<td>
 						<a href="update.do?speech_num=${article.speech_num}" class="btn btn-xs btn-warning">수정</a>
 						<a href="cancel.do?speech_num=${article.speech_num}" class="btn btn-xs btn-danger">일정취소</a>

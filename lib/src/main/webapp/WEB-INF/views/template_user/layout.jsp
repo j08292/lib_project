@@ -47,7 +47,7 @@
 		<!-- 바디 시작 -->
 		<tiles:insertAttribute name="body"/>
 		<!-- 바디 끝 -->
-		</section><!-- #content end -->
+		<!-- #content end -->
 		<!-- 푸터 시작 -->
 		<tiles:insertAttribute name="footer"/>
 		<!-- 푸터 끝 -->

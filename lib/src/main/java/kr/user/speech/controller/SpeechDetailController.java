@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.speech.domain.SpeechCommand;
+import kr.spring.speech.domain.SpeechReservationCommand;
 import kr.spring.speech.service.SpeechService;
 import kr.spring.util.StringUtil;
 
@@ -21,7 +22,7 @@ public class SpeechDetailController {
 	@Resource
 	private SpeechService speechService;
 	
-	@RequestMapping(value="/speech/detail.do",method=RequestMethod.GET)
+	@RequestMapping("/speech/detail.do")
 	public ModelAndView process(@RequestParam("speech_num") int speech_num){
 		
 		if(log.isDebugEnabled()){
@@ -46,10 +47,5 @@ public class SpeechDetailController {
 		mav.addObject("res",res);
 		return mav;
 	}
-	@RequestMapping(value="/speech/detail.do",method=RequestMethod.POST)
-	public String submit(@RequestParam("seq") int seq, HttpSession session)throws Exception{
-		//신청하기 눌렀을 경우
-		
-		return "redirect:/speech/detail.do";
-	}
+	
 }

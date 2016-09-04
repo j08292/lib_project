@@ -26,7 +26,7 @@
 											
 						<ul>
 							<li class="current"><a href="#"><div>Corporate</div></a></li>
-							<li class="mega-menu"><a href="${pageContext.request.contextPath}/speech/list.do"><div>강연</div></a>
+							<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do"><div>강연</div></a>
 							<li><a href="#"><div>Features</div></a></li>
 							<li class="mega-menu"><a href="#"><div>Pages</div></a></li>
 							<li class="mega-menu"><a href="#"><div>Portfolio</div></a></li>

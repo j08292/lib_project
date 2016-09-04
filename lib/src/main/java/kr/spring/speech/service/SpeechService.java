@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.spring.speech.domain.SpeechCommand;
+import kr.spring.speech.domain.SpeechReservationCommand;
 
 @Transactional
 public interface SpeechService {
@@ -22,4 +23,13 @@ public interface SpeechService {
 	public void updateStatus(Integer speech_num);
 	@Transactional(readOnly=true)
 	public int selectRes(Integer speech_num);
+	
+	//예약자(신청자)
+	@Transactional(readOnly=true)
+	public List<SpeechReservationCommand> reserveList(Map<String, Object> map);
+	@Transactional(readOnly=true)
+	public int getRowCountReservation(Map<String, Object> map);
+	public void insertReservation(SpeechReservationCommand speechReservation);
+	public void updateReservation(SpeechReservationCommand speechReservation);
+	public void deleteReservation(Integer speech_reserve_num);
 }

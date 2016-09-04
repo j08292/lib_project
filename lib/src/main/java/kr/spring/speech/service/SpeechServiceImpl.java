@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import kr.spring.speech.dao.SpeechMapper;
 import kr.spring.speech.domain.SpeechCommand;
+import kr.spring.speech.domain.SpeechReservationCommand;
 
 @Service("speechService")
 public class SpeechServiceImpl implements SpeechService{
@@ -59,6 +60,33 @@ public class SpeechServiceImpl implements SpeechService{
 
 	@Override
 	public void updateStatus(Integer speech_num) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<SpeechReservationCommand> reserveList(Map<String, Object> map) {
+		return speechMapper.reserveList(map);
+	}
+
+	@Override
+	public int getRowCountReservation(Map<String, Object> map) {
+		return speechMapper.getRowCountReservation(map);
+	}
+
+	@Override
+	public void insertReservation(SpeechReservationCommand speechReservation) {
+		speechMapper.insertReservation(speechReservation);
+	}
+
+	@Override
+	public void updateReservation(SpeechReservationCommand speechReservation) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteReservation(Integer speech_reserve_num) {
 		// TODO Auto-generated method stub
 		
 	}

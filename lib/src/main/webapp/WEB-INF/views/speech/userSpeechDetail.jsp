@@ -14,7 +14,7 @@
 	</div>
 	<div class="col_half">
 	강연날짜 : ${speech.speech_date} <br><br>
-	강연장소 : ${speech.speech_location}
+	강연장소 : ${speech.speech_location} ${speech.speech_location2}
 	</div>
 	<div class="col_half col_last">
 	신청인원 : 총 ${speech.speech_people}명 | <strong>${speech.speech_people-res}</strong>명 신청가능 <br><br>
@@ -36,7 +36,7 @@
 	
 	<!-- 신청한사람은 다른버튼보이게 -->
 	<div align="center">
-		<input type="submit" value="신청하기" class="button button-desc button-3d button-rounded button-green center"><br>
+		<input type="button" value="신청하기" class="button button-desc button-3d button-rounded button-green center" onclick="location.href='reserveSuccess.do?speech_num=${speech.speech_num}'"><br>
 	</div>
 	
 </div>

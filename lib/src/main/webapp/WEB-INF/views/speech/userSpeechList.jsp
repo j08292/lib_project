@@ -41,7 +41,13 @@
 			<tbody>
 				<tr>
 					<td>${article.speech_num}</td>
-					<td><a href="detail.do?speech_num=${article.speech_num}">${article.speech_title}</a></td>
+					<td><c:if test="${article.speech_status eq 0}">
+						<a href="detail.do?speech_num=${article.speech_num}">${article.speech_title}</a>
+						</c:if>
+						<c:if test="${article.speech_status eq 1}">
+						<del>${article.speech_title}</del> (일정 취소)
+						</c:if>
+					</td>
 					<td>${article.speech_date}</td>
 					<td>${article.speech_location}</td>
 					<td>
