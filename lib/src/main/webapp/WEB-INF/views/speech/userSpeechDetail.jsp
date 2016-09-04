@@ -34,9 +34,27 @@
 	<div class="col_one_third">조회수 : ${speech.speech_hit}</div>
 	<div class="col_one_third col_last">등록날짜 : ${speech.speech_regdate}</div>
 	
-	<!-- 신청한사람은 다른버튼보이게 -->
-	<div align="center">
-		<input type="button" value="신청하기" class="button button-desc button-3d button-rounded button-green center" onclick="location.href='reserveSuccess.do?speech_num=${speech.speech_num}'"><br>
-	</div>
+	
+
+		<c:if test="${speech.speech_people-res > 0}">
+			<!-- 이미 신청한 사람은 다른 버튼보여지게 -->
+			
+				<div align="center">
+					<input type="button" value="신청하기" class="button button-desc button-3d button-rounded button-green center" onclick="location.href='reserveSuccess.do?speech_num=${speech.speech_num}'"><br>
+				</div>
+			
+			<%-- <c:if test="">
+			<div align="center">
+					<input type="button" value="신청현황보기" class="button button-desc button-3d button-rounded button-green center" onclick="location.href=''"><br>
+				</div>
+			</c:if> --%>
+		</c:if>
+		<!-- 예약 불가능한 상태 -->
+		<c:if test="${speech.speech_people-res <= 0}">
+			<div align="center">
+				<h4>신청 마감되었습니다.</h4>
+			</div>
+		</c:if>
+
 	
 </div>

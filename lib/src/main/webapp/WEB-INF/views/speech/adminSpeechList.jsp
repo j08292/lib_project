@@ -48,11 +48,16 @@
 						</c:if>
 					</td>
 					<td>${article.speech_date}</td>
-					<td>${article.speech_people}</td>
-					<td><a href="">예약자수</a></td>
+					<td>${article.speech_people}명</td>
+					<td><a href="reservationList.do?speech_num=${article.speech_num}">(신청인원수)명</a></td>
 					<td>
 						<a href="update.do?speech_num=${article.speech_num}" class="btn btn-xs btn-warning">수정</a>
-						<a href="cancel.do?speech_num=${article.speech_num}" class="btn btn-xs btn-danger">일정취소</a>
+						<c:if test="${article.speech_status eq 0}">
+							<a href="cancel.do?speech_num=${article.speech_num}" class="btn btn-xs btn-danger">일정취소</a>
+						</c:if>
+						<c:if test="${article.speech_status eq 1}">
+							<a href="delete.do?speech_num=${article.speech_num}" class="btn btn-xs btn-danger">일정삭제</a>
+						</c:if>
 					</td>
 				</tr>
 			</tbody>

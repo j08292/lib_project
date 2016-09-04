@@ -25,11 +25,9 @@ public interface SpeechMapper {
 	@Update("UPDATE speech SET speech_title=#{speech_title},speech_content=#{speech_content},speech_people=#{speech_people},speech_date=#{speech_date},speech_location=#{speech_location},speech_location2=#{speech_location2,jdbcType=VARCHAR},speech_price=#{speech_price} WHERE speech_num=#{speech_num}")
 	public void update(SpeechCommand speech);
 	@Update("UPDATE speech SET speech_status=1 WHERE speech_num=#{speech_num}")
-	public void cancel(SpeechCommand speech);
+	public void cancel(Integer speech);
 	@Delete("DELETE FROM speech WHERE speech_num=#{speech_num}")
 	public void delete(Integer speech_num);
-	@Update("UPDATE speech SET speech_status WHERE speech_num=#{speech_num}")
-	public void updateStatus(Integer speech_num);
 	@Select("SELECT count(sr.speech_num) FROM speech s, speech_reservation sr WHERE s.speech_num = sr.speech_num and (sr.speech_reserve_status=0 or sr.speech_reserve_status=1) and s.speech_num=#{speech_num}")
 	public int selectRes(Integer speech_num);
 	
@@ -39,6 +37,6 @@ public interface SpeechMapper {
 	public int getRowCountReservation(Map<String, Object> map);
 	@Insert("INSERT INTO speech_reservation (speech_reserve_num,speech_num,mem_id,speech_reserve_date) VALUES (speech_reservation_seq.nextval,#{speech_num},#{mem_id},sysdate)")
 	public void insertReservation(SpeechReservationCommand speechReservation);
-	public void updateReservation(SpeechReservationCommand speechReservation);
+	public void updateReservation(Integer speech_reserve_num);
 	public void deleteReservation(Integer speech_reserve_num);
 }

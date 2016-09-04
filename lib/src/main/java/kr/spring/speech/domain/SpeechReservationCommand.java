@@ -8,7 +8,14 @@ public class SpeechReservationCommand {
 	private String mem_id;
 	private int speech_reserve_status;
 	private Date speech_reserve_date;
+	private String mem_name;
 	
+	public String getMem_name() {
+		return mem_name;
+	}
+	public void setMem_name(String mem_name) {
+		this.mem_name = mem_name;
+	}
 	public int getSpeech_reserve_num() {
 		return speech_reserve_num;
 	}
@@ -44,6 +51,7 @@ public class SpeechReservationCommand {
 	public String toString() {
 		return "SpeechReservationCommand [speech_reserve_num=" + speech_reserve_num + ", speech_num=" + speech_num
 				+ ", mem_id=" + mem_id + ", speech_reserve_status=" + speech_reserve_status + ", speech_reserve_date="
-				+ speech_reserve_date + "]";
+				+ speech_reserve_date + ", mem_name=" + mem_name + "]";
 	}
+	
 }

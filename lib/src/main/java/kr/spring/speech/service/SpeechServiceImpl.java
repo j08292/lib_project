@@ -59,12 +59,6 @@ public class SpeechServiceImpl implements SpeechService{
 	}
 
 	@Override
-	public void updateStatus(Integer speech_num) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public List<SpeechReservationCommand> reserveList(Map<String, Object> map) {
 		return speechMapper.reserveList(map);
 	}
@@ -80,14 +74,19 @@ public class SpeechServiceImpl implements SpeechService{
 	}
 
 	@Override
-	public void updateReservation(SpeechReservationCommand speechReservation) {
-		// TODO Auto-generated method stub
-		
+	public void updateReservation(Integer speech_reserve_num) {
+		speechMapper.updateReservation(speech_reserve_num);
 	}
 
 	@Override
 	public void deleteReservation(Integer speech_reserve_num) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void cancel(Integer speech) {
+		speechMapper.cancel(speech);
 		
 	}
 

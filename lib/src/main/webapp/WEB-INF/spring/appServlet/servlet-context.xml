@@ -62,6 +62,16 @@
 		</beans:property>
 	</beans:bean>
 	
+	<!-- 로그인 여부 체크 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/member/detail.do"/>
+			<mvc:mapping path="/member/update.do"/>
+			<mvc:mapping path="/member/delete.do"/>
+			<mvc:mapping path="/speech/reserveSuccess.do"/>
+			<beans:bean class="kr.spring.member.interceptor.LogonCheckInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 	<!-- 파일 다운로드 -->
 	<beans:bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
 	      p:order="0"/>

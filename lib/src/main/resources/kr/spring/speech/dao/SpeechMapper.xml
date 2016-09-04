@@ -41,7 +41,7 @@
 			  		ORDER BY speech_num DESC)a)
 		<![CDATA[
 		WHERE rnum >= #{start} AND rnum <= #{end}
-		]]>
+		]]> 
 	</select>
 	<select id="getRowCount" parameterType="map" resultType="Integer">
 		SELECT
@@ -55,31 +55,40 @@
   				speech_content like '%' || #{keyword} || '%'
   			</if>
   			<if test="keyword!='' and keyfield=='speech_location'">
-			  				speech_location like '%' || #{keyword} || '%'
-			  			</if>
-			  			<if test="keyword!='' and keyfield=='speech_date'">
-			  				speech_date like '%' || #{keyword} || '%'
-			  			</if>
+  				speech_location like '%' || #{keyword} || '%'
+  			</if>
+  			<if test="keyword!='' and keyfield=='speech_date'">
+  				speech_date like '%' || #{keyword} || '%'
+  			</if>
   		</where>
 	</select>
 	
-	<select id="listReservation" parameterType="map" resultType="speechReservationCommand">
+	<select id="reserveList" parameterType="map" resultType="speechReservationCommand">
 		SELECT
-			speech_reserve_num,
-			speech_num,
-			speech_reserve_status,
-			speech_reserve_date,
-			mem_id
-		FROM (SELECT
+			sr.speech_reserve_num,
+			sr.speech_num,
+			sr.speech_reserve_status,
+			sr.speech_reserve_date,
+			sr.mem_id,
+			m.mem_name
+		FROM  member m,(SELECT
 				a.*,
 				rownum rnum
 			  FROM (SELECT
 			  			*
-			  		FROM speech_reservation
-			  		WHERE speech_num=#{speech_num}
-			  		ORDER BY speech_reserve_num ASC)a)
-		<![CDATA[
-		WHERE rnum >= #{start} AND rnum <= #{end}
-		]]>
+			  		FROM speech_reservation 
+					<where>
+			  			<if test="keyword!='' and keyfield=='mem_id'">
+			  				mem_id like '%' || #{keyword} || '%' AND speech_num=#{speech_num}
+			  			</if>
+			  			<if test="keyword!='' and keyfield=='speech_reserve_status'">
+			  				speech_reserve_status= #{keyword} AND speech_num=#{speech_num}
+			  			</if>
+			  		</where>
+					ORDER BY speech_reserve_num ASC)a)sr 
+			<![CDATA[	
+			WHERE  rnum >= #{start} AND rnum <= #{end} AND sr.mem_id = m.mem_id
+			]]> 
 	</select>
+	
 </mapper>

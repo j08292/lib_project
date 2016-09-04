@@ -41,6 +41,10 @@ public class SpeechReservationInsertController {
 			mav.setViewName("memberLogin");
 			return mav;
 		}else{//로그인 됨
+			//이미 신청한 사람일경우 목록으로 돌아가게
+			/*if(userId == command.getMem_id()){
+				
+			}*/
 			command.setMem_id(userId);
 			command.setSpeech_num(speech_num);
 			speechService.insertReservation(command);

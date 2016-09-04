@@ -19,8 +19,8 @@ public interface SpeechService {
 	public SpeechCommand selectSpeech(Integer speech_num);
 	public void updateHit(Integer speech_num);
 	public void update(SpeechCommand speech);
+	public void cancel(Integer speech);
 	public void delete(Integer speech_num);
-	public void updateStatus(Integer speech_num);
 	@Transactional(readOnly=true)
 	public int selectRes(Integer speech_num);
 	
@@ -30,6 +30,6 @@ public interface SpeechService {
 	@Transactional(readOnly=true)
 	public int getRowCountReservation(Map<String, Object> map);
 	public void insertReservation(SpeechReservationCommand speechReservation);
-	public void updateReservation(SpeechReservationCommand speechReservation);
+	public void updateReservation(Integer speech_reserve_num);
 	public void deleteReservation(Integer speech_reserve_num);
 }
