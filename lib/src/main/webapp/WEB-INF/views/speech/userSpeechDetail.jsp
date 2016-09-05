@@ -38,12 +38,12 @@
 
 		<c:if test="${speech.speech_people-res > 0}">
 			<!-- 이미 신청한 사람은 다른 버튼보여지게 -->
-			
+			<%-- <c:if test=""> --%>
 				<div align="center">
 					<input type="button" value="신청하기" class="button button-desc button-3d button-rounded button-green center" onclick="location.href='reserveSuccess.do?speech_num=${speech.speech_num}'"><br>
 				</div>
-			
-			<%-- <c:if test="">
+			<%-- </c:if>
+			<c:if test="${checkCount>0}">
 			<div align="center">
 					<input type="button" value="신청현황보기" class="button button-desc button-3d button-rounded button-green center" onclick="location.href=''"><br>
 				</div>

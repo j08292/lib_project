@@ -56,6 +56,7 @@ public class SpeechListController {
 			list = Collections.emptyList();
 		}
 		
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("userSpeechList");
 		mav.addObject("count",count);

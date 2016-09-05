@@ -19,9 +19,6 @@ public class SpeechReservationInsertController {
 	private Logger log = Logger.getLogger(this.getClass());
 	
 	@Resource
-	private SpeechService speechServer;
-	
-	@Resource
 	private SpeechService speechService;
 	
 	@RequestMapping("/speech/reserveSuccess.do")
@@ -30,29 +27,32 @@ public class SpeechReservationInsertController {
 		
 		SpeechReservationCommand command = new SpeechReservationCommand();
 		
-		
 		if(log.isDebugEnabled()){
 			log.debug("speechReservationCommand : " + command);
 		}
-		
 		
 		if(userId==null){//로그인 안됨
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("memberLogin");
 			return mav;
 		}else{//로그인 됨
-			//이미 신청한 사람일경우 목록으로 돌아가게
-			/*if(userId == command.getMem_id()){
-				
-			}*/
 			command.setMem_id(userId);
 			command.setSpeech_num(speech_num);
-			speechService.insertReservation(command);
-			SpeechCommand speech = speechService.selectSpeech(speech_num);
-			ModelAndView mav = new ModelAndView();
-			mav.setViewName("reserveSuccess");
-			mav.addObject("speech",speech);
-			return mav;
+			
+			Integer checkCount = speechService.checkSpeechReservation(command);
+			
+			if(checkCount!=null){//이미 신청한 사람일경우 다시 돌아가게
+				return new ModelAndView("redirect:/speech/detail.do?speech_num="+speech_num);
+			}else{
+				command.setMem_id(userId);
+				command.setSpeech_num(speech_num);
+				speechService.insertReservation(command);
+				SpeechCommand speech = speechService.selectSpeech(speech_num);
+				ModelAndView mav = new ModelAndView();
+				mav.setViewName("reserveSuccess");
+				mav.addObject("speech",speech);
+				return mav;
+			}
 		}
 	}
 }

@@ -40,6 +40,7 @@ public class SpeechDetailController {
 		
 		//¡ŸπŸ≤ﬁ √≥∏Æ
 		speech.setSpeech_content(StringUtil.useBrNoHtml(speech.getSpeech_content()));
+
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("userSpeechDetail");

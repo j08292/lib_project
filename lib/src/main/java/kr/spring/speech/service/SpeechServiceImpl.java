@@ -72,10 +72,10 @@ public class SpeechServiceImpl implements SpeechService{
 	public void insertReservation(SpeechReservationCommand speechReservation) {
 		speechMapper.insertReservation(speechReservation);
 	}
-
+	
 	@Override
-	public void updateReservation(Integer speech_reserve_num) {
-		speechMapper.updateReservation(speech_reserve_num);
+	public SpeechReservationCommand updateReservation(SpeechReservationCommand speechReserveCommand) {
+		return speechMapper.updateReservation(speechReserveCommand);
 	}
 
 	@Override
@@ -89,5 +89,12 @@ public class SpeechServiceImpl implements SpeechService{
 		speechMapper.cancel(speech);
 		
 	}
+
+	@Override
+	public Integer checkSpeechReservation(SpeechReservationCommand speechReserveCommand) {
+		return speechMapper.checkSpeechReservation(speechReserveCommand);
+	}
+
+
 
 }

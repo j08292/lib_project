@@ -63,15 +63,25 @@
 					</c:if>
 					</td>
 					<td>
-					<form action="updateReserve.do" id="search_form" method="get">
-						<select name="status">
+					<%-- <%-- <a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=0" 
+					<c:if test="${article.speech_reserve_status eq 0}">class="btn btn-xs btn-success"</c:if>
+					<c:if test="${article.speech_reserve_status != 0 }">class="btn btn-xs btn-primary"</c:if>>신청중</a>
+					<a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=1" 
+					<c:if test="${article.speech_reserve_status eq 1}">class="btn btn-xs btn-success"</c:if>
+					<c:if test="${article.speech_reserve_status != 1 }">class="btn btn-xs btn-primary"</c:if>>신청 확정</a>
+					<a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=2" 
+					<c:if test="${article.speech_reserve_status eq 2}">class="btn btn-xs btn-success"</c:if>
+					<c:if test="${article.speech_reserve_status != 2 }">class="btn btn-xs btn-primary"</c:if>>취소 신청</a>
+					<a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=3"
+					<c:if test="${article.speech_reserve_status eq 3}">class="btn btn-xs btn-success"</c:if>
+					<c:if test="${article.speech_reserve_status != 3 }">class="btn btn-xs btn-primary"</c:if>>취소 확정</a> --%>
+						<select name="status" id="status">
 							<option value="0" <c:if test="${article.speech_reserve_status eq 0}">selected</c:if>>신청중</option>
 							<option value="1" <c:if test="${article.speech_reserve_status eq 1}">selected</c:if>>신청 확정</option>
 							<option value="2" <c:if test="${article.speech_reserve_status eq 2}">selected</c:if>>취소 신청</option>
 							<option value="3" <c:if test="${article.speech_reserve_status eq 3}">selected</c:if>>취소 완료</option>
 						</select>
-						<a href="updateReserve.do?speech_num=${article.speech_reserve_num}&speech_reserve_num=${article.speech_reserve_num}" class="btn btn-xs btn-success">저장</a>
-					</form>
+						<a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=" class="btn btn-xs btn-success">저장</a>
 					</td>
 				</tr>
 			</tbody>

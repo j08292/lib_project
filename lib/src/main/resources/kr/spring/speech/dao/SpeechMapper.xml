@@ -78,12 +78,10 @@
 			  			*
 			  		FROM speech_reservation 
 					<where>
-			  			<if test="keyword!='' and keyfield=='mem_id'">
-			  				mem_id like '%' || #{keyword} || '%' AND speech_num=#{speech_num}
-			  			</if>
 			  			<if test="keyword!='' and keyfield=='speech_reserve_status'">
-			  				speech_reserve_status= #{keyword} AND speech_num=#{speech_num}
+			  				speech_reserve_status= #{keyword} AND 
 			  			</if>
+			  			 speech_num=#{speech_num}
 			  		</where>
 					ORDER BY speech_reserve_num ASC)a)sr 
 			<![CDATA[	

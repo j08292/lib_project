@@ -30,6 +30,8 @@ public interface SpeechService {
 	@Transactional(readOnly=true)
 	public int getRowCountReservation(Map<String, Object> map);
 	public void insertReservation(SpeechReservationCommand speechReservation);
-	public void updateReservation(Integer speech_reserve_num);
+	public SpeechReservationCommand updateReservation(SpeechReservationCommand speechReserveCommand);
+	@Transactional(readOnly=true)
+	public Integer checkSpeechReservation(SpeechReservationCommand speechReserveCommand);
 	public void deleteReservation(Integer speech_reserve_num);
 }
