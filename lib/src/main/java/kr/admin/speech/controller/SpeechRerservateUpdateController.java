@@ -33,10 +33,9 @@ public class SpeechRerservateUpdateController {
 		command.setSpeech_reserve_num(speech_reserve_num);
 		speechService.updateReservation(command);
 		
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("reservationList");
 		
-		return mav;
+		
+		return new ModelAndView("redirect:/admin/speech/reservationList.do?speech_num="+speech_num);
 		
 	}
 }

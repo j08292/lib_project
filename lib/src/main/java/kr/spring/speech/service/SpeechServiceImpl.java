@@ -73,10 +73,6 @@ public class SpeechServiceImpl implements SpeechService{
 		speechMapper.insertReservation(speechReservation);
 	}
 	
-	@Override
-	public SpeechReservationCommand updateReservation(SpeechReservationCommand speechReserveCommand) {
-		return speechMapper.updateReservation(speechReserveCommand);
-	}
 
 	@Override
 	public void deleteReservation(Integer speech_reserve_num) {
@@ -93,6 +89,11 @@ public class SpeechServiceImpl implements SpeechService{
 	@Override
 	public Integer checkSpeechReservation(SpeechReservationCommand speechReserveCommand) {
 		return speechMapper.checkSpeechReservation(speechReserveCommand);
+	}
+
+	@Override
+	public void updateReservation(SpeechReservationCommand speechReserveCommand) {
+		speechMapper.updateReservation(speechReserveCommand);
 	}
 
 

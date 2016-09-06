@@ -38,7 +38,7 @@ public interface SpeechMapper {
 	@Insert("INSERT INTO speech_reservation (speech_reserve_num,speech_num,mem_id,speech_reserve_date) VALUES (speech_reservation_seq.nextval,#{speech_num},#{mem_id},sysdate)")
 	public void insertReservation(SpeechReservationCommand speechReservation);
 	@Update("UPDATE speech_reservation SET speech_reserve_status=#{speech_reserve_status} WHERE speech_reserve_num=#{speech_reserve_num}")
-	public SpeechReservationCommand updateReservation(SpeechReservationCommand speechReserveCommand);
+	public void updateReservation(SpeechReservationCommand speechReserveCommand);
 	@Select("SELECT * FROM speech_reservation WHERE speech_num=#{speech_num} AND mem_id=#{mem_id}")
 	public Integer checkSpeechReservation(SpeechReservationCommand speechReserveCommand);
 	public void deleteReservation(Integer speech_reserve_num);

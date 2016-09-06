@@ -81,7 +81,9 @@
 							<option value="2" <c:if test="${article.speech_reserve_status eq 2}">selected</c:if>>취소 신청</option>
 							<option value="3" <c:if test="${article.speech_reserve_status eq 3}">selected</c:if>>취소 완료</option>
 						</select>
-						<a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=" class="btn btn-xs btn-success">저장</a>
+						<a href="javascript:updateReserve('${speech.speech_num}','${article.speech_reserve_num}')" class="btn btn-xs btn-success">저장</a>
+						<!-- <input type="button" value="저장" class="btn btn-xs btn-success" id="saveChange"> -->
+						<%-- <a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=" class="btn btn-xs btn-success">저장</a> --%>
 					</td>
 				</tr>
 			</tbody>
