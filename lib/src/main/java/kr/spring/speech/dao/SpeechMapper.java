@@ -41,5 +41,8 @@ public interface SpeechMapper {
 	public void updateReservation(SpeechReservationCommand speechReserveCommand);
 	@Select("SELECT * FROM speech_reservation WHERE speech_num=#{speech_num} AND mem_id=#{mem_id}")
 	public Integer checkSpeechReservation(SpeechReservationCommand speechReserveCommand);
+	@Delete("DELETE FROM speech_reservation WHERE speech_reserve_num = #{speech_reserve_num}")
 	public void deleteReservation(Integer speech_reserve_num);
+	@Select("SELECT * FROM speech_reservation WHERE speech_num=#{speech_num} AND mem_id=#{mem_id}")
+	public SpeechReservationCommand selectReservation(SpeechReservationCommand speechReserveCommand);
 }

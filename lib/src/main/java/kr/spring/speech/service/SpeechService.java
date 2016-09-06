@@ -34,4 +34,6 @@ public interface SpeechService {
 	@Transactional(readOnly=true)
 	public Integer checkSpeechReservation(SpeechReservationCommand speechReserveCommand);
 	public void deleteReservation(Integer speech_reserve_num);
+	@Transactional(readOnly=true)
+	public SpeechReservationCommand selectReservation(SpeechReservationCommand speechReserveCommand);
 }

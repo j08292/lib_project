@@ -48,6 +48,9 @@
 					<input type="button" value="신청현황보기" class="button button-desc button-3d button-rounded button-green center" onclick="location.href=''"><br>
 				</div>
 			</c:if> --%>
+			<div align="center">
+				<input type="button" value="신청현황보기" onclick="location.href='reserveWaiting.do?speech_num=${speech.speech_num}'">
+			</div>
 		</c:if>
 		<!-- 예약 불가능한 상태 -->
 		<c:if test="${speech.speech_people-res <= 0}">

@@ -10,8 +10,6 @@
 		<div align="center">
 				<select name="keyfield">
 					<option value="speech_title">제목</option>
-					<option value="speech_content">내용</option>
-					<option value="speech_location">장소</option>
 					<option value="speech_date">날짜</option>
 				</select>
 				<input type="text" size="16" name="keyword">

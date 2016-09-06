@@ -76,8 +76,7 @@ public class SpeechServiceImpl implements SpeechService{
 
 	@Override
 	public void deleteReservation(Integer speech_reserve_num) {
-		// TODO Auto-generated method stub
-		
+		speechMapper.deleteReservation(speech_reserve_num);
 	}
 
 	@Override
@@ -95,6 +94,12 @@ public class SpeechServiceImpl implements SpeechService{
 	public void updateReservation(SpeechReservationCommand speechReserveCommand) {
 		speechMapper.updateReservation(speechReserveCommand);
 	}
+
+	@Override
+	public SpeechReservationCommand selectReservation(SpeechReservationCommand speechReserveCommand) {
+		return speechMapper.selectReservation(speechReserveCommand);
+	}
+
 
 
 

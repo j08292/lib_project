@@ -16,6 +16,7 @@ import kr.spring.speech.domain.SpeechCommand;
 import kr.spring.speech.domain.SpeechReservationCommand;
 import kr.spring.speech.service.SpeechService;
 import kr.spring.util.PagingUtil;
+import kr.spring.util.PagingUtil_SpeechReserve;
 
 @Controller
 public class SpeechReservateListController {
@@ -46,11 +47,10 @@ public class SpeechReservateListController {
 		//ÃÑ ±ÛÀÇ °¹¼ö ¶Ç´Â °Ë»öµÈ ±ÛÀÇ °¹¼ö
 		int count = speechService.getRowCountReservation(map);
 		
-		PagingUtil page = new PagingUtil(keyfield, keyword, currentPage, count, rowCount,pageCount,"list.do");
+		PagingUtil page = new PagingUtil(keyfield, keyword, currentPage, count, rowCount,pageCount,"reservationList.do?speech_num="+speech_num);
 		
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
-		
 		List<SpeechReservationCommand> list = null;
 		if(count>0){
 			list = speechService.reserveList(map);

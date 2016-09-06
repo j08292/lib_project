@@ -13,8 +13,6 @@
 	<br>
 	강연 참가금액: <fmt:formatNumber type="currency" value="${speech.speech_price}" pattern="###,###"/>원<br>
 	
-	<!-- 검색 PagingUtil 수정해야함 -->
-	
 	<form action="reservationList.do" id="search_form" method="get">
 		<div align="center">
 				<select name="keyfield">
@@ -34,19 +32,19 @@
 			<thead> 
 				<tr>
 					<th style="text-align:center;">예약번호</th>
-					<th style="text-align:center;">예약자</th>
 					<th style="text-align:center;">아이디</th>
+					<th style="text-align:center;">이름</th>
 					<th style="text-align:center;">예약일</th>
 					<th style="text-align:center;">신청현황</th>
-					<th style="text-align:center;">상태변경</th>
+					<th style="text-align:center;">신청상태변경</th>
 				</tr>
 			</thead>
 			<c:forEach var="article" items="${list}">
 			<tbody style="text-align:center;">
 				<tr>
 					<td>${article.speech_reserve_num}</td>
-					<td>${article.mem_name}</td>
 					<td>${article.mem_id}</td>
+					<td>${article.mem_name}</td>
 					<td>${article.speech_reserve_date}</td>
 					<td>
 					<c:if test="${article.speech_reserve_status eq 0}">
@@ -59,31 +57,17 @@
 						취소신청
 					</c:if>
 					<c:if test="${article.speech_reserve_status eq 3}">
-						취소완료
+						취소완료 <a href="reservationDelete.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}"  class="btn btn-xs btn-danger">삭제</a>
 					</c:if>
 					</td>
-					<td>
-					<%-- <%-- <a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=0" 
-					<c:if test="${article.speech_reserve_status eq 0}">class="btn btn-xs btn-success"</c:if>
-					<c:if test="${article.speech_reserve_status != 0 }">class="btn btn-xs btn-primary"</c:if>>신청중</a>
-					<a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=1" 
-					<c:if test="${article.speech_reserve_status eq 1}">class="btn btn-xs btn-success"</c:if>
-					<c:if test="${article.speech_reserve_status != 1 }">class="btn btn-xs btn-primary"</c:if>>신청 확정</a>
-					<a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=2" 
-					<c:if test="${article.speech_reserve_status eq 2}">class="btn btn-xs btn-success"</c:if>
-					<c:if test="${article.speech_reserve_status != 2 }">class="btn btn-xs btn-primary"</c:if>>취소 신청</a>
-					<a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=3"
-					<c:if test="${article.speech_reserve_status eq 3}">class="btn btn-xs btn-success"</c:if>
-					<c:if test="${article.speech_reserve_status != 3 }">class="btn btn-xs btn-primary"</c:if>>취소 확정</a> --%>
-						<select name="status" id="status">
+					<td data-num="${article.speech_reserve_num}">
+						<select name="status" class="status" data-num="${speech.speech_num}">
 							<option value="0" <c:if test="${article.speech_reserve_status eq 0}">selected</c:if>>신청중</option>
 							<option value="1" <c:if test="${article.speech_reserve_status eq 1}">selected</c:if>>신청 확정</option>
 							<option value="2" <c:if test="${article.speech_reserve_status eq 2}">selected</c:if>>취소 신청</option>
 							<option value="3" <c:if test="${article.speech_reserve_status eq 3}">selected</c:if>>취소 완료</option>
 						</select>
-						<a href="javascript:updateReserve('${speech.speech_num}','${article.speech_reserve_num}')" class="btn btn-xs btn-success">저장</a>
-						<!-- <input type="button" value="저장" class="btn btn-xs btn-success" id="saveChange"> -->
-						<%-- <a href="updateReserve.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}&status=" class="btn btn-xs btn-success">저장</a> --%>
+						<input type="button" value="저장" class="save_Status btn btn-xs btn-success">
 					</td>
 				</tr>
 			</tbody>

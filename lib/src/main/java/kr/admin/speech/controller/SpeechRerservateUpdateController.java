@@ -22,7 +22,7 @@ public class SpeechRerservateUpdateController {
 	@RequestMapping("/admin/speech/updateReserve.do")
 	public ModelAndView process(@RequestParam("speech_reserve_num") int speech_reserve_num,
 						 @RequestParam("status") int status,
-						 @RequestParam("speech_num") int speech_num){
+						 @RequestParam("speech_num") int speech_num)throws Exception{
 		if(log.isDebugEnabled()){
 			log.debug("speech_reserve_num : " +speech_reserve_num);
 			log.debug("status : " +status);
@@ -32,8 +32,6 @@ public class SpeechRerservateUpdateController {
 		command.setSpeech_reserve_status(status);
 		command.setSpeech_reserve_num(speech_reserve_num);
 		speechService.updateReservation(command);
-		
-		
 		
 		return new ModelAndView("redirect:/admin/speech/reservationList.do?speech_num="+speech_num);
 		
