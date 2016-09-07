@@ -9,7 +9,14 @@ public class SpeechReservationCommand {
 	private int speech_reserve_status;
 	private Date speech_reserve_date;
 	private String mem_name;
+	private Date depositDate;
 	
+	public Date getDepositDate() {
+		return new Date(getSpeech_reserve_date().getTime()+(3*24*60*60*1000));
+	}
+	public void setDepositDate(Date depositDate) {
+		this.depositDate = depositDate;
+	}
 	public String getMem_name() {
 		return mem_name;
 	}
@@ -46,12 +53,13 @@ public class SpeechReservationCommand {
 	public void setSpeech_reserve_date(Date speech_reserve_date) {
 		this.speech_reserve_date = speech_reserve_date;
 	}
-	
 	@Override
 	public String toString() {
 		return "SpeechReservationCommand [speech_reserve_num=" + speech_reserve_num + ", speech_num=" + speech_num
 				+ ", mem_id=" + mem_id + ", speech_reserve_status=" + speech_reserve_status + ", speech_reserve_date="
-				+ speech_reserve_date + ", mem_name=" + mem_name + "]";
+				+ speech_reserve_date + ", mem_name=" + mem_name + ", depositDate=" + depositDate + "]";
 	}
+	
+	
 	
 }

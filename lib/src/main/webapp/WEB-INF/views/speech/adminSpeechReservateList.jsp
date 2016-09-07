@@ -14,12 +14,15 @@
 	강연 참가금액: <fmt:formatNumber type="currency" value="${speech.speech_price}" pattern="###,###"/>원<br>
 	
 	<form action="reservationList.do" id="search_form" method="get">
+		<input type="hidden" value="${speech.speech_num}" name="speech_num">
 		<div align="center">
-				<select name="keyfield">
-					<option value="memid">ID</option>
+				<select name="keyfield" id="speechReserveSearch">
+					<option value="mem_id">ID</option>
 					<option value="speech_reserve_status">신청상태</option>
 				</select>
-				<input type="text" size="16" name="keyword">
+				<span id="output">
+					<input type="text" size="16" name="keyword" id="textbox">
+				</span>
 				<input type="submit" value="찾기">
 		</div>
 	</form>
@@ -54,10 +57,10 @@
 						신청 확정
 					</c:if>
 					<c:if test="${article.speech_reserve_status eq 2}">
-						취소신청
+						취소 신청
 					</c:if>
 					<c:if test="${article.speech_reserve_status eq 3}">
-						취소완료 <a href="reservationDelete.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}"  class="btn btn-xs btn-danger">삭제</a>
+						취소 완료 <a href="reservationDelete.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}"  class="btn btn-xs btn-danger">삭제</a>
 					</c:if>
 					</td>
 					<td data-num="${article.speech_reserve_num}">

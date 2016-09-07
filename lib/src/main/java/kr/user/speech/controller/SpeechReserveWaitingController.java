@@ -28,8 +28,6 @@ public class SpeechReserveWaitingController {
 		String userId = (String)session.getAttribute("userId");
 		SpeechCommand speech = speechService.selectSpeech(speech_num);
 		
-		
-		
 		SpeechReservationCommand speechReserveCommand = new SpeechReservationCommand();
 		
 		speechReserveCommand.setMem_id(userId);

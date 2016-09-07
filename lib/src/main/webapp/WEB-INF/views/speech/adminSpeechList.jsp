@@ -30,7 +30,7 @@
 					<th style="text-align:center;">강연제목</th>
 					<th style="text-align:center;">강연날짜</th>
 					<th style="text-align:center;">최대 참가인원</th>
-					<th style="text-align:center;">예약인원</th>
+					<th style="text-align:center;">신청인원</th>
 					<th style="text-align:center;">수정/취소</th>
 				</tr>
 			</thead>

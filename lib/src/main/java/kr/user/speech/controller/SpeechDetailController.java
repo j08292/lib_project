@@ -23,7 +23,7 @@ public class SpeechDetailController {
 	private SpeechService speechService;
 	
 	@RequestMapping("/speech/detail.do")
-	public ModelAndView process(@RequestParam("speech_num") int speech_num){
+	public ModelAndView process(@RequestParam("speech_num") int speech_num,HttpSession session){
 		
 		if(log.isDebugEnabled()){
 			log.debug("speech_num : "+speech_num);
@@ -32,7 +32,7 @@ public class SpeechDetailController {
 		//해당 글의 조회수 증가
 		speechService.updateHit(speech_num);
 		//해당 글의 예약자 확인
-		int res = speechService.selectRes(speech_num);
+		int res = speechService.countRes(speech_num);
 		SpeechCommand speech = speechService.selectSpeech(speech_num);
 		
 		//타이틀 태그 불허
@@ -40,11 +40,19 @@ public class SpeechDetailController {
 		
 		//줄바꿈 처리
 		speech.setSpeech_content(StringUtil.useBrNoHtml(speech.getSpeech_content()));
-
+		
+		//예약자 불러오기
+		String userId = (String)session.getAttribute("userId");
+		SpeechReservationCommand command = new SpeechReservationCommand();
+		command.setSpeech_num(speech_num);
+		command.setMem_id(userId);
+		SpeechReservationCommand speechReserve = speechService.selectReservation(command);
+		
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("userSpeechDetail");
 		mav.addObject("speech",speech);
+		mav.addObject("speechReserve",speechReserve);
 		mav.addObject("res",res);
 		return mav;
 	}

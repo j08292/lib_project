@@ -54,8 +54,8 @@ public class SpeechServiceImpl implements SpeechService{
 	}
 
 	@Override
-	public int selectRes(Integer speech_num) {
-		return speechMapper.selectRes(speech_num);
+	public int countRes(Integer speech_num) {
+		return speechMapper.countRes(speech_num);
 	}
 
 	@Override
@@ -98,6 +98,16 @@ public class SpeechServiceImpl implements SpeechService{
 	@Override
 	public SpeechReservationCommand selectReservation(SpeechReservationCommand speechReserveCommand) {
 		return speechMapper.selectReservation(speechReserveCommand);
+	}
+
+	@Override
+	public Integer checkRes(Integer speech_num) {
+		return speechMapper.checkRes(speech_num);
+	}
+
+	@Override
+	public void adminUpdateReservation(SpeechReservationCommand speechReserveCommand) {
+		speechMapper.adminUpdateReservation(speechReserveCommand);
 	}
 
 

@@ -31,7 +31,7 @@ public class SpeechRerservateUpdateController {
 		SpeechReservationCommand command = new SpeechReservationCommand();
 		command.setSpeech_reserve_status(status);
 		command.setSpeech_reserve_num(speech_reserve_num);
-		speechService.updateReservation(command);
+		speechService.adminUpdateReservation(command);
 		
 		return new ModelAndView("redirect:/admin/speech/reservationList.do?speech_num="+speech_num);
 		

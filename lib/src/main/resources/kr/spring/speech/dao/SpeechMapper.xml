@@ -78,6 +78,9 @@
 			  			*
 			  		FROM speech_reservation 
 					<where>
+						<if test="keyword!='' and keyfield=='mem_id'">
+			  				mem_id= #{keyword} AND 
+			  			</if>
 			  			<if test="keyword!='' and keyfield=='speech_reserve_status'">
 			  				speech_reserve_status= #{keyword} AND 
 			  			</if>

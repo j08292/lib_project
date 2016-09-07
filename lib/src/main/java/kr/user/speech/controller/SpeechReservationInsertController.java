@@ -22,7 +22,8 @@ public class SpeechReservationInsertController {
 	private SpeechService speechService;
 	
 	@RequestMapping("/speech/reserveSuccess.do")
-	public ModelAndView process(@RequestParam("speech_num") int speech_num,HttpSession session)throws Exception{
+	public ModelAndView process(@RequestParam("speech_num") int speech_num,
+								@RequestParam("speech_reserve_status") int speech_reserve_status,HttpSession session)throws Exception{
 		String userId = (String)session.getAttribute("userId");
 		
 		SpeechReservationCommand command = new SpeechReservationCommand();
@@ -46,11 +47,14 @@ public class SpeechReservationInsertController {
 			}else{
 				command.setMem_id(userId);
 				command.setSpeech_num(speech_num);
+				command.setSpeech_reserve_status(speech_reserve_status);
 				speechService.insertReservation(command);
 				SpeechCommand speech = speechService.selectSpeech(speech_num);
+				SpeechReservationCommand speechReserve = speechService.selectReservation(command);
 				ModelAndView mav = new ModelAndView();
 				mav.setViewName("reserveSuccess");
 				mav.addObject("speech",speech);
+				mav.addObject("speechReserve",speechReserve);
 				return mav;
 			}
 		}

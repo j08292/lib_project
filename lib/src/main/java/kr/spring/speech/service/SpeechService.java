@@ -22,7 +22,8 @@ public interface SpeechService {
 	public void cancel(Integer speech);
 	public void delete(Integer speech_num);
 	@Transactional(readOnly=true)
-	public int selectRes(Integer speech_num);
+	public int countRes(Integer speech_num);
+	public Integer checkRes(Integer speech_num);
 	
 	//예약자(신청자)
 	@Transactional(readOnly=true)
@@ -31,6 +32,7 @@ public interface SpeechService {
 	public int getRowCountReservation(Map<String, Object> map);
 	public void insertReservation(SpeechReservationCommand speechReservation);
 	public void updateReservation(SpeechReservationCommand speechReserveCommand);
+	public void adminUpdateReservation(SpeechReservationCommand speechReserveCommand);
 	@Transactional(readOnly=true)
 	public Integer checkSpeechReservation(SpeechReservationCommand speechReserveCommand);
 	public void deleteReservation(Integer speech_reserve_num);
