@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 @Component
-public class LogonCheckInterceptor extends HandlerInterceptorAdapter{
+public class /event/applyMarathon.do extends HandlerInterceptorAdapter{
 	private Logger log = Logger.getLogger(this.getClass());
 	
 	@Override

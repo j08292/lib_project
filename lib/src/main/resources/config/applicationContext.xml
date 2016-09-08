@@ -53,11 +53,15 @@
 	             class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="typeAliasesPackage" value="kr.spring.member.domain,
-													kr.spring.speech.domain"/><!-- 계속 추가해야함 -->
+													kr.spring.speech.domain,
+													kr.spring.review.domain,
+													kr.spring.marathon.domain"/><!-- 계속 추가해야함 -->
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="kr.spring.member.dao,
-											kr.spring.speech.dao"/><!-- 계속 추가해야함 -->
+											kr.spring.speech.dao,
+											kr.spring.review.dao,
+											kr.spring.marathon.dao"/><!-- 계속 추가해야함 -->
 	</bean>
 </beans>
 

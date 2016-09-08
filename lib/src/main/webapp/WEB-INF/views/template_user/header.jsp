@@ -30,8 +30,17 @@
 							<li><a href="#"><div>Features</div></a></li>
 							<li class="mega-menu"><a href="#"><div>Pages</div></a></li>
 							<li class="mega-menu"><a href="#"><div>Portfolio</div></a></li>
-							<li class="mega-menu"><a href="#"><div>Blog</div></a></li>
-							<li><a href="shop.html"><div>Shop</div></a></li>
+							<li><a href="#"><div>EVENT</div></a>
+								<ul>
+									<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do"><div>독서마라톤</div></a></li>
+								</ul>
+							</li>
+							<li><a href="#"><div>BOARD</div></a>
+								<ul>
+									<li><a href="${pageContext.request.contextPath}/board/list.do"><div>감상평게시판</div></a></li>
+									<li><a href="shop-3.html"><div>질문게시판</div></a></li>								
+								</ul>
+							</li>
 						</ul>
 						
 						<ul>

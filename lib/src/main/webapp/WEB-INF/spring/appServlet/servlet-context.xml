@@ -15,6 +15,8 @@
 	<context:component-scan base-package="kr.spring.member.controller"/>
 	<context:component-scan base-package="kr.spring.board.controller"/>
 	<context:component-scan base-package="kr.spring.admin.controller"/>
+	<context:component-scan base-package="kr.spring.review.controller"/>
+	<context:component-scan base-package="kr.user.marathon.controller"/>
 	<!-- 본 프로젝트에 맞게 자동 스캔 수정할 것 -->
 	
 	<!-- Spring3 Validator -->
@@ -58,6 +60,8 @@
 				<beans:value>/WEB-INF/tiles-def/admin.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/speech.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/member.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/review.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/marathon.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
@@ -69,6 +73,9 @@
 			<mvc:mapping path="/member/update.do"/>
 			<mvc:mapping path="/member/delete.do"/>
 			<mvc:mapping path="/speech/reserveSuccess.do"/>
+			<mvc:mapping path="/speech/reserveWaiting.do"/>
+			<!-- <mvc:mapping path="/event/applyMarathon.do"/>
+			<mvc:mapping path="/event/myMarathon.do"/> -->
 			<beans:bean class="kr.spring.member.interceptor.LogonCheckInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>

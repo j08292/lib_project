@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>  
+	 <definition name="reviewWrite" extends="main">
+    	<put-attribute name="title" value="글쓰기"/>
+    	<put-attribute name="body" value="/WEB-INF/views/board/reviewWrite.jsp"/>
+    </definition>
+
+
+    <definition name="reviewList" extends="main">
+    	<put-attribute name="title" value="감상평게시판 목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/board/reviewList.jsp"/>
+    </definition>
+    
+    
+	<definition name="reviewView" extends="main">
+    	<put-attribute name="title" value="글 상세"/>
+    	<put-attribute name="body" value="/WEB-INF/views/board/reviewView.jsp"/>
+    	<put-list-attribute name="jsList">
+        	<add-attribute value="../resources/user/js/jquery.js"/>
+        	<add-attribute value="../resources/user/js/plugins.js"/>
+        	<add-attribute value="../resources/user/js/review.reply.js"/>
+        </put-list-attribute>
+    </definition>
+    
+	<definition name="reviewModify" extends="main">
+    	<put-attribute name="title" value="글 수정"/>
+    	<put-attribute name="body" value="/WEB-INF/views/board/reviewModify.jsp"/>
+    </definition>
+
+
+ <definition name="pageError" extends="main">
+    	<put-attribute name="title" value="에러페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>
+   </definition>  
+    
+</tiles-definitions>
+

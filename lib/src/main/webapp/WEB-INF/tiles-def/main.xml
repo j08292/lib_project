@@ -11,17 +11,25 @@
     	<put-attribute name="menu" value="/WEB-INF/views/template_user/menu.jsp"/>
     	<put-attribute name="body" value="/WEB-INF/views/main/home.jsp"/>
     	<put-attribute name="footer" value="/WEB-INF/views/template_user/footer.jsp"/>
+    	
+    	<put-list-attribute name="cssList">
+        	<add-attribute value="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic"/>
+        	<add-attribute value="../resources/user/css/bootstrap.css"/>
+        	<add-attribute value="../resources/user/style.css"/>
+        	<add-attribute value="../resources/user/css/dark.css"/>
+        	<add-attribute value="../resources/user/css/font-icons.css"/>
+        	<add-attribute value="../resources/user/css/animate.css"/>
+        	<add-attribute value="../resources/user/css/magnific-popup.css"/>
+        	<add-attribute value="../resources/user/css/responsive.css"/>
+        </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<add-attribute value="../resources/user/js/jquery.js"/>
+        	<add-attribute value="../resources/user/js/plugins.js"/>
+        </put-list-attribute>
     </definition>
+    
     <definition name="pageError" extends="main">
     	<put-attribute name="title" value="에러페이지"/>
     	<put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>
     </definition>
 </tiles-definitions>
-
-
-
-
-
-
-
-
