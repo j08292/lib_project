@@ -19,6 +19,7 @@ public class SpeechCommand {
 	private String speech_location;
 	private String speech_location2;
 	private int speech_status;
+	private int countres;
 	
 	public int getSpeech_status() {
 		return speech_status;
@@ -97,12 +98,20 @@ public class SpeechCommand {
 	public void setMem_id(String mem_id) {
 		this.mem_id = mem_id;
 	}
+	public int getCountres() {
+		return countres;
+	}
+	public void setCountres(int countres) {
+		this.countres = countres;
+	}
 	@Override
 	public String toString() {
 		return "SpeechCommand [speech_num=" + speech_num + ", speech_title=" + speech_title + ", speech_content="
 				+ speech_content + ", speech_date=" + speech_date + ", speech_people=" + speech_people + ", speech_hit="
 				+ speech_hit + ", speech_regdate=" + speech_regdate + ", speech_location=" + speech_location
-				+ ", speech_location2=" + speech_location2 + ", speech_status=" + speech_status + ", speech_price="
-				+ speech_price + ", mem_id=" + mem_id + "]";
+				+ ", speech_location2=" + speech_location2 + ", speech_status=" + speech_status + ", countres="
+				+ countres + ", speech_price=" + speech_price + ", mem_id=" + mem_id + "]";
 	}
+	
+	
 }

@@ -110,7 +110,14 @@ public class SpeechServiceImpl implements SpeechService{
 		speechMapper.adminUpdateReservation(speechReserveCommand);
 	}
 
+	@Override
+	public List<SpeechReservationCommand> noCheckReserveList(Map<String, Object> map) {
+		return speechMapper.noCheckReserveList(map);
+	}
 
-
+	@Override
+	public int getRowCountNoCheck(Map<String, Object> map) {
+		return speechMapper.getRowCountNoCheck(map);
+	}
 
 }

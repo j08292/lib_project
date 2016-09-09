@@ -52,4 +52,8 @@ public interface SpeechMapper {
 	public void deleteReservation(Integer speech_reserve_num);
 	@Select("SELECT * FROM speech_reservation WHERE speech_num=#{speech_num} AND mem_id=#{mem_id}")
 	public SpeechReservationCommand selectReservation(SpeechReservationCommand speechReserveCommand);
+	
+	//미승인 예약자(신청자)
+	public List<SpeechReservationCommand> noCheckReserveList(Map<String, Object> map);
+	public int getRowCountNoCheck(Map<String, Object> map);
 }

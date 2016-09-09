@@ -38,4 +38,8 @@ public interface SpeechService {
 	public void deleteReservation(Integer speech_reserve_num);
 	@Transactional(readOnly=true)
 	public SpeechReservationCommand selectReservation(SpeechReservationCommand speechReserveCommand);
+	
+	//미승인 예약자(신청자)
+	public List<SpeechReservationCommand> noCheckReserveList(Map<String, Object> map);
+	public int getRowCountNoCheck(Map<String, Object> map);
 }

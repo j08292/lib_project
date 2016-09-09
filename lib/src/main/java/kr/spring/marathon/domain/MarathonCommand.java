@@ -8,6 +8,7 @@ public class MarathonCommand {
 	private int list_page;
 	private String mem_id;
 	private Date rent_regdate;
+	private int gradecheck;
 	
 	public int getList_num() {
 		return list_num;
@@ -39,11 +40,18 @@ public class MarathonCommand {
 	public void setRent_regdate(Date rent_regdate) {
 		this.rent_regdate = rent_regdate;
 	}
-	
+	public int getGradecheck() {
+		return gradecheck;
+	}
+	public void setGradecheck(int gradecheck) {
+		this.gradecheck = gradecheck;
+	}
 	@Override
 	public String toString() {
 		return "MarathonCommand [list_num=" + list_num + ", list_title=" + list_title + ", list_page=" + list_page
-				+ ", mem_id=" + mem_id + ", rent_regdate=" + rent_regdate + "]";
+				+ ", mem_id=" + mem_id + ", rent_regdate=" + rent_regdate + ", gradecheck=" + gradecheck + "]";
 	}
+	
+
 	
 }

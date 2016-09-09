@@ -149,6 +149,7 @@ form#mre_form{
 }
 
 </style>
+
         <!-- Page Title(지우면안됨X) -->
         <section id="page-title">
 
@@ -175,7 +176,7 @@ form#mre_form{
                    <div>
                    	<h2 class="align-center">${review.review_title}</h2>
                    	<ul>
-                   		<li>번호 : ${review.review_num}</li>
+                   		<li >번호 : ${review.review_num}</li>
                    		<li>ID : ${review.mem_id }</li>
                    		<li>조회수 : ${review.review_hit}</li>
                    		<li>등록날짜 : ${review.review_regdate}</li>
@@ -186,7 +187,14 @@ form#mre_form{
                    	</ul>
                    	<hr size="1" width="100%">
                    	<p>
+                  	 	<img src="file.do?review_file=${review.review_file}" width=512 height=384></img>
+                  	 	
+                  	 	
+                   	  	
+                   	  	<br>
+                  	 	<br>                   		
                    		${review.review_content}
+                   		
                    	</p>
                    	<hr size="1" width="100%">
                    	<p class="align-right">
@@ -203,7 +211,7 @@ form#mre_form{
                    		<input type="hidden" name="review_num" value="${review.review_num}" id="review_num">
                    		<input type="hidden" name="mem_id" value="${userId}" id="userId">
                    		<textarea rows="3" cols="50" name="review_re_content"
-                   		id="review_re_content" maxlength="300" class="rep-content"
+                   		id="review_re_content" maxlength="300" class="a"
                    		 <c:if test="${empty userId}">disabled="disabled"</c:if>
                    		 ><c:if test="${empty userId}">로그인해야 작성할 수 있습니다.</c:if></textarea>
                  		<c:if test="${!empty userId}">
@@ -230,18 +238,15 @@ form#mre_form{
                    	  	<input type="hidden" name="review_re_num" id="mreview_re_num">
                    	 	<input type="hidden" name="mem_id" id="muserId">
                    	 	<textarea rows="3" cols="50" name="review_re_content"
-                   	 	id="mreview_re_content" class="rep_content"></textarea>
+                   	 	id="mreview_re_content" class="a"></textarea>
                    	  	<div id="mre_first"><span class="letter-count">300/300</span></div>  
 						<div id="mre_second" class="align-right">
 							<input type="submit" value="수정">
-							<input type="button" value="취소" class="re_reset">
+							<input type="button" value="취소" class = "re-reset">
 						</div>
 						<hr size="1" noshade width="96%">
-                   	  	</form>
-                   	  	
-                   	  	</div>
-                   	  	
-                   	  	
+                   	  	</form>                   	  	
+                   	  	</div>                   	  	
                    </div>
                  
                     <!--============ 내용입력 끝===============-->

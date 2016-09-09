@@ -58,6 +58,10 @@
 		    <add-attribute value="/lib/resources/admin/js/adminSpeechReservateList.js"/>
         </put-list-attribute>
 	</definition>
+	<definition name="adminNoCheckReserveList" extends="speechWrite">
+		<put-attribute name="title" value="미승인 강연 신청자 목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/speech/adminNoCheckSpeechReserve.jsp"/>
+	</definition>
 	<definition name="speechUpdate" extends="speechWrite">
 		<put-attribute name="title" value="강연 수정"/>
 		<put-attribute name="body" value="/WEB-INF/views/speech/speechUpdate.jsp"/>
@@ -78,6 +82,8 @@
 		<put-attribute name="title" value="강연 신청 현황"/>
 		<put-attribute name="body" value="/WEB-INF/views/speech/speechReserveWaiting.jsp"/>
 	</definition>
+	
+	
 	
 </tiles-definitions>
 

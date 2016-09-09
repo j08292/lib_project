@@ -61,7 +61,8 @@
 		<property name="basePackage" value="kr.spring.member.dao,
 											kr.spring.speech.dao,
 											kr.spring.review.dao,
-											kr.spring.marathon.dao"/><!-- 계속 추가해야함 -->
+											kr.spring.marathon.dao,
+											kr.spring.admin.dao"/><!-- 계속 추가해야함 -->
 	</bean>
 </beans>
 

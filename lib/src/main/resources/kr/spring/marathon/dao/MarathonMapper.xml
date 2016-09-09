@@ -8,7 +8,8 @@
 			   b.list_title,
 			   b.list_page,
 			   br.rent_regdate,
-			   br.mem_id 
+			   br.mem_id,
+			   (SELECT count(*) FROM grade WHERE list_num=b.list_num AND mem_id=#{mem_id}) gradecheck
 			FROM (SELECT booklist.*, rownum rnum FROM booklist) b, 
 				 bookrent br 
 				WHERE b.list_num=br.list_num 
@@ -47,10 +48,9 @@
 						FROM booklist b, bookrent br 
 						WHERE b.list_num=br.list_num 
 							AND br.rent_status=1 
-							AND br.mem_id='admin1') a, 
+							AND br.mem_id=#{mem_id}) a, 
 					grade b
 						WHERE a.list_num=b.list_num 
-							AND b.mem_id=#{mem_id}
 	</select>
 	
 </mapper>

@@ -17,7 +17,8 @@
 		  speech_date,
 		  speech_hit,
 		  speech_status,
-		  speech_regdate
+		  speech_regdate,
+		  (SELECT count(*) FROM speech_reservation sr WHERE sr.speech_num=s.speech_num)countres
 		FROM (SELECT 
 				a.*,
 				rownum rnum
@@ -38,7 +39,7 @@
 			  				speech_date like '%' || #{keyword} || '%'
 			  			</if>
 			  		</where>
-			  		ORDER BY speech_num DESC)a)
+			  		ORDER BY speech_num DESC)a)s
 		<![CDATA[
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]> 
@@ -90,6 +91,34 @@
 			<![CDATA[	
 			WHERE  rnum >= #{start} AND rnum <= #{end} AND sr.mem_id = m.mem_id
 			]]> 
+	</select>
+	
+	<select id="noCheckReserveList" parameterType="map" resultType="speechReservationCommand">
+		SELECT 
+			sr.speech_reserve_num,
+			sr.speech_num,
+			s.speech_title,
+			sr.mem_id,
+			sr.speech_reserve_status,
+			sr.speech_reserve_date 
+		FROM (SELECT 
+				a.*, 
+				rownum rnum 
+			FROM(SELECT 
+					* 
+				FROM speech_reservation 
+				ORDER BY speech_reserve_num ASC)a) sr, speech s 
+			WHERE sr.speech_num=s.speech_num 
+			AND (speech_reserve_status = 0 OR speech_reserve_status=2)
+		<![CDATA[	
+		AND rnum >= #{start} AND rnum <= #{end}
+		]]> 
+	</select>
+	<select id="getRowCountNoCheck" parameterType="map" resultType="Integer">
+		SELECT
+		  count(*)
+		FROM speech_reservation
+		WHERE speech_reserve_status = 0 OR speech_reserve_status=2
 	</select>
 	
 </mapper>

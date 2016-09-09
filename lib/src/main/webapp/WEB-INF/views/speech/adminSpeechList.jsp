@@ -4,7 +4,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <div>
-	<h2><spring:message code="speech.list.title"/></h2>
+	<h1 class="page-header">
+	<spring:message code="speech.list.title"/> | <a href="${pageContext.request.contextPath}/admin/speech/noCheckReserveList.do"><small>강연 미승인 신청자</small></a>
+	</h1>
 	
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
@@ -47,7 +49,7 @@
 					</td>
 					<td>${article.speech_date}</td>
 					<td>${article.speech_people}명</td>
-					<td><a href="reservationList.do?speech_num=${article.speech_num}">(신청인원수)명</a></td>
+					<td><a href="reservationList.do?speech_num=${article.speech_num}">${article.countres}명</a></td>
 					<td>
 						<a href="update.do?speech_num=${article.speech_num}" class="btn btn-xs btn-warning">수정</a>
 						<c:if test="${article.speech_status eq 0}">

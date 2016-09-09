@@ -74,8 +74,8 @@
 			<mvc:mapping path="/member/delete.do"/>
 			<mvc:mapping path="/speech/reserveSuccess.do"/>
 			<mvc:mapping path="/speech/reserveWaiting.do"/>
-			<!-- <mvc:mapping path="/event/applyMarathon.do"/>
-			<mvc:mapping path="/event/myMarathon.do"/> -->
+			<mvc:mapping path="/event/applyMarathon.do"/>
+			<mvc:mapping path="/event/myMarathon.do"/>
 			<beans:bean class="kr.spring.member.interceptor.LogonCheckInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>

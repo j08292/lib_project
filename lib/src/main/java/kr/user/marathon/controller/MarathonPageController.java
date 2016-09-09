@@ -29,8 +29,8 @@ public class MarathonPageController {
 	@Resource
 	private MarathonService marathonService;
 	
-	/*@Resource
-	private MemberService memberService;*/
+	@Resource
+	private MemberService memberService;
 	
 	@RequestMapping("/event/myMarathon.do")
 	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1") int currentPage, HttpSession session) throws Exception{
@@ -38,18 +38,16 @@ public class MarathonPageController {
 		if(userId == null){
 			return new ModelAndView("memberLogin");
 		}else{
-			/*MemberCommand memberCommand = memberService.selectMember(userId);
 			
-			if(log.isDebugEnabled()){
-				log.debug("memberCommand : " + memberCommand);
-			}*/
+			
 			
 			HashMap<String,Object> map = new HashMap<String, Object>();
+			map.put("mem_id", userId);
 			int count = marathonService.getRowCount(map);
 			
 			PagingUtil page = new PagingUtil(null, null, currentPage, count, rowCount,pageCount,"myMarathon.do");
 			
-			map.put("mem_id", userId);
+			
 			map.put("start", page.getStartCount());
 			map.put("end", page.getEndCount());
 			
@@ -63,11 +61,15 @@ public class MarathonPageController {
 				rentedList=Collections.emptyList();
 				pageList = Collections.emptyList();
 			}
-
 			
+			MemberCommand memberCommand = memberService.selectMember(userId);
+
+			if(log.isDebugEnabled()){
+				log.debug("memberCommand : " + memberCommand);
+			}
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("myMarathon");
-			/*mav.addObject("member",memberCommand);*/
+			mav.addObject("member",memberCommand);
 			mav.addObject("count",count);
 			mav.addObject("rentedList",rentedList);
 			mav.addObject("pageList",pageList);

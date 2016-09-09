@@ -27,10 +27,10 @@
 	1회 완주 후 다시 완주할 경우 무료배송쿠폰만 증정합니다.
 	</p>
 	<c:if test="${empty userId || member.mrt_status eq 0}">
-	<input type="button" value="참가하기" onclick="location.href=''" class="button button-desc button-3d button-rounded button-green center" >
+	<input type="button" value="참가하기" onclick="location.href='${pageContext.request.contextPath }/event/applyMarathon.do'" class="button button-desc button-3d button-rounded button-green center" >
 	</c:if>
 	<c:if test="${member.mrt_status eq 1}">
-	<input type="button" value="내 독서마라톤 현황" onclick="location.href=''" class="button button-desc button-3d button-rounded button-teal center">
+	<input type="button" value="내 독서마라톤 현황" onclick="location.href='${pageContext.request.contextPath }/event/myMarathon.do'" class="button button-desc button-3d button-rounded button-teal center">
 	</c:if>
 
 </div>
