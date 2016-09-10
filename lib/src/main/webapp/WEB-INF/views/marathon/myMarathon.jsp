@@ -11,18 +11,18 @@
 	<c:forEach var="page" items="${pageList}">
 		<c:set var="sum" value="${sum + page.list_page}"/>
 	</c:forEach>
-	현재 <strong><fmt:formatNumber type="currency" value="${sum}" pattern="###,###"/></strong>페이지 읽음(<fmt:formatNumber value="${(sum/42195) - (sum/42195%1)}" type="number"/>회 완주)<br>
+	현재 <strong><fmt:formatNumber type="currency" value="${sum - ((sum/42195) - (sum/42195%1))*42195}" pattern="###,###"/></strong>페이지 읽음(<fmt:formatNumber value="${(sum/42195) - (sum/42195%1)}" type="number"/>회 완주)<br>
 	<br>
-	완주까지 남은 페이지 <strong><fmt:formatNumber type="currency" value="${42195-sum}" pattern="###,###"/></strong>페이지
+	완주까지 남은 페이지 <strong><fmt:formatNumber type="currency" value="${42195-(sum - ((sum/42195) - (sum/42195%1))*42195)}" pattern="###,###"/></strong>페이지
 	</div>
 	<br>
 	<hr size="100%">
 	<h4>달성률</h4>
 	
 	<ul class="skills">
-	    <li data-percent="${sum/42192 * 100}">
-	        <div class="progress" style="width: ${sum/42192 * 100}%;">
-	            <div class="progress-percent"><div class="counter counter-inherit counter-instant"><span data-from="0" data-to="${sum/42192 * 100}" data-refresh-interval="50" data-speed="1100">${sum/42192 * 100}</span>%</div></div>
+	    <li data-percent="${(sum - ((sum/42195) - (sum/42195%1))*42195)/42192 * 100}">
+	        <div class="progress" style="width: ${(sum - ((sum/42195) - (sum/42195%1))*42195)/42192 * 100}%;">
+	            <div class="progress-percent"><div class="counter counter-inherit counter-instant"><span data-from="0" data-to="${(sum - ((sum/42195) - (sum/42195%1))*42195)/42192 * 100}" data-refresh-interval="50" data-speed="1100">${(sum - ((sum/42195) - (sum/42195%1))*42195)/42192 * 100}</span>%</div></div>
 	        </div>
 	    </li>
 	</ul>
@@ -39,7 +39,7 @@
 	<h4>[대출내역]</h4>
 	<br>
 	<c:if test="${count == 0}">
-	<div align="center">등록된 게시물이 없습니다.</div>
+	<div align="center">대출 내역이 없습니다.</div>
 	</c:if>
 	<c:if test="${count > 0}">
 	<table class="table table-hover"  style="text-align:center;">
