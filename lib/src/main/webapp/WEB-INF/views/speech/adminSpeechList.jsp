@@ -56,7 +56,7 @@
 							<a href="cancel.do?speech_num=${article.speech_num}" class="btn btn-xs btn-danger">일정취소</a>
 						</c:if>
 						<c:if test="${article.speech_status eq 1}">
-							<a href="delete.do?speech_num=${article.speech_num}" class="btn btn-xs btn-danger">일정삭제</a>
+							<a href="javascript:delete_event(${article.speech_num},${article.countres});" class="btn btn-xs btn-danger">일정삭제</a>
 						</c:if>
 					</td>
 				</tr>

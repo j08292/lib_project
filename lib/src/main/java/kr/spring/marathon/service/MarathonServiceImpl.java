@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import kr.spring.marathon.dao.MarathonMapper;
 import kr.spring.marathon.domain.MarathonCommand;
-import kr.spring.member.domain.MemberCommand;
 
 @Service("marathonService")
 public class MarathonServiceImpl implements MarathonService{
@@ -33,8 +32,28 @@ public class MarathonServiceImpl implements MarathonService{
 	}
 
 	@Override
-	public void updateMrtStatus(String mem_id) {
-		marathonMapper.updateMrtStatus(mem_id);
+	public void applyMrtStatus(String mem_id) {
+		marathonMapper.applyMrtStatus(mem_id);
+	}
+
+	@Override
+	public void finishMrtStatus(String mem_id) {
+		marathonMapper.finishMrtStatus(mem_id);
+	}
+
+	@Override
+	public void insert(MarathonCommand marathon) {
+		marathonMapper.insert(marathon);
+	}
+
+	@Override
+	public List<MarathonCommand> finishList(Map<String, Object> map) {
+		return marathonMapper.finishList(map);
+	}
+
+	@Override
+	public int getFinishRowCount(Map<String, Object> map) {
+		return marathonMapper.getFinishRowCount(map);
 	}
 	
 }

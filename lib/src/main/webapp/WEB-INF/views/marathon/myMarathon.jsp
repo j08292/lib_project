@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div class="container clearfix">
-	<c:if test="${member.mrt_status eq 1}">
+	<c:if test="${member.mrt_status eq 1 || member.mrt_status eq 2}">
 	<h2>내 마라톤 현황</h2>
 	<div>
 	<c:set var="sumPage" value="0"/>
@@ -11,10 +11,14 @@
 	<c:forEach var="page" items="${pageList}">
 		<c:set var="sum" value="${sum + page.list_page}"/>
 	</c:forEach>
-	현재 <strong><fmt:formatNumber type="currency" value="${sum - ((sum/42195) - (sum/42195%1))*42195}" pattern="###,###"/></strong>페이지 읽음(<fmt:formatNumber value="${(sum/42195) - (sum/42195%1)}" type="number"/>회 완주)<br>
+	현재 <strong><fmt:formatNumber type="currency" value="${sum - ((sum/42195) - (sum/42195%1))*42195}" pattern="###,###"/></strong>페이지 읽음(<fmt:formatNumber value="${(sum/42195) - (sum/42195%1)}" type="number"/>회 완주) <small>총 <strong><fmt:formatNumber type="currency" value="${sum}" pattern="###,###"/></strong>페이지 읽음</small><br>
 	<br>
-	완주까지 남은 페이지 <strong><fmt:formatNumber type="currency" value="${42195-(sum - ((sum/42195) - (sum/42195%1))*42195)}" pattern="###,###"/></strong>페이지
+	완주까지 남은 페이지 <strong><fmt:formatNumber type="currency" value="${42195-(sum - ((sum/42195) - (sum/42195%1))*42195)}" pattern="###,###"/></strong>페이지<br>
+	<br>
 	</div>
+	<c:if test="${sum >=42195 && member.mrt_status eq 1 }">
+		<input type="button" value="완주혜택 신청하기" onclick="javascript:finish_event(${sum},${member.mrt_status});">
+	</c:if>
 	<br>
 	<hr size="100%">
 	<h4>달성률</h4>
@@ -22,16 +26,14 @@
 	<ul class="skills">
 	    <li data-percent="${(sum - ((sum/42195) - (sum/42195%1))*42195)/42192 * 100}">
 	        <div class="progress" style="width: ${(sum - ((sum/42195) - (sum/42195%1))*42195)/42192 * 100}%;">
-	            <div class="progress-percent"><div class="counter counter-inherit counter-instant"><span data-from="0" data-to="${(sum - ((sum/42195) - (sum/42195%1))*42195)/42192 * 100}" data-refresh-interval="50" data-speed="1100">${(sum - ((sum/42195) - (sum/42195%1))*42195)/42192 * 100}</span>%</div></div>
+	            <div class="progress-percent">
+		            <div class="counter counter-inherit counter-instant">
+			            <span data-from="0" data-to="${(sum - ((sum/42195) - (sum/42195%1))*42195)/42192 * 100}" data-refresh-interval="50" data-speed="1100">
+			            	${(sum - ((sum/42195) - (sum/42195%1))*42195)/42192 * 100}</span>%</div>
+	            </div>
 	        </div>
 	    </li>
 	</ul>
-	
-	<div class="rounded-skill nobottommargin easyPieChart 6500 animated" data-color="#3F729B" data-size="200" data-percent="${sum/42192 * 100}" data-width="3" data-animate="6500" style="width: 200px; height: 200px; line-height: 200px;">
-	<div class="counter counter-inherit">
-	<span data-from="0" data-to="${sum/42192 * 100}" data-refresh-interval="50" data-speed="6000">${sum/42192 * 100}</span>%</div>
-	<canvas width="200" height="200"></canvas>
-	</div>
 	
 	
 	<br>
@@ -58,7 +60,7 @@
 			<tr>
 				<td>${article.list_num}</td>
 				<td>${article.list_title}</td>
-				<td>${article.list_page}</td>
+				<td><fmt:formatNumber type="currency" value="${article.list_page}" pattern="###,###"/></td>
 				<td>${article.rent_regdate}</td>
 				<td>
 				<c:if test="${article.gradecheck eq 1}">

@@ -38,19 +38,14 @@ public class MarathonPageController {
 		if(userId == null){
 			return new ModelAndView("memberLogin");
 		}else{
-			
-			
-			
 			HashMap<String,Object> map = new HashMap<String, Object>();
 			map.put("mem_id", userId);
 			int count = marathonService.getRowCount(map);
 			
 			PagingUtil page = new PagingUtil(null, null, currentPage, count, rowCount,pageCount,"myMarathon.do");
 			
-			
 			map.put("start", page.getStartCount());
 			map.put("end", page.getEndCount());
-			
 			
 			List<MarathonCommand> pageList = null;
 			List<MarathonCommand> rentedList = null;

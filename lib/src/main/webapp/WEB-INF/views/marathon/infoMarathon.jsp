@@ -24,12 +24,12 @@
 	본 도서관에서 대출하지 않았던 책에 [별점한줄평]을 등록했을 경우에는 누적되지 않습니다.<br>
 	[별점한줄평]을 장난으로 기록한 경우, 모니터링 후 사전 연락 없이 삭제됩니다.<br>
 	[마이 페이지]에서 주소를 다시 확인하여 정확하게 입력해주세요.<br>
-	1회 완주 후 다시 완주할 경우 무료배송쿠폰만 증정합니다.
+	1회 완주 후 다시 완주할 경우에는 완주혜택이 없습니다.
 	</p>
 	<c:if test="${empty userId || member.mrt_status eq 0}">
 	<input type="button" value="참가하기" onclick="location.href='${pageContext.request.contextPath }/event/applyMarathon.do'" class="button button-desc button-3d button-rounded button-green center" >
 	</c:if>
-	<c:if test="${member.mrt_status eq 1}">
+	<c:if test="${member.mrt_status eq 1 || member.mrt_status eq 2}">
 	<input type="button" value="내 독서마라톤 현황" onclick="location.href='${pageContext.request.contextPath }/event/myMarathon.do'" class="button button-desc button-3d button-rounded button-teal center">
 	</c:if>
 

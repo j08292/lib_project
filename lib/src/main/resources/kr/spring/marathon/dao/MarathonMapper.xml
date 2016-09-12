@@ -52,5 +52,45 @@
 					grade b
 						WHERE a.list_num=b.list_num 
 	</select>
-	
+	<select id="finishList" parameterType="map" resultType="marathonCommand">
+		SELECT
+			ma.MARATHON_NUM,
+		    ma.MARATHON_PAGE,
+		    ma.MARATHON_REGDATE,
+		    ma.MARATHON_STATUS,
+		    ma.MEM_ID,
+		    mem.MEM_NAME,
+		    mem.MEM_ADDRESS
+		FROM (SELECT 
+				a.*,
+				rownum rnum
+			  FROM (SELECT
+			  			*
+			  		FROM marathon
+			  		<where>
+			  			<if test="keyword!='' and keyfield=='mem_id'">
+			  				mem_id like '%' || #{keyword} || '%'
+			  			</if>
+			  			<if test="keyword!='' and keyfield=='marathon_status'">
+			  				marathon_status like '%' || #{keyword} || '%'
+			  			</if>
+			  		</where>
+			  		ORDER BY marathon_num DESC)a)ma, member mem
+		<![CDATA[
+		WHERE mem.mem_id = ma.mem_id AND (rnum >= #{start} AND rnum <= #{end})
+		]]> 
+	</select>
+	<select id="getFinishRowCount" parameterType="map" resultType="Integer">
+		SELECT
+		  count(*)
+		FROM marathon
+  		<where>
+  			<if test="keyword!='' and keyfield=='mem_id'">
+  				mem_id like '%' || #{keyword} || '%'
+  			</if>
+  			<if test="keyword!='' and keyfield=='marathon_status'">
+  				marathon_status like '%' || #{keyword} || '%'
+  			</if>
+  		</where>
+	</select>
 </mapper>

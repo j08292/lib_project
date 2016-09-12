@@ -43,18 +43,25 @@ public class SpeechDetailController {
 		
 		//예약자 불러오기
 		String userId = (String)session.getAttribute("userId");
-		SpeechReservationCommand command = new SpeechReservationCommand();
-		command.setSpeech_num(speech_num);
-		command.setMem_id(userId);
-		SpeechReservationCommand speechReserve = speechService.selectReservation(command);
-		
-		
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("userSpeechDetail");
-		mav.addObject("speech",speech);
-		mav.addObject("speechReserve",speechReserve);
-		mav.addObject("res",res);
-		return mav;
+		if(userId==null){
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("userSpeechDetail");
+			mav.addObject("speech",speech);
+			mav.addObject("res",res);
+			return mav;
+		}else{
+			SpeechReservationCommand command = new SpeechReservationCommand();
+			command.setSpeech_num(speech_num);
+			command.setMem_id(userId);
+			SpeechReservationCommand speechReserve = speechService.selectReservation(command);
+			
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("userSpeechDetail");
+			mav.addObject("speech",speech);
+			mav.addObject("speechReserve",speechReserve);
+			mav.addObject("res",res);
+			return mav;
+		}
 	}
 	
 }

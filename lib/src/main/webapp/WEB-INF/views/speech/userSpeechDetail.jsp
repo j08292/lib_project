@@ -38,7 +38,7 @@
 
 		<c:if test="${speech.speech_people-res > 0}">
 			<!-- 이미 신청한 사람은 신청현황보기만 보여지게 -->
-			<%-- <c:if test=""> --%>
+			<c:if test="${empty speechReserve.mem_id}">
 			<c:choose>
 				<c:when test="${speech.speech_price eq 0}">
 					<div align="center">
@@ -51,11 +51,14 @@
 					</div>
 				</c:otherwise>
 			</c:choose>
+			</c:if>
 			
 			<!-- 신청하지 않은사람은 신청하기만 보여지게 -->
+			<c:if test="${not empty speechReserve.mem_id}">
 			<div align="center">
 				<input type="button" value="신청현황보기" onclick="location.href='reserveWaiting.do?speech_num=${speech.speech_num}'" class="button button-desc button-3d button-rounded button-teal center">
 			</div>
+			</c:if>
 		</c:if>
 		<!-- 예약 불가능한 상태 -->
 		<c:if test="${speech.speech_people-res <= 0}">

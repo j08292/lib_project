@@ -180,3 +180,13 @@ create table chat(
 );
 
 create sequence chat_seq;
+
+create table marathon(
+    marathon_num number not null primary key,
+    mem_id varchar2(20) not null,
+    marathon_page number not null,
+    marathon_regdate date not null,
+    marathon_status number(1) default(0) not null,
+    constraint marathon_fk1 foreign key (mem_id) references member (mem_id)
+);
+create sequence marathon_seq;

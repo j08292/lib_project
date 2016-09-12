@@ -17,6 +17,7 @@
 	<context:component-scan base-package="kr.spring.admin.controller"/>
 	<context:component-scan base-package="kr.spring.review.controller"/>
 	<context:component-scan base-package="kr.user.marathon.controller"/>
+	<context:component-scan base-package="kr.admin.marathon.controller"/>
 	<!-- 본 프로젝트에 맞게 자동 스캔 수정할 것 -->
 	
 	<!-- Spring3 Validator -->

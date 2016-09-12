@@ -41,6 +41,21 @@
     <definition name="adminSpeechList" extends="speechWrite">
 		<put-attribute name="title" value="강연 목록"/>
 		<put-attribute name="body" value="/WEB-INF/views/speech/adminSpeechList.jsp"/>
+		<put-list-attribute name="jsList">
+        	<!-- jQuery -->
+		    <add-attribute value="/lib/resources/admin/js/jquery.js"/>
+		    <!-- Bootstrap Core JavaScript -->
+		    <add-attribute value="/lib/resources/admin/js/bootstrap.min.js"/>
+		    <!-- Morris Charts JavaScript -->
+		    <add-attribute value="/lib/resources/admin/js/plugins/morris/raphael.min.js"/>
+		    <add-attribute value="/lib/resources/admin/js/plugins/morris/morris.min.js"/>
+		    <add-attribute value="/lib/resources/admin/js/plugins/morris/morris-data.js"/>
+		    <!-- jquery ui datepicker -->
+		    <add-attribute value="/lib/resources/admin/js/jquery-1.12.4.js"/>
+		    <add-attribute value="/lib/resources/admin/js/jquery-ui.js"/>
+		    <add-attribute value="/lib/resources/admin/js/adminSpeechList.js"/>
+		    <add-attribute value="http://dmaps.daum.net/map_js_init/postcode.v2.js"/>
+        </put-list-attribute>
 	</definition>
 	<definition name="adminSpeechReservateList" extends="speechWrite">
 		<put-attribute name="title" value="강연 신청자 목록"/>
