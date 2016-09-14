@@ -25,7 +25,8 @@
 					<nav id="primary-menu" class="dark">
 											
 						<ul>
-							<li class="current"><a href="#"><div>Corporate</div></a></li>
+							<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do"><div>희망도서</div></a>
+							<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do"><div>공지사항</div></a>
 							<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do"><div>강연</div></a>
 							<li><a href="#"><div>Features</div></a></li>
 							<li class="mega-menu"><a href="#"><div>Pages</div></a></li>

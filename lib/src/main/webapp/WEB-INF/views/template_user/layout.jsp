@@ -30,7 +30,7 @@
 	</c:forEach>
 	<!-- Document Title
 	============================================= -->
-	<title>Canvas | The Multi-Purpose HTML5 Template</title>
+	<title>Library</title>
 
 </head>
 

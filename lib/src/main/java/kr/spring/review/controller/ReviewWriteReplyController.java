@@ -15,23 +15,20 @@ import kr.spring.review.domain.ReviewReplyCommand;
 import kr.spring.review.service.ReviewService;
 
 @Controller
-public class ReviewWriteReplyController {
-	
-private Logger log = Logger.getLogger(this.getClass());
-	
+public class ReviewWriteReplyController {	
+	private Logger log = Logger.getLogger(this.getClass());
+
 	@Resource
 	private ReviewService reviewService;
-	
+
 	@RequestMapping("/board/writeReplyAjax.do")
 	@ResponseBody
-	public Map<String,String> process(
-			ReviewReplyCommand reviewReplyCommand,
-			HttpSession session){
-		
+	public Map<String,String> process(ReviewReplyCommand reviewReplyCommand,HttpSession session){
+
 		if(log.isDebugEnabled()){
 			log.debug("reviewReplyCommand : " + reviewReplyCommand);
 		}
-		
+
 		Map<String,String> map = new HashMap<String,String>();
 		try{
 			String userId = (String)session.getAttribute("userId");
@@ -40,11 +37,8 @@ private Logger log = Logger.getLogger(this.getClass());
 			}else{//·Î±×ÀÎ µÊ
 				//´ñ±Û µî·Ï
 				reviewService.insertReply(reviewReplyCommand);
-				
-							
+
 				map.put("result", "success");
-				
-				
 			}
 		}catch(Exception e){
 			e.printStackTrace();
@@ -52,5 +46,4 @@ private Logger log = Logger.getLogger(this.getClass());
 		}
 		return map;
 	}
-	
 }

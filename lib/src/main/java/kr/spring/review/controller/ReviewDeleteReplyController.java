@@ -14,27 +14,25 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.spring.review.service.ReviewService;
 
-
 @Controller
 public class ReviewDeleteReplyController {
 	private Logger log = Logger.getLogger(this.getClass());
-	
+
 	@Resource
 	private ReviewService reviewSerview;
-	
+
 	@RequestMapping("/board/deleteReplyAjax.do")
 	@ResponseBody
 	public Map<String, String> process(@RequestParam("review_re_num") int review_re_num,
-										@RequestParam("mem_id")String mem_id,
-										HttpSession session){
-		
+									   @RequestParam("mem_id")String mem_id,HttpSession session){
+
 		if(log.isDebugEnabled()){
 			log.debug("review_re_num : " +review_re_num);
 			log.debug("mem_id : " +mem_id);
 		}
-		
+
 		Map<String, String> map = new HashMap<String, String>();
-		
+
 		try{
 			String userId = (String)session.getAttribute("userId");
 			if(userId == null){
@@ -49,8 +47,7 @@ public class ReviewDeleteReplyController {
 		}catch (Exception e){
 			e.printStackTrace();
 			map.put("result","failure");
-		}
-	
+		}	
 		return map;
 	}
 }

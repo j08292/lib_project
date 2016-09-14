@@ -22,7 +22,13 @@ public interface ReviewService {
 	public void update(ReviewCommand review);
 	public void delete(Integer review_num);
 
+	//관리자 게시물 관리
+	//파일 삭제를 위해 글 정보 가져오기
+	public List<ReviewCommand> selectReviewAdmin(List<Integer> list);
+	//해당 글번호의 게시글 삭제S
+	public void deleteByReviewNum(List<Integer> list);
 	
+	//댓글
 	@Transactional(readOnly=true)
 	public List<ReviewReplyCommand> listReply (Map<String,Object> map);
 	@Transactional(readOnly=true)

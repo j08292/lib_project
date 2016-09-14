@@ -57,15 +57,15 @@
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#book_manage"><i class="fa fa-fw fa-file"></i> 도서관리  <i class="fa fa-fw fa-caret-down"></i></a>
                    		<ul id="book_manage" class="collapse">
-                            <li>
-                                <a href="#">도서 등록</a>
-                            </li>
-                            <li>
-                                <a href="#">대출 현황</a>
-                            </li>
-                            <li>
-                                <a href="#">희망 도서</a>
-                            </li>
+                            <li><a
+						href="${pageContext.request.contextPath}/admin/booklist/list.do">도서
+							현황</a></li>
+					<li><a
+						href="${pageContext.request.contextPath}/admin/bookrent/list.do">대출
+							현황</a></li>
+					<li><a
+						href="${pageContext.request.contextPath}/admin/wishlist/list.do">희망
+							도서</a></li>
                         </ul>
                     </li>
                     <li>
@@ -74,15 +74,12 @@
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#board_manage"><i class="fa fa-fw fa-edit"></i> 게시판 관리  <i class="fa fa-fw fa-caret-down"></i></a>
                     	<ul id="board_manage" class="collapse">
-                            <li>
-                                <a href="#">공지사항 등록</a>
-                            </li>
-                            <li>
-                                <a href="#">게시물 관리</a>
-                            </li>
-                            <li>
-                                <a href="#">QnA 관리</a>
-                            </li>
+                            <li><a
+						href="${pageContext.request.contextPath}/admin/notice/list.do">공지사항</a>
+					</li>
+					<li><a href="${pageContext.request.contextPath}/admin/board/list.do">감상평</a></li>
+					<li><a href="#">한줄평</a></li>
+					<li><a href="#">QnA</a></li>
                         </ul>
                     </li>
                     <li>

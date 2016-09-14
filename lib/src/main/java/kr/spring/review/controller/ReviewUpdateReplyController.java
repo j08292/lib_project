@@ -17,23 +17,19 @@ import kr.spring.review.service.ReviewService;
 @Controller
 public class ReviewUpdateReplyController {
 	private Logger log = Logger.getLogger(this.getClass());
-	
+
 	@Resource
-	private ReviewService reviewService;
-	
-	
+	private ReviewService reviewService;	
+
 	@RequestMapping("/board/updateReplyAjax.do")
 	@ResponseBody
-	public Map<String,Object> process(
-			ReviewReplyCommand reviewReplyCommand,
-			HttpSession session){
-		
-		
+	public Map<String,Object> process(ReviewReplyCommand reviewReplyCommand,HttpSession session){
+
 		if(log.isDebugEnabled()){
 			log.debug("reivewReplyCommand : " + reviewReplyCommand);
 		}
 		Map<String, Object> map = new HashMap<String, Object>();
-		
+
 		try{
 			String userId = (String)session.getAttribute("userId");
 			if(userId == null){//·Î±×ÀÎ ¾ÈµÊ
@@ -45,16 +41,11 @@ public class ReviewUpdateReplyController {
 			}else{
 				map.put("result","worngAccess");
 			}
-			
-			
+
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result","failure");
 		}
 		return map;
-		
 	}
-	
-	
-	
 }

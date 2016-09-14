@@ -19,10 +19,7 @@ public class ReviewCommand {
 	private MultipartFile upload;	
 	private String review_file;
 	@NotEmpty
-	private String mem_id;//작성자 아이디
-	
-	
-	
+	private String mem_id;//작성자 아이디	
 	
 	public int getReview_num() {
 		return review_num;
@@ -83,8 +80,7 @@ public class ReviewCommand {
 	}
 	public void setMem_id(String mem_id) {
 		this.mem_id = mem_id;
-	}
-	
+	}	
 
 	@Override
 	public String toString() {
@@ -92,6 +88,5 @@ public class ReviewCommand {
 				+ review_content + ", review_regdate=" + review_regdate + ", review_hit=" + review_hit
 				+ ", review_like=" + review_like + ", review_dislike=" + review_dislike + ", upload=" + upload
 				+ ", review_file=" + review_file + ", mem_id=" + mem_id + "]";
-	}
-	
+	}	
 }
