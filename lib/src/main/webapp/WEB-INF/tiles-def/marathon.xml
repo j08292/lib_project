@@ -13,10 +13,10 @@
 		<put-attribute name="title" value="내 독서마라톤현황"/>
 		<put-attribute name="body" value="/WEB-INF/views/marathon/myMarathon.jsp"/>
 	    <put-list-attribute name="jsList">
-        	<add-attribute value="../resources/user/js/jquery.js"/>
-        	<add-attribute value="../resources/user/js/plugins.js"/>
+        	<add-attribute value="/lib/resources/user/js/jquery.js"/>
+        	<add-attribute value="/lib/resources/user/js/plugins.js"/>
         	<!-- 추가 -->
-        	<add-attribute value="../resources/user/js/myMarathon.js"/>
+        	<add-attribute value="/lib/resources/user/js/myMarathon.js"/>
         </put-list-attribute>
 	</definition>
 	

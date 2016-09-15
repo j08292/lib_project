@@ -23,4 +23,5 @@ public interface MarathonService {
 	//관리자쪽에서 보는 완주자 리스트
 	public List<MarathonCommand> finishList(Map<String, Object> map);
 	public int getFinishRowCount(Map<String , Object> map);
+	public void updateStatus(MarathonCommand marathon);
 }

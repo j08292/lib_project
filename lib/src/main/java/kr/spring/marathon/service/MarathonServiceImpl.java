@@ -55,5 +55,10 @@ public class MarathonServiceImpl implements MarathonService{
 	public int getFinishRowCount(Map<String, Object> map) {
 		return marathonMapper.getFinishRowCount(map);
 	}
+
+	@Override
+	public void updateStatus(MarathonCommand marathon) {
+		marathonMapper.updateStatus(marathon);
+	}
 	
 }

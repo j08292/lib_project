@@ -50,15 +50,16 @@
 							신청중
 						</c:if>
 						<c:if test="${article.marathon_status eq 1}">
-							신청 확정
+							상품 보냄
 						</c:if>
 					</td>
 					<td>
-						<select name="status" class="status">
-							<option value="0" <c:if test="${article.marathon_status eq 0}">selected</c:if>>신청중</option>
-							<option value="1" <c:if test="${article.marathon_status eq 1}">selected</c:if>>신청 확정</option>
-						</select>
-						<input type="button" value="저장" class="btn btn-xs btn-success">
+						<c:if test="${article.marathon_status eq 0}">
+							<input type="button" value="완주 확인" class="btn btn-xs btn-success">
+						</c:if>
+						<c:if test="${article.marathon_status eq 1}">
+							<input type="button" value="취소" class="btn btn-xs btn-success">
+						</c:if>
 					</td>
 				</tr>
 			</tbody>

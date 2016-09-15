@@ -104,7 +104,7 @@ create table review(
   review_dislike number(4) default 0 not null,
   constraint review_member_fk1 foreign key(mem_id) references member(mem_id)
 );
-create sequence review_seq;
+create sequence review_num;
 
 create table review_reply(
   review_re_num number not null primary key,
@@ -115,7 +115,7 @@ create table review_reply(
   constraint review_re_member_fk1 foreign key(mem_id) references member(mem_id),
   constraint review_re_review_fk2 foreign key(review_num) references review(review_num)
 );
-create sequence review_re_seq;
+create sequence review_re_num;
 
 create table grade(
   grade_num number not null primary key,
@@ -153,7 +153,7 @@ create table qna(
   qna_hit number(4) default 0 not null,
   constraint qna_member_fk1 foreign key(mem_id) references member(mem_id)
 );
-create sequence qna_seq;
+create sequence qna_num;
 
 create table qna_reply(
   qna_re_num number not null primary key,
@@ -164,7 +164,7 @@ create table qna_reply(
   constraint qna_re_member_fk1 foreign key(mem_id) references member(mem_id),
   constraint qna_re_qna_fk1 foreign key(qna_num) references qna(qna_num)
 );
-create sequence qna_re_seq;
+create sequence qna_re_num;
 
 create table chat(
   chat_num number not null primary key,
