@@ -48,12 +48,17 @@ public class BookrentServiceImpl implements BookrentService{
 	}
 	
 	@Override
-	public void delete(Integer rent_num) {
-		
-	}
-
-	@Override
 	public void updatePenalty(MemberCommand member) {
 		bookrentMapper.updatePenalty(member);
+	}
+	
+	@Override
+	public void updateBookRent(BookrentCommand bookrent) {
+		bookrentMapper.updateBookRent(bookrent);
+	}
+	
+	@Override
+	public void delete(Integer rent_num) {
+		
 	}
 }

@@ -58,7 +58,7 @@ public class ReviewListController {
 		mav.setViewName("reviewList");
 		mav.addObject("count",count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtil" ,page.getPagingHtml());
+		mav.addObject("pagingHtml",page.getPagingHtml());
 
 		return mav;
 	}

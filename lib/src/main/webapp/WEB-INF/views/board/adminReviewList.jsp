@@ -3,11 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div>
-	<h2>
+	<h2 class="page-header">
 		<spring:message code="review.list.title" />
 	</h2>
 	<form action="list.do" id="search_form" method="get">
-		<div class="form-group input-group">
+		<div align="center">
 			<select name="keyfield">
 				<option value="review_title">제목</option>
 				<option value="mem_id">ID</option>
@@ -22,19 +22,21 @@
 		<div class="align-center">등록된 감상평이 없습니다.</div>
 	</c:if>
 	<c:if test="${count>0}">
-		<input type="button" value="삭제" onclick="ajaxExample();">
+		<div align="right">
+			<input type="button" value="삭제" onclick="ajaxExample();" class="btn btn-xs btn-danger">
+		</div>
 		<div class="table-responsive">			
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>글번호</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>작성일</th>
-						<th>전체 선택/해제<input type="checkbox" id="allCheck" name="review_num"></th>
+						<th style="text-align:center;">글번호</th>
+						<th style="text-align:center;">제목</th>
+						<th style="text-align:center;">작성자</th>
+						<th style="text-align:center;">작성일</th>
+						<th style="text-align:center;">전체 선택/해제<input type="checkbox" id="allCheck" name="review_num"></th>
 					</tr>
 				</thead>				
-				<tbody>
+				<tbody style="text-align:center;">
 					<c:forEach var="article" items="${list}">
 						<tr>
 							<td>${article.review_num}</td>
@@ -49,6 +51,6 @@
 				</tbody>
 			</table>
 		</div>		
-		<div class="align-center">${pagingHtml}</div>
+		<div align="center">${pagingHtml}</div>
 	</c:if>
 </div>

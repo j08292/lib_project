@@ -18,7 +18,7 @@
 				<input type="submit" value="찾기">
 		</div>
 	</form>
-	<div align="right"><input type="button" value="등록" onclick="location.href='write.do'" class="btn btn-xs btn-primary"></div>
+	<div align="right"><input type="button" value="등록" onclick="location.href='write.do'" class="btn btn-sm btn-primary"></div>
 	<c:if test="${count == 0}">
 	<div align="center">등록된 게시물이 없습니다.</div>
 	</c:if>

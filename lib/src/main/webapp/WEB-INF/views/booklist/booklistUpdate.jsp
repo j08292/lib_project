@@ -4,11 +4,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <div>
-	<h2>
-		<spring:message code="booklist.update.title" />
-	</h2>
+	<h2 class="page-header"><spring:message code="booklist.update.title" /></h2>
 	<form:form action="updateStatus.do" commandName="command" id="updateStatus_form">
-		<input type="submit" value="대출 정지">
+		<div align="right"><input type="submit" value="대출 정지" class="btn btn-danger"></div>
 	</form:form>
 	<form:form action="update.do" enctype="multipart/form-data"
 		commandName="command" id="update_form">
@@ -41,20 +39,18 @@
 		<div class="form-group">
 			<label for="upload">업로드</label>
 			<div id="beforeImage">			
-				<c:if test="${!empty command.list_filename}">
-					<br>
-					<span><img src="${pageContext.request.contextPath}/upload/${command.list_filename}"
-						width=200 height=140></img><br>
-					(${command.list_filename})파일이 등록되어 있습니다.<br>다시 업로드하면 기존
-						파일은 삭제됩니다.</span>
+				<c:if test="${!empty command.list_filename}"><br>
+					<span><img src="${pageContext.request.contextPath}/upload/${command.list_filename}" width=200 height=140></img>
+					<br>(${command.list_filename})파일이 등록되어 있습니다.
+					<br>다시 업로드하면 기존 파일은 삭제됩니다.</span>
 				</c:if>
 			</div>
 			<div id="imagePreview"></div><br>
 			<input type="file" name="upload" id="upload" onchange="ImagePreview();">
 		</div>
-		<div class="form-group">
-			<input type="submit" value="수정"> <input type="button"
-				value="목록" onclick="location.href='list.do'">
+		<div>
+			<input type="submit" value="수정" class="btn btn-warning">
+			<input type="button" value="목록" class="btn btn-default" onclick="location.href='list.do'">
 		</div>
 	</form:form>	
 </div>

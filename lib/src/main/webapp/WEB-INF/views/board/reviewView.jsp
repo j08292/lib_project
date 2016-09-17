@@ -185,18 +185,14 @@ form#mre_form {
 
 <!-- Page Title(지우면안됨X) -->
 <section id="page-title">
-
 	<div class="container clearfix">
-		<h1>
-			<spring:message code="review.write.title" />
-		</h1>
+		<h1>${review.review_title}</h1>
 		<span>Start Buying your Favourite Theme</span>
 		<ol class="breadcrumb">
 			<li><a href="#">Home</a></li>
 			<li class="active">Shop</li>
 		</ol>
 	</div>
-
 </section>
 <!-- #page-title end -->
 
@@ -217,14 +213,15 @@ form#mre_form {
 					<li>조회수 : ${review.review_hit}</li>
 					<li>등록날짜 : ${review.review_regdate}</li>
 					<c:if test="${!empty review.review_file}">
-						<li>첨부파일 : <a
-							href="file.do?review_file=${review.review_file}">${review.review_file}</a></li>
+						<li>첨부파일 : <a href="file.do?review_file=${review.review_file}">${review.review_file}</a></li>
 					</c:if>
 				</ul>
 				<hr size="1" width="100%">
 				<p>
-					<img src="file.do?review_file=${review.review_file}" width=512
-						height=384></img> <br> <br> ${review.review_content}
+					<c:if test="${!empty review.review_file}">
+					<img src="file.do?review_file=${review.review_file}" width=512 height=384></img><br><br>
+					</c:if>
+					${review.review_content}
 				</p>
 				<hr size="1" width="100%">
 				<p class="align-right">

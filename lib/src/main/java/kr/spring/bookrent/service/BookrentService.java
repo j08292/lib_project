@@ -20,5 +20,6 @@ public interface BookrentService {
 	public void update(BookrentCommand bookrent);
 	public void updateStatusChange(BookrentCommand bookrent);
 	public void updatePenalty(MemberCommand member);
+	public void updateBookRent(BookrentCommand bookrent);
 	public void delete(Integer rent_num);
 }

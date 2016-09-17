@@ -20,5 +20,7 @@ public interface BookrentMapper {
 	public void updateStatusChange(BookrentCommand bookrent);
 	@Update("UPDATE member SET mem_penalty=#{mem_penalty} WHERE mem_id=#{mem_id}")
 	public void updatePenalty(MemberCommand member);
+	@Update("UPDATE bookrent SET rent_regdate=sysdate WHERE rent_num=#{rent_num}")
+	public void updateBookRent(BookrentCommand bookrent);
 	public void delete(Integer rent_num);
 }

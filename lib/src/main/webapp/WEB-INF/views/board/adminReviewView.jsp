@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div>
-	<h2>${review.review_title}</h2>
-	<ul>
+	<div align="center"><h2>${review.review_title}</h2></div>
+	<ul style="list-style:none;">
 		<li>번호 : ${review.review_num}</li>
 		<li>ID : ${review.mem_id }</li>
 		<li>등록날짜 : ${review.review_regdate}</li>
@@ -12,12 +12,15 @@
 			<li>첨부파일 : <a href="file.do?review_file=${review.review_file}">${review.review_file}</a></li>
 		</c:if>
 	</ul>
-	<input type="button" value="삭제" onclick="javascript:delete_event(${review.review_num});">
+	<div align="right">
+	<input type="button" value="목록으로" onclick="location.href='list.do'" class="btn btn-sm btn-info">
+	<input type="button" value="삭제" onclick="javascript:delete_event(${review.review_num});" class="btn btn-sm btn-danger">
+	</div>	
 	<hr size="1" width="100%">	
 	<p>
 		<c:if test="${!empty review.review_file}">
-			<img src="file.do?review_file=${review.review_file}" width=512 height=384></img>
-		</c:if><br><br>
+			<img src="file.do?review_file=${review.review_file}" width=512 height=384></img><br><br>
+		</c:if>
 		${review.review_content}
 	</p>
 	<hr size="1" width="100%">
@@ -48,7 +51,7 @@
 	<!-- 목록출력 -->
 	<div id="output"></div>
 	<div class="paging_button" style="display: none;">
-		<input type="button" value="다음글 보기">
+		<input type="button" value="다음글 보기" class="btn btn-xs btn-info">
 	</div>
 	<div id="loading" style="display: none;">
 		<img src="${pageContext.request.contextPath}/resources/user/images/ajax-loader.gif">

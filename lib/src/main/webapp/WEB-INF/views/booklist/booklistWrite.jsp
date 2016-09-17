@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div>
-	<h2><spring:message code="booklist.write.title"/></h2>
+	<h2 class="page-header"><spring:message code="booklist.write.title"/></h2>
 	<form:form action="write.do" enctype="multipart/form-data" commandName="command" id="register_form">
 		<form:errors element="div" class="error-color"/>					
 			<div class="form-group">
@@ -36,9 +35,9 @@
 				<div id="imagePreview"></div><br>
 				<input type="file" name="upload" id="upload" onchange="ImagePreview();">
 			</div>
-			<div class="form-group">
-				<input type="submit" value="전송">
-				<input type="button" value="목록" onclick="location.href='list.do'">
+			<div>
+				<input type="submit" value="전송" class="btn btn-primary">
+				<input type="button" value="목록" class="btn btn-default" onclick="location.href='list.do'">
 			</div>		
 	</form:form>
 </div>

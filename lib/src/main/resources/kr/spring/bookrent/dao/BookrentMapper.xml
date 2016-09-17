@@ -21,7 +21,7 @@
 						  FROM booklist l, bookrent r
 						WHERE
 							l.list_num=r.list_num
-							AND (r.rent_status=0 OR r.rent_status=2)
+							AND (r.rent_status=0 OR r.rent_status=2 OR r.rent_status=3)
 						)
 				<where>
 					<if test="keyword != '' and keyfield == 'rent_num'">
@@ -64,7 +64,7 @@
 		  FROM booklist l, bookrent r
 		WHERE
 			l.list_num=r.list_num
-			AND (r.rent_status=0 OR r.rent_status=2)
+			AND (r.rent_status=0 OR r.rent_status=2 OR r.rent_status=3)
 		)
 		<where>
 			<if test="keyword != '' and keyfield == 'rent_num'">

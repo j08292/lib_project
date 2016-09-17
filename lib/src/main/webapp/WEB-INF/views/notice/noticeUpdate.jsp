@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div>
-	<h2><spring:message code="notice.update.title"/></h2>
+	<h2 class="page-header"><spring:message code="notice.update.title"/></h2>
 	<form:form action="update.do" commandName="command" id="update_form">
 		<form:errors element="div" class="error-color"/>					
 			<div class="form-group">
@@ -16,9 +16,9 @@
 				<form:textarea path="notice_content" class="form-control" width="150px"/>
 				<form:errors path="notice_content" class="error-color"/>
 			</div>
-			<div class="form-group">
-				<input type="submit" value="수정">
-				<input type="button" value="목록" onclick="location.href='list.do'">
+			<div>
+				<input type="submit" value="수정" class="btn btn-primary">
+				<input type="button" value="목록" class="btn btn-default" onclick="location.href='list.do'">
 			</div>		
 	</form:form>
 </div>
