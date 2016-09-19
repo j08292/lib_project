@@ -19,6 +19,7 @@ public class MarathonStatusUpdateController {
 						 @RequestParam("marathon_status") int marathon_status){
 		if(log.isDebugEnabled()){
 			log.debug("marathon_num : " + marathon_num);
+			log.debug("marathon_status : " + marathon_status);
 		}
 		
 		MarathonCommand marathon = new MarathonCommand();
