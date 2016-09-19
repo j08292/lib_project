@@ -1,15 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <div>
 	<h2 class="page-header"><spring:message code="booklist.update.title" /></h2>
-	<form:form action="updateStatus.do" commandName="command" id="updateStatus_form">
-		<div align="right"><input type="submit" value="대출 정지" class="btn btn-danger"></div>
-	</form:form>
-	<form:form action="update.do" enctype="multipart/form-data"
-		commandName="command" id="update_form">
+	<c:if test="${command.list_status == 0 }">
+		<div align="right"><input type="button" value="대출 정지" onclick="javascript:rentStop_event(${command.list_num},'${command.list_title}');" class="btn btn-danger"></div>
+	</c:if>
+	<form:form action="update.do" enctype="multipart/form-data" commandName="command" id="update_form">
 		<form:errors element="div" class="error-color" />
 		<div class="form-group">
 			<label for="list_title">제목</label>

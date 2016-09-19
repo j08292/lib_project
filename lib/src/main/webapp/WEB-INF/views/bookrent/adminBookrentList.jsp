@@ -76,17 +76,12 @@
 									<c:if test="${(nowDays - oldDays) > 0}"><!-- 연체 도서 -->
 										<input type="button" onclick="javascript:updatePenalty_event(${article.rent_num},${nowDays - oldDays},'${article.list_title}','${article.mem_id}');" value="반납" class="btn btn-xs btn-danger">
 									</c:if>
-									<c:if test="${(nowDays - oldDays) <= 0}">
-										<input type="button" onclick="javascript:bookReturn_event(${article.rent_num},${article.rent_status}'${article.list_title}');" value="반납" class="btn btn-xs btn-warning">
+									<c:if test="${(nowDays - oldDays) <= 0}">									
+										<input type="button" onclick="javascript:bookReturn_event(${article.rent_num},${article.rent_status},'${article.list_title}',${article.list_num});" value="반납" class="btn btn-xs btn-warning">										
 									</c:if>
-								</c:if>
-								<c:if test="${article.rent_status == 2}"><!-- 예약 도서 -->
-									<input type="button" onclick="javascript:bookReturn_event(${article.rent_num},${article.rent_status},'${article.list_title}');" value="승인" class="btn btn-xs btn-info">	
-								</c:if>
+								</c:if>								
 								<c:if test="${article.rent_status == 3}"><!-- 대출대기 도서 -->
-									<jsp:useBean id="now" class="java.util.Date" />
-									<fmt:formatDate var="sysDate" value="${now}" pattern="yyyy-MM-dd" />
-									<input type="button" onclick="javascript:bookRent_event(${article.rent_num},'${article.list_title}',${sysDate});" value="대출" class="btn btn-xs btn-primary">	
+									<input type="button" onclick="javascript:bookRent_event(${article.rent_num},'${article.list_title}');" value="대출" class="btn btn-xs btn-primary">
 								</c:if>
 							</td>									
 						</tr>

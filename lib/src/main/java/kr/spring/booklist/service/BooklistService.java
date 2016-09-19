@@ -17,5 +17,5 @@ public interface BooklistService {
 	@Transactional(readOnly=true)
 	public BooklistCommand selectBooklist(Integer list_num);
 	public void update(BooklistCommand booklist);
-	public void updateStatusChange(Integer list_num);
+	public void updateStatusChange(BooklistCommand booklist);
 }

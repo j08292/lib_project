@@ -20,6 +20,6 @@ public interface BooklistMapper {
 	public BooklistCommand selectBooklist(Integer list_num);
 	@Update("UPDATE booklist SET list_title=#{list_title},list_writer=#{list_writer},list_publish=#{list_publish},list_code=#{list_code},list_page=#{list_page},list_filename=#{list_filename,jdbcType=VARCHAR} WHERE list_num=#{list_num}")
 	public void update(BooklistCommand booklist);
-	@Update("UPDATE booklist set list_status=1 WHERE list_num=#{list_num}")
-	public void updateStatusChange(Integer list_num);
+	@Update("UPDATE booklist set list_status=#{list_status} WHERE list_num=#{list_num}")
+	public void updateStatusChange(BooklistCommand booklist);
 }

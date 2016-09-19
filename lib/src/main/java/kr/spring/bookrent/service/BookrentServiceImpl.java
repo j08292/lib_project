@@ -26,25 +26,20 @@ public class BookrentServiceImpl implements BookrentService{
 	public int getRowCount(Map<String, Object> map) {
 		return bookrentMapper.getRowCount(map);
 	}
-
+	
 	@Override
-	public void insert(BookrentCommand bookrent) {
-		
-	}
-
-	@Override
-	public BookrentCommand selectBookrent(Integer rent_num) {
-		return null;
-	}
-
-	@Override
-	public void update(BookrentCommand bookrent) {
-		
+	public int getReserveCount(Integer list_num) {		
+		return bookrentMapper.getReserveCount(list_num);
 	}
 	
 	@Override
 	public void updateStatusChange(BookrentCommand bookrent) {
 		bookrentMapper.updateStatusChange(bookrent);
+	}
+	
+	@Override
+	public void reserveToWaiting(Integer list_num) {
+		bookrentMapper.reserveToWaiting(list_num);
 	}
 	
 	@Override
@@ -55,10 +50,5 @@ public class BookrentServiceImpl implements BookrentService{
 	@Override
 	public void updateBookRent(BookrentCommand bookrent) {
 		bookrentMapper.updateBookRent(bookrent);
-	}
-	
-	@Override
-	public void delete(Integer rent_num) {
-		
 	}
 }

@@ -42,7 +42,7 @@ public class BooklistServiceImpl implements BooklistService{
 	}
 
 	@Override
-	public void updateStatusChange(Integer list_num) {
-		booklistMapper.updateStatusChange(list_num);
+	public void updateStatusChange(BooklistCommand booklist) {
+		booklistMapper.updateStatusChange(booklist);
 	}
 }

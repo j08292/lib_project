@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.bookrent.domain.BookrentCommand;
@@ -14,7 +13,6 @@ import kr.spring.bookrent.service.BookrentService;
 import kr.spring.member.domain.MemberCommand;
 
 @Controller
-@SessionAttributes("command")
 public class BookrentUpdatePenaltyController {
 	private Logger log= Logger.getLogger(this.getClass());
 	

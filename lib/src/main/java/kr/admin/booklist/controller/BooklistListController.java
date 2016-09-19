@@ -31,9 +31,6 @@ public class BooklistListController {
 								@RequestParam(value="keyfield",defaultValue="")String keyfield,
 								@RequestParam(value="keyword",defaultValue="")String keyword){
 		
-		 /*String path = BooklistListController.class.getResource("").getPath();
-		 System.out.println(path); */
-		
 		if(log.isDebugEnabled()){
 			log.debug("currentPage : "+currentPage);
 			log.debug("keyfield : "+keyfield);

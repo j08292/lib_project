@@ -10,16 +10,14 @@ import kr.spring.member.domain.MemberCommand;
 
 @Transactional
 public interface BookrentService {
+	//관리자 도서 대출
 	@Transactional(readOnly=true)
 	public List<BookrentCommand> list(Map<String, Object> map);
 	@Transactional(readOnly=true)
-	public int getRowCount(Map<String, Object> map);	
-	public void insert(BookrentCommand bookrent);
-	@Transactional(readOnly=true)
-	public BookrentCommand selectBookrent(Integer rent_num);
-	public void update(BookrentCommand bookrent);
+	public int getRowCount(Map<String, Object> map);
+	public int getReserveCount(Integer list_num);
 	public void updateStatusChange(BookrentCommand bookrent);
+	public void reserveToWaiting(Integer list_num);
 	public void updatePenalty(MemberCommand member);
 	public void updateBookRent(BookrentCommand bookrent);
-	public void delete(Integer rent_num);
 }

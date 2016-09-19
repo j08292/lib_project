@@ -13,6 +13,7 @@
 					  *
 					FROM (SELECT
 							r.rent_num,
+							l.list_num,
 							l.list_title,							
 							l.list_code,
 							r.mem_id,
@@ -56,6 +57,7 @@
 		count(*)
 		FROM (SELECT
 			r.rent_num,
+			l.list_num,
 			l.list_title,
 			l.list_code,
 			r.mem_id,
