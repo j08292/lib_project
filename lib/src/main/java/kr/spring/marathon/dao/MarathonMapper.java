@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import kr.spring.marathon.domain.MarathonCommand;
-
+  
 @Repository
 public interface MarathonMapper {
 	//특정 회원이 대출했던 목록

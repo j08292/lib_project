@@ -28,11 +28,17 @@ public class AdminMainController {
 		int mem_level = (Integer)session.getAttribute("mem_level");
 		session.setAttribute("mem_level",mem_level);
 		
-		int reserveCount = adminService.getSpeechReserveCount();
+		int speechReserveCount = adminService.getSpeechReserveCount();
+		int marathonCount = adminService.getMarathonCount();
+		int wishlistCount = adminService.getWishlistCount();
+		int rentWaitingCount = adminService.getRentWaitingCount();
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("adminMain");
-		mav.addObject("reserveCount",reserveCount);
+		mav.addObject("speechReserveCount",speechReserveCount);
+		mav.addObject("marathonCount",marathonCount);
+		mav.addObject("wishlistCount",wishlistCount);
+		mav.addObject("rentWaitingCount",rentWaitingCount);
 		
 		return mav;
 	}
