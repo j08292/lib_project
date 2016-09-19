@@ -55,10 +55,10 @@
 					</td>
 					<td>
 						<c:if test="${article.marathon_status eq 0}">
-							<input type="button" value="완주 확인" class="btn btn-xs btn-success">
+							<input type="button" value="완주 확인" class="btn btn-xs btn-success" onclick="location.href='updateStatus.do?marathon_num=${article.marathon_num}&marathon_status=1'">
 						</c:if>
 						<c:if test="${article.marathon_status eq 1}">
-							<input type="button" value="취소" class="btn btn-xs btn-success">
+							<input type="button" value="취소" class="btn btn-xs btn-success" onclick="location.href='updateStatus.do?marathon_num=${article.marathon_num}&marathon_status=0'">
 						</c:if>
 					</td>
 				</tr>
