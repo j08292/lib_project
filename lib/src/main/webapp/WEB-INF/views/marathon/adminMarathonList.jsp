@@ -8,11 +8,13 @@
 	</h1>
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
-				<select name="keyfield">
+				<select name="keyfield" id="marathonSearch">
 					<option value="mem_id">ID</option>
-					<option value="marathon_status">상태값</option>
+					<option value="marathon_status">완주혜택상태</option>
 				</select>
-				<input type="text" size="16" name="keyword">
+				<span id="output">
+					<input type="text" size="16" name="keyword" id="textbox">
+				</span>
 				<input type="submit" value="찾기">
 		</div>
 	</form>
@@ -50,15 +52,17 @@
 							신청중
 						</c:if>
 						<c:if test="${article.marathon_status eq 1}">
-							상품 보냄
+							발송처리
 						</c:if>
 					</td>
 					<td>
 						<c:if test="${article.marathon_status eq 0}">
-							<input type="button" value="완주 확인" class="btn btn-xs btn-success" onclick="location.href='updateStatus.do?marathon_num=${article.marathon_num}&marathon_status=1'">
+							<input type="button" value="완주 확인" class="btn btn-xs btn-success" 
+							onclick="location.href='updateStatus.do?marathon_num=${article.marathon_num}&marathon_status=1'">
 						</c:if>
 						<c:if test="${article.marathon_status eq 1}">
-							<input type="button" value="취소" class="btn btn-xs btn-success" onclick="location.href='updateStatus.do?marathon_num=${article.marathon_num}&marathon_status=0'">
+							<input type="button" value="취소" class="btn btn-xs btn-success" 
+							onclick="location.href='updateStatus.do?marathon_num=${article.marathon_num}&marathon_status=0'">
 						</c:if>
 					</td>
 				</tr>

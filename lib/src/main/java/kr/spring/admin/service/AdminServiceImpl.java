@@ -17,4 +17,19 @@ public class AdminServiceImpl implements AdminService{
 		return adminMapper.getSpeechReserveCount();
 	}
 
+	@Override
+	public int getMarathonCount() {
+		return adminMapper.getMarathonCount();
+	}
+
+	@Override
+	public int getWishlistCount() {
+		return adminMapper.getWishlistCount();
+	}
+
+	@Override
+	public int getRentWaitingCount() {
+		return adminMapper.getRentWaitingCount();
+	}
+
 }

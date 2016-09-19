@@ -30,12 +30,12 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="row">
-                                    <div class="col-xs-3">
+                                    <div class="col-xs-6">
                                         <!-- <i class="fa fa-comments fa-5x"></i> -->
                                         	<h3>강연</h3>
                                     </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">${reserveCount}</div>
+                                    <div class="col-xs-6 text-right">
+                                        <div class="huge">${speechReserveCount}</div>
                                         <div>New Applicant!</div>
                                     </div>
                                 </div>
@@ -53,16 +53,16 @@
                         <div class="panel panel-green">
                             <div class="panel-heading">
                                 <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
+                                    <div class="col-xs-6">
+                                        <h3>마라톤 완주자</h3>
                                     </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
-                                        <div>New Tasks!</div>
+                                    <div class="col-xs-6 text-right">
+                                        <div class="huge">${marathonCount}</div>
+                                        <div>New Finisher!</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="${pageContext.request.contextPath}/admin/marathon/list.do?keyfield=marathon_status&keyword=0">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -75,16 +75,16 @@
                         <div class="panel panel-yellow">
                             <div class="panel-heading">
                                 <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-shopping-cart fa-5x"></i>
+                                    <div class="col-xs-6">
+                                        <h3>희망도서</h3>
                                     </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">124</div>
-                                        <div>New Comments!</div>
+                                    <div class="col-xs-6 text-right">
+                                        <div class="huge">${wishlistCount}</div>
+                                        <div>New Application!</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="${pageContext.request.contextPath}/admin/wishlist/list.do?keyfield=wish_status&keyword=0">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -97,16 +97,16 @@
                         <div class="panel panel-red">
                             <div class="panel-heading">
                                 <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-support fa-5x"></i>
+                                    <div class="col-xs-6">
+                                        <h3>대출대기</h3>
                                     </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
-                                        <div>Support Tickets!</div>
+                                    <div class="col-xs-6 text-right">
+                                        <div class="huge">${rentWaitingCount}</div>
+                                        <div>New Lending!</div>
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="${pageContext.request.contextPath}/admin/bookrent/list.do?keyfield=rent_status&keyword=3">
                                 <div class="panel-footer">
                                     <span class="pull-left">View Details</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
