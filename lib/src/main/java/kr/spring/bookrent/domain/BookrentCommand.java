@@ -11,7 +11,6 @@ public class BookrentCommand {
 	private String list_title;
 	private String list_code;
 	private Date return_regdate;
-	//private Date penaltyDate;
 	
 	public int getRent_num() {
 		return rent_num;

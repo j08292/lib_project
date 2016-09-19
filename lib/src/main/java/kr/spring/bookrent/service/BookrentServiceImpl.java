@@ -11,7 +11,7 @@ import kr.spring.bookrent.dao.BookrentMapper;
 import kr.spring.bookrent.domain.BookrentCommand;
 import kr.spring.member.domain.MemberCommand;
 
-@Service("bookrentService")   
+@Service("bookrentService")
 public class BookrentServiceImpl implements BookrentService{
 
 	@Resource

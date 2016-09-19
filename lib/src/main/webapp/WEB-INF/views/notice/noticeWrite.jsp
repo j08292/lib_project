@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div>
-	<h2 class="page-header"><spring:message code="notice.write.title"/></h2>
+	<h1 class="page-header"><spring:message code="notice.write.title"/></h1>
 	<form:form action="write.do" commandName="command" id="register_form">
 		<form:errors element="div" class="error-color"/>					
 			<div class="form-group">

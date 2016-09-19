@@ -4,9 +4,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <div>
-	<h2 class="page-header">
-		<spring:message code="wishlist.list.title" />
-	</h2>
+	<h1 class="page-header"><spring:message code="wishlist.list.title" /></h1>
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
 			<select name="keyfield" id="wishlistSearch">

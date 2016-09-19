@@ -2,9 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div>
-	<h2 class="page-header">
-		<spring:message code="notice.list.title" />
-	</h2>
+	<h1 class="page-header"><spring:message code="notice.list.title" /></h1>
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
 			<select name="keyfield">

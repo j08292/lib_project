@@ -4,7 +4,7 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
-<tiles-definitions>
+<tiles-definitions>  
     <definition name="adminBookrentList" extends="adminMain">
 		<put-attribute name="title" value="대출 도서 목록"/>
 		<put-attribute name="body" value="/WEB-INF/views/bookrent/adminBookrentList.jsp"/>
