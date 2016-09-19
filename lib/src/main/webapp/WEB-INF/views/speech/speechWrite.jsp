@@ -4,6 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div>
 	<h2 class="page-header"><spring:message code="speech.write.title"/></h2>
+	<div style="width:70%;margin:0 auto;">
 	<form:form action="write.do" commandName="command" id="register_form">
 		<form:errors element="div" class="error-color"/>
 			<div class="form-group">
@@ -35,12 +36,13 @@
 			</div>
 			<div class="form-group">
 				<label for="speech_content">강연 내용</label>
-				<form:textarea path="speech_content" class="form-control"/>
+				<form:textarea path="speech_content" class="form-control" rows="5"/>
 				<form:errors path="speech_content" class="error-color"/>
 			</div>
-			<div>
+			<div align="center">
 				<input type="submit" value="전송" class="btn btn-primary">
 				<input type="button" value="목록" class="btn btn-default" onclick="location.href='list.do'">
 			</div>
 	</form:form>
+	</div>
 </div>

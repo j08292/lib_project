@@ -8,13 +8,15 @@
 	
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
-				<select name="keyfield">
+				<select name="keyfield" id="speechSearch">
 					<option value="speech_title">제목</option>
 					<option value="speech_content">내용</option>
 					<option value="speech_location">장소</option>
-					<option value="speech_date">날짜</option>
+					<!-- <option value="speech_date">날짜</option> -->
 				</select>
-				<input type="text" size="16" name="keyword">
+				<span id="output">
+					<input type="text" size="16" name="keyword" id="textbox">
+				</span>
 				<input type="submit" value="찾기">
 		</div>
 	</form>
