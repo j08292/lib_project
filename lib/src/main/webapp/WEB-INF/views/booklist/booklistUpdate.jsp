@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<div>
+<div>  
 	<h2 class="page-header"><spring:message code="booklist.update.title" /></h2>
 	<c:if test="${command.list_status == 0 }">
 		<div align="right"><input type="button" value="대출 정지" onclick="javascript:rentStop_event(${command.list_num},'${command.list_title}');" class="btn btn-danger"></div>

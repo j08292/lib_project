@@ -12,7 +12,7 @@ import kr.spring.member.domain.MemberCommand;
 
 @Repository
 public interface BookrentMapper {
-	//관리자 도서 대출
+	//관리자 도서 대출  
 	public List<BookrentCommand> list(Map<String, Object> map);
 	public int getRowCount(Map<String, Object> map);
 	@Select("SELECT count(*) FROM bookrent WHERE list_num=#{list_num} AND rent_status=2")

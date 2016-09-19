@@ -10,7 +10,7 @@ import kr.spring.member.domain.MemberCommand;
 
 @Transactional
 public interface BookrentService {
-	//관리자 도서 대출
+	//관리자 도서 대출   
 	@Transactional(readOnly=true)
 	public List<BookrentCommand> list(Map<String, Object> map);
 	@Transactional(readOnly=true)

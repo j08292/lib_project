@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div>
-	<div align="center"><h2>${review.review_title}</h2></div>
+	<div align="center"><h1>${review.review_title}</h1></div>
 	<ul style="list-style:none;">
 		<li>번호 : ${review.review_num}</li>
 		<li>ID : ${review.mem_id }</li>

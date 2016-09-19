@@ -15,6 +15,7 @@ import kr.spring.bookrent.service.BookrentService;
 public class BookrentUpdateStatusController {
 	private Logger log= Logger.getLogger(this.getClass());
 
+	
 	@Resource
 	private BookrentService bookrentService;
 	

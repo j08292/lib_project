@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<div>
+<div>  
 	<h2 class="page-header"><spring:message code="booklist.list.title" /></h2>
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
@@ -58,7 +58,7 @@
 							<td><c:if test="${article.list_status == 1}">대출정지</c:if>
 								<c:if test="${article.list_status == 0}"></c:if></td>
 						</tr>						
-					</c:forEach>
+					</c:forEach>				
 				</tbody>
 			</table>
 		</div>
