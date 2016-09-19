@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<div>  
+<div>
 	<h2 class="page-header"><spring:message code="bookrent.list.title"/></h2>
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">

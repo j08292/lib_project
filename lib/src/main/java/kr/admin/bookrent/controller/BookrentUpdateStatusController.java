@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.bookrent.domain.BookrentCommand;
 import kr.spring.bookrent.service.BookrentService;
 
-@Controller
+@Controller  
 public class BookrentUpdateStatusController {
 	private Logger log= Logger.getLogger(this.getClass());
 
