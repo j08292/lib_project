@@ -16,7 +16,7 @@ import kr.spring.member.service.MemberService;
 
 @Controller
 public class MemberConfirmIdAjaxController {
-	private Logger log = Logger.getLogger(this.getClass());
+	private Logger log = Logger.getLogger(this.getClass());	
 	@Resource
 	private MemberService memberService;
 	
@@ -31,7 +31,7 @@ public class MemberConfirmIdAjaxController {
 		Map<String,String> map = new HashMap<String,String>();
 		try{
 			MemberCommand member = memberService.selectMember(mem_id);
-			if(member != null){
+			if(member!=null){
 				//아이디 중복
 				map.put("result", "idDuplicated");
 			}else{

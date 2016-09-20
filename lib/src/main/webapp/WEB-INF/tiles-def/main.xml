@@ -13,6 +13,7 @@
     	<put-attribute name="footer" value="/WEB-INF/views/template_user/footer.jsp"/>
     	
     	<put-list-attribute name="cssList">
+    		<add-attribute value="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
         	<add-attribute value="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic"/>
         	<add-attribute value="../resources/user/css/bootstrap.css"/>
         	<add-attribute value="../resources/user/style.css"/>
@@ -23,8 +24,15 @@
         	<add-attribute value="../resources/user/css/responsive.css"/>
         </put-list-attribute>
         <put-list-attribute name="jsList">
-        	<add-attribute value="../resources/user/js/jquery.js"/>
-        	<add-attribute value="../resources/user/js/plugins.js"/>
+        	<add-attribute value="//code.jquery.com/jquery-1.9.1.js"/>
+			<add-attribute value="//code.jquery.com/ui/1.10.4/jquery-ui.js"/>
+        	<add-attribute value="../resources/user/js/plugins.js" />
+			<add-attribute value="../resources/user/js/checkBasket.js" />
+			<add-attribute value="../resources/user/js/deleteBasket.js" />
+			<add-attribute value="../resources/user/js/datepicker.js" />
+			<add-attribute value="../resources/user/js/view.js" />
+			<add-attribute value="../resources/user/js/reserve.js" />
+			<add-attribute value="../resources/user/js/search.js"/>
         </put-list-attribute>
     </definition>
     

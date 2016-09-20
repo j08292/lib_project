@@ -1,7 +1,5 @@
 package kr.spring.member.service;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -14,8 +12,8 @@ public class MemberServiceImpl implements MemberService {
 
 	@Resource
 	private MemberMapper memberMapper;
-	//@Resource
-	//private BoardMapper boardMapper;
+	// @Resource
+	// private BoardMapper boardMapper;
 
 	@Override
 	public void insert(MemberCommand member) {
@@ -34,18 +32,18 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void delete(String id) {
-		//해당id로 작성된 부모글의 글번호 구하기
+		// 해당id로 작성된 부모글의 글번호 구하기
 		//List<Integer> seq = boardMapper.selectSeqById(id);
 		// 해당id로 작성된 부모글에 달린 댓글 삭제
-		//if(seq!=null && !seq.isEmpty()){
-		//boardMapper.deleteReplyBySeqList(seq);
+		//if (seq != null && !seq.isEmpty()) {
+		//	boardMapper.deleteReplyBySeqList(seq);
 		//}
-		//해당id로 작성된 댓글 삭제
+		// 해당id로 작성된 댓글 삭제
 		//boardMapper.deleteReplyById(id);
-		//해당id로 작성된 부모글 삭제
+		// 해당id로 작성된 부모글 삭제
 		//boardMapper.deleteById(id);
-		//해당id 삭제
-		//memberMapper.delete(id);
+		// 해당id 삭제
+		memberMapper.delete(id);
 
 	}
 

@@ -19,47 +19,70 @@ import kr.spring.member.service.MemberService;
 
 @Controller
 @SessionAttributes("command")
-public class MemberUpdateController {
+public class MemberDeleteController {
 	private Logger log = Logger.getLogger(this.getClass());
 	
 	@Resource
 	private MemberService memberService;
 	
-	@RequestMapping(value="/member/update.do",method=RequestMethod.GET)
-	public String form(HttpSession session, Model model){
+	@RequestMapping(value="/member/delete.do",method=RequestMethod.GET)
+	public String form(HttpSession session,Model model){
 		
 		String mem_id = (String)session.getAttribute("userId");
-		MemberCommand memberCommand = memberService.selectMember(mem_id);
-		//모델에 저장된 정보는 @SessionAttributes("command")를
-		//통해 세션에 저장
+		
+		MemberCommand memberCommand = new MemberCommand();
+		memberCommand.setMem_id(mem_id);
+		
 		model.addAttribute("command", memberCommand);
 		
-		return "memberModify";
+		return "memberDelete";
 	}
-	
-	@RequestMapping(value="/member/update.do",method=RequestMethod.POST)
+	@RequestMapping(value="/member/delete.do",method=RequestMethod.POST)
 	public String submit(@ModelAttribute("command")
 	                     @Valid MemberCommand memberCommand,
 	                     BindingResult result,
-	                     SessionStatus status){
+	                     SessionStatus status,
+	                     HttpSession session){
 		
 		if(log.isDebugEnabled()){
 			log.debug("memberCommand : " + memberCommand);
 		}
-		
-		//유효성 체크
-		if(result.hasErrors()){
-			return "memberModify";
+
+		if(result.hasFieldErrors("mem_passwd")){
+			return "memberDelete";
 		}
 		
-		memberService.update(memberCommand);
-		//session에 저장된 model을 삭제하는 이벤트 발생
-		status.setComplete();
-
-		return "redirect:/member/detail.do";
+		try{
+			
+			MemberCommand member = 
+					memberService.selectMember(memberCommand.getMem_id());
+			boolean check = false;
+			if(member!=null){
+				check = member.isCheckedPasswd(memberCommand.getMem_passwd());
+			}
+			if(check){
+				//인증성공
+				memberService.delete(memberCommand.getMem_id());
+				//session에서 model를 삭제하는 이벤트 발생
+				status.setComplete();
+				//로그아웃
+				session.invalidate();
+				return "redirect:/main/main.do";
+			}else{
+				//인증실패
+				throw new Exception();
+			}
+		}catch(Exception e){
+			result.rejectValue("mem_passwd", "invalidPassword");
+			return "memberDelete";
+		}
 	}
-	
-};
+}
+
+
+
+
+
 
 
 

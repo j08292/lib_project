@@ -12,6 +12,7 @@ public class MemberCommand {
 	private String mem_id;
 	@NotEmpty
 	private String mem_name;
+	@NotEmpty
 	@Size(min=4, max=10, message="비밀번호는 필수입니다.")
 	private String mem_passwd;
 	@NotEmpty
@@ -19,6 +20,8 @@ public class MemberCommand {
 	@Email
 	@NotEmpty
 	private String mem_email;
+	@NotEmpty
+	private String sample3_postcode;
 	@NotEmpty
 	private String mem_address;
 	private Date mem_regdate;
@@ -33,7 +36,7 @@ public class MemberCommand {
 		}
 		return false;
 	}
-
+	
 	public String getMem_id() {
 		return mem_id;
 	}
@@ -72,6 +75,15 @@ public class MemberCommand {
 
 	public void setMem_email(String mem_email) {
 		this.mem_email = mem_email;
+	}
+
+	
+	public String getSample3_postcode() {
+		return sample3_postcode;
+	}
+
+	public void setSample3_postcode(String sample3_postcode) {
+		this.sample3_postcode = sample3_postcode;
 	}
 
 	public String getMem_address() {
@@ -117,9 +129,11 @@ public class MemberCommand {
 	@Override
 	public String toString() {
 		return "MemberCommand [mem_id=" + mem_id + ", mem_name=" + mem_name + ", mem_passwd=" + mem_passwd
-				+ ", mem_cell=" + mem_cell + ", mem_email=" + mem_email + ", mem_address=" + mem_address
-				+ ", mem_regdate=" + mem_regdate + ", mrt_status=" + mrt_status + ", mem_level=" + mem_level
-				+ ", mem_penalty=" + mem_penalty + "]";
+				+ ", mem_cell=" + mem_cell + ", mem_email=" + mem_email + ", sample3_postcode=" + sample3_postcode
+				+ ", mem_address=" + mem_address + ", mem_regdate=" + mem_regdate + ", mrt_status=" + mrt_status
+				+ ", mem_level=" + mem_level + ", mem_penalty=" + mem_penalty + "]";
 	}
+
+	
 
 }

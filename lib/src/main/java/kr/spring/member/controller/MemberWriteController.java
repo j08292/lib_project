@@ -43,8 +43,6 @@ public class MemberWriteController {
 		
 		memberService.insert(memberCommand);
 		
-		
-
 		return "redirect:/main/main.do";
 	}
 }

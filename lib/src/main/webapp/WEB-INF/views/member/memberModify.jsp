@@ -7,22 +7,22 @@
 <!-- Stylesheets
 	============================================= -->
 	
-
 <!-- Document Title
 	============================================= -->
-<title>회원가입</title>
+<title>회원정보 수정</title>
 
 
 <!-- Page Title
 		============================================= -->
 <section id="page-title">
 
-	<div class="container clearfix">
+<div class="container clearfix">
 		<h1>My Account</h1>
 		<ol class="breadcrumb">
 			<li><a href="${pageContext.request.contextPath}/main/main.do" style = "font-size: 10pt;">Home</a></li>
-			<li><a href = "${pageContext.request.contextPath}/member/write.do" style = "font-size: 10pt;">Register</a></li>
-			<li><a href = "${pageContext.request.contextPath}/member/login.do" style = "font-size: 10pt;">Login</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/update.do" style = "font-size: 10pt;">Modify</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/detail.do" style = "font-size: 10pt;">MemberData</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/delete.do" style = "font-size: 10pt;">Delete</a></li>
 		</ol>
 	</div>
 
@@ -41,60 +41,54 @@
 				id="tab-login-register" style="max-width: 500px;">
 
 				<ul class="tab-nav tab-nav2 center clearfix">
-					<li class="inline-block"><a href="#tab-register">회원가입</a></li>
+					<li class="inline-block"><a href="#tab-register">회원정보 수정</a></li>
 				</ul>
 
 				<div class="tab-container">
-
 					<div class="tab-content clearfix" id="tab-register">
 						<div class="panel panel-default nobottommargin">
 							<div class="panel-body" style="padding: 40px;">
 
-								<form:form action="write.do" commandName="command"
-									id="register-form" class="nobottommargin" method = "post">
-
-									<div class="col_full">
-										<label for="mem_id">아이디:</label> 
-										<form:input path="mem_id" class="form-control id" maxlength="12" />
-										<input type="button" id="confirmId" value="아이디 중복검사">
-										<span id="id_signed" class="error-color"></span> 
-										<img
-											src="${pageContext.request.contextPath }/resources/user/images/ajax-loader.gif"
-											width="16" height="16" id="loading" style="display: none;">
-										<form:errors path="mem_id" class="error-color" />
-									</div>
+								<form:form action="update.do" commandName="command"
+									id="update-form" class="nobottommargin" method = "post">
 
 									<div class="col_full">
 										<label for="mem_passwd">비밀번호:</label>
-										<form:password path="mem_passwd" class="form-control passwd" />
+										<form:password path="mem_passwd" class="form-control" />
 										<span id="passwd_signed" class="error-color"></span>
-										<form:errors path="mem_passwd" class="error-color" />	
+										<%-- <form:errors path="mem_passwd" class="error-color" />	 --%>
 									</div>
+									
+									<%-- <div class="col_full">
+										<label for="check_passwd">비밀번호 확인:</label> 
+										<form:password path="check_passwd" class="form-control" />
+										<span id="check_passwd_signed" class="error-color"></span>
+									</div> --%>
 
 									<div class="col_full">
 										<label for="mem_name">이름:</label> 
 										<form:input path="mem_name" class="form-control" />
 										<span id="name_signed" class="error-color"></span>
-										<form:errors path="mem_name" class="error-color" />
+										<%-- <form:errors path="mem_name" class="error-color" /> --%>
 									</div>
 
 									<div class="col_full">
 										<label for="mem_cell">전화번호:</label> 
 										<form:input path="mem_cell" class="form-control" />
 										<span id="cell_signed" class="error-color"></span>
-										<form:errors path="mem_cell" class="error-color" />
+										<%-- <form:errors path="mem_cell" class="error-color" /> --%>
 									</div>
 
 									<div class="col_full">
 										<label for="mem_email">이메일 주소:</label> 
 										<form:input path="mem_email" class="form-control" />
 										<span id="email_signed" class="error-color"></span>
-										<form:errors path="mem_email" class="error-color" />
+										<%-- <form:errors path="mem_email" class="error-color" /> --%>
 									</div>
 								
 									<!-- daum 우편번호 시작 -->
 									<div class="col_full">
-										<label for="sample3_postcode">우편번호:</label>
+										<label for="mem_address">우편번호:</label><br> 
 										<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br> 
 											<form:input path="sample3_postcode" placeholder="우편번호" class="form-control"/>	-
 											<br>
@@ -107,10 +101,9 @@
 												style="cursor: pointer; position: absolute; right: 0px; top: -1px; z-index: 1"
 												onclick="foldDaumPostcode()" alt="접기 버튼">
 										</div>
-										<label for="sample3_postcode">주소:</label>
 										<form:input path="mem_address" class="form-control"
 											placeholder="주소"/>
-										<form:errors path="mem_address" class="error-color" />
+										<%-- <form:errors path="mem_address" class="error-color" /> --%>
 
 									</div>
 									
@@ -192,10 +185,13 @@
 									
 									<div class="col_full nobottommargin">
 										<input type="submit"
-											class="button button-3d button-black nomargin" value="등록">
+											class="button button-3d button-black nomargin" value="수정">
+										<input type = "button" value = "홈으로" class = "button button-3d button-black nomargin"
+											onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
 									</div>
 
 								</form:form>
+								<%-- </form> --%>
 							</div>
 						</div>
 					</div>

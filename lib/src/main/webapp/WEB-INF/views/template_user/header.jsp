@@ -25,6 +25,7 @@
 					<nav id="primary-menu" class="dark">
 											
 						<ul>
+							<li><a href="${pageContext.request.contextPath }/book/search.do">도서검색</a></li>
 							<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do"><div>희망도서</div></a>
 							<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do"><div>공지사항</div></a>
 							<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do"><div>강연</div></a>
@@ -56,10 +57,11 @@
 							</c:if>
 							<c:if test = "${!empty userId && mem_level == 0 }">
 								<li><a href = "#">[일반회원 ${userId }님 로그인 중]</a></li>
-								<li><a>나의 예약/취소</a></li>
-								<li><a>회원정보수정</a></li>
-								<li><a>회원탈퇴</a></li>
-								<li><a href = "${pageContext.request.contextPath }/member/logout.do">로그아웃</a></li>								
+								<li><a href ="${pageContext.request.contextPath }/book/basket.do">장바구니</a>
+								<li><a href = "${pageContext.request.contextPath }/member/myOrder.do">나의 예약/취소</a></li>
+								<li><a
+									href="${pageContext.request.contextPath }/member/update.do">회원정보수정</a></li>
+								<li><a href="${pageContext.request.contextPath }/member/logout.do">로그아웃</a></li>								
 							</c:if>
 						</ul>
 

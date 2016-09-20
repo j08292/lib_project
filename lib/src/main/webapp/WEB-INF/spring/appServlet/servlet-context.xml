@@ -25,6 +25,7 @@
 	<context:component-scan base-package="kr.user.notice.controller"/>
 	<context:component-scan base-package="kr.admin.board.controller"/>
 	<context:component-scan base-package="kr.spring.qna.controller"/>
+	<context:component-scan base-package="kr.spring.book.controller"/>
 	<!-- 본 프로젝트에 맞게 자동 스캔 수정할 것 -->
 	
 	<!-- Spring3 Validator -->
@@ -76,6 +77,7 @@
 				<beans:value>/WEB-INF/tiles-def/notice.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/member.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/qna.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/book.xml</beans:value>
 			</beans:list>
 		</beans:property>
 	</beans:bean>
@@ -91,6 +93,9 @@
 			<mvc:mapping path="/event/applyMarathon.do"/>
 			<mvc:mapping path="/event/myMarathon.do"/>
 			<mvc:mapping path="/wishlist/write.do"/>
+			<mvc:mapping path="/member/myOrder.do"/>
+			<mvc:mapping path="/book/basket.do"/>
+			<mvc:mapping path="/book/rent.do"/>
 			<beans:bean class="kr.spring.member.interceptor.LogonCheckInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
