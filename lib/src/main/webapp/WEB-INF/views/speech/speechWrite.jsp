@@ -4,7 +4,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div>
 	<h2 class="page-header"><spring:message code="speech.write.title"/></h2>
-	<div style="width:70%;margin:0 auto;">
+	<div style="width:70%;margin:0 auto;"> 
 	<form:form action="write.do" commandName="command" id="register_form">
 		<form:errors element="div" class="error-color"/>
 			<div class="form-group">
