@@ -16,14 +16,10 @@
     	<put-attribute name="body" value="/WEB-INF/views/board/qnaList.jsp"/>
     </definition>
     
-    
+     
 	<definition name="qnaView" extends="main">
     	<put-attribute name="title" value="글 상세"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/qnaView.jsp"/>
-    	
-    	
-    	
-    	
     	<put-list-attribute name="jsList">
         	<add-attribute value="../resources/user/js/jquery.js"/>
         	<add-attribute value="../resources/user/js/plugins.js"/>

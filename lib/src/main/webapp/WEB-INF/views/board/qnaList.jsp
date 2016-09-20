@@ -3,9 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>    
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>   
  <%@ taglib prefix = "c"	uri = "http://java.sun.com/jsp/jstl/core" %>
-   
     <!-- Stylesheets(지우면안됨X)-->
-	
   
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
