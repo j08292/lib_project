@@ -60,7 +60,7 @@
 						취소 신청
 					</c:if>
 					<c:if test="${article.speech_reserve_status eq 3}">
-						취소 완료 <a href="reservationDelete.do?speech_num=${speech.speech_num}&speech_reserve_num=${article.speech_reserve_num}"  class="btn btn-xs btn-danger">삭제</a>
+						취소 완료 <a href="javascript:delete_event(${speech.speech_num},${article.speech_reserve_num})"  class="btn btn-xs btn-danger">삭제</a>
 					</c:if>
 					</td>
 					<td data-num="${article.speech_reserve_num}">
