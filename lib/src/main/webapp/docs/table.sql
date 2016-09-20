@@ -189,3 +189,14 @@ create table marathon(
 );
 create sequence marathon_seq;
 >>>>>>> branch 'master' of https://github.com/j08292/lib_project.git
+
+create table penalty( 
+  penalty_num number not null primary key,
+  penalty_blockCancelDate date not null,
+  penalty_day number(3) not null,
+  mem_id varchar2(20) not null,
+  rent_num number not null,
+  constraint penalty_fk1 foreign key (mem_id) references member (mem_id),
+  constraint penalty_fk2 foreign key (rent_num) references bookrent (rent_num)
+);
+create sequence penalty_num;
