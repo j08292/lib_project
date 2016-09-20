@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>  
-<!DOCTYPE mapper   
+<!DOCTYPE mapper     
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.spring.bookrent.dao.BookrentMapper">
-	<select id="list" parameterType="map" resultType="bookrentCommand">
+<mapper namespace="kr.spring.bookrent.dao.AdminBookrentMapper">
+	<select id="list" parameterType="map" resultType="adminBookrentCommand">
 		SELECT
 			* 
 		FROM (SELECT

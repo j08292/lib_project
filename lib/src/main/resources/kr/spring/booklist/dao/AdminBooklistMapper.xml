@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>  
 <!DOCTYPE mapper   
-    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.spring.booklist.dao.BooklistMapper">
-	<select id="list" parameterType="map" resultType="booklistCommand">
+<mapper namespace="kr.spring.booklist.dao.AdminBooklistMapper">
+	<select id="list" parameterType="map" resultType="adminBooklistCommand">
 		SELECT
 		list_num,		
 			<![CDATA[
