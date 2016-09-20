@@ -39,7 +39,7 @@
 							<li><a href="#"><div>BOARD</div></a>
 								<ul>
 									<li><a href="${pageContext.request.contextPath}/board/list.do"><div>감상평게시판</div></a></li>
-									<li><a href="shop-3.html"><div>질문게시판</div></a></li>								
+									<li><a href="${pageContext.request.contextPath}/board/qnaList.do"><div>질문게시판</div></a></li>								
 								</ul>
 							</li>
 						</ul>

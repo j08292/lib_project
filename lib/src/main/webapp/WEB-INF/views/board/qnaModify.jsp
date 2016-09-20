@@ -2,11 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>    
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>   
- 
+ <%@ taglib prefix = "c"	uri = "http://java.sun.com/jsp/jstl/core" %>
    
     <!-- Stylesheets(지우면안됨X)-->
-
-    <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
     	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -20,7 +19,7 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1><spring:message code="review.write.title"/></h1>
+                <h3><spring:message code="review.list.title"/></h3>
                 <span>Start Buying your Favourite Theme</span>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
@@ -38,26 +37,34 @@
                 <div class="container clearfix">
 
                    <!-- 내용입력 시작-->
-                   <div>
-                   	<h2><spring:message code="qna.write.title"/></h2>
-                   	<form:form action="qnaWrite.do"  enctype="multipart/form-data" 
-                   										commandName="qnaCommand"
-														method="post">
-                   	<form:errors element="div" class="error-color"/>
-                   	제목 : <form:input path="qna_title" />
-                   	<form:errors path="qna_title" class="error-color"/>                   	
-                   	비밀번호 : <form:password path="qna_passwd" />
+                  <form:form action="qnaUpdate.do" enctype="multipart/form-data"
+						                               commandName="qnaCommand"
+						                               id="modify_form">
+                  <ul>
+	                  <li>
+	                  	<label for="qna_title">제목</label>
+	                  	<form:input class="title_nari" path="qna_title"/>
+						<form:errors path="qna_title" class="qna_title"/>
+	                  </li>
+	                  <li>
+	                 <label for="qna_content">비밀번호</label>
+	                  <form:password path="qna_passwd" />
                    	<form:errors path="qna_passwd" class="error-color"/>
-                   	내용 : <form:input path="qna_content" />
-                   	<form:errors path="qna_content" class="error-color"/>
-                   	<br>
-                   	<input type="submit" value="전송">
-                   	<input type="button" value="목록으로" onclick="location.href='qnaList.do'">
-                   	</form:form>
-                   </div>
-                   
-                   
-                   
+                   	</li>
+                  <li>
+                   	<label for="qna_content">내용</label>
+                   	<form:input class="content_nari" path="qna_content"/>
+					<form:errors path="qna_content" class="error-color"/>
+                  </li>
+                  <li class="align-center">
+                 	<input type="submit" value="전송">
+                 	<input type="button" value="목록" 
+                 	onclick="location.href='qnaList.do'">
+                 </li>
+                  </ul>
+                  
+                  
+                  </form:form>
                     <!-- 내용입력 끝-->
 
                 </div>

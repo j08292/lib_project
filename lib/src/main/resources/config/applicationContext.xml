@@ -59,7 +59,8 @@
 													kr.spring.booklist.domain,
 												    kr.spring.bookrent.domain,
 												    kr.spring.wishlist.domain,
-												    kr.spring.notice.domain"/><!-- 계속 추가해야함 -->
+												    kr.spring.notice.domain,
+												    kr.spring.qna.domain"/><!-- 계속 추가해야함 -->
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="kr.spring.member.dao,
@@ -70,7 +71,8 @@
 											kr.spring.booklist.dao,
 											kr.spring.bookrent.dao,
 											kr.spring.wishlist.dao,
-											kr.spring.notice.dao"/><!-- 계속 추가해야함 -->
+											kr.spring.notice.dao,
+											kr.spring.qna.dao"/><!-- 계속 추가해야함 -->
 	</bean>
 </beans>
 

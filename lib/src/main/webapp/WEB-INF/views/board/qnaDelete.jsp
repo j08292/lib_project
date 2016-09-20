@@ -5,6 +5,7 @@
  
    
     <!-- Stylesheets(지우면안됨X)-->
+	
 
     <link rel="stylesheet" href="css/responsive.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -38,28 +39,17 @@
                 <div class="container clearfix">
 
                    <!-- 내용입력 시작-->
-                   <div>
-                   	<h2><spring:message code="qna.write.title"/></h2>
-                   	<form:form action="qnaWrite.do"  enctype="multipart/form-data" 
-                   										commandName="qnaCommand"
-														method="post">
+                   <h2><spring:message code="qna.delete.title"/></h2>
+                  
+                   <form:form action="qnaDelete.do" commandName="qnaCommand">
                    	<form:errors element="div" class="error-color"/>
-                   	제목 : <form:input path="qna_title" />
-                   	<form:errors path="qna_title" class="error-color"/>                   	
-                   	비밀번호 : <form:password path="qna_passwd" />
-                   	<form:errors path="qna_passwd" class="error-color"/>
-                   	내용 : <form:input path="qna_content" />
-                   	<form:errors path="qna_content" class="error-color"/>
-                   	<br>
+                   	비밀번호 : <form:password path="qna_passwd"/>
+                   	<form:errors path="qna_passwd" class="error"/><br>
                    	<input type="submit" value="전송">
-                   	<input type="button" value="목록으로" onclick="location.href='qnaList.do'">
-                   	</form:form>
-                   </div>
-                   
-                   
-                   
+                   	<input type="button" value="게시판 목록" onclick="location.href='qnaList.do'">                    
+                   </form:form>
                     <!-- 내용입력 끝-->
-
+				
                 </div>
 
             </div>
