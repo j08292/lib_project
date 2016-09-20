@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import kr.spring.booklist.domain.BooklistCommand;
-import kr.spring.booklist.service.BooklistService;
+import kr.spring.booklist.domain.AdminBooklistCommand;
+import kr.spring.booklist.service.AdminBooklistService;
 import kr.spring.util.FileUtil;
 
 @Controller
@@ -26,7 +26,7 @@ public class BooklistWriteController {
 	private Logger log= Logger.getLogger(this.getClass());
 
 	@Resource
-	private BooklistService booklistService;
+	private AdminBooklistService booklistService;
 
 	@RequestMapping(value="/admin/booklist/write.do",method=RequestMethod.GET)
 	public String form(HttpSession session, Model model){
@@ -34,7 +34,7 @@ public class BooklistWriteController {
 		String mem_id= (String)session.getAttribute("userId");
 		/*String mem_level= (String)session.getAttribute("userLevel");*/
 
-		BooklistCommand command= new BooklistCommand();
+		AdminBooklistCommand command= new AdminBooklistCommand();
 		command.setMem_id(mem_id);
 
 		model.addAttribute("command", command);
@@ -43,7 +43,7 @@ public class BooklistWriteController {
 	}
 
 	@RequestMapping(value="/admin/booklist/write.do",method=RequestMethod.POST)
-	public String submit(@ModelAttribute("command")@Valid BooklistCommand booklistCommand,
+	public String submit(@ModelAttribute("command")@Valid AdminBooklistCommand booklistCommand,
 			BindingResult result, SessionStatus status) throws Exception{
 
 		if(log.isDebugEnabled()){

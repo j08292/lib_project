@@ -7,17 +7,17 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import kr.spring.booklist.dao.BooklistMapper;
-import kr.spring.booklist.domain.BooklistCommand;
+import kr.spring.booklist.dao.AdminBooklistMapper;
+import kr.spring.booklist.domain.AdminBooklistCommand;
 
 @Service("booklistService")
-public class BooklistServiceImpl implements BooklistService{
+public class AdminBooklistServiceImpl implements AdminBooklistService{
 	
 	@Resource
-	private BooklistMapper booklistMapper;
+	private AdminBooklistMapper booklistMapper;
 	
 	@Override
-	public List<BooklistCommand> list(Map<String, Object> map) {
+	public List<AdminBooklistCommand> list(Map<String, Object> map) {
 		return booklistMapper.list(map);
 	}
 
@@ -27,22 +27,22 @@ public class BooklistServiceImpl implements BooklistService{
 	}
 
 	@Override
-	public void insert(BooklistCommand booklist) {
+	public void insert(AdminBooklistCommand booklist) {
 		booklistMapper.insert(booklist);
 	}
 
 	@Override
-	public BooklistCommand selectBooklist(Integer list_num) {
+	public AdminBooklistCommand selectBooklist(Integer list_num) {
 		return booklistMapper.selectBooklist(list_num);
 	}
 
 	@Override
-	public void update(BooklistCommand booklist) {
+	public void update(AdminBooklistCommand booklist) {
 		booklistMapper.update(booklist);
 	}
 
 	@Override
-	public void updateStatusChange(BooklistCommand booklist) {
+	public void updateStatusChange(AdminBooklistCommand booklist) {
 		booklistMapper.updateStatusChange(booklist);
 	}
 }

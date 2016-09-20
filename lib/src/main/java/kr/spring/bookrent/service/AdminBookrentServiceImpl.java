@@ -7,18 +7,18 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import kr.spring.bookrent.dao.BookrentMapper;
-import kr.spring.bookrent.domain.BookrentCommand;
+import kr.spring.bookrent.dao.AdminBookrentMapper;
+import kr.spring.bookrent.domain.AdminBookrentCommand;
 import kr.spring.member.domain.MemberCommand;
 
 @Service("bookrentService")
-public class BookrentServiceImpl implements BookrentService{
+public class AdminBookrentServiceImpl implements AdminBookrentService{
 
 	@Resource
-	private BookrentMapper bookrentMapper;
+	private AdminBookrentMapper bookrentMapper;
 	
 	@Override
-	public List<BookrentCommand> list(Map<String, Object> map) {
+	public List<AdminBookrentCommand> list(Map<String, Object> map) {
 		return bookrentMapper.list(map);
 	}
 
@@ -33,7 +33,7 @@ public class BookrentServiceImpl implements BookrentService{
 	}
 	
 	@Override
-	public void updateStatusChange(BookrentCommand bookrent) {
+	public void updateStatusChange(AdminBookrentCommand bookrent) {
 		bookrentMapper.updateStatusChange(bookrent);
 	}
 	
@@ -48,7 +48,7 @@ public class BookrentServiceImpl implements BookrentService{
 	}
 	
 	@Override
-	public void updateBookRent(BookrentCommand bookrent) {
+	public void updateBookRent(AdminBookrentCommand bookrent) {
 		bookrentMapper.updateBookRent(bookrent);
 	}
 }

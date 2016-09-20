@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.spring.booklist.domain.BooklistCommand;
-import kr.spring.booklist.service.BooklistService;
+import kr.spring.booklist.domain.AdminBooklistCommand;
+import kr.spring.booklist.service.AdminBooklistService;
 import kr.spring.util.PagingUtil;
 
 @Controller
@@ -24,7 +24,7 @@ public class BooklistListController {
 	private int pageCount=10;
 	
 	@Resource
-	private BooklistService booklistService;
+	private AdminBooklistService booklistService;
 	
 	@RequestMapping("/admin/booklist/list.do")
 	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1")int currentPage,
@@ -49,7 +49,7 @@ public class BooklistListController {
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
 		
-		List<BooklistCommand> list= null;
+		List<AdminBooklistCommand> list= null;
 		if(count>0){
 			list= booklistService.list(map);
 		}else{

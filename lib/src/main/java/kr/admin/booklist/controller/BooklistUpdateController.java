@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import kr.spring.booklist.domain.BooklistCommand;
-import kr.spring.booklist.service.BooklistService;
+import kr.spring.booklist.domain.AdminBooklistCommand;
+import kr.spring.booklist.service.AdminBooklistService;
 import kr.spring.util.FileUtil;
 
 @Controller
@@ -27,19 +27,19 @@ public class BooklistUpdateController {
 	private Logger log= Logger.getLogger(this.getClass());
 
 	@Resource
-	private BooklistService booklistService;
+	private AdminBooklistService booklistService;
 
 	@RequestMapping(value="/admin/booklist/update.do",method=RequestMethod.GET)
 	public String form(@RequestParam("list_num")int list_num, Model model){
 
-		BooklistCommand boooklistCommand = booklistService.selectBooklist(list_num);
+		AdminBooklistCommand boooklistCommand = booklistService.selectBooklist(list_num);
 		model.addAttribute("command", boooklistCommand);
 
 		return "booklistUpdate";
 	}
 
 	@RequestMapping(value="/admin/booklist/update.do",method=RequestMethod.POST)
-	public String submit(@ModelAttribute("command")@Valid BooklistCommand booklistCommand,
+	public String submit(@ModelAttribute("command")@Valid AdminBooklistCommand booklistCommand,
 			BindingResult result,SessionStatus status,HttpSession session) throws Exception{
 
 		if(log.isDebugEnabled()){
@@ -50,7 +50,7 @@ public class BooklistUpdateController {
 			return "booklistUpdate";
 		}
 
-		BooklistCommand booklist= booklistService.selectBooklist(booklistCommand.getList_num());
+		AdminBooklistCommand booklist= booklistService.selectBooklist(booklistCommand.getList_num());
 		String oldFileName="";
 
 		//기존 파일명을 구함 -> 업로드되는 파일이 있을 경우 기존파일을 삭제한 후 새로운 파일명을 셋팅함 

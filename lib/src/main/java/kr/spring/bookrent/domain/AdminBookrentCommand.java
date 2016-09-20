@@ -2,7 +2,7 @@ package kr.spring.bookrent.domain;
 
 import java.sql.Date;
 
-public class BookrentCommand {
+public class AdminBookrentCommand {
 	private int rent_num;
 	private int list_num;
 	private String mem_id;

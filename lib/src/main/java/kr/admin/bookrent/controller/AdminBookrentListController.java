@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.spring.bookrent.domain.BookrentCommand;
-import kr.spring.bookrent.service.BookrentService;
+import kr.spring.bookrent.domain.AdminBookrentCommand;
+import kr.spring.bookrent.service.AdminBookrentService;
 import kr.spring.util.PagingUtil;
 
 @Controller
@@ -24,7 +24,7 @@ private Logger log= Logger.getLogger(this.getClass());
 	private int pageCount=10;
 	
 	@Resource
-	private BookrentService bookrentService;
+	private AdminBookrentService bookrentService;
 	
 	@RequestMapping("/admin/bookrent/list.do")
 	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1")int currentPage,
@@ -49,7 +49,7 @@ private Logger log= Logger.getLogger(this.getClass());
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
 		
-		List<BookrentCommand> list= null;
+		List<AdminBookrentCommand> list= null;
 		if(count>0){
 			list= bookrentService.list(map);
 		}else{

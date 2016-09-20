@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.spring.bookrent.domain.BookrentCommand;
-import kr.spring.bookrent.service.BookrentService;
+import kr.spring.bookrent.domain.AdminBookrentCommand;
+import kr.spring.bookrent.service.AdminBookrentService;
 
 @Controller  
 public class BookrentUpdateStatusController {
@@ -17,7 +17,7 @@ public class BookrentUpdateStatusController {
 
 	
 	@Resource
-	private BookrentService bookrentService;
+	private AdminBookrentService bookrentService;
 	
 	@RequestMapping("/admin/bookrent/updateStatus.do")
 	public ModelAndView process(@RequestParam("rent_num") int rent_num,
@@ -32,13 +32,13 @@ public class BookrentUpdateStatusController {
 		int reserveCount= bookrentService.getReserveCount(list_num);
 
 		if(reserveCount>0){
-			BookrentCommand bookrent = new BookrentCommand();
+			AdminBookrentCommand bookrent = new AdminBookrentCommand();
 			bookrent.setRent_num(rent_num);
 			bookrent.setRent_status(rent_status);
 			bookrentService.updateStatusChange(bookrent);		
 			bookrentService.reserveToWaiting(list_num);
 		}else{
-			BookrentCommand bookrent = new BookrentCommand();
+			AdminBookrentCommand bookrent = new AdminBookrentCommand();
 			bookrent.setRent_num(rent_num);
 			bookrent.setRent_status(rent_status);
 			bookrentService.updateStatusChange(bookrent);

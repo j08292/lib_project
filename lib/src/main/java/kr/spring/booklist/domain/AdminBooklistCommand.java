@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
-public class BooklistCommand {
+public class AdminBooklistCommand {
 	private int list_num;
 	@Size(min=10, max=13, message="ISBN은 필수입니다.")
 	private String list_code;

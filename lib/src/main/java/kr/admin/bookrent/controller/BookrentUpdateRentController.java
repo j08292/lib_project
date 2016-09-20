@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.spring.bookrent.domain.BookrentCommand;
-import kr.spring.bookrent.service.BookrentService;
+import kr.spring.bookrent.domain.AdminBookrentCommand;
+import kr.spring.bookrent.service.AdminBookrentService;
 
 @Controller
 public class BookrentUpdateRentController {
 	private Logger log= Logger.getLogger(this.getClass());
 
 	@Resource
-	private BookrentService bookrentService;
+	private AdminBookrentService bookrentService;
 	
 	@RequestMapping("/admin/bookrent/updateRent.do")
 	public ModelAndView process(@RequestParam("rent_num") int rent_num,
@@ -27,7 +27,7 @@ public class BookrentUpdateRentController {
 			log.debug("rent_status : " +rent_status);
 		}
 		
-		BookrentCommand bookrent = new BookrentCommand();
+		AdminBookrentCommand bookrent = new AdminBookrentCommand();
 		bookrent.setRent_num(rent_num);
 		bookrent.setRent_status(rent_status);
 		bookrentService.updateBookRent(bookrent);
