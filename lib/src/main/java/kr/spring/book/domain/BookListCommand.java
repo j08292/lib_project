@@ -5,7 +5,7 @@ import java.sql.Date;
 public class BookListCommand {
 
 	private int list_num;
-	private int list_code;
+	private String list_code;
 	private String list_title;
 	private String list_writer;
 	private String list_publish;
@@ -45,11 +45,11 @@ public class BookListCommand {
 		this.list_num = list_num;
 	}
 
-	public int getList_code() {
+	public String getList_code() {
 		return list_code;
 	}
 
-	public void setList_code(int list_code) {
+	public void setList_code(String list_code) {
 		this.list_code = list_code;
 	}
 
@@ -155,9 +155,9 @@ public class BookListCommand {
 				+ ", list_writer=" + list_writer + ", list_publish=" + list_publish + ", list_page=" + list_page
 				+ ", list_filename=" + list_filename + ", list_regdate=" + list_regdate + ", list_grade=" + list_grade
 				+ ", list_status=" + list_status + ", list_rent=" + list_rent + ", list_rentDate=" + list_rentDate
-				+ ", list_returnDate=" + list_returnDate + ", list_order=" + list_order + "]";
+				+ ", list_returnDate=" + list_returnDate + ", list_order=" + list_order + ", mem_id=" + mem_id
+				+ ", list_reserveId=" + list_reserveId + "]";
 	}
-	
-	
+
 
 }

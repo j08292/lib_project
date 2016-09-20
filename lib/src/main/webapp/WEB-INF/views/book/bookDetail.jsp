@@ -37,7 +37,7 @@
 							<table style="font-size: 10pt;">
 								<tr>
 									<td style="width: 157px; vertical-align: top;"><img
-										src="${book.list_filename }" width="200" alt="도서 이미지" /></td>
+										src="/lib/upload/${book.list_filename }" width="200" alt="도서 이미지" /></td>
 									<td style="vertical-align: top;">
 										<dl>
 											<dt>표제/책임표시.</dt>
