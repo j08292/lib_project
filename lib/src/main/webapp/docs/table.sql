@@ -35,11 +35,8 @@ create table speech_reservation(
   speech_reserve_status number(1) default 0 not null,
   speech_reserve_date date not null,
   constraint speech_reservation_member_fk1 foreign key(mem_id) references member(mem_id),
-<<<<<<< HEAD
   constraint speech_reservation_speech_fk2 foreign key(speech_num) references speech(speech_num)
-=======
   constraint speech_reservation_speech_fk2 foreign key(speech_num) references speech (speech_num)
->>>>>>> branch 'master' of https://github.com/j08292/lib_project.git
 );
 create sequence speech_reservation_seq;
 
@@ -173,11 +170,8 @@ create table chat(
   mem_id varchar2(20) not null,
   constraint chat_member_fk1 foreign key(mem_id) references member(mem_id)
 );
-<<<<<<< HEAD
 create sequence chat_seq;
-=======
 
-create sequence chat_seq;
 
 create table marathon(
     marathon_num number not null primary key,
@@ -188,12 +182,12 @@ create table marathon(
     constraint marathon_fk1 foreign key (mem_id) references member (mem_id)
 );
 create sequence marathon_seq;
->>>>>>> branch 'master' of https://github.com/j08292/lib_project.git
 
 create table penalty( 
   penalty_num number not null primary key,
   penalty_blockCancelDate date not null,
   penalty_day number(3) not null,
+  penalty_reason varchar2(200) not null, 
   mem_id varchar2(20) not null,
   rent_num number not null,
   constraint penalty_fk1 foreign key (mem_id) references member (mem_id),

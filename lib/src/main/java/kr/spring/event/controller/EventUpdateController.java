@@ -3,7 +3,6 @@ package kr.spring.event.controller;
 import java.io.File;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
@@ -29,7 +28,7 @@ public class EventUpdateController {
 	@Resource
 	private EventService eventService;
 	
-	@RequestMapping(value="/event/update.do",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/event/update.do",method=RequestMethod.GET)
 	public String form(@RequestParam("event_num")int event_num, Model model){
 		
 		EventCommand eventCommand = eventService.selectEvent(event_num);
@@ -38,21 +37,16 @@ public class EventUpdateController {
 		return "eventModify";
 	}
 	
-	@RequestMapping(value="/event/update.do",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/event/update.do",method=RequestMethod.POST)
 	public String submit(@ModelAttribute("command")
 						 @Valid EventCommand eventCommand,
 						 BindingResult result,
-						 SessionStatus status,
-						 HttpSession session)throws Exception{
+						 SessionStatus status)throws Exception{
 		
 		if(log.isDebugEnabled()){
 			log.debug("eventCommand : " + eventCommand);
 		}
 		
-		String userId = (String)session.getAttribute("userId");
-		if(!userId.equals(eventCommand.getMem_id())){
-			throw new Exception("로그인한 아이디로 작성된 글이 아니기 떄문에 수정할 수 없습니다.");
-		}
 		if(result.hasErrors()){
 			return "eventModify";
 		}
@@ -83,6 +77,6 @@ public class EventUpdateController {
 				FileUtil.removeFile(oldFileName);
 			}
 		}
-		return "redirect:/event/list.do";
+		return "redirect:/admin/event/list.do";
 	}
 }

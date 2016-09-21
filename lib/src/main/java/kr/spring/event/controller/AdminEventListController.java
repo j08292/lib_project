@@ -17,8 +17,8 @@ import kr.spring.event.service.EventService;
 import kr.spring.util.PagingUtil;
 
 @Controller
-public class EventListController {
-	private Logger log = Logger.getLogger(this.getClass());
+public class AdminEventListController {
+private Logger log = Logger.getLogger(this.getClass());
 	
 	private int rowCount = 12;
 	private int pageCount = 10;
@@ -26,7 +26,7 @@ public class EventListController {
 	@Resource
 	private EventService eventService;
 	
-	@RequestMapping("event/list.do")
+	@RequestMapping("/admin/event/list.do")
 	public ModelAndView process(
 			@RequestParam(value="pageNum", defaultValue="1")
 			int currentPage,
@@ -62,7 +62,7 @@ public class EventListController {
 		}
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("eventList");
+		mav.setViewName("adminEventList");
 		mav.addObject("count", count);
 		mav.addObject("list", list);
 		mav.addObject("pagingHtml", page.getPagingHtml());

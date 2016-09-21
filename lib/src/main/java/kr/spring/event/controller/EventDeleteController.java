@@ -1,7 +1,6 @@
 package kr.spring.event.controller;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -19,19 +18,14 @@ public class EventDeleteController {
 	@Resource
 	private EventService eventService;
 	
-	@RequestMapping("/event/delete.do")
-	public String submit(@RequestParam("event_num")int event_num,
-						  HttpSession session)throws Exception{
+	@RequestMapping("/admin/event/delete.do")
+	public String submit(@RequestParam("event_num")int event_num)throws Exception{
 		
 		if(log.isDebugEnabled()){
 			log.debug("event_num : " + event_num);
 		}
 		
 		EventCommand eventCommand = eventService.selectEvent(event_num);
-		String userId = (String)session.getAttribute("userId");
-		if(!userId.equals(eventCommand.getMem_id())){
-			throw new Exception("로그인한 아이디로 작성된 글이 아니기때문에 삭제할 수 없습니다.");
-		}
 		//글삭제
 		eventService.delete(eventCommand.getEvent_num());
 		
@@ -39,6 +33,6 @@ public class EventDeleteController {
 		if(eventCommand.getEvent_filename()!=null){
 			FileUtil.removeFile(eventCommand.getEvent_filename());
 		}
-		return "redirect:/event/list.do";
+		return "redirect:/admin/event/list.do";
 	}
 }

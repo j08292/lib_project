@@ -26,11 +26,6 @@
 		</div>
 	</div>
 				
-	<!-- 글쓰기 버튼 (관리자만 작성하도록 조건값을 줘야함) -->		
-	<div class="container clearfix">
-		<div align="right">				
-			<input type="button" value="글쓰기" onclick="location.href='write.do'">
-		</div>
 							
 		<!-- 이벤트 목록 -->
 		<div id="event" class="clearfix">

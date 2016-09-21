@@ -39,7 +39,7 @@
 				<form:errors path="speech_content" class="error-color"/>
 			</div>
 			<div>
-				<input type="submit" value="전송" class="btn btn-primary">
+				<input type="submit" value="수정" class="btn btn-warning">
 				<input type="button" value="목록" class="btn btn-default" onclick="location.href='list.do'">
 			</div>
 	</form:form>

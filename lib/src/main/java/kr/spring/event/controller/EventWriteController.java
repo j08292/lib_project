@@ -28,7 +28,7 @@ public class EventWriteController {
 	@Resource
 	private EventService eventService;
 	
-	@RequestMapping(value="/event/write.do", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/event/write.do", method=RequestMethod.GET)
 	public String form(HttpSession session, Model model){
 		String mem_id = (String)session.getAttribute("userId");
 		
@@ -40,7 +40,7 @@ public class EventWriteController {
 		return "eventWrite";
 	}
 	
-	@RequestMapping(value="/event/write.do", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/event/write.do", method=RequestMethod.POST)
 	public String submit(@ModelAttribute("command")
 						 @Valid EventCommand eventCommand,
 						 BindingResult result,
@@ -66,7 +66,7 @@ public class EventWriteController {
 			File file = new File(FileUtil.UPLOAD_PATH+"/"+newName);
 			eventCommand.getEvent_upload().transferTo(file);
 		}
-		return "redirect:/event/list.do";
+		return "redirect:/admin/event/list.do";
 		
 	}
 	
