@@ -62,7 +62,8 @@
 												    kr.spring.wishlist.domain,
 												    kr.spring.notice.domain,
 												    kr.spring.qna.domain,
-												    kr.spring.event.domain"/>
+												    kr.spring.event.domain,
+												    kr.spring.adminMember.domain"/>
 												    <!-- 계속 추가해야함 -->
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
@@ -77,7 +78,8 @@
 											kr.spring.wishlist.dao,
 											kr.spring.notice.dao,
 											kr.spring.qna.dao,
-											kr.spring.event.dao"/><!-- 계속 추가해야함 -->
+											kr.spring.event.dao,
+											kr.spring.adminMember.dao"/><!-- 계속 추가해야함 -->
 	</bean>
 </beans>
 

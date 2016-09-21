@@ -185,6 +185,7 @@ create sequence marathon_seq;
 
 create table penalty( 
   penalty_num number not null primary key,
+  penalty_regdate date not null,
   penalty_blockCancelDate date not null,
   penalty_day number(3) not null,
   penalty_reason varchar2(200) not null, 
