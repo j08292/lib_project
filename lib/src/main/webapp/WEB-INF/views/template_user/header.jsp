@@ -34,6 +34,8 @@
 							<li class="mega-menu"><a href="#"><div>Portfolio</div></a></li>
 							<li><a href="#"><div>EVENT</div></a>
 								<ul>
+									<li><a href="${pageContext.request.contextPath}/event/list.do"><div>이벤트</div></a></li>
+									<li><a href="${pageContext.request.contextPath }/event/write.do"><div>글쓰기</div></a></li>
 									<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do"><div>독서마라톤</div></a></li>
 								</ul>
 							</li>

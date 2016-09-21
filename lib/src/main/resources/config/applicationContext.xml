@@ -20,7 +20,7 @@
     	<context:exclude-filter type="annotation" 
     	         expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-    
+     
     <!-- JDBC 기반 트랜잭션 관리자 설정 -->
     <bean id="transactionManager" 
       class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
@@ -61,7 +61,8 @@
 												    kr.spring.bookrent.domain,
 												    kr.spring.wishlist.domain,
 												    kr.spring.notice.domain,
-												    kr.spring.qna.domain"/>
+												    kr.spring.qna.domain,
+												    kr.spring.event.domain"/>
 												    <!-- 계속 추가해야함 -->
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
@@ -75,7 +76,8 @@
 											kr.spring.bookrent.dao,
 											kr.spring.wishlist.dao,
 											kr.spring.notice.dao,
-											kr.spring.qna.dao"/><!-- 계속 추가해야함 -->
+											kr.spring.qna.dao,
+											kr.spring.event.dao"/><!-- 계속 추가해야함 -->
 	</bean>
 </beans>
 
