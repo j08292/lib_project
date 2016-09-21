@@ -47,7 +47,7 @@
     	<property name="minIdle" value="20"/>
     	<!-- 최대 대기시간(초) : 초과시 연결실패 오류 발생 -->
     	<property name="maxWait" value="5"/>
-    </bean>
+    </bean> 
 	<!-- mybatis 설정 -->
 	<bean id="sqlSessionFactory" 
 	             class="org.mybatis.spring.SqlSessionFactoryBean">

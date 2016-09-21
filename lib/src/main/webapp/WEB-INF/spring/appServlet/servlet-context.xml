@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- 자동 스캔 -->
+	<!-- 자동 스캔 --> 
 	<context:component-scan base-package="kr.spring.member.controller"/>
 	<context:component-scan base-package="kr.spring.book.controller"/>
 	<context:component-scan base-package="kr.admin.booklist.controller"/>
