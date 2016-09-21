@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import kr.spring.event.dao.EventMapper;
 import kr.spring.event.domain.EventCommand;
 import kr.spring.event.domain.EventReplyCommand;
-  
+
 @Service("eventService")
 public class EventServiceImpl implements EventService{
 	
@@ -80,5 +80,6 @@ public class EventServiceImpl implements EventService{
 	@Override
 	public void deleteReply(Integer event_re_num) {
 		eventMapper.deleteReply(event_re_num);
-	}	
+	}
+	
 }

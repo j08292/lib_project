@@ -3,7 +3,7 @@
 <!DOCTYPE tiles-definitions PUBLIC
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
- 
+
 <tiles-definitions>
     <definition name="eventWrite" extends="main">
     	<put-attribute name="title" value="글쓰기"/>
@@ -23,12 +23,12 @@
            <add-attribute value="../resources/user/js/jquery.js"/>
            <add-attribute value="../resources/user/js/plugins.js"/>
            <add-attribute value="../resources/event/js/event.reply.js"/>
-        </put-list-attribute>
-        
+        </put-list-attribute>        
         
     </definition>
      <definition name="eventModify" extends="main">
     	<put-attribute name="title" value="이벤트 글수정"/>
     	<put-attribute name="body" value="/WEB-INF/views/event/eventModify.jsp"/>
 	 </definition>
+	 
 </tiles-definitions>

@@ -20,7 +20,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import kr.spring.event.domain.EventCommand;
 import kr.spring.event.service.EventService;
 import kr.spring.util.FileUtil;
- 
+
 @Controller
 @SessionAttributes("command")
 public class EventUpdateController {

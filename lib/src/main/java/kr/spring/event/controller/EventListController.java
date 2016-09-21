@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.event.domain.EventCommand;
 import kr.spring.event.service.EventService;
 import kr.spring.util.PagingUtil;
- 
+
 @Controller
 public class EventListController {
 	private Logger log = Logger.getLogger(this.getClass());
@@ -67,5 +67,26 @@ public class EventListController {
 		mav.addObject("list", list);
 		mav.addObject("pagingHtml", page.getPagingHtml());
 		return mav;
-	}	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.spring.event.domain.EventCommand;
 import kr.spring.event.domain.EventReplyCommand;
- 
+
 @Repository
 public interface EventMapper {
 	public List<EventCommand> list(Map<String, Object>map);

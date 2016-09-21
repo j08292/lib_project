@@ -14,7 +14,7 @@ import kr.spring.event.domain.EventCommand;
 import kr.spring.event.service.EventService;
 import kr.spring.util.FileUtil;
 import kr.spring.util.StringUtil;
- 
+
 @Controller
 public class EventDetailController {
 	private Logger log = Logger.getLogger(this.getClass());
@@ -46,5 +46,6 @@ public class EventDetailController {
 								 String event_filename)throws Exception{
 		File downloadFile = new File(FileUtil.UPLOAD_PATH+"/"+event_filename);
 		return new ModelAndView("downloadView","downloadFile",downloadFile);
-	}	
+	}
+	
 }

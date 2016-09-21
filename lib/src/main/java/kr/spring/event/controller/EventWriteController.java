@@ -19,7 +19,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import kr.spring.event.domain.EventCommand;
 import kr.spring.event.service.EventService;
 import kr.spring.util.FileUtil;
- 
+
 @Controller
 @SessionAttributes("command")
 public class EventWriteController {
@@ -66,6 +66,19 @@ public class EventWriteController {
 			File file = new File(FileUtil.UPLOAD_PATH+"/"+newName);
 			eventCommand.getEvent_upload().transferTo(file);
 		}
-		return "redirect:/event/list.do";		
+		return "redirect:/event/list.do";
+		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

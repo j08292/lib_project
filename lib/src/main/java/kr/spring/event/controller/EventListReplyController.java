@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.spring.event.domain.EventReplyCommand;
 import kr.spring.event.service.EventService;
 import kr.spring.util.PagingUtil;
- 
+
 @Controller
 public class EventListReplyController {
 	private Logger log = Logger.getLogger(this.getClass());

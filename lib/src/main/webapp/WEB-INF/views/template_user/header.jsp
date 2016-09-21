@@ -3,8 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix = "c"	uri = "http://java.sun.com/jsp/jstl/core" %>
-<!-- Header
-		============================================= -->
+<!-- Header ============================================ -->
 		<header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
 
 			<div id="header-wrap">
@@ -13,15 +12,13 @@
 
 					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-					<!-- Logo
-					============================================= -->
+					<!-- Logo ============================================= -->
 					<div id="logo">
 						<a href="${pageContext.request.contextPath}/main/main.do" class="standard-logo" data-dark-logo="${pageContext.request.contextPath}/resources/user/images/logo-dark.png"><img src="${pageContext.request.contextPath}/resources/user/images/logo.png" alt="Canvas Logo"></a>
 						<a href="${pageContext.request.contextPath}/main/main.do" class="retina-logo" data-dark-logo="${pageContext.request.contextPath}/resources/user/images/logo-dark@2x.png"><img src="${pageContext.request.contextPath}/resources/user/images/logo@2x.png" alt="Canvas Logo"></a>
 					</div><!-- #logo end -->
 
-					<!-- Primary Navigation
-					============================================= -->
+					<!-- Primary Navigation ============================================= -->
 					<nav id="primary-menu" class="dark">
 											
 						<ul>

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.spring.event.domain.EventCommand;
 import kr.spring.event.service.EventService;
 import kr.spring.util.FileUtil;
- 
+
 @Controller
 public class EventDeleteController {
 	private Logger log = Logger.getLogger(this.getClass());

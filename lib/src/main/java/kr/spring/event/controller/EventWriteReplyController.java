@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.spring.event.domain.EventReplyCommand;
 import kr.spring.event.service.EventService;
- 
+
 @Controller
 public class EventWriteReplyController {
 	private Logger log = Logger.getLogger(this.getClass());
@@ -44,7 +44,9 @@ public class EventWriteReplyController {
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("reslut", "failure");
-		}		
+		}
+		
+		
 		return map;
 	}
 }

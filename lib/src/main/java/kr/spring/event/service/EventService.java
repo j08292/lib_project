@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import kr.spring.event.domain.EventCommand;
 import kr.spring.event.domain.EventReplyCommand;
- 
+
 @Transactional
 public interface EventService {
 	@Transactional(readOnly=true)
