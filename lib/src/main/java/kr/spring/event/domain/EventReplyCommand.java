@@ -44,8 +44,5 @@ public class EventReplyCommand {
 	public String toString() {
 		return "EventReplyCommand [event_re_num=" + event_re_num + ", event_re_content=" + event_re_content
 				+ ", event_re_date=" + event_re_date + ", event_num=" + event_num + ", mem_id=" + mem_id + "]";
-	}
-	
-	
-	
+	}	
 }

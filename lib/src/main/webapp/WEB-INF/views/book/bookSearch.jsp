@@ -99,7 +99,7 @@
 								<c:forEach var="book" items="${list}">
 									<tr>
 										<td><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }">
-										<img src="/lib/upload/${book.list_filename }" width="75" height="113"></a></td>
+										<img src="${book.list_filename}" width="75" height="113"></a></td>
 										<td>${book.list_title}</td>
 										<td>${book.list_writer}</td>
 										<td>${book.list_publish}</td>
@@ -119,8 +119,6 @@
 </section>
 <!-- #content end -->
 
-
-
 <!-- Go To Top
 	============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>
@@ -128,4 +126,3 @@
 <!-- Footer Scripts
 	============================================= -->
 <script type="text/javascript" src="js/functions.js"></script>
-

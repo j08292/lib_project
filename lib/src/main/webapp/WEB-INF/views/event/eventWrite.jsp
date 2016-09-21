@@ -2,24 +2,16 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
- 
-
 <!-- Content -->
 <section id="content">
-
 	<div class="content-wrap">
-
 		<div class="container clearfix">
-
 			<div class="tabs divcenter nobottommargin clearfix"
 				id="tab-login-register" style="max-width: 500px;">
-
 				<div class="tab-content clearfix" id="tab-register">
 					<div class="panel panel-default nobottommargin">
 						<div class="panel-body" style="padding: 40px;">
 							<h3>이벤트 등록하기</h3>
-
 							<form:form id="register-form" name="register-form"
 								class="nobottommargin" action="write.do" commandName="command"
 								enctype="multipart/form-data">
@@ -68,24 +60,13 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
-
 		</div>
-
 	</div>
-
-	</div>
-
 </section>
 <!-- #content end -->
-
-
-
-<!-- Go To Top
-   ============================================= -->
+<!-- Go To Top ============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>
 
-<!-- Footer Scripts
-   ============================================= -->
+<!-- Footer Scripts ============================================= -->
 <script type="text/javascript" src="js/functions.js"></script>

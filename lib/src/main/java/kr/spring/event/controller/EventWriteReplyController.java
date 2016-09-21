@@ -44,9 +44,7 @@ public class EventWriteReplyController {
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("reslut", "failure");
-		}
-		
-		
+		}		
 		return map;
 	}
 }

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
  
@@ -83,15 +82,10 @@
 </section>
 <!-- 이벤트 content 끝 -->
 
-
-
-
-<!-- Go To Top
-    ============================================= -->
+<!-- Go To Top ============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>
 
-<!-- Footer Scripts
-    ============================================= -->
+<!-- Footer Scripts ============================================= -->
 <script type="text/javascript" src="js/functions.js"></script>
 
 </body>

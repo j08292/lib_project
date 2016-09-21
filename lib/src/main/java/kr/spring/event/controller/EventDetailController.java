@@ -46,6 +46,5 @@ public class EventDetailController {
 								 String event_filename)throws Exception{
 		File downloadFile = new File(FileUtil.UPLOAD_PATH+"/"+event_filename);
 		return new ModelAndView("downloadView","downloadFile",downloadFile);
-	}
-	
+	}	
 }

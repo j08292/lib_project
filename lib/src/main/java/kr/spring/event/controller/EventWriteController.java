@@ -66,19 +66,6 @@ public class EventWriteController {
 			File file = new File(FileUtil.UPLOAD_PATH+"/"+newName);
 			eventCommand.getEvent_upload().transferTo(file);
 		}
-		return "redirect:/event/list.do";
-		
+		return "redirect:/event/list.do";		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

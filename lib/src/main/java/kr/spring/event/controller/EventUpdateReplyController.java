@@ -49,6 +49,5 @@ public class EventUpdateReplyController {
 			map.put("result", "failure");
 		}
 		return map;
-	}
-	
+	}	
 }

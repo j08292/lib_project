@@ -80,6 +80,5 @@ public class EventServiceImpl implements EventService{
 	@Override
 	public void deleteReply(Integer event_re_num) {
 		eventMapper.deleteReply(event_re_num);
-	}
-	
+	}	
 }
