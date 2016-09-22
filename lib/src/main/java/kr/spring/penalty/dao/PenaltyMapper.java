@@ -23,7 +23,6 @@ public interface PenaltyMapper {
 	
 	
 	
-	
 	public PenaltyCommand selectPenalty(Integer penalty_num);
 	public void update(PenaltyCommand penalty);	
 	public void delete(Integer penalty_num);
