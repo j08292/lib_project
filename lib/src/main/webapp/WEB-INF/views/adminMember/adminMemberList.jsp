@@ -46,13 +46,13 @@
 									<c:if test="${article.mem_level == 2}">관리자</c:if>
 									<br> 회원상태:
 									<c:if
-										test="${article.mem_level == 0 || article.mem_level == 2}">
-										<span style="color: blue;">정상</span> | <a href="#"><span
+										test="${article.block_count == 0}">
+										<span style="color: blue;">정상</span> | <a href="javascript:block_message('${article.mem_id}')"><span
 											style="color: grey;">차단</span></a>
 									</c:if>
-									<c:if test="${article.mem_level == 1}">
-										<span style="color: grey;">정상</span> | <a href="#"><span
-											style="color: red;">차단</span></a>
+									<c:if test="${article.block_count>0}">
+										<a href="javascript:blockcancel_event('${article.mem_id}')"><span style="color: grey;">정상</span></a> | <span
+											style="color: red;">차단</span>
 									</c:if>
 								</div>
 							</div>

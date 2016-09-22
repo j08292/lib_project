@@ -7,9 +7,9 @@ create table member(
   mem_address varchar2(100) not null,
   mem_regdate date not null,
   mrt_status number(1) default(0) not null,
-  mem_level number(1) default(0) not null,
-  mem_penalty number(3) default(0) not null
+  mem_level number(1) default(0) not null
 );
+--mem_penalty 삭제 대신 penalty 테이블 추가함
 
 create table speech( 
   speech_num number not null primary key,
@@ -187,10 +187,8 @@ create table penalty(
   penalty_num number not null primary key,
   penalty_regdate date not null,
   penalty_blockCancelDate date not null,
-  penalty_day number(3) not null,
-  penalty_reason varchar2(200) not null, 
+  penalty_reason varchar2(300) not null, 
   mem_id varchar2(20) not null,
-  rent_num number not null,
   constraint penalty_fk1 foreign key (mem_id) references member (mem_id),
   constraint penalty_fk2 foreign key (rent_num) references bookrent (rent_num)
 );

@@ -5,7 +5,8 @@
 <mapper namespace="kr.spring.adminMember.dao.AdminMemberMapper">  
 	<select id="list" parameterType="map" resultType="adminMemberCommand">
 		SELECT
-		  *
+		  m.*,
+		  (SELECT count(*) FROM penalty p WHERE penalty_blockcanceldate > sysdate AND m.mem_id=p.mem_id) block_count
 		FROM (SELECT 
 		        a.*,
 		        rownum rnum
@@ -32,7 +33,7 @@
 		            		mem_address like '%' || #{keyword} || '%'
 		            	</if>
 		            </where>
-		            ORDER BY mem_regdate DESC)a)
+		            ORDER BY mem_regdate DESC)a)m
 		<![CDATA[
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>              

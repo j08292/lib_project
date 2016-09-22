@@ -28,6 +28,7 @@ public class AdminMemberCommand {
 	private int mrt_status;
 	private int mem_level;
 	private int mem_penalty;
+	private int block_count;
 
 	/*// 비밀번호 일치 여부 체크
 	public boolean isCheckedPasswd(String userPasswd) {
@@ -125,12 +126,20 @@ public class AdminMemberCommand {
 	public void setMem_penalty(int mem_penalty) {
 		this.mem_penalty = mem_penalty;
 	}
+	public int getBlock_count() {
+		return block_count;
+	}
+
+	public void setBlock_count(int block_count) {
+		this.block_count = block_count;
+	}
 
 	@Override
 	public String toString() {
-		return "MemberCommand [mem_id=" + mem_id + ", mem_name=" + mem_name + ", mem_passwd=" + mem_passwd
+		return "AdminMemberCommand [mem_id=" + mem_id + ", mem_name=" + mem_name + ", mem_passwd=" + mem_passwd
 				+ ", mem_cell=" + mem_cell + ", mem_email=" + mem_email + ", sample3_postcode=" + sample3_postcode
 				+ ", mem_address=" + mem_address + ", mem_regdate=" + mem_regdate + ", mrt_status=" + mrt_status
-				+ ", mem_level=" + mem_level + ", mem_penalty=" + mem_penalty + "]";
+				+ ", mem_level=" + mem_level + ", mem_penalty=" + mem_penalty + ", block_count=" + block_count + "]";
 	}
+	
 }
