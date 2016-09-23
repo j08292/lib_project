@@ -28,22 +28,31 @@
 			<thead> 
 				<tr>
 					<th style="text-align:center;">번호</th>
-					<th style="text-align:center;">ID</th>
 					<th style="text-align:center;">제목</th>
+					<th style="text-align:center;">ID</th>
 					<th style="text-align:center;">작성일</th>
 					<th style="text-align:center;">답변여부</th>
 					<th style="text-align:center;">조회수</th>
+					<th style="text-align:center;">삭제</th>
 				</tr>
 			</thead>
 			<c:forEach var="article" items="${list}">
 			<tbody style="text-align:center;">
 				<tr>
 					<td>${article.qna_num}</td>
+					<td><a href="detail.do?qna_num=${article.qna_num}">${article.qna_title}</a></td>
 					<td>${article.mem_id}</td>
-					<td>${article.qna_title}</td>
 					<td>${article.qna_regdate}</td>
-					<td></td>
+					<td>
+					<c:if test="${article.qna_replyCount>0 }">
+					답변 완료
+					</c:if>
+					<c:if test="${article.qna_replyCount==0 }">
+					답변 대기
+					</c:if>
+					</td>
 					<td>${article.qna_hit}</td>
+					<td><input type="button" value="삭제"></td>
 				</tr>
 			</tbody>
 			</c:forEach>

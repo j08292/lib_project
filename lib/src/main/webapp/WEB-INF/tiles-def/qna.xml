@@ -40,6 +40,10 @@
     	<put-attribute name="title" value="QnA 글목록"/>
     	<put-attribute name="body" value="/WEB-INF/views/qna/adminQnaList.jsp"/>
     </definition> 
+    <definition name="adminQnaDetail" extends="adminQnaList">
+    	<put-attribute name="title" value="QnA 글상세"/>
+    	<put-attribute name="body" value="/WEB-INF/views/qna/adminQnaDetail.jsp"/>
+    </definition> 
 
 
 

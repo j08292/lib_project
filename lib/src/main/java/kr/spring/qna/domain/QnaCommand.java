@@ -1,5 +1,7 @@
 package kr.spring.qna.domain;
 
+import java.sql.Date;
+
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -14,7 +16,7 @@ public class QnaCommand {
 	private String qna_passwd;//글작성 비밀번호
 	@NotEmpty
 	private String qna_content;//qna작성내용
-	private String qna_regdate;//작성일
+	private Date qna_regdate;//작성일
 	private int qna_hit;//조회수
 	private String mem_id;
 	private int qna_replyCount;//댓글수
@@ -53,12 +55,14 @@ public class QnaCommand {
 	public void setQna_content(String qna_content) {
 		this.qna_content = qna_content;
 	}
-	public String getQna_regdate() {
+	
+	public Date getQna_regdate() {
 		return qna_regdate;
 	}
-	public void setQna_regdate(String qna_regdate) {
+	public void setQna_regdate(Date qna_regdate) {
 		this.qna_regdate = qna_regdate;
 	}
+
 	public int getQna_hit() {
 		return qna_hit;
 	}
