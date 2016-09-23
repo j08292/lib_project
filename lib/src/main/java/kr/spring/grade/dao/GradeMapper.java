@@ -17,7 +17,7 @@ public interface GradeMapper {
 	@Update("UPDATE grade SET grade_like = grade_like+1 WHERE grade_like=#{grade_like}")
 	public void updateGradeLike(Integer grade_num);
 	@Insert("INSERT INTO grade (grade_num,grade_like,grade_content,grade_regdate,grade_star,list_num,mem_id) VALUES (grade_seq.nextval,#{grade_like},#{grade_content},sysdate,#{grade_star},#{list_num},#{mem_id})")
-	public void insertGrade(GradeCommand garde);
+	public void insertGrade(GradeCommand grade);
 	@Delete("DELETE FROM grade WHERE grade_num=#{grade_num}")
 	public void deleteGrade(Integer grade_num);
 	

@@ -35,7 +35,7 @@
           <add-attribute value="/lib/resources/admin/font-awesome/css/font-awesome.min.css"/>
           <!-- 목록 사진미리보기 -->
           <add-attribute value="/lib/resources/admin/css/adminBooklist.css"/>
-        </put-list-attribute>		
+        </put-list-attribute>
 		<put-list-attribute name="jsList">
 			<!-- jQuery -->
 			<add-attribute value="/lib/resources/admin/js/jquery.js" />

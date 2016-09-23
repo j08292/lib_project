@@ -56,12 +56,16 @@
 	            	<if test="keyword !='' and keyfield == 'mem_id'">
 	            		mem_id like '%' || #{keyword} || '%'
 	            	</if>
+	            	<if test="keyword !='' and keyfield == 'list_title'">
+		           		list_title like '%' || #{keyword} || '%'
+		           	</if>
 	            	<if test="keyword !='' and keyfield == 'grade_content'">
 		           		grade_content like '%' || #{keyword} || '%'
 		           	</if>
 	            	<if test="keyword !='' and keyfield == 'all'">
-	            		grade_content like '%' || #{keyword} || '%' or
-	            		mem_id like '%' || #{keyword} || '%'
+	            		mem_id like '%' || #{keyword} || '%' or
+	            		list_title like '%' || #{keyword} || '%' or
+	            		grade_content like '%' || #{keyword} || '%'
 	            	</if>
 	            </where>
 				ORDER BY grade_num DESC)a)
@@ -85,17 +89,21 @@
 			WHERE 
 				g.list_num = l.list_num 
   			)
-		<where>           	
-           	<if test="keyword !='' and keyfield == 'mem_id'">
-           		mem_id like '%' || #{keyword} || '%'
-           	</if>
-           	<if test="keyword !='' and keyfield == 'grade_content'">
-           		grade_content like '%' || #{keyword} || '%'
-           	</if>		            	
-           	<if test="keyword !='' and keyfield == 'all'">
-           		grade_content like '%' || #{keyword} || '%' or
-           		mem_id like '%' || #{keyword} || '%'
-           	</if>
+		<where>		            	
+          	<if test="keyword !='' and keyfield == 'mem_id'">
+          		mem_id like '%' || #{keyword} || '%'
+          	</if>
+          	<if test="keyword !='' and keyfield == 'list_title'">
+          		list_title like '%' || #{keyword} || '%'
+          	</if>
+          	<if test="keyword !='' and keyfield == 'grade_content'">
+          		grade_content like '%' || #{keyword} || '%'
+          	</if>
+          	<if test="keyword !='' and keyfield == 'all'">
+          		mem_id like '%' || #{keyword} || '%' or
+          		list_title like '%' || #{keyword} || '%' or
+          		grade_content like '%' || #{keyword} || '%'
+          	</if>
         </where>
 	</select>
 	

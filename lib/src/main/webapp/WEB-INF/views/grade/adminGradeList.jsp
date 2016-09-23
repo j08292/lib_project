@@ -6,7 +6,8 @@
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
 			<select name="keyfield">
-				<option value="mem_id">ID</option>
+				<option value="mem_id">작성자</option>
+				<option value="list_title">책제목</option>
 				<option value="grade_content">내용</option>
 				<option value="all">전체</option>
 			</select>
@@ -28,7 +29,7 @@
 						<th style="text-align:center;">글번호</th>
 						<th style="text-align:center;">책제목</th>
 						<th style="text-align:center;">작성자</th>
-						<th style="text-align:center;">한줄평</th>
+						<th style="text-align:center;">내용</th>
 						<th style="text-align:center;">별점</th>
 						<th style="text-align:center;">작성일</th>
 						<th style="text-align:center;">전체 선택/해제<input type="checkbox" id="allCheck" name="grade_num"></th>

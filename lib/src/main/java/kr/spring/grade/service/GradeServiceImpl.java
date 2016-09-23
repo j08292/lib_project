@@ -35,8 +35,8 @@ public class GradeServiceImpl implements GradeService{
 	}
 
 	@Override
-	public void insertGrade(GradeCommand garde) {
-		gradeMapper.insertGrade(garde);
+	public void insertGrade(GradeCommand grade) {
+		gradeMapper.insertGrade(grade);
 		
 	}
 

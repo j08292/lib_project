@@ -14,7 +14,7 @@ public interface GradeService {
 	@Transactional(readOnly=true)
 	public int getRowCountGrade(Map<String,Object> map);
 	public void updateGradeLike(Integer grade_num);
-	public void insertGrade(GradeCommand garde);
+	public void insertGrade(GradeCommand grade);
 	public void deleteGrade(Integer grade_num);
 	
 	//包府磊 霸矫拱 包府
