@@ -17,6 +17,7 @@ public class QnaCommand {
 	private String qna_regdate;//작성일
 	private int qna_hit;//조회수
 	private String mem_id;
+	private int qna_replyCount;//댓글수
 	
 	//비밀번호 일치여부 체크
 		public boolean isCheckedPwd(String userPwd){
@@ -70,17 +71,20 @@ public class QnaCommand {
 	public void setMem_id(String mem_id) {
 		this.mem_id = mem_id;
 	}
-	
-	
+	//관리자 추가
+	public int getQna_replyCount() {
+		return qna_replyCount;
+	}
+	public void setQna_replyCount(int qna_replyCount) {
+		this.qna_replyCount = qna_replyCount;
+	}
+
+
 	@Override
 	public String toString() {
 		return "QnaCommand [qna_num=" + qna_num + ", qna_title=" + qna_title + ", qna_passwd=" + qna_passwd
 				+ ", qna_content=" + qna_content + ", qna_regdate=" + qna_regdate + ", qna_hit=" + qna_hit + ", mem_id="
-				+ mem_id + "]";
+				+ mem_id + ", qna_replyCount=" + qna_replyCount + "]";
 	}
-	
-	
-	
-	
-	
+
 }

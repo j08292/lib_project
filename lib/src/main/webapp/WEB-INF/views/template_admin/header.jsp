@@ -79,7 +79,7 @@
 					</li>
 					<li><a href="${pageContext.request.contextPath}/admin/board/list.do">감상평</a></li>
 					<li><a href="#">한줄평</a></li>
-					<li><a href="#">QnA</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/qna/list.do">QnA</a></li>
                         </ul>
                     </li>
                     <li>
@@ -91,9 +91,6 @@
                             </li>
                             <li>
                                 <a href="${pageContext.request.contextPath }/admin/marathon/list.do">독서마라톤 완주자</a>
-                            </li>
-                            <li>
-                                <a href="#"></a>
                             </li>
                         </ul>
                     </li>

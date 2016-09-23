@@ -90,5 +90,10 @@ public class QnaServiceImpl implements QnaService{
 		
 	}
 
+	@Override
+	public List<QnaCommand> adminList(Map<String, Object> map) {
+		return QnaMapper.adminList(map);
+	}
+
 	
 }

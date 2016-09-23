@@ -71,4 +71,6 @@ public interface QnaMapper {
 	@Delete("DELETE FROM qna_reply WHERE qna_num = #{qna_num}")
 	public void deleteReplyByReview_num(Integer qna_num);
 	
+	//°ü¸®ÀÚ=========================================================
+	public List<QnaCommand> adminList(Map<String, Object> map);
 }

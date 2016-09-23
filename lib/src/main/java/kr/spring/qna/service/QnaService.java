@@ -30,4 +30,8 @@ public interface QnaService {
 	public void deleteReply(Integer qna_re_num);
 	
 	
+	
+	public List<QnaCommand> adminList(Map<String, Object> map);
+	
+	
 }
