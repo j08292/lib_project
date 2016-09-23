@@ -18,12 +18,12 @@ public class PenaltyServiceImpl implements PenaltyService{
 	
 	@Override
 	public List<PenaltyCommand> list(Map<String, Object> map) {
-		return null;
+		return penaltyMapper.list(map);
 	}
 
 	@Override
 	public int getRowCount(Map<String, Object> map) {
-		return 0;
+		return penaltyMapper.getRowCount(map);
 	}
 
 	@Override
@@ -37,8 +37,13 @@ public class PenaltyServiceImpl implements PenaltyService{
 	}
 
 	@Override
-	public PenaltyCommand selectPenalty(Integer penalty_num) {
-		return null;
+	public List<PenaltyCommand> reasonView(String mem_id) {
+		return penaltyMapper.reasonView(mem_id);
+	}
+	
+	@Override
+	public int getReasonCount(String mem_id) {
+		return penaltyMapper.getReasonCount(mem_id);
 	}
 
 	@Override
@@ -50,6 +55,8 @@ public class PenaltyServiceImpl implements PenaltyService{
 	public void delete(Integer penalty_num) {
 		
 	}
+
+	
 
 	
 }

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.spring.adminMember.domain.AdminMemberCommand;
+import kr.spring.penalty.domain.PenaltyCommand;
 
 @Transactional
 public interface AdminMemberService {
@@ -13,6 +14,4 @@ public interface AdminMemberService {
 	public List<AdminMemberCommand> list(Map<String, Object> map);
 	@Transactional(readOnly=true)
 	public int getRowCount(Map<String, Object> map);
-	public List<AdminMemberCommand> blockList(Map<String, Object> map);
-	public int getBlockRowCount(Map<String,Object> map);
 }

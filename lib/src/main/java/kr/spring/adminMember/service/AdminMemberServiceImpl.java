@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import kr.spring.adminMember.dao.AdminMemberMapper;
 import kr.spring.adminMember.domain.AdminMemberCommand;
+import kr.spring.penalty.domain.PenaltyCommand;
 
 @Service("adminMemberService")
 public class AdminMemberServiceImpl implements AdminMemberService{
@@ -26,13 +27,5 @@ public class AdminMemberServiceImpl implements AdminMemberService{
 		return adminMemberMapper.getRowCount(map);
 	}
 
-	@Override
-	public List<AdminMemberCommand> blockList(Map<String, Object> map) {
-		return null;
-	}
-
-	@Override
-	public int getBlockRowCount(Map<String, Object> map) {
-		return 0;
-	}
+	
 }

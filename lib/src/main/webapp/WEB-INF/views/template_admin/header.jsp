@@ -50,7 +50,7 @@
                                 <a href="${pageContext.request.contextPath}/admin/member/list.do">회원 정보 조회</a>
                             </li>
                             <li>
-                                <a href="#">차단 회원 관리</a>
+                                <a href="${pageContext.request.contextPath}/admin/blockmember/list.do">차단 회원 관리</a>
                             </li>
                         </ul>
                     </li>
