@@ -64,7 +64,12 @@
 										<fmt:parseNumber value="${returnDate.time / (1000*60*60*24)}" integerOnly="true" var="oldDays" scope="request" />
 										<c:choose>
 											<c:when test="${toDay > article.rent_returndate}">
-												<font color="red"> ${nowDays - oldDays} </font>
+												<c:if test="${(nowDays - oldDays) != 0}">
+													<font color="red"> ${nowDays - oldDays} </font>
+												</c:if>
+												<c:if test="${(nowDays - oldDays) == 0}">
+													-
+												</c:if>								
 											</c:when>
 											<c:otherwise>-</c:otherwise>
 										</c:choose>
@@ -77,7 +82,7 @@
 							<td>
 								<c:if test="${article.rent_status == 0}"><!-- 대출 도서 -->
 									<c:if test="${(nowDays - oldDays) > 0}"><!-- 연체 도서 -->
-										<input type="button" onclick="javascript:updatePenalty_event(${article.rent_num},${nowDays - oldDays},'${article.list_title}','${article.mem_id}');" value="반납" class="btn btn-xs btn-warning">
+										<input type="button" onclick="javascript:insertPenalty_event(${article.rent_num},'${article.mem_id}','${article.list_title}',${nowDays - oldDays});" value="반납" class="btn btn-xs btn-warning">
 									</c:if>
 									<c:if test="${(nowDays - oldDays) <= 0}">									
 										<input type="button" onclick="javascript:bookReturn_event(${article.rent_num},${article.rent_status},'${article.list_title}',${article.list_num});" value="반납" class="btn btn-xs btn-warning">										

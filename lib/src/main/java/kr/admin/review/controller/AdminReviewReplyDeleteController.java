@@ -1,4 +1,4 @@
-package kr.admin.board.controller;
+package kr.admin.review.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +20,7 @@ public class AdminReviewReplyDeleteController {
 	@Resource
 	private ReviewService reviewSerview;
 
-	@RequestMapping("/admin/board/deleteReplyAjax.do")
+	@RequestMapping("/admin/review/deleteReplyAjax.do")
 	@ResponseBody
 	public Map<String, String> process(@RequestParam("review_re_num") int review_re_num){
 

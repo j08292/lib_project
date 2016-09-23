@@ -81,7 +81,12 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 
 	
-	//관리자 게시물 관리 시작=======================================	
+	//관리자 게시물 관리 시작=======================================
+	@Override
+	public List<ReviewCommand> adminList(Map<String, Object> map) {
+		return reviewMapper.adminList(map);
+	}
+	
 	@Override
 	public void deleteByReviewNum(List<Integer> list) {		
 		//해당 글번호에 작성된 모든 댓글 삭제
@@ -95,5 +100,5 @@ public class ReviewServiceImpl implements ReviewService{
 		//파일 삭제를 위해 글 정보 가져오기
 		return reviewMapper.selectReviewAdmin(list);
 	}
-	//관리자 게시물 관리 시작=======================================
+	//관리자 게시물 관리 끝=======================================
 }

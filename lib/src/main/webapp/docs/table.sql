@@ -61,6 +61,7 @@ create table bookrent(
   list_num number not null,
   mem_id varchar2(20) not null,
   rent_regdate date not null,
+  rent_returndate date,
   rent_status number(1) default 0 not null,
   constraint bookrent_member_fk1 foreign key(mem_id) references member(mem_id),
   constraint bookrent_booklist_fk2 foreign key(list_num) references booklist(list_num)
@@ -172,7 +173,6 @@ create table chat(
 );
 create sequence chat_seq;
 
-
 create table marathon(
     marathon_num number not null primary key,
     mem_id varchar2(20) not null,
@@ -189,7 +189,6 @@ create table penalty(
   penalty_blockCancelDate date not null,
   penalty_reason varchar2(300) not null, 
   mem_id varchar2(20) not null,
-  constraint penalty_fk1 foreign key (mem_id) references member (mem_id),
-  constraint penalty_fk2 foreign key (rent_num) references bookrent (rent_num)
+  constraint penalty_fk1 foreign key (mem_id) references member (mem_id)
 );
 create sequence penalty_num;

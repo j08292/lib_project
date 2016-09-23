@@ -53,35 +53,38 @@
 	             class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="typeAliasesPackage" value="kr.spring.member.domain,
-													kr.spring.book.domain,
+													kr.spring.adminMember.domain,
+													kr.spring.penalty.domain,													
 													kr.spring.booklist.domain,
+													kr.spring.bookrent.domain,													
+													kr.spring.book.domain,
+													kr.spring.wishlist.domain,
 													kr.spring.speech.domain,
 													kr.spring.review.domain,
 													kr.spring.marathon.domain,
-												    kr.spring.bookrent.domain,
-												    kr.spring.wishlist.domain,
 												    kr.spring.notice.domain,
 												    kr.spring.qna.domain,
 												    kr.spring.event.domain,
-												    kr.spring.adminMember.domain,
-												    kr.spring.penalty.domain"/>
+												    kr.spring.grade.domain"/>
 												    <!-- 계속 추가해야함 -->
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="kr.spring.member.dao,
-											kr.spring.book.dao,
+		<property name="basePackage" value="kr.spring.admin.dao,
+											kr.spring.member.dao,
+											kr.spring.adminMember.dao,
+											kr.spring.penalty.dao,
 											kr.spring.booklist.dao,
+											kr.spring.bookrent.dao,
+											kr.spring.book.dao,
+											kr.spring.wishlist.dao,
 											kr.spring.speech.dao,
 											kr.spring.review.dao,
 											kr.spring.marathon.dao,
-											kr.spring.admin.dao,
-											kr.spring.bookrent.dao,
-											kr.spring.wishlist.dao,
 											kr.spring.notice.dao,
 											kr.spring.qna.dao,
 											kr.spring.event.dao,
-											kr.spring.adminMember.dao,
-											kr.spring.penalty.dao"/><!-- 계속 추가해야함 -->
+											kr.spring.grade.dao"/>
+											<!-- 계속 추가해야함 -->
 	</bean>
 </beans>
 

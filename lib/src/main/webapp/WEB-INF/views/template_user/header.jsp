@@ -22,24 +22,28 @@
 					<nav id="primary-menu" class="dark">
 											
 						<ul>
-							<li><a href="${pageContext.request.contextPath }/book/search.do">도서검색</a></li>
-							<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do"><div>희망도서</div></a>
-							<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do"><div>공지사항</div></a>
-							<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do"><div>강연</div></a>
-							<li><a href="#"><div>Features</div></a></li>
-							<li class="mega-menu"><a href="#"><div>Pages</div></a></li>
-							<li class="mega-menu"><a href="#"><div>Portfolio</div></a></li>
-							<li><a href="#"><div>EVENT</div></a>
+							<li><a href="#">BOOK</a>
 								<ul>
-									<li><a href="${pageContext.request.contextPath}/event/list.do"><div>이벤트</div></a></li>
-									<li><a href="${pageContext.request.contextPath }/event/write.do"><div>글쓰기</div></a></li>
-									<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do"><div>독서마라톤</div></a></li>
+									<li><a href="${pageContext.request.contextPath }/book/search.do">도서검색</a></li>
+									<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do">희망도서 신청</a></li>
 								</ul>
 							</li>
-							<li><a href="#"><div>BOARD</div></a>
+							<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do">강연</a></li>							
+							<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do">공지사항</a></li>							
+							<li><a href="#">Features</a></li>
+							<li class="mega-menu"><a href="#">Pages</a></li>
+							<li class="mega-menu"><a href="#">Portfolio</a></li>
+							<li><a href="#">EVENT</a>
 								<ul>
-									<li><a href="${pageContext.request.contextPath}/board/list.do"><div>감상평게시판</div></a></li>
-									<li><a href="${pageContext.request.contextPath}/board/qnaList.do"><div>질문게시판</div></a></li>								
+									<li><a href="${pageContext.request.contextPath}/event/list.do">이벤트</a></li>
+									<li><a href="${pageContext.request.contextPath }/event/write.do">글쓰기</a></li>
+									<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do">독서마라톤</a></li>
+								</ul>
+							</li>
+							<li><a href="#">BOARD</a>
+								<ul>
+									<li><a href="${pageContext.request.contextPath}/board/list.do">감상평게시판</a></li>
+									<li><a href="${pageContext.request.contextPath}/board/qnaList.do">질문게시판</a></li>								
 								</ul>
 							</li>
 						</ul>
@@ -64,8 +68,7 @@
 							</c:if>
 						</ul>
 
-						<!-- Top Cart
-						============================================= -->
+						<!-- Top Cart 	============================================= -->
 						<div id="top-cart">
 							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
 							<div class="top-cart-content">
@@ -101,8 +104,7 @@
 							</div>
 						</div><!-- #top-cart end -->
 
-						<!-- Top Search
-						============================================= -->
+						<!-- Top Search ============================================= -->
 						<div id="top-search">
 							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
 							<form action="search.html" method="get">

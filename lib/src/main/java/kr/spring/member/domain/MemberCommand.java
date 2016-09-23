@@ -133,7 +133,4 @@ public class MemberCommand {
 				+ ", mem_address=" + mem_address + ", mem_regdate=" + mem_regdate + ", mrt_status=" + mrt_status
 				+ ", mem_level=" + mem_level + ", mem_penalty=" + mem_penalty + "]";
 	}
-
-	
-
 }

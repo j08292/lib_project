@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import kr.spring.member.dao.MemberMapper;
 import kr.spring.member.domain.MemberCommand;
+import kr.spring.penalty.domain.PenaltyCommand;
 
 @Service("memberService")
 public class MemberServiceImpl implements MemberService {
@@ -47,4 +48,15 @@ public class MemberServiceImpl implements MemberService {
 
 	}
 
+	@Override
+	public int checkBlock(String mem_id) {
+		//차단 회원 관리
+		return memberMapper.checkBlock(mem_id);
+	}
+
+	@Override
+	public PenaltyCommand selectBlockMember(String mem_id) {
+		//차단사유, 차단 해지 예정일
+		return memberMapper.selectBlockMember(mem_id);
+	}
 }

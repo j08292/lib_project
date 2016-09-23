@@ -6,18 +6,25 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class PenaltyCommand {
 	private int penalty_num;
-	private Date penalty_blockcanceldate;
 	private Date penalty_regdate;
+	private Date penalty_blockcanceldate;
 	private int penalty_day;
 	private String mem_id;
 	@NotEmpty
 	private String penalty_reason;
+	private Date blockcanceldate;
 	
 	public int getPenalty_num() {
 		return penalty_num;
 	}
 	public void setPenalty_num(int penalty_num) {
 		this.penalty_num = penalty_num;
+	}	
+	public Date getPenalty_regdate() {
+		return penalty_regdate;
+	}
+	public void setPenalty_regdate(Date penalty_regdate) {
+		this.penalty_regdate = penalty_regdate;
 	}
 	public Date getPenalty_blockcanceldate() {
 		return penalty_blockcanceldate;
@@ -42,18 +49,18 @@ public class PenaltyCommand {
 	}
 	public void setPenalty_reason(String penalty_reason) {
 		this.penalty_reason = penalty_reason;
+	}	
+	public Date getBlockcanceldate() {
+		return blockcanceldate;
 	}
-	public Date getPenalty_regdate() {
-		return penalty_regdate;
-	}
-	public void setPenalty_regdate(Date penalty_regdate) {
-		this.penalty_regdate = penalty_regdate;
-	}
-	@Override
-	public String toString() {
-		return "PenaltyCommand [penalty_num=" + penalty_num + ", penalty_blockcanceldate=" + penalty_blockcanceldate
-				+ ", penalty_regdate=" + penalty_regdate + ", penalty_day=" + penalty_day + ", mem_id=" + mem_id
-				+ ", penalty_reason=" + penalty_reason + "]";
+	public void setBlockcanceldate(Date blockcanceldate) {
+		this.blockcanceldate = blockcanceldate;
 	}
 	
+	@Override
+	public String toString() {
+		return "PenaltyCommand [penalty_num=" + penalty_num + ", penalty_regdate=" + penalty_regdate
+				+ ", penalty_blockcanceldate=" + penalty_blockcanceldate + ", penalty_day=" + penalty_day + ", mem_id="
+				+ mem_id + ", penalty_reason=" + penalty_reason + ", blockcanceldate=" + blockcanceldate + "]";
+	}		
 }

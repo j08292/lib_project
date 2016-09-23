@@ -1,4 +1,4 @@
-package kr.admin.board.controller;
+package kr.admin.review.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +23,7 @@ public class AdminReviewDeleteController {
 	@Resource(name="reviewService")
 	private ReviewService reviewService;
 
-	@RequestMapping("/admin/board/delete.do")
+	@RequestMapping("/admin/review/delete.do")
 	@ResponseBody
 	public Map<String,String> submit(@RequestParam(value="review_num") List<Integer> list) throws Exception{
 

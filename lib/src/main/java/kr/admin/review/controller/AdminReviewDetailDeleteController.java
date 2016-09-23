@@ -1,4 +1,4 @@
-package kr.admin.board.controller;
+package kr.admin.review.controller;
 
 import javax.annotation.Resource;
 
@@ -18,7 +18,7 @@ public class AdminReviewDetailDeleteController {
 	@Resource(name="reviewService")
 	private ReviewService reviewService;
 
-	@RequestMapping("/admin/board/detailDelete.do")
+	@RequestMapping("/admin/review/detailDelete.do")
 	public String submit(@RequestParam("review_num") int review_num) throws Exception{
 		
 		if(log.isDebugEnabled()){
@@ -35,6 +35,6 @@ public class AdminReviewDetailDeleteController {
 			FileUtil.removeFile(reviewCommand.getReview_file());
 		}
 		
-		return "redirect:/admin/board/list.do";
+		return "redirect:/admin/review/list.do";
 	}
 }

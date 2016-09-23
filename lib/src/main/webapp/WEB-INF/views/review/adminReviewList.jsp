@@ -20,7 +20,7 @@
 	</c:if>
 	<c:if test="${count>0}">
 		<div align="right">
-			<input type="button" value="삭제" onclick="ajaxExample();" class="btn btn-xs btn-danger">
+			<input type="button" value="삭제" onclick="ajaxReviewDelete();" class="btn btn-xs btn-danger">
 		</div>
 		<div class="table-responsive">			
 			<table class="table table-hover">

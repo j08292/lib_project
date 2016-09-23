@@ -1,4 +1,4 @@
-package kr.admin.board.controller;
+package kr.admin.review.controller;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -27,7 +27,7 @@ public class AdminReviewReplyListController {
 	@Resource
 	private ReviewService reviewService;
 
-	@RequestMapping("/admin/board/listReplyAjax.do")
+	@RequestMapping("/admin/review/listReplyAjax.do")
 	@ResponseBody
 	public Map<String, Object> process(@RequestParam(value="pageNum",defaultValue="1")int currentPage,
 									   @RequestParam("review_num")int review_num){

@@ -77,8 +77,8 @@
                             <li><a
 						href="${pageContext.request.contextPath}/admin/notice/list.do">공지사항</a>
 					</li>
-					<li><a href="${pageContext.request.contextPath}/admin/board/list.do">감상평</a></li>
-					<li><a href="#">한줄평</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/review/list.do">감상평</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/grade/list.do">한줄평</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/qna/list.do">QnA</a></li>
                         </ul>
                     </li>

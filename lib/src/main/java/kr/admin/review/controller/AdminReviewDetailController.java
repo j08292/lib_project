@@ -1,4 +1,4 @@
-package kr.admin.board.controller;
+package kr.admin.review.controller;
 
 import java.io.File;
 
@@ -22,7 +22,7 @@ public class AdminReviewDetailController {
 	@Resource
 	private ReviewService reviewService;
 
-	@RequestMapping("/admin/board/detail.do")
+	@RequestMapping("/admin/review/detail.do")
 	public ModelAndView process(@RequestParam("review_num") int review_num){
 		if(log.isDebugEnabled()){
 			log.debug("review_num : " + review_num);
@@ -39,7 +39,7 @@ public class AdminReviewDetailController {
 		return new ModelAndView("adminReviewView","review",review);
 	}
 	//파일 다운로드
-	@RequestMapping("/admin/board/file.do")
+	@RequestMapping("/admin/review/file.do")
 	public ModelAndView download(@RequestParam("review_file")String review_file)throws Exception{					
 		File downloadFile= new File(FileUtil.UPLOAD_PATH + "/" +review_file);
 		return new ModelAndView("downloadView","downloadFile",downloadFile);

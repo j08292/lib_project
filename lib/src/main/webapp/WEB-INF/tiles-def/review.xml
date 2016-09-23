@@ -31,7 +31,7 @@
 	<!-- 관리자 감상평 관리 -->
  	<definition name="adminReviewList" extends="adminMain">
     	<put-attribute name="title" value="감상평 목록"/>
-    	<put-attribute name="body" value="/WEB-INF/views/board/adminReviewList.jsp"/>
+    	<put-attribute name="body" value="/WEB-INF/views/review/adminReviewList.jsp"/>
     	<put-list-attribute name="jsList">
 			<!-- jQuery -->
 			<add-attribute value="/lib/resources/admin/js/jquery.js" />
@@ -41,12 +41,12 @@
 			<add-attribute value="/lib/resources/admin/js/plugins/morris/raphael.min.js" />
 			<add-attribute value="/lib/resources/admin/js/plugins/morris/morris.min.js" />
 			<add-attribute value="/lib/resources/admin/js/plugins/morris/morris-data.js" />
-	       	<add-attribute value="/lib/resources/admin/js/adminBoardManagement.js"/>
+	       	<add-attribute value="/lib/resources/admin/js/adminReviewManagement.js"/>
 		</put-list-attribute>
     </definition>
     <definition name="adminReviewView" extends="adminReviewList">
     	<put-attribute name="title" value="감상평 글 상세"/>
-    	<put-attribute name="body" value="/WEB-INF/views/board/adminReviewView.jsp"/>
+    	<put-attribute name="body" value="/WEB-INF/views/review/adminReviewView.jsp"/>
     	<put-list-attribute name="jsList">
     		<!-- jQuery -->
 	        <add-attribute value="/lib/resources/admin/js/jquery.js"/>

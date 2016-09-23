@@ -16,10 +16,7 @@
 		  list_filename,
 		  list_regdate,
 		  list_grade,
-		  list_status,
-		  list_rent,
-		  list_rentdate,
-		  list_returndate
+		  list_status
 		FROM (SELECT 
 		        a.*,
 		        rownum rnum
@@ -76,13 +73,5 @@
 				list_code like '%' || #{keyword} || '%'
 			</if>
 		</where>
-	</select>
-	
+	</select>	
 </mapper>
-
-
-
-
-
-
-
