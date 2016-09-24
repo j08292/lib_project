@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-
+ 
 @Component
 public class LogonCheckInterceptor extends HandlerInterceptorAdapter{
 	private Logger log = Logger.getLogger(this.getClass());

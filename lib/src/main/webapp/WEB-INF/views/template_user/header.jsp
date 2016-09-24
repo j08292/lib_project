@@ -30,13 +30,9 @@
 							</li>
 							<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do">강연</a></li>							
 							<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do">공지사항</a></li>							
-							<li><a href="#">Features</a></li>
-							<li class="mega-menu"><a href="#">Pages</a></li>
-							<li class="mega-menu"><a href="#">Portfolio</a></li>
 							<li><a href="#">EVENT</a>
 								<ul>
 									<li><a href="${pageContext.request.contextPath}/event/list.do">이벤트</a></li>
-									<li><a href="${pageContext.request.contextPath }/event/write.do">글쓰기</a></li>
 									<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do">독서마라톤</a></li>
 								</ul>
 							</li>
