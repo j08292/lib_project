@@ -5,6 +5,7 @@ create table member(
   mem_cell varchar2(15) not null,
   mem_email varchar2(50) not null,
   mem_address varchar2(100) not null,
+  SAMPLE3_POSTCODE number,
   mem_regdate date not null,
   mrt_status number(1) default(0) not null,
   mem_level number(1) default(0) not null
@@ -36,7 +37,6 @@ create table speech_reservation(
   speech_reserve_date date not null,
   constraint speech_reservation_member_fk1 foreign key(mem_id) references member(mem_id),
   constraint speech_reservation_speech_fk2 foreign key(speech_num) references speech(speech_num)
-  constraint speech_reservation_speech_fk2 foreign key(speech_num) references speech (speech_num)
 );
 create sequence speech_reservation_seq;
 
