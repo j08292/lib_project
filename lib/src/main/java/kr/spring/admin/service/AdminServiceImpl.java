@@ -32,4 +32,9 @@ public class AdminServiceImpl implements AdminService{
 		return adminMapper.getRentWaitingCount();
 	}
 
+	@Override
+	public int getQnaWaitingCount() {
+		return adminMapper.getQnaWaitingCount();
+	}
+
 }

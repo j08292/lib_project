@@ -10,6 +10,7 @@
   		<li>조회수 : ${qnaCommand.qna_hit}</li>
   		<li>등록날짜 : ${qnaCommand.qna_regdate}</li>
   	</ul>
+  	<input type="button" value="목록으로" onclick="location.href='list.do'">
   	<hr size="1" width="100%">
   	<p>
   	  	<br>

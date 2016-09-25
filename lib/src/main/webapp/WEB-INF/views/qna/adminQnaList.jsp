@@ -9,7 +9,9 @@
 		<div align="center">
 				<select name="keyfield" id="marathonSearch">
 					<option value="mem_id">ID</option>
-					<option value="marathon_status">완주혜택상태</option>
+					<option value="qna_title">제목</option>
+					<option value="qna_content">내용</option>
+					<option value="qna_replyCount">답변여부</option>
 				</select>
 				<span id="output">
 					<input type="text" size="16" name="keyword" id="textbox">

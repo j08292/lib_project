@@ -8,4 +8,5 @@ public interface AdminService {
 	public int getMarathonCount();
 	public int getWishlistCount();
 	public int getRentWaitingCount();
+	public int getQnaWaitingCount();
 }
