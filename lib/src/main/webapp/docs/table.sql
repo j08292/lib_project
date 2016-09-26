@@ -196,8 +196,8 @@ create sequence penalty_num;
 
 create table basket(
   basket_num number not null primary key,
-  basket_price varchar2,
-  basket_amount number not null default(1),
+  basket_price varchar2(20),
+  basket_amount number default(1) not null,
   mem_id varchar2(20) not null,
   list_num number not null,
   basket_rentDate varchar2(20),
