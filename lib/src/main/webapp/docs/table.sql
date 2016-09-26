@@ -10,7 +10,7 @@ create table member(
   mrt_status number(1) default(0) not null,
   mem_level number(1) default(0) not null
 );
---mem_penalty 삭제 대신 penalty 테이블 추가함
+--mem_penalty 삭제. 대신 penalty 테이블 추가함
 
 create table speech( 
   speech_num number not null primary key,
@@ -100,6 +100,7 @@ create table review(
   review_hit number(4) default 0 not null,
   review_like number(4) default 0 not null,
   review_dislike number(4) default 0 not null,
+  review_file varchar2(100),
   constraint review_member_fk1 foreign key(mem_id) references member(mem_id)
 );
 create sequence review_num;
@@ -199,5 +200,21 @@ create table basket(
   basket_amount number not null default(1),
   mem_id varchar2(20) not null,
   list_num number not null,
-  list_filename
+  basket_rentDate varchar2(20),
+  basket_returnDate varchar2(20),
+  constraint basket_fk1 foreign key (mem_id) references member (mem_id),
+  constraint basket_fk2 foreign key(list_num) references booklist(list_num)
 );
+create sequence basket_seq;
+
+create table delivery(
+  delivery_num number not null primary key,
+  mem_id varchar2(20) not null,
+  delivery_name varchar2(40),
+  delivery_email varchar2(40),
+  delivery_cell varchar2(40),
+  sample3_postcode varchar2(40),
+  delivery_address varchar2(300),
+  constraint delivery_fk1 foreign key (mem_id) references member (mem_id)
+);
+create sequence delivery_seq;

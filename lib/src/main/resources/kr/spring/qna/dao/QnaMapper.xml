@@ -137,7 +137,6 @@
 			<![CDATA[
 				rnum >= #{start} AND rnum <= #{end}	
 			]]>
-			<!-- 검색이 왜안될까 -->
 			<if test="keyword =='답변대기' and keyfield == 'qna_replyCount'">
 				AND (SELECT count(*) FROM qna_reply qr WHERE qr.qna_num=q.qna_num) = 0		
 			</if>
