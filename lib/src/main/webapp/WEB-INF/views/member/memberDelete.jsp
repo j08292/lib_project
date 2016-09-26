@@ -17,25 +17,12 @@
 <section id="page-title">
 
 	<div class="container clearfix">
-		<h1>My Account</h1>
+		<h1>회원탈퇴</h1>
 		<ol class="breadcrumb">
-			<li><a href="${pageContext.request.contextPath}/main/main.do"
-				style="font-size: 10pt;">Home</a></li>
-		<%-- 		<li><a
-					href="${pageContext.request.contextPath}/member/write.do"
-					style="font-size: 10pt;">Register</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/member/login.do"
-					style="font-size: 10pt;">Login</a></li> --%>
-				<li><a
-					href="${pageContext.request.contextPath}/member/update.do"
-					style="font-size: 10pt;">Modify</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/member/detail.do"
-					style="font-size: 10pt;">MemberData</a></li>
-				<li><a
-					href="${pageContext.request.contextPath}/member/delete.do"
-					style="font-size: 10pt;">Delete</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/update.do" style = "font-size: 10pt;">회원정보 수정</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/detail.do" style = "font-size: 10pt;">회원 상세정보</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/delete.do" style = "font-size: 10pt;">회원 탈퇴</a></li>
+					
 		</ol>
 	</div>
 

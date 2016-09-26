@@ -16,8 +16,11 @@ public interface BasketMapper {
 	public List<BasketCommand> list(String mem_id);
 
 	public int getRowCount(String mem_id);
+	
+	@Select("SELECT * FROM booklist b1, basket b2 WHERE b1.list_num = b2.list_num and b2.mem_id = #{mem_id} ORDER BY basket_num DESC")
+	public List<BasketCommand> select_book_basket(String mem_id);
 
-	@Insert("INSERT INTO basket(basket_num, mem_id, list_num, list_filename, list_title) VALUES(basket_seq.nextval, #{mem_id}, #{list_num}, #{list_filename}, #{list_title})")
+	@Insert("INSERT INTO basket(basket_num, mem_id, list_num) VALUES(basket_seq.nextval, #{mem_id}, #{list_num})")
 	public void insert(BasketCommand basket);
 	
 	@Update("UPDATE basket SET basket_rentDate=#{basket_rentDate}, basket_returnDate=#{basket_returnDate} WHERE mem_id = #{mem_id}")
@@ -32,7 +35,7 @@ public interface BasketMapper {
 	@Delete("DELETE FROM basket WHERE basket_num = #{basket_num}")
 	public void delete(Integer basket_num);
 
-	@Select("SELECT b1.basket_num, b1.basket_price, b1.basket_amount, b1.mem_id, b1.list_num, b2.list_filename FROM basket b1, booklist b2 WHERE b1.list_num = b2.list_num and b1.mem_id = #{mem_id}")
+	@Select("SELECT * FROM basket b1, booklist b2 WHERE b1.list_num = b2.list_num and b1.mem_id = #{mem_id}")
 	public BasketCommand selectJoin(String mem_id);
 	
 	

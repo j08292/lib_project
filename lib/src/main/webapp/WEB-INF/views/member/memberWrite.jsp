@@ -18,11 +18,10 @@
 <section id="page-title">
 
 	<div class="container clearfix">
-		<h1>My Account</h1>
+		<h1>회원가입</h1>
 		<ol class="breadcrumb">
-			<li><a href="${pageContext.request.contextPath}/main/main.do" style = "font-size: 10pt;">Home</a></li>
-			<li><a href = "${pageContext.request.contextPath}/member/write.do" style = "font-size: 10pt;">Register</a></li>
-			<li><a href = "${pageContext.request.contextPath}/member/login.do" style = "font-size: 10pt;">Login</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/write.do" style = "font-size: 10pt;">회원가입</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/login.do" style = "font-size: 10pt;">로그인</a></li>
 		</ol>
 	</div>
 

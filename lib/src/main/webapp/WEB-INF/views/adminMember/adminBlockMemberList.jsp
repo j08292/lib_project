@@ -41,7 +41,7 @@
 								</div>
 								<div id="loading" style="display:none;">
 									<img src="${pageContext.request.contextPath}/resources/event/images/ajax-loader.gif">
-								</div>		
+								</div>
 						</div>
 					</div>
 				</c:forEach>

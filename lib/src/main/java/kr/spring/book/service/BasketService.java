@@ -14,6 +14,8 @@ public interface BasketService {
 	public int getRowCount(String mem_id);
 	@Transactional(readOnly=true)
 	public BasketCommand selectBasket(String mem_id);
+	@Transactional(readOnly=true)
+	public List<BasketCommand> select_book_basket(String mem_id);
 	
 	public void insert(BasketCommand basket);
 	public void updateDate(BasketCommand basket);

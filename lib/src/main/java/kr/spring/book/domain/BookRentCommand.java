@@ -8,53 +8,9 @@ public class BookRentCommand {
 	private String mem_id;
 	private Date rent_regdate;
 	private int rent_status;
-	private String rent_rentDate;
-	private String rent_returnDate;
-	private String rent_listTitle;
-	private int list_order;
-	private String list_reserveId;
-	private Date rent_reserveDate;
-	private Date rent_reserveDateCancel;
-	
-	public Date getRent_reserveDate() {
-		return rent_reserveDate;
-	}
-
-	public void setRent_reserveDate(Date rent_reserveDate) {
-		this.rent_reserveDate = rent_reserveDate;
-	}
-
-	public Date getRent_reserveDateCancel() {
-		return rent_reserveDateCancel;
-	}
-
-	public void setRent_reserveDateCancel(Date rent_reserveDateCancel) {
-		this.rent_reserveDateCancel = rent_reserveDateCancel;
-	}
-
-	public String getList_reserveId() {
-		return list_reserveId;
-	}
-
-	public void setList_reserveId(String list_reserveId) {
-		this.list_reserveId = list_reserveId;
-	}
-
-	public int getList_order() {
-		return list_order;
-	}
-
-	public void setList_order(int list_order) {
-		this.list_order = list_order;
-	}
-
-	public String getRent_listTitle() {
-		return rent_listTitle;
-	}
-
-	public void setRent_listTitle(String rent_listTitle) {
-		this.rent_listTitle = rent_listTitle;
-	}
+	private String rent_returndate;
+	private String list_title;
+	private String list_filename;
 
 	public int getRent_num() {
 		return rent_num;
@@ -96,20 +52,28 @@ public class BookRentCommand {
 		this.rent_status = rent_status;
 	}
 
-	public String getRent_rentDate() {
-		return rent_rentDate;
+	public String getRent_returndate() {
+		return rent_returndate;
 	}
 
-	public void setRent_rentDate(String rent_rentDate) {
-		this.rent_rentDate = rent_rentDate;
+	public void setRent_returndate(String rent_returndate) {
+		this.rent_returndate = rent_returndate;
 	}
 
-	public String getRent_returnDate() {
-		return rent_returnDate;
+	public String getList_title() {
+		return list_title;
 	}
 
-	public void setRent_returnDate(String rent_returnDate) {
-		this.rent_returnDate = rent_returnDate;
+	public void setList_title(String list_title) {
+		this.list_title = list_title;
 	}
-	
+
+	public String getList_filename() {
+		return list_filename;
+	}
+
+	public void setList_filename(String list_filename) {
+		this.list_filename = list_filename;
+	}
+
 }

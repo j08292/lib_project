@@ -58,6 +58,7 @@ public class GradeListController {
 			map.put("rowcount", rowCount);
 			map.put("list", list);
 					
-			return map;
+			return map;			
+
 	}
 }

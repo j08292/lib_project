@@ -50,5 +50,10 @@ public class BasketServiceImpl implements BasketService {
 		basketMapper.updateDate(basket);
 	}
 
+	@Override
+	public List<BasketCommand> select_book_basket(String mem_id) {
+		return basketMapper.select_book_basket(mem_id);
+	}
+
 
 }

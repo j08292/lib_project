@@ -42,5 +42,6 @@ public class GradeWriteController {
 			map.put("result", "failure");
 		}
 		return map;
-	}	
+	}
+	
 }

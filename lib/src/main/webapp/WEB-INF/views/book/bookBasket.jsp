@@ -19,9 +19,6 @@
 	<div class="container clearfix">
 		<h1>책 바구니</h1>
 		<ol class="breadcrumb">
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Library</a></li>
-			<li class="active">Data</li>
 		</ol>
 	</div>
 
@@ -42,15 +39,14 @@
 								<table class="table table-hover provideList">
 									<thead>
 										<tr>
-											<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+											<th></th>
 											<th>도서명</th>
-											<th>개수</th>
-											<th>대여일</th>
-											<th>반납일</th>
+											<th>코드</th>
+											<th>글쓴이</th>
+											<th>출판사</th>
 											<th>비고</th>
 										</tr>
-										<tr>
+										<!-- <tr>
 											<td></td>
 											<td></td>
 											<td></td>
@@ -59,21 +55,21 @@
 											<td><input type="text" name="returnDate" id="returnDate"
 												size="10"></td>
 											<td></td>
-										</tr>
+										</tr> -->
 									</thead>
 									<tbody>
 										<c:forEach var="basket" items="${list }">
 											<tr>
-												<td><img src="${basket.list_filename }" width="75"
-													height="113"></td>
+												<td><a href = "${pageContext.request.contextPath}/book/detail.do?list_title=${basket.list_title}&list_filename=${basket.list_filename }&list_num=${basket.list_num }"><img src="${basket.list_filename }" width="75"
+													height="113"></a></td>
 												<td>${basket.list_title}</td>
-												<td>${basket.basket_amount }</td>
-												<td></td>
-												<td></td>
-												<td><input type="hidden" id="basket_num"
-													name="basket_num" value="${basket.basket_num }"> <a
-													id="delete-button" class="btn btn-primary"
-													href="${pageContext.request.contextPath}/book/delete.do?basket_num=${basket.basket_num }">삭제</a>
+												<td>${basket.list_code}</td>
+												<td>${basket.list_writer }</td>
+												<td>${basket.list_publish }</td>
+												<td><input type="hidden" id="basket_num" class = "basket_num"
+													name="basket_num" value="${basket.basket_num }">
+													<a id="delete-button" class="btn btn-primary delete-button" data-num= "${basket.basket_num }"
+													href="${pageContext.request.contextPath}/book/basket.do">삭제</a>
 												</td>
 											</tr>
 										</c:forEach>

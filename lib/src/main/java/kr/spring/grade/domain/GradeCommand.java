@@ -12,7 +12,6 @@ public class GradeCommand {
 	private String mem_id;
 	@NotEmpty
 	private int grade_star;
-	private int grade_like;
 	private String list_title;
 	
 	public int getGrade_num() {
@@ -50,12 +49,6 @@ public class GradeCommand {
 	}
 	public void setGrade_star(int grade_star) {
 		this.grade_star = grade_star;
-	}	
-	public int getGrade_like() {
-		return grade_like;
-	}
-	public void setGrade_like(int grade_like) {
-		this.grade_like = grade_like;
 	}
 	public String getList_title() {
 		return list_title;
@@ -68,6 +61,6 @@ public class GradeCommand {
 	public String toString() {
 		return "GradeCommand [grade_num=" + grade_num + ", grade_content=" + grade_content + ", grade_regdate="
 				+ grade_regdate + ", list_num=" + list_num + ", mem_id=" + mem_id + ", grade_star=" + grade_star
-				+ ", grade_like=" + grade_like + ", list_title=" + list_title + "]";
+				+ ", list_title=" + list_title + "]";
 	}	
 }

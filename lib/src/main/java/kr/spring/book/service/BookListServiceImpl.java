@@ -25,11 +25,7 @@ public class BookListServiceImpl implements BookListService {
 	public int getRowCount(Map<String, Object> map) {
 		return bookListMapper.getRowCount(map);
 	}
-
-	@Override
-	public BookListCommand selectBook(String list_title) {
-		return bookListMapper.selectBook(list_title);
-	}
+	
 
 	@Override
 	public void update(BookListCommand bookListCommand) {
@@ -46,6 +42,14 @@ public class BookListServiceImpl implements BookListService {
 		return bookListMapper.selectId(mem_id);
 	}
 
-	
+	@Override
+	public BookListCommand select_num(int list_num) {
+		return bookListMapper.select_num(list_num);
+	}
+
+	@Override
+	public BookListCommand select_book_rent(int list_num) {
+		return bookListMapper.select_book_rent(list_num);
+	}
 
 }

@@ -9,6 +9,15 @@ public class DeliveryCommand {
 	private String delivery_address;
 	private String delivery_receiveDate;
 	private String mem_id;
+	private String list_title;
+	
+	public String getList_title() {
+		return list_title;
+	}
+
+	public void setList_title(String list_title) {
+		this.list_title = list_title;
+	}
 
 	public int getDelivery_num() {
 		return delivery_num;

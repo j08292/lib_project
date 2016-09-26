@@ -1,6 +1,5 @@
 package kr.spring.member.controller;
 
-import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -40,7 +39,7 @@ public class MemberMyOrderDetailController {
 	public ModelAndView form(HttpSession session,
 			@RequestParam(value = "rent_num")Integer rent_num,
 			@RequestParam(value = "list_num")Integer list_num,
-			@RequestParam(value = "rent_listTitle")String rent_listTitle) {
+			@RequestParam(value = "list_title")String list_title) {
 
 		String mem_id = (String) session.getAttribute("userId");
 		
@@ -48,7 +47,7 @@ public class MemberMyOrderDetailController {
 		member = memberService.selectMember(mem_id);
 		String name = memberService.selectMember(mem_id).getMem_name();
 		BookListCommand book = new BookListCommand();
-		book = bookListService.selectBook(rent_listTitle);
+		book = bookListService.select_num(list_num);
 		
 		BookRentCommand rent = new BookRentCommand();
 		rent = bookRentService.selectRent(rent_num);

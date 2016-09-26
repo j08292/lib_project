@@ -14,19 +14,42 @@ public class BookListCommand {
 	private Date list_regdate;
 	private int list_grade;
 	private int list_status;
-	private int list_rent;
-	private String list_rentDate;
-	private String list_returnDate;
-	private int list_order;
 	private String mem_id;
-	private String list_reserveId;
+	private Date rent_regdate;
+	private Date rent_returndate;
+	private int rent_status;
+	private String list_contents;
 
-	public String getList_reserveId() {
-		return list_reserveId;
+	public String getList_contents() {
+		return list_contents;
 	}
 
-	public void setList_reserveId(String list_reserveId) {
-		this.list_reserveId = list_reserveId;
+	public void setList_contents(String list_contents) {
+		this.list_contents = list_contents;
+	}
+
+	public Date getRent_regdate() {
+		return rent_regdate;
+	}
+
+	public void setRent_regdate(Date rent_regdate) {
+		this.rent_regdate = rent_regdate;
+	}
+
+	public Date getRent_returndate() {
+		return rent_returndate;
+	}
+
+	public void setRent_returndate(Date rent_returndate) {
+		this.rent_returndate = rent_returndate;
+	}
+
+	public int getRent_status() {
+		return rent_status;
+	}
+
+	public void setRent_status(int rent_status) {
+		this.rent_status = rent_status;
 	}
 
 	public String getMem_id() {
@@ -43,7 +66,7 @@ public class BookListCommand {
 
 	public void setList_num(int list_num) {
 		this.list_num = list_num;
-	}
+	}	
 
 	public String getList_code() {
 		return list_code;
@@ -117,47 +140,13 @@ public class BookListCommand {
 		this.list_status = list_status;
 	}
 
-	public int getList_rent() {
-		return list_rent;
-	}
-
-	public void setList_rent(int list_rent) {
-		this.list_rent = list_rent;
-	}
-
-	public String getList_rentDate() {
-		return list_rentDate;
-	}
-
-	public void setList_rentDate(String list_rentDate) {
-		this.list_rentDate = list_rentDate;
-	}
-
-	public String getList_returnDate() {
-		return list_returnDate;
-	}
-
-	public void setList_returnDate(String list_returnDate) {
-		this.list_returnDate = list_returnDate;
-	}
-
-	public int getList_order() {
-		return list_order;
-	}
-
-	public void setList_order(int list_order) {
-		this.list_order = list_order;
-	}
-
 	@Override
 	public String toString() {
 		return "BookListCommand [list_num=" + list_num + ", list_code=" + list_code + ", list_title=" + list_title
 				+ ", list_writer=" + list_writer + ", list_publish=" + list_publish + ", list_page=" + list_page
 				+ ", list_filename=" + list_filename + ", list_regdate=" + list_regdate + ", list_grade=" + list_grade
-				+ ", list_status=" + list_status + ", list_rent=" + list_rent + ", list_rentDate=" + list_rentDate
-				+ ", list_returnDate=" + list_returnDate + ", list_order=" + list_order + ", mem_id=" + mem_id
-				+ ", list_reserveId=" + list_reserveId + "]";
+				+ ", list_status=" + list_status + ", mem_id=" + mem_id + ", rent_regdate=" + rent_regdate
+				+ ", rent_returndate=" + rent_returndate + ", rent_status=" + rent_status + "]";
 	}
-
 
 }

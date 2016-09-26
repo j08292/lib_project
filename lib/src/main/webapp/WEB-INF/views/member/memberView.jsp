@@ -17,12 +17,11 @@
 <section id="page-title">
 
 <div class="container clearfix">
-		<h1>My Account</h1>
+		<h1>회원 상세정보</h1>
 		<ol class="breadcrumb">
-			<li><a href="${pageContext.request.contextPath}/main/main.do" style = "font-size: 10pt;">Home</a></li>
-			<li><a href = "${pageContext.request.contextPath}/member/update.do" style = "font-size: 10pt;">Modify</a></li>
-			<li><a href = "${pageContext.request.contextPath}/member/detail.do" style = "font-size: 10pt;">MemberData</a></li>
-			<li><a href = "${pageContext.request.contextPath}/member/delete.do" style = "font-size: 10pt;">Delete</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/update.do" style = "font-size: 10pt;">회원정보 수정</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/detail.do" style = "font-size: 10pt;">회원 상세정보</a></li>
+			<li><a href = "${pageContext.request.contextPath}/member/delete.do" style = "font-size: 10pt;">회원 탈퇴</a></li>
 		</ol>
 	</div>
 
@@ -54,35 +53,40 @@
 									<div class="col_full">
 										<label>아이디 : </label>
 										<form:input path = "mem_id" value = "${member.mem_id }" class="form-control"
-											disabled="disabled" />
+										disabled="true" />
 									</div>
 										 
 									<div class="col_full">
 										<label>비밀번호:</label>
-										<form:password path = "mem_passwd" value = "${member.mem_passwd }" class="form-control" />
+										<form:password path = "mem_passwd" value = "${member.mem_passwd }" class="form-control"
+										disabled="true" />
 									</div>
 										
 									<div class="col_full">
 										<label>이름 : </label>
-										<form:input path = "mem_name" value = "${member.mem_name }" class="form-control" />
+										<form:input path = "mem_name" value = "${member.mem_name }" class="form-control" 
+										disabled="true"/>
 									</div>
 									
 									<div class="col_full">
 										<label>전화번호 : </label>
-										<form:input path = "mem_cell" value = "${member.mem_cell }" class="form-control" />
+										<form:input path = "mem_cell" value = "${member.mem_cell }" class="form-control"
+										disabled="true" />
 									</div>
 									
 
 									<div class="col_full">
 										<label>이메일 : </label>
-										<form:input path = "mem_email" value = "${member.mem_email }" class="form-control" />
+										<form:input path = "mem_email" value = "${member.mem_email }" class="form-control" 
+										disabled="true"/>
 									</div>
 									
 								
 									<!-- daum 우편번호 시작 -->
 									<div class="col_full">
 										<label>우편번호:</label><br> 
-											<form:input path="sample3_postcode" value = "${member.sample3_postcode }" class="form-control"/>	-
+											<form:input path="sample3_postcode" value = "${member.sample3_postcode }" class="form-control"
+											disabled="true"/>	-
 											<br>
 										<div id="wrap"
 											style="display: none; border: 1px solid; width: 500px; height: 300px; margin: 5px 0; position: relative">
@@ -93,7 +97,7 @@
 												onclick="foldDaumPostcode()" alt="접기 버튼">
 										</div>
 										<form:input path="mem_address" value = "${member.mem_address }" class="form-control"
-											placeholder="주소"/>
+											placeholder="주소" disabled="true"/>
 										<%-- <form:errors path="mem_address" class="error-color" /> --%>
 									</div>
 									

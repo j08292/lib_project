@@ -27,7 +27,6 @@ public class MemberCommand {
 	private Date mem_regdate;
 	private int mrt_status;
 	private int mem_level;
-	private int mem_penalty;
 
 	// 비밀번호 일치 여부 체크
 	public boolean isCheckedPasswd(String userPasswd) {
@@ -118,19 +117,11 @@ public class MemberCommand {
 		this.mem_level = mem_level;
 	}
 
-	public int getMem_penalty() {
-		return mem_penalty;
-	}
-
-	public void setMem_penalty(int mem_penalty) {
-		this.mem_penalty = mem_penalty;
-	}
-
 	@Override
 	public String toString() {
 		return "MemberCommand [mem_id=" + mem_id + ", mem_name=" + mem_name + ", mem_passwd=" + mem_passwd
 				+ ", mem_cell=" + mem_cell + ", mem_email=" + mem_email + ", sample3_postcode=" + sample3_postcode
 				+ ", mem_address=" + mem_address + ", mem_regdate=" + mem_regdate + ", mrt_status=" + mrt_status
-				+ ", mem_level=" + mem_level + ", mem_penalty=" + mem_penalty + "]";
-	}
+				+ ", mem_level=" + mem_level + "]";
+	}	
 }

@@ -24,6 +24,7 @@ public interface MemberMapper {
 	@Delete("DELETE FROM member WHERE mem_id = #{mem_id}") 	
 	public void delete(String id);
 	
+	//관리자 회원관리
 	@Select("SELECT count(*) FROM penalty WHERE penalty_blockcanceldate > sysdate AND mem_id=#{mem_id}")
 	public int checkBlock(String mem_id);//아직 차단회원일경우 1, 아니면 0
 	@Select("SELECT mem_id,blockcanceldate,penalty_reason FROM(SELECT a.*,rownum FROM (SELECT mem_id,max(penalty_blockcanceldate)blockcanceldate,penalty_reason FROM penalty GROUP BY mem_id,penalty_reason HAVING mem_id=#{mem_id} ORDER BY max(penalty_blockcanceldate)desc)a) WHERE rownum=1")

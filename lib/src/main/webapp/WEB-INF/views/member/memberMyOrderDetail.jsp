@@ -12,9 +12,6 @@
 	<div class="container clearfix">
 		<h1>주문 내역</h1>
 		<ol class="breadcrumb">
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Library</a></li>
-			<li class="active">Data</li>
 		</ol>
 	</div>
 
@@ -45,25 +42,19 @@
 									<th>주문처리상태</th>
 									<c:choose>
 										<c:when test="${rent.rent_status == 0 }">
-											<td>대여대기</td>
-										</c:when>
-										<c:when test="${rent.rent_status == 1 }">
 											<td>대여중</td>
 										</c:when>
-										<c:when test="${rent.rent_status == 2 }">
+										<c:when test="${rent.rent_status == 1 }">
 											<td>반납</td>
 										</c:when>
-										<c:when test="${rent.rent_status == 3 }">
+										<c:when test="${rent.rent_status == 2 }">
 											<td>예약</td>
 										</c:when>
+										<c:when test="${rent.rent_status == 3 }">
+											<td>대여대기</td>
+										</c:when>
 										<c:when test="${rent.rent_status == 4 }">
-											<td>무인대여</td>
-										</c:when>
-										<c:when test="${rent.rent_status == 5 }">
-											<td>무인반납</td>
-										</c:when>
-										<c:when test="${rent.rent_status == 6 }">
-											<td>연체</td>
+											<td>예약취소</td>
 										</c:when>
 									</c:choose>
 								</tr>
@@ -112,7 +103,7 @@
 							<c:if test="${book != null }">
 								<tr>
 									<th>배송구분</th>
-									<th>
+									<th>도서정보</th>
 									<th>상품명</th>
 									<th>수량</th>
 									<th>가격</th>
@@ -122,7 +113,7 @@
 								</tr>
 								<tr>
 									<th>기본배송</th>
-									<td><img src="${book.list_filename }" width="60" height="100"></td>
+									<td><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }"><img src="${book.list_filename }" width="60" height="100"></a></td>
 									<td>${book.list_title }</td>
 									<td>1</td>
 									<td>3,000원</td>
@@ -157,7 +148,7 @@
 								<th>비고</th>
 							</tr>
 							<tr>
-								<td></td>
+								<td>무통장입금</td>
 								<td></td>
 								<td></td>
 							</tr>

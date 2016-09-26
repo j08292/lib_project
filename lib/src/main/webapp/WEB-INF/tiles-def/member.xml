@@ -12,7 +12,8 @@
            <add-attribute value="../resources/user/js/jquery.js"/>
            <add-attribute value="../resources/user/js/plugins.js"/>
            <add-attribute value="../resources/user/js/confirmId.js"/>
-           <add-attribute value="../resources/user/js/reserveDateCancel.js"/>
+           <add-attribute value="../resources/user/js/searchBox.js"/>
+           <add-attribute value="../resources/user/js/reserveCancel.js"/>
         </put-list-attribute>
     </definition>
     <definition name="memberLogin" extends="memberWrite">

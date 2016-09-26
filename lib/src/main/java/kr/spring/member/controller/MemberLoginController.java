@@ -58,7 +58,7 @@ public class MemberLoginController {
 				check = member.isCheckedPasswd(memberCommand.getMem_passwd());
 			}
 			if(check){
-				if(memberService.checkBlock(memberCommand.getMem_id()) > 0){//차단회원 로그인 시도 -> 로그인 막음
+				if(memberService.checkBlock(memberCommand.getMem_id()) > 0){//차단회원 로그인 시도 -> 로그인 차단
 					PenaltyCommand penalty = memberService.selectBlockMember(memberCommand.getMem_id());
 					if(log.isDebugEnabled()){
 						log.debug("penalty : " + penalty);

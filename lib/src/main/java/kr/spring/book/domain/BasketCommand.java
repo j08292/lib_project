@@ -8,8 +8,35 @@ public class BasketCommand {
 	private int list_num;
 	private String list_filename;
 	private String list_title;
+	private String list_code;
+	private String list_writer;
+	private String list_publish;
 	private String basket_rentDate;
 	private String basket_returnDate;
+
+	public String getList_code() {
+		return list_code;
+	}
+
+	public void setList_code(String list_code) {
+		this.list_code = list_code;
+	}
+
+	public String getList_writer() {
+		return list_writer;
+	}
+
+	public void setList_writer(String list_writer) {
+		this.list_writer = list_writer;
+	}
+
+	public String getList_publish() {
+		return list_publish;
+	}
+
+	public void setList_publish(String list_publish) {
+		this.list_publish = list_publish;
+	}
 
 	public String getBasket_rentDate() {
 		return basket_rentDate;

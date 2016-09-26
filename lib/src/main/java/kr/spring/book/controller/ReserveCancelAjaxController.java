@@ -1,6 +1,7 @@
-package kr.spring.member.controller;
+package kr.spring.book.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -12,13 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import kr.spring.book.domain.BookListCommand;
 import kr.spring.book.domain.BookRentCommand;
 import kr.spring.book.service.BookListService;
 import kr.spring.book.service.BookRentService;
 
 @Controller
-public class ReserveDateCancelAjaxController {
+public class ReserveCancelAjaxController {
 	private Logger log = Logger.getLogger(this.getClass());
 
 	@Resource
@@ -29,37 +29,44 @@ public class ReserveDateCancelAjaxController {
 
 	@RequestMapping("/member/reserveCancel.do")
 	@ResponseBody
-	public Map<String, String> process(HttpSession session, @RequestParam("rent_num") Integer rent_num,
-			 @RequestParam("list_num") Integer list_num) {
+	public Map<String, String> process(HttpSession session,
+			@RequestParam(value = "list_num") Integer list_num,
+			@RequestParam(value = "rent_num") Integer rent_num) {
 
 		String userId = (String) session.getAttribute("userId");
 
 		Map<String, String> map = new HashMap<String, String>();
 
-		BookListCommand bookListCommand = new BookListCommand(); 
+		List<BookRentCommand> rentCommand = bookRentService.select_book_rent(userId);
+		int status = bookRentService.recentStatus(list_num);
 		BookRentCommand bookRentCommand = new BookRentCommand();
 		
 		if (log.isDebugEnabled()) {
 			log.debug("userId : " + userId);
-			log.debug("rent_num : " + rent_num);
 			log.debug("list_num : " + list_num);
+			log.debug("rent_num : " + rent_num);
+			log.debug("rentCommand : " + rentCommand);
+			log.debug("size : " + rentCommand.size());
+			log.debug("status : " + status);
 		}
-		int list_order = 1;
-		String list_reserveId = "";
-		bookListCommand.setList_order(list_order);
-		bookListCommand.setList_reserveId(list_reserveId);
-		
-		int rent_order = 3;
-		String rent_reserveId = "";
-		bookRentCommand.setList_order(rent_order);
-		bookRentCommand.setList_reserveId(rent_reserveId);
-		bookRentCommand.setList_num(list_num);
 		
 		try {
 			if (userId != null) {
-				map.put("result", "success");
-				bookRentService.updateReserveDateCancel(rent_num);
-				bookListService.updateOrder(bookListCommand);
+				if (rentCommand.size() != 0 ) {
+					for (int i = 0; i < rentCommand.size(); i++) {
+						if(rentCommand.get(i).getRent_num() == rent_num && status == 2){
+							
+							bookRentCommand.setRent_status(4);
+							bookRentCommand.setRent_num(rent_num);
+							bookRentService.updateStatus(bookRentCommand);
+							map.put("result", "success");
+							break;
+						}else{
+							map.put("result", "fail");
+							break;
+						}
+					}
+				}
 			} else if (userId == null) {
 				map.put("result", "noUserId");
 			}

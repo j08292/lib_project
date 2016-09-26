@@ -16,7 +16,6 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.book.domain.BasketCommand;
-import kr.spring.book.domain.BookListCommand;
 import kr.spring.book.domain.BookRentCommand;
 import kr.spring.book.domain.DeliveryCommand;
 import kr.spring.book.service.BasketService;
@@ -55,12 +54,13 @@ public class BookRentController {
 	public ModelAndView form(HttpSession session){
 		String userId = (String) session.getAttribute("userId");
 
+		List<BasketCommand> list = null;
+		list = basketService.select_book_basket(userId);
+		
 		if(log.isDebugEnabled()){
 			log.debug("userId : " + userId);
+			log.debug("list : " + list);
 		}
-		
-		List<BasketCommand> list = null;
-		list = basketService.list(userId);
 		
 		MemberCommand member = memberService.selectMember(userId);
 		
@@ -79,40 +79,17 @@ public class BookRentController {
 		String userId = (String) session.getAttribute("userId");
 		
 		List<BasketCommand> list = null;
-		list = basketService.list(userId);
+		list = basketService.select_book_basket(userId);
 		
-		String rentDate = null;
-		String returnDate = null;
-		String list_title = null;
-		int basket_num;
-		int list_num;
-		int rent=1;
 		
-		BookListCommand bookListCommand = new BookListCommand();
+		
 		BookRentCommand bookRentCommand = new BookRentCommand();
-		
 		for(int i=0; i<list.size(); i++){
-			rentDate = list.get(i).getBasket_rentDate();
-			returnDate = list.get(i).getBasket_returnDate();
-			list_num = list.get(i).getList_num();
-			list_title = list.get(i).getList_title();
-			basket_num = list.get(i).getBasket_num();
-  
-			bookListCommand.setList_rentDate(rentDate);
-			bookListCommand.setList_returnDate(returnDate);
-			bookListCommand.setList_rent(rent);
-			bookListCommand.setList_num(list_num);
-			bookListCommand.setMem_id(userId);
-			
-			bookRentCommand.setList_num(list_num);
+			bookRentCommand.setList_num(list.get(i).getList_num());
 			bookRentCommand.setMem_id(userId);
-			bookRentCommand.setRent_rentDate(rentDate);
-			bookRentCommand.setRent_returnDate(returnDate);
-			bookRentCommand.setRent_listTitle(list_title);
 			
-			bookListService.update(bookListCommand);
 			bookRentService.insert(bookRentCommand);
-			basketService.delete(basket_num);
+			basketService.delete(list.get(i).getBasket_num());
 		}
 		
 		if(log.isDebugEnabled()){  
@@ -120,9 +97,8 @@ public class BookRentController {
 			log.debug("userId : " + userId);
 			log.debug("deliveryCommand : " + deliveryCommand );
 			log.debug("list : " + list);
-			log.debug("rentDate : " + rentDate);
-			log.debug("returnDate : " + returnDate);
 		}
+		
 		
 		deliveryCommand.setMem_id(userId);
 		deliveryService.insert(deliveryCommand);

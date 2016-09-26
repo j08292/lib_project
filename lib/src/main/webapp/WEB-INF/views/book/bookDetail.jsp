@@ -24,32 +24,30 @@
 <section id="content">
 
 	<div class="content-wrap">
-
 		<div class="container clearfix">
 
 			<div class="panel-group">
 				<div class="panel panel-default">
-					<div class="panel-heading" style="text-align: center">도서 상세정보</div>
+					<div class="panel-heading" style="text-align: left;">도서 상세정보</div>
 
 					<div class="panel-body">
-						<div>
-							<h3>${book.list_title }</h3>
+							<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${book.list_title }</h3>
 							<table style="font-size: 10pt;">
 								<tr>
-									<td style="width: 157px; vertical-align: top;"><img
-										src="${book.list_filename}" width="200" alt="도서 이미지" /></td>
-									<td style="vertical-align: top;">
+									<td><img
+										src="${book.list_filename }" width="200" alt="도서 이미지" /></td>
+									<td style = "text-align:center;">
 										<dl>
-											<dt>표제/책임표시.</dt>
-											<dd>${book.list_title}</dd>
-											<dt>작가</dt>
-											<dd>${book.list_writer}</dd>
-											<dt>발행사항.</dt>
-											<dd>${book.list_publish}</dd>
-											<dt>표준번호/부호.</dt>
-											<dd>${book.list_code}</dd>
-											<dt>분류기호.</dt>
-											<dd>한국십진분류법 -> 005.135</dd>
+											<dt style = "text-align:left;">표제/책임표시.</dt>
+											<dd style = "text-align:left;">${book.list_title }</dd>
+											<dt style = "text-align:left;">작가</dt>
+											<dd style = "text-align:left;">${book.list_writer }</dd>
+											<dt style = "text-align:left;">발행사항.</dt>
+											<dd style = "text-align:left;">${book.list_publish }</dd>
+											<dt style = "text-align:left;">표준번호/부호.</dt>
+											<dd style = "text-align:left;">${book.list_code }</dd>
+											<dt style = "text-align:left;">분류기호.</dt>
+											<dd style = "text-align:left;">한국십진분류법 -> 005.135</dd>
 										</dl>
 									</td>
 								</tr>
@@ -64,36 +62,61 @@
 				</div>
 
 				<div class="panel panel-default">
-					<div class="panel-heading" align="center">소장정보</div>
+					<div class="panel-heading" style="text-align: left;">소장정보</div>
 					<div class="panel-body">
-						<form action="detail.do" id="detail-form">
+						<form action="basket.do" id="detail-form" method = "post">
 							<table class="table table-hover provideList">
 								<tr>
-									<th>상태</th>
-									<th>도서정보</th>
-									<th>자료실</th>
-									<th>예약</th>
-								</tr>
+									<th style = "width:20%; text-align:center;">상태</th>
+									<th style = "width:20%; text-align:center;">도서정보</th>
+									<th style = "width:20%; text-align:center;">자료실</th>
+									<th style = "width:20%; text-align:center;">반납예정</th>
+									<th style = "width:20%; text-align:center;">예약</th>
+								</tr>	
 								<tr>
-									<td><c:if test="${book.list_rent == 0 }">
-											비치중, 대여가능
-										</c:if> <c:if test="${book.list_rent == 1 }">
-											대여중
-										</c:if></td>
-									<td>${book.list_title}</td>
-									<td>북수원도서관<br>서수원도서관
+									<td style = "width:20%; text-align:center;">
+										<c:if test="${book.list_status == 0 }">
+											대여 가능
+										</c:if> <c:if test="${book.list_status == 1 }">
+											대여 불가
+										</c:if>
 									</td>
-									<td>
-										<!-- 대출중일때 --> <c:if test="${book.list_rent == 1 }">
-											<input type="button" value="예약" id="reserveButton">
-											<br>
-										</c:if> <!-- 비치중일때 --> <c:if test="${book.list_rent == 0 }">
-											<input type="hidden" id="list_num" name="list_num"
-												value="${book.list_num }">
-											<a id="checkbasket-button"
-												href="${pageContext.request.contextPath}/book/basket.do?list_title=${book.list_title }&list_num=${book.list_num }&list_filename=${book.list_filename }"
-												class="btn btn-primary">대여</a>
-											<input class="btn" type="button" value="무인">
+									<td style = "width:20%; text-align:center;">${book.list_title}</td>
+									<td style = "width:20%; text-align:center;">북수원도서관<br>서수원도서관
+									</td>
+									<td style = "width:20%; text-align:center;"></td>
+										<!-- 대출중일때 -->
+									<td style = "width:20%; text-align:center;">
+										<c:if test="${book.list_status == 1 }">
+											대여불가										
+										</c:if>
+										<c:if test="${book.list_status == 0 }">
+										<c:if test="${book.rent_status == 3 || book.rent_status == 0}">
+										<input type = "hidden" id = "list_title" name = "list_title" value = "${book.list_title }">
+										<input type = "hidden" id = "list_num" name = "list_num" value = "${book.list_num }">
+											<input type="button" value="예약" id="reserve-button" class = "btn btn-primary"><br>
+										</c:if>
+											<c:if test="${book.rent_status != 2 && book.rent_status == 0 || book.rent_status == 3 }">
+											<span>예약 가능</span>
+											</c:if>
+											<c:if test="${book.rent_status == 2 }">
+											<span>허용인원 초과</span>
+											</c:if>
+										<!-- 비치중일때 -->
+										<c:if test="${book.rent_status == 7 || book.rent_status == 1 || book.rent_status == 4 }">
+											<input type = "hidden" id = "list_num" name = "list_num" value = "${book.list_num }">
+											<input type = "hidden" id = "list_title" name = "list_title" value = "${book.list_title }"> 
+											<input type = "hidden" id = "list_filename" name = "list_filename" value = "${book.list_filename }">
+
+											<a id="checkbasket-button" onclick="formSubmit()" class="btn btn-primary"
+											href="${pageContext.request.contextPath}/book/basket.do">대여</a>
+											<input class="btn btn-primary" type="button" value="무인">
+										<script type="text/javascript">
+												function formSubmit() {
+													document.getElementById("detail-form").submit();
+												}
+										</script>
+										</c:if>
 										</c:if>
 									</td>
 								</tr>
@@ -102,7 +125,15 @@
 					</div>
 				</div>
 
+				<div class="panel panel-default">
+					<div class="panel-heading" style="text-align: left;">목차</div>
 
+					<div class="panel-body">
+						<div>
+							${book.list_contents }
+						</div>
+					</div>
+				</div>
 				<!--별점 및 한줄평 -->
 				<div class="panel panel-default">
 					<div class="panel-heading" align="center">별점 및 한줄평</div>
@@ -173,22 +204,13 @@
 						</div>
 					</div>
 				</div>
-
-
-
-
 			</div>
-
 		</div>
 	</div>
 
 </section>
 <!-- #content end -->
 
-
-
 <!-- Go To Top
 	============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>
-
-

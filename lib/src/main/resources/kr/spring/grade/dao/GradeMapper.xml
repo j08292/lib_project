@@ -8,7 +8,6 @@
 			grade_num,
 			mem_id,
 			grade_content,
-			grade_like,
 			grade_star,
 			to_char(grade_regdate,'YYYY-MM-DD HH24:MI:SS') grade_regdate,
 			list_num
@@ -47,7 +46,7 @@
 					 		  g.mem_id,
 					 		  g.grade_content,
 					 		  g.grade_star,
-					 		  to_char(g.grade_regdate,'YYYY-MM-DD HH24:MI:SS')grade_regdate
+					 		  to_char(g.grade_regdate,'YYYY-MM-DD')grade_regdate
 		  				  FROM grade g, booklist l 
 	  				WHERE 
 	  					g.list_num = l.list_num
@@ -56,16 +55,12 @@
 	            	<if test="keyword !='' and keyfield == 'mem_id'">
 	            		mem_id like '%' || #{keyword} || '%'
 	            	</if>
-	            	<if test="keyword !='' and keyfield == 'list_title'">
-		           		list_title like '%' || #{keyword} || '%'
-		           	</if>
 	            	<if test="keyword !='' and keyfield == 'grade_content'">
 		           		grade_content like '%' || #{keyword} || '%'
 		           	</if>
 	            	<if test="keyword !='' and keyfield == 'all'">
-	            		mem_id like '%' || #{keyword} || '%' or
-	            		list_title like '%' || #{keyword} || '%' or
-	            		grade_content like '%' || #{keyword} || '%'
+	            		grade_content like '%' || #{keyword} || '%' or
+	            		mem_id like '%' || #{keyword} || '%'
 	            	</if>
 	            </where>
 				ORDER BY grade_num DESC)a)
@@ -84,26 +79,22 @@
 		 		  g.mem_id,
 		 		  g.grade_content,
 		 		  g.grade_star,
-		 		  to_char(g.grade_regdate,'YYYY-MM-DD HH24:MI:SS')grade_regdate
+		 		  to_char(g.grade_regdate,'YYYY-MM-DD')grade_regdate
 			   FROM grade g, booklist l 
 			WHERE 
 				g.list_num = l.list_num 
   			)
-		<where>		            	
-          	<if test="keyword !='' and keyfield == 'mem_id'">
-          		mem_id like '%' || #{keyword} || '%'
-          	</if>
-          	<if test="keyword !='' and keyfield == 'list_title'">
-          		list_title like '%' || #{keyword} || '%'
-          	</if>
-          	<if test="keyword !='' and keyfield == 'grade_content'">
-          		grade_content like '%' || #{keyword} || '%'
-          	</if>
-          	<if test="keyword !='' and keyfield == 'all'">
-          		mem_id like '%' || #{keyword} || '%' or
-          		list_title like '%' || #{keyword} || '%' or
-          		grade_content like '%' || #{keyword} || '%'
-          	</if>
+		<where>           	
+           	<if test="keyword !='' and keyfield == 'mem_id'">
+           		mem_id like '%' || #{keyword} || '%'
+           	</if>
+           	<if test="keyword !='' and keyfield == 'grade_content'">
+           		grade_content like '%' || #{keyword} || '%'
+           	</if>		            	
+           	<if test="keyword !='' and keyfield == 'all'">
+           		grade_content like '%' || #{keyword} || '%' or
+           		mem_id like '%' || #{keyword} || '%'
+           	</if>
         </where>
 	</select>
 	

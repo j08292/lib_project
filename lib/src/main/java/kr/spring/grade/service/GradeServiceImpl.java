@@ -17,33 +17,23 @@ public class GradeServiceImpl implements GradeService{
 	private GradeMapper gradeMapper;
 	
 	@Override
-	public List<GradeCommand> list(Map<String, Object> map) {
-		
+	public List<GradeCommand> list(Map<String, Object> map) {		
 		return gradeMapper.list(map);
 	}
 
 	@Override
-	public int getRowCountGrade(Map<String, Object> map) {
-		
+	public int getRowCountGrade(Map<String, Object> map) {		
 		return gradeMapper.getRowCountGrade(map);
 	}
 
 	@Override
-	public void updateGradeLike(Integer grade_num) {
-		gradeMapper.updateGradeLike(grade_num);
-		
-	}
-
-	@Override
-	public void insertGrade(GradeCommand grade) {
-		gradeMapper.insertGrade(grade);
-		
+	public void insertGrade(GradeCommand garde) {
+		gradeMapper.insertGrade(garde);		
 	}
 
 	@Override
 	public void deleteGrade(Integer grade_num) {
-		gradeMapper.deleteGrade(grade_num);
-		
+		gradeMapper.deleteGrade(grade_num);		
 	}
 	
 	@Override
@@ -59,5 +49,10 @@ public class GradeServiceImpl implements GradeService{
 	@Override
 	public void deleteByGradeNum(List<Integer> list) {
 		gradeMapper.deleteByGradeNum(list);
-	}	
+	}
+
+	@Override
+	public GradeCommand selectAdminGrade(Integer grade_num) {
+		return gradeMapper.selectAdminGrade(grade_num);
+	}
 }
