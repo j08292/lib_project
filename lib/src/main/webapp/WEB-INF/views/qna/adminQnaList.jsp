@@ -7,7 +7,7 @@
 	</h1>
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
-				<select name="keyfield" id="marathonSearch">
+				<select name="keyfield" id="qnaSearch">
 					<option value="mem_id">ID</option>
 					<option value="qna_title">제목</option>
 					<option value="qna_content">내용</option>
@@ -25,6 +25,9 @@
 	
 	
 	<c:if test="${count > 0}">
+	<div align="right">
+		<input type="button" value="삭제"  onclick="ajaxQnaDelete();" class="btn btn-xs btn-danger">
+	</div>
 	<div class="table-responsive">
 		<table class="table table-hover">
 			<thead> 
@@ -35,14 +38,14 @@
 					<th style="text-align:center;">작성일</th>
 					<th style="text-align:center;">답변여부</th>
 					<th style="text-align:center;">조회수</th>
-					<th style="text-align:center;">삭제</th>
+					<th style="text-align:center;">전체 선택/해제<input type="checkbox" id="allCheck" name="qna_num"></th>
 				</tr>
 			</thead>
 			<c:forEach var="article" items="${list}">
 			<tbody style="text-align:center;">
 				<tr>
 					<td>${article.qna_num}</td>
-					<td><a href="detail.do?qna_num=${article.qna_num}">${article.qna_title}</a></td>
+					<td><a href="detail.do?qna_num=${article.qna_num}" class="detail_btn">${article.qna_title}</a></td>
 					<td>${article.mem_id}</td>
 					<td>${article.qna_regdate}</td>
 					<td>
@@ -54,7 +57,9 @@
 					</c:if>
 					</td>
 					<td>${article.qna_hit}</td>
-					<td><input type="button" value="삭제"></td>
+					<td>
+						<input type="checkbox" value="${article.qna_num}" name="qna_num">
+					</td>
 				</tr>
 			</tbody>
 			</c:forEach>

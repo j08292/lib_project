@@ -73,4 +73,7 @@ public interface QnaMapper {
 	
 	//관리자=========================================================
 	public List<QnaCommand> adminList(Map<String, Object> map);
+	public void deleteByQnaNum(List<Integer> list);
+	//해당 글번호에 작성된 모든 댓글 삭제
+	public void deleteReplyByQnaNum(List<Integer> list);
 }

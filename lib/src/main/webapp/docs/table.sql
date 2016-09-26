@@ -119,7 +119,7 @@ create table grade(
   grade_num number not null primary key,
   mem_id varchar2(20) not null,
   list_num number(10) not null,
-  grade_star number(1) not null,
+  grade_star number(2) not null,
   grade_regdate date not null,
   grade_content varchar2(600) not null,
   constraint grade_member_fk1 foreign key(mem_id) references member(mem_id),

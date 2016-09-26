@@ -3,14 +3,16 @@
 <%@ taglib prefix = "c"	uri = "http://java.sun.com/jsp/jstl/core" %>
 <div>
 
-<h2 class="align-center">${qnaCommand.qna_title}</h2>
-	<ul>
+	<div align="center"><h1 class="align-center">${qnaCommand.qna_title}</h1></div>
+	<ul style="list-style:none;">
         <li>번호 : ${qnaCommand.qna_num}</li>
   		<li>ID : ${qnaCommand.mem_id}</li>
   		<li>조회수 : ${qnaCommand.qna_hit}</li>
   		<li>등록날짜 : ${qnaCommand.qna_regdate}</li>
   	</ul>
-  	<input type="button" value="목록으로" onclick="location.href='list.do'">
+  	<input type="button" value="목록으로" onclick="location.href='list.do'" class="btn btn-sm btn-info">
+  	<input type="button" value="삭제"
+  			onclick="javascript:delete_event(${qnaCommand.qna_num});" class="btn btn-sm btn-danger">
   	<hr size="1" width="100%">
   	<p>
   	  	<br>
@@ -19,16 +21,11 @@
   	</p>
   	<hr size="1" width="100%">
   	<p class="align-right">
-  		<c:if test="${!empty userId && userId == qnaCommand.mem_id}">
-  		<input type="button" value="수정"
-  			onclick="location.href='qnaUpdate.do?qna_num=${qnaCommand.qna_num}'">
-  		<input type="button" value="삭제"
-  			onclick="location.href='qnaDelete.do?qna_num=${qnaCommand.qna_num}'">
-  		</c:if>
+  		
   	</p>
   	
-  	<!-- 댓글 -->
-  	<span class="reply title">댓글 달기</span>
+  	<!-- 답변 -->
+  	<span class="reply title">답변 달기</span>
   	<form id="qre_form">
   		<input type="hidden" name="qna_num"  value="${qnaCommand.qna_num}" id="qna_num">
 		<input type="hidden" name="mem_id" value="${userId}" id="userId"> 
@@ -45,7 +42,7 @@
     		<input type="submit" value="전송">
     	</div>
 	</c:if>            	
-              	</form>
+    </form>
               	
     <!-- 목록출력 -->
   	<div id="output"></div>
@@ -59,21 +56,20 @@
   	
   	<!-- 댓글수정 -->
   	<div id="modify_div" style="display:none;">
-             	<form id="mqre_form">
-             		<input type="hidden" name="qna_re_num" id="mqna_re_num">
-             	 	<input type="hidden" name="mem_id" id="muserId">
-             	 	<textarea rows="3" cols="50" name="qna_re_content" id="mqna_re_content" class="a"></textarea>
-             	  	<div id="mqre_first"><span class="letter-count">300/300</span></div>  
-					<div id="mqre_second" class="align-right">
-						<input type="submit" value="수정">
-						<input type="button" value="취소" class = "re-reset">
-					</div>
-					<hr size="1" noshade width="96%">
-             	</form>
-             	</div>
-             	
-             	
-             	
+		<form id="mqre_form">
+			<input type="hidden" name="qna_re_num" id="mqna_re_num">
+			<input type="hidden" name="mem_id" id="muserId">
+			<textarea rows="3" cols="50" name="qna_re_content" id="mqna_re_content" class="a"></textarea>
+			<div id="mqre_first">
+				<span class="letter-count">300/300</span>
+			</div>  
+			<div id="mqre_second" class="align-right">
+				<input type="submit" value="수정">
+				<input type="button" value="취소" class = "re-reset">
+			</div>
+			<hr size="1" noshade width="96%">
+        </form>
+	</div>
               <!--============ 내용입력 끝===============-->
 
 

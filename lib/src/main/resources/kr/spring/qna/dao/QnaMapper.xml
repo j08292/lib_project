@@ -133,20 +133,33 @@
 						
 					</where>
 					ORDER BY qna_num DESC)a)q
-		<![CDATA[
-			WHERE rnum >= #{start} AND rnum <= #{end}	
-		]]>
-		<!-- 검색이 왜안될까 -->
-		<if test="keyword =='0' and keyfield == 'qna_replyCount'">
-			AND (SELECT count(*) FROM qna_reply qr WHERE qr.qna_num=q.qna_num) = 0		
-		</if>
-		<if test="keyword =='1' and keyfield == 'qna_replyCount'">
-			AND (SELECT count(*) FROM qna_reply qr WHERE qr.qna_num=q.qna_num) > 0		
-		</if>
+		<where>
+			<![CDATA[
+				rnum >= #{start} AND rnum <= #{end}	
+			]]>
+			<!-- 검색이 왜안될까 -->
+			<if test="keyword =='답변대기' and keyfield == 'qna_replyCount'">
+				AND (SELECT count(*) FROM qna_reply qr WHERE qr.qna_num=q.qna_num) = 0		
+			</if>
+			<if test="keyword =='답변완료' and keyfield == 'qna_replyCount'">
+				AND (SELECT count(*) FROM qna_reply qr WHERE qr.qna_num=q.qna_num) > 0		
+			</if>
+		</where>
 	</select>
 	
-	
-	
+	<delete id="deleteByQnaNum" parameterType="list">
+      DELETE FROM qna WHERE qna_num in
+      <foreach collection="list" item="qna_num" open="(" separator="," close=")">
+         #{qna_num}
+      </foreach>   
+    </delete>
+   
+    <delete id="deleteReplyByQnaNum" parameterType="list">
+		DELETE FROM qna_reply WHERE qna_num in
+		<foreach collection="list" item="qna_num" open="(" separator="," close=")">
+			#{qna_num}
+		</foreach>	
+	</delete>
 </mapper>
 
 

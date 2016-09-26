@@ -32,6 +32,6 @@ public interface QnaService {
 	
 	
 	public List<QnaCommand> adminList(Map<String, Object> map);
-	
+	public void deleteByQnaNum(List<Integer> list);
 	
 }

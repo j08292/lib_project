@@ -49,7 +49,7 @@
     	<put-attribute name="body" value="/WEB-INF/views/review/adminReviewView.jsp"/>
     	<put-list-attribute name="jsList">
     		<!-- jQuery -->
-	        <add-attribute value="/lib/resources/admin/js/jquery.js"/>
+    		<add-attribute value="/lib/resources/admin/js/jquery.js"/>
 	        <!-- Bootstrap Core JavaScript -->
 	        <add-attribute value="/lib/resources/admin/js/bootstrap.min.js"/>
 	        <!-- Morris Charts JavaScript -->
@@ -57,7 +57,6 @@
 	        <add-attribute value="/lib/resources/admin/js/plugins/morris/morris.min.js"/>
 	        <add-attribute value="/lib/resources/admin/js/plugins/morris/morris-data.js"/>
 	       	<add-attribute value="/lib/resources/admin/js/jquery.js"/>
-	       	<add-attribute value="/lib/resources/admin/js/plugins.js"/>
 	       	<add-attribute value="/lib/resources/admin/js/adminReview.reply.js"/>
         </put-list-attribute>
     </definition>

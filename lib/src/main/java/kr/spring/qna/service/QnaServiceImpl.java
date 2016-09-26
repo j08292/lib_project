@@ -95,5 +95,13 @@ public class QnaServiceImpl implements QnaService{
 		return QnaMapper.adminList(map);
 	}
 
+	@Override
+	public void deleteByQnaNum(List<Integer> list) {
+		//해당 글번호에 작성된 모든 댓글 삭제
+		QnaMapper.deleteReplyByQnaNum(list);
+		//해당 글번호의 게시글 삭제
+		QnaMapper.deleteByQnaNum(list);
+	}
+
 	
 }
