@@ -20,23 +20,29 @@ import kr.spring.util.PagingUtil;
 @Controller
 public class ReviewListReplyController {
 	private Logger log = Logger.getLogger(this.getClass());
-	
 	private int rowCount = 10;
 	private int pageCount = 10;
-
+		
 	@Resource
 	private ReviewService reviewService;
-
+	
 	@RequestMapping("/board/listReplyAjax.do")
 	@ResponseBody
-	public Map<String, Object> process(@RequestParam(value="pageNum",defaultValue="1")int currentPage,
-									   @RequestParam("review_num")int review_num){
+	public Map<String, Object> process(
+				 @RequestParam(value="pageNum",defaultValue="1")
+		           int currentPage,
+		           @RequestParam("review_num")int review_num){
+				
+		
+		
 		if(log.isDebugEnabled()){
 			log.debug("pageNum : " +currentPage);
 			log.debug("review_num : "+review_num);
 		}
+		
 		HashMap<String,Object> hashMap = new HashMap<String,Object>();
 		hashMap.put("review_num",review_num);
+		
 		
 		//ÃÑ ´ñ±ÛÀÇ °¹¼ö
 		int count = reviewService.getRowCountReply(hashMap);
@@ -45,7 +51,8 @@ public class ReviewListReplyController {
 				rowCount, pageCount, "listReply.do");
 		hashMap.put("start",page.getStartCount());
 		hashMap.put("end",page.getEndCount());
-
+		
+		
 		List<ReviewReplyCommand>list = null;
 		if(count > 0){
 			list = reviewService.listReply(hashMap);
@@ -56,7 +63,10 @@ public class ReviewListReplyController {
 		map.put("count",count);
 		map.put("rowCount",rowCount);
 		map.put("list", list);	
-
+		
 		return map;
 	}
+	
+	
+
 }

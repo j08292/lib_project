@@ -3,7 +3,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>    
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>   
  <%@ taglib prefix = "c"	uri = "http://java.sun.com/jsp/jstl/core" %>
+   
     <!-- Stylesheets(지우면안됨X)-->
+	
   
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
@@ -11,15 +13,13 @@
     <![endif]-->
 
     <!-- External JavaScripts(지우면안됨X) -->
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/plugins.js"></script>
-
+	
         <!-- Page Title(지우면안됨X) -->
         <section id="page-title">
 
             <div class="container clearfix">
                 <h3><spring:message code="qna.list.title"/></h3>
-                <span>Start Buying your Favourite Theme</span>
+                <span>Guest Relation </span>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li class="active">Shop</li>
@@ -52,24 +52,30 @@
                    				<input type="text" size="16" name="keyword">
                    			</li>
                    			<li>
-                   				<input type="submit" value="찾기">
+                   				<input type="submit" class="btn btn-default btn-sm" value="찾기">
                    			</li>
                    		</ul>                   		
                    	</form>
                    	<table>
                    		<tr>
                    			<td class="align-right">
-                   				<input type="button" value="글쓰기"
+                   			<input type="button" value="글쓰기" class="btn btn-primary btn-sm"
+                   						 onclick="location.href='qnaWrite.do'"<c:if test="${empty userId }">disabled="disabled"</c:if>>
+                   				<c:if test="${userId }">
+                   				<input type="button" value="글쓰기" class="btn btn-primary btn-sm"
                    						 onclick="location.href='qnaWrite.do'">
+                   						 </c:if>
                    			</td>
                    		</tr>                   		
                    	</table>
-                   
+                    <br>
                    <c:if test="${count == 0 }">
                    	<div class="align-center">등록된 게시글이 없습니다.</div>
                    </c:if>
                    <c:if test="${count > 0 }">
-                   <table border="1">
+                   <div class="table-responsive">
+                   <table class="table" border="1" style="border:1px solid #FFFFFF;">
+                  
                    	<tr>
                    		<th>번호</th>
                    		<th>제목</th>
@@ -90,9 +96,12 @@
                    	
                    	</c:forEach>
                    </table>
+                   </div>
                    <div class="align-center">${pagingHtml}</div>
                    </c:if>
+                   
                    </div>
+                   
                     <!-- 내용입력 끝-->
 
                 </div>
@@ -107,7 +116,7 @@
     <div id="gotoTop" class="icon-angle-up"></div>
 
     <!-- Footer Scripts (지우면안됨X)-->
-    <script type="text/javascript" src="js/functions.js"></script>
+  
 
 </body>
 </html>

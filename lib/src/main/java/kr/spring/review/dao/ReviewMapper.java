@@ -1,5 +1,6 @@
 package kr.spring.review.dao;
 
+
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +16,23 @@ import kr.spring.review.domain.ReviewReplyCommand;
 
 @Repository
 public interface ReviewMapper {
+
+	
+/*		private int review_num;//글번호
+	@NotEmpty
+	private String review_title;//글제목
+	@NotEmpty   
+	private String review_content;//내용
+	private Date review_regdate;//날짜
+	private int review_hit;//조회수
+	private int review_like;//좋아요
+	private int review_dislike;//싫어요
+	private MultipartFile upload;	
+	private String review_file;
+	@NotEmpty
+	private String mem_id;//작성자 아이디
+*/	
+	
 	//게시글
 	public List<ReviewCommand> list(Map<String,Object> map);
 	public int getRowCount(Map<String,Object> map);//list에서 글번호수? 
@@ -22,16 +40,24 @@ public interface ReviewMapper {
 			+ "VALUES (review_num.nextval,#{review_title},#{review_content},sysdate,#{review_file,jdbcType=VARCHAR},#{mem_id})")
 	public void insert(ReviewCommand review);
 	@Select("SELECT * FROM review WHERE review_num = #{review_num}")
-	public ReviewCommand selectReview(Integer review_num);
+	public ReviewCommand selectReview(Integer review_num);//
 	@Update ("UPDATE review SET review_hit = review_hit+1 WHERE review_num = #{review_num}")
 	public void updateHit(Integer review_num);
 	@Update("UPDATE review SET review_title=#{review_title}, review_content=#{review_content}, review_file=#{review_file,jdbcType=VARCHAR} WHERE review_num=#{review_num}")
 	public void update(ReviewCommand review);
 	@Delete("DELETE FROM review WHERE review_num = #{review_num}")
 	public void delete(Integer review_num);
-
+	
+	
+	/*private int Review_re_num;//댓글의 글번호
+	private int Review_num;//게시물의 글번호
+	private String Review_re_contnet;//댓글내용
+	private Date Review_re_regdate;
+	private String mem_id;*/
+	
 	//댓글
-	public List<ReviewReplyCommand> listReply(Map<String,Object> map);
+	
+	public List<ReviewReplyCommand> listReply (Map<String,Object> map);
 	@Select("SELECT count(*) FROM review_reply WHERE review_num = #{review_num}")
 	public int getRowCountReply(Map <String, Object> map);	
 	@Insert("INSERT INTO review_reply (review_re_num,review_re_content,review_re_regdate,review_num,mem_id) VALUES (review_re_num.nextval,#{review_re_content},sysdate,#{review_num},#{mem_id})")
@@ -40,11 +66,26 @@ public interface ReviewMapper {
 	public void updateReply(ReviewReplyCommand reviewReplyCommand);
 	@Delete("DELETE FROM review_reply WHERE review_re_num = #{review_re_num}")
 	public void deleteReply(Integer review_re_num);
-
-	//부모글에 댓글이 있으면 부모글삭제시 댓글을 먼저 삭제해야 함
-	//부모글의 글번호로 댓글 삭제
-	@Delete("DELETE FROM review_reply WHERE review_num = #{review_num}")
-	public void deleteReplyByReview_num(Integer review_num);
+	/*@Update("UPDATE review_reply SET review_re_count = review_re_count+1 where review_num = #{review_num}")	
+	public int getReplyReviewCount(int review_re_count);
+	*/
+/*	SELECT title, contents, (SELECT COUNT(*) AS cnt FROM BOARD_COMMENT WHERE parent.seq = BOARD.seq) as CommentTotalCnt FROM BOARD
+ * @Select("SELECT q.*,(SELECT COUNT(*) FROM review_reply r WHERE r.review_num=q.review_num)as replyCount FROM review q")*/
+	
+		
+		//부모글에 댓글이 있으면 부모글삭제시 댓글을 먼저 삭제해야 함
+		//부모글의 글번호로 댓글 삭제
+		@Delete("DELETE FROM review_reply WHERE review_num = #{review_num}")
+		public void deleteReplyByReview_num(Integer review_num);
+		
+/*
+		@Update ("UPDATE review SET review_hit = review_hit+1 WHERE review_num = #{review_num}")
+	public void updateHit(Integer review_num);
+		 */
+		
+		//댓글 갯수
+		
+	
 	
 	//관리자 게시물 관리===================================================================
 	public List<ReviewCommand> adminList(Map<String, Object> map);

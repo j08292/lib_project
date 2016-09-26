@@ -55,14 +55,12 @@ public class QnaCommand {
 	public void setQna_content(String qna_content) {
 		this.qna_content = qna_content;
 	}
-	
 	public Date getQna_regdate() {
 		return qna_regdate;
 	}
 	public void setQna_regdate(Date qna_regdate) {
 		this.qna_regdate = qna_regdate;
 	}
-
 	public int getQna_hit() {
 		return qna_hit;
 	}
@@ -75,14 +73,12 @@ public class QnaCommand {
 	public void setMem_id(String mem_id) {
 		this.mem_id = mem_id;
 	}
-	//관리자 추가
 	public int getQna_replyCount() {
 		return qna_replyCount;
 	}
 	public void setQna_replyCount(int qna_replyCount) {
 		this.qna_replyCount = qna_replyCount;
 	}
-
 
 	@Override
 	public String toString() {

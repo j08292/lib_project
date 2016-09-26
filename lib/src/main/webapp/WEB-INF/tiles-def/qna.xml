@@ -5,7 +5,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>  
-	 <definition name="qnaWrite" extends="main">
+	 <definition name="qnaWrite" extends="qnaList">
     	<put-attribute name="title" value="고객상담 게시판 글쓰기"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/qnaWrite.jsp"/>   
      </definition>
@@ -14,10 +14,22 @@
      <definition name="qnaList" extends="main">
     	<put-attribute name="title" value="감상평게시판 목록"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/qnaList.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<add-attribute value="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+        	<add-attribute value="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic"/>
+        	<add-attribute value="../resources/user/css/bootstrap.css"/>
+        	<add-attribute value="../resources/user/style.css"/>
+        	<add-attribute value="../resources/user/css/dark.css"/>
+        	<add-attribute value="../resources/user/css/font-icons.css"/>
+        	<add-attribute value="../resources/user/css/animate.css"/>
+        	<add-attribute value="../resources/user/css/magnific-popup.css"/>
+        	<add-attribute value="../resources/user/css/responsive.css"/>
+        	<add-attribute value="../resources/css/board.css"/>
+        </put-list-attribute>
     </definition>
     
      
-	<definition name="qnaView" extends="main">
+	<definition name="qnaView" extends="qnaList">
     	<put-attribute name="title" value="글 상세"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/qnaView.jsp"/>
     	<put-list-attribute name="jsList">
@@ -27,12 +39,12 @@
         </put-list-attribute>    	
     </definition>
     
-	<definition name="qnaModify" extends="main">
+	<definition name="qnaModify" extends="qnaList">
     	<put-attribute name="title" value="글 수정"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/qnaModify.jsp"/>
     </definition> 
-	<definition name="qnaDelete" extends="main">
-    	<put-attribute name="title" value="글 수정"/>
+	<definition name="qnaDelete" extends="qnaList">
+    	<put-attribute name="title" value="글 삭제"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/qnaDelete.jsp"/>
     </definition> 
 

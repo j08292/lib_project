@@ -45,8 +45,8 @@
                    	<form:errors element="div" class="error-color"/>
                    	비밀번호 : <form:password path="qna_passwd"/>
                    	<form:errors path="qna_passwd" class="error"/><br>
-                   	<input type="submit" value="전송">
-                   	<input type="button" value="게시판 목록" onclick="location.href='qnaList.do'">                    
+                   	<input type="submit" class="btn btn-default btn-sm" value="전송">
+                   	<input type="button" value="게시판 목록" class="btn btn-default btn-sm" onclick="location.href='qnaList.do'">                    
                    </form:form>
                     <!-- 내용입력 끝-->
 				

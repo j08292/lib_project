@@ -29,9 +29,7 @@ public interface QnaService {
 	public void updateReply(QnaReplyCommand qnaRepluCommand);
 	public void deleteReply(Integer qna_re_num);
 	
-	
-	
+	//°ü¸®ÀÚ=========================================================
 	public List<QnaCommand> adminList(Map<String, Object> map);
 	public void deleteByQnaNum(List<Integer> list);
-	
 }

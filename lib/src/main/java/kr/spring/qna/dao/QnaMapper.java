@@ -26,7 +26,7 @@ public interface QnaMapper {
 	private String mem_id;
 	*/
 	
-	
+
 	//게시글
 	public List<QnaCommand> list(Map<String,Object>map);
 	public int getRowCount(Map<String,Object>map);
@@ -71,9 +71,14 @@ public interface QnaMapper {
 	@Delete("DELETE FROM qna_reply WHERE qna_num = #{qna_num}")
 	public void deleteReplyByReview_num(Integer qna_num);
 	
+	/*@Select("SELECT count(*) FROM qna_reply WHERE qna_re_num=#{qna_re_num}")
+	public int getReplyCount(Map <String, Object> map);
+	 */
+	
 	//관리자=========================================================
 	public List<QnaCommand> adminList(Map<String, Object> map);
 	public void deleteByQnaNum(List<Integer> list);
 	//해당 글번호에 작성된 모든 댓글 삭제
 	public void deleteReplyByQnaNum(List<Integer> list);
+
 }

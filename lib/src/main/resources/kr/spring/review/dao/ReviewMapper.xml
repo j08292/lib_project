@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>  
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
  <mapper namespace="kr.spring.review.dao.ReviewMapper">  
-	<select id="list" parameterType="map" resultType="reviewCommand">
+
+<select id="list" parameterType="map" resultType="reviewCommand">
 		SELECT
 		  review_num,
 		  mem_id,
@@ -20,7 +23,7 @@
 		      FROM (SELECT
 		              *
 		            FROM review
-		            <where>
+				<where>
 		            	<if test="keyword !='' and keyfield == 'review_title'">
 		            		review_title like '%' || #{keyword} || '%'
 		            	</if>
@@ -36,11 +39,12 @@
 		            		review_content like '%' || #{keyword} || '%'
 		            	</if>
 		            </where>
+		         
 		            ORDER BY review_num DESC)a)
 		<![CDATA[
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>              
-	</select>	
+	</select>
 	
 	<select id="getRowCount" parameterType="map" resultType="integer">
 		SELECT
@@ -63,7 +67,8 @@
            	</if>
         </where> 
 	</select>
-		
+	
+	
 	<select id="listReply" parameterType="map" resultType="reviewReplyCommand">
 		SELECT
 		  review_re_num,
@@ -83,6 +88,16 @@
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>            
 	</select>
+	
+	<delete id="deleteReplyBySeqList" parameterType="list">
+		DELETE FROM review_reply WHERE review_num in
+		<foreach collection="list" item="seq" open="(" separator="," close=")">
+			#{review_num}
+		</foreach>
+	
+	</delete>
+	
+	
 	
 	<!-- 관리자 게시물 관리 -->
 	<select id="adminList" parameterType="map" resultType="reviewCommand">
@@ -148,3 +163,10 @@
 		</foreach>	
 	</delete>
 </mapper>
+
+
+
+
+
+
+

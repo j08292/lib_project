@@ -30,7 +30,7 @@
                   
                    <div>
                    	<h2 class="align-center">${qnaCommand.qna_title}</h2>
-                   	<ul>
+                   	<ul style="list-style:none;">
                    		<li >번호 : ${qnaCommand.qna_num}</li>
                    		<li>ID : ${qnaCommand.mem_id}</li>
                    		<li>조회수 : ${qnaCommand.qna_hit}</li>
@@ -47,29 +47,35 @@
                    		
                    	</p>
                    	<hr size="1" width="100%">
+                   	
                    	<p class="align-right">
+	                   	<input type="button" value="목록으로" class="btn btn-default btn-sm"
+	                   			onclick="location.href='qnaList.do?qna_num=${qnaCommand.qna_num}'">
                    		<c:if test="${!empty userId && userId == qnaCommand.mem_id}">
-                   		<input type="button" value="수정"
+                   		
+                   		<input type="button" value="수정" class="btn btn-default btn-sm"
                    			onclick="location.href='qnaUpdate.do?qna_num=${qnaCommand.qna_num}'">
-                   		<input type="button" value="삭제"
+                   		<input type="button" value="삭제" class="btn btn-danger btn-sm"
                    			onclick="location.href='qnaDelete.do?qna_num=${qnaCommand.qna_num}'">
                    	</c:if>
                    	</p>
                    	<!-- 댓글 -->
-                   	<span class="reply title">댓글 달기</span>
+                   	<span class="reply title">▶ 댓글 달기 </span>
+                   	
+                   	 	<br><br>
                    	<form id="qre_form">
                    		<input type="hidden" name="qna_num"  value="${qnaCommand.qna_num}" id="qna_num">
 					    <input type="hidden" name="mem_id" value="${userId}" id="userId"> 
-					    <textarea rows="3" cols="50" name="qna_re_content" 
+					    <textarea rows="3" cols="50" name="qna_re_content" class="content"
 					    id="qna_re_content" maxlength="300" class="a"
 					    <c:if test="${empty userId && mem_level ==2}">disabled="disabled"</c:if>
-					    ><c:if test="${empty userId}"></c:if><c:if test="${mem_level != 2}">관리자만 작성할 수 있습니다.</c:if></textarea>  
+					    ><c:if test="${empty userId }"></c:if><c:if test="${mem_level != 2}">관리자만 작성할 수 있습니다.</c:if></textarea>  
 					    <c:if test="${!empty userId && mem_level == 2}">
 					    	<div id="qre_first">
 					    		<span class="letter-count">300/300</span>
 					    	</div>
 					    	<div id="qre_second" class="align-right">
-					    		<input type="submit" value="전송">
+					    		<input type="submit"  class="btn btn-default btn-sm" value="전송">
 					    	</div>
 					</c:if>            	
                    	</form>
@@ -91,13 +97,13 @@
                    	 	id="mqna_re_content" class="a"></textarea>
                    	  	<div id="mqre_first"><span class="letter-count">300/300</span></div>  
 						<div id="mqre_second" class="align-right">
-							<input type="submit" value="수정">
-							<input type="button" value="취소" class = "re-reset">
+							<input type="submit" class="btn btn-default btn-sm" value="수정">
+							<input type="button" value="취소" class ="btn btn-danger btn-sm, re-reset">
 						</div>
 						<hr size="1" noshade width="96%">
                    	</form>
                    	</div>
-                   	
+                   </div> 	
                    	
                    	
                     <!--============ 내용입력 끝===============-->

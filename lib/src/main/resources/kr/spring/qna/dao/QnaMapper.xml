@@ -160,6 +160,7 @@
 			#{qna_num}
 		</foreach>	
 	</delete>
+	
 </mapper>
 
 

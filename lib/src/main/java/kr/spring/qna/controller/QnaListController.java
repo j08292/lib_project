@@ -70,7 +70,7 @@ public class QnaListController {
 		mav.setViewName("qnaList");
 		mav.addObject("count",count);
 		mav.addObject("list",list);
-		mav.addObject("pagingHtil" ,page.getPagingHtml());	
+		mav.addObject("pagingHtml" ,page.getPagingHtml());	
 		
 		
 		return mav;

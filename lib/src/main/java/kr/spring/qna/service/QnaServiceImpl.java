@@ -102,6 +102,4 @@ public class QnaServiceImpl implements QnaService{
 		//해당 글번호의 게시글 삭제
 		QnaMapper.deleteByQnaNum(list);
 	}
-
-	
 }

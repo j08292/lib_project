@@ -53,12 +53,12 @@
                    	</li>
                   <li>
                    	<label for="qna_content">내용</label>
-                   	<form:input class="content_nari" path="qna_content"/>
+                   	<form:textarea class="content_nari" path="qna_content"/>
 					<form:errors path="qna_content" class="error-color"/>
                   </li>
                   <li class="align-center">
-                 	<input type="submit" value="전송">
-                 	<input type="button" value="목록" 
+                 	<input type="submit" class="btn btn-default btn-sm" value="전송">
+                 	<input type="button" class="btn btn-default btn-sm" value="목록" 
                  	onclick="location.href='qnaList.do'">
                  </li>
                   </ul>

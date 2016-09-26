@@ -9,12 +9,24 @@
 	<definition name="reviewWrite" extends="main">
     	<put-attribute name="title" value="글쓰기"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/reviewWrite.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<add-attribute value="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+        	<add-attribute value="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic"/>
+        	<add-attribute value="../resources/user/css/bootstrap.css"/>
+        	<add-attribute value="../resources/user/style.css"/>
+        	<add-attribute value="../resources/user/css/dark.css"/>
+        	<add-attribute value="../resources/user/css/font-icons.css"/>
+        	<add-attribute value="../resources/user/css/animate.css"/>
+        	<add-attribute value="../resources/user/css/magnific-popup.css"/>
+        	<add-attribute value="../resources/user/css/responsive.css"/>
+        	<add-attribute value="../resources/css/board.css"/>
+        </put-list-attribute>
     </definition>
-    <definition name="reviewList" extends="main">
+    <definition name="reviewList" extends="reviewWrite">
     	<put-attribute name="title" value="감상평게시판 목록"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/reviewList.jsp"/>
     </definition>    
-	<definition name="reviewView" extends="main">
+	<definition name="reviewView" extends="reviewWrite">
     	<put-attribute name="title" value="글 상세"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/reviewView.jsp"/>
     	<put-list-attribute name="jsList">
@@ -23,7 +35,7 @@
         	<add-attribute value="/lib/resources/user/js/review.reply.js"/>
         </put-list-attribute>
     </definition>    
-	<definition name="reviewModify" extends="main">
+	<definition name="reviewModify" extends="reviewWrite">
     	<put-attribute name="title" value="글 수정"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/reviewModify.jsp"/>
     </definition>

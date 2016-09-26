@@ -22,6 +22,9 @@ public class ReviewCommand {
 	private String mem_id;//작성자 아이디
 	private int review_replyCount;//댓글수
 	
+	
+	
+
 	public int getReview_num() {
 		return review_num;
 	}
@@ -88,7 +91,6 @@ public class ReviewCommand {
 	public void setReview_replyCount(int review_replyCount) {
 		this.review_replyCount = review_replyCount;
 	}
-	
 	@Override
 	public String toString() {
 		return "ReviewCommand [review_num=" + review_num + ", review_title=" + review_title + ", review_content="
@@ -96,5 +98,5 @@ public class ReviewCommand {
 				+ ", review_like=" + review_like + ", review_dislike=" + review_dislike + ", upload=" + upload
 				+ ", review_file=" + review_file + ", mem_id=" + mem_id + ", review_replyCount=" + review_replyCount
 				+ "]";
-	}	
+	}
 }

@@ -192,3 +192,12 @@ create table penalty(
   constraint penalty_fk1 foreign key (mem_id) references member (mem_id)
 );
 create sequence penalty_num;
+
+create table basket(
+  basket_num number not null primary key,
+  basket_price varchar2,
+  basket_amount number not null default(1),
+  mem_id varchar2(20) not null,
+  list_num number not null,
+  list_filename
+);
