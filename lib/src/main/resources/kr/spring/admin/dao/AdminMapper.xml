@@ -32,4 +32,24 @@
 
 	</select>
 	
+	<select id="rentRankList" resultType="adminBooklistCommand">
+		SELECT 
+		   * 
+		  FROM (SELECT 
+		            a.*, 
+		            rownum rnum 
+		        FROM (SELECT 
+		                list_title,
+		                count(*) rent_count 
+		              FROM (SELECT 
+		                        br.list_num, 
+		                        bl.list_title 
+		                    FROM bookrent br, booklist bl 
+		                    WHERE br.LIST_NUM=bl.list_num AND br.RENT_STATUS=1) 
+		                GROUP BY list_title ORDER BY rent_count DESC)a) 
+		            <![CDATA[
+		            WHERE rnum<=3 
+		            ]]>     
+	</select>
+		
 </mapper>
