@@ -146,7 +146,7 @@
 							<br>
 							<div class="feature-box fbox-right topmargin" data-animate="fadeIn" data-delay="200">
 								<div class="fbox-icon">
-									<a href="#"><i class="icon-line-paper"></i></a>
+									<a href="${pageContext.request.contextPath }/book/search.do"><i class="icon-line-paper"></i></a>
 								</div>
 								<h3>도서대출</h3>
 								<p>읽고싶은 도서를 편리하게 만나보세요.</p>
@@ -154,7 +154,7 @@
 							<br>
 							<div class="feature-box fbox-right topmargin" data-animate="fadeIn" data-delay="400">
 								<div class="fbox-icon">
-									<a href="#"><i class="icon-line-layers"></i></a>
+									<a href="${pageContext.request.contextPath }/wishlist/write.do"><i class="icon-line-layers"></i></a>
 								</div>
 								<h3>희망도서신청</h3>
 								<p>원하는 도서가 소장되어 있지 않을 경우<br>
@@ -172,7 +172,7 @@
 
 							<div class="feature-box topmargin" data-animate="fadeIn">
 								<div class="fbox-icon">
-									<a href="#"><i class="icon-line-power"></i></a>
+									<a href="${pageContext.request.contextPath }/event/marathonInfo.do"><i class="icon-line-power"></i></a>
 								</div>
 								<h3>[EVENT] 독서 마라톤</h3>
 								<p>독서 활동을 마라톤에 접목시켜<br> 42.195페이지를 읽으면 완주!</p>
@@ -188,7 +188,7 @@
 
 							<div class="feature-box topmargin" data-animate="fadeIn" data-delay="400">
 								<div class="fbox-icon">
-									<a href="#"><i class="icon-bulb"></i></a>
+									<a href="${pageContext.request.contextPath }/board/qnaList.do"><i class="icon-bulb"></i></a>
 								</div>
 								<h3>문의 게시판</h3>
 								<p>온라인 도서관 이용 관련 문의 내용은<br> 해당 게시판을 이용해 주세요.</p>
@@ -202,48 +202,61 @@
 					<hr size="1" width="100%">
 					<hr size="1" width="100%">
 					<br><br>
+					<div>
+					
+					
 					<div class="center">
-						<h3>최신강연 안내</h3>
-						
+					<div class="fbox-icon">
+						<h3><a href="${pageContext.request.contextPath }/speech/list.do"><i class="icon-note"></i></a>			
+						 &nbsp;최신강연 안내</h3>	
+					</div>	
 					</div>
-					<br><br>
-				
+					</div>
+					<br>
+
 				<div class="container clearfix">
 
-					
+					<a href="${pageContext.request.contextPath }/speech/list.do"><p style="text-align:right">▶더보기</p></a>	
 
 					<div class="clear"></div>
-
+			
 					<div class="col_one_third bottommargin-sm">
+					<img src="${pageContext.request.contextPath}/resources/user/images/book/a.png"alt="Clients"><br>
 						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="600">
+						
 							<div class="fbox-icon">
-								<a href="#"><i class="icon-bulb"></i></a>
+								<a href="${pageContext.request.contextPath }/speech/list.do"><i class="icon-bulb"></i></a>
 							</div>
+							
 							<h3>[서민교수 기생충 콘서트 ]<br> 작가 초청 강연회</h3>
 							<p>▶ 그들은 어떻게 지구의 2인자가 됐을까?<br>  서민교수의 기생충에 관한 유쾌한 강연!</p>
 						</div>
 					</div>
 
 					<div class="col_one_third bottommargin-sm">
+					<img src="${pageContext.request.contextPath}/resources/user/images/book/b.png"alt="Clients"><br>
 						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="800">
 							<div class="fbox-icon">
-								<a href="#"><i class="icon-heart2"></i></a>
+								<a href="${pageContext.request.contextPath }/speech/list.do"><i class="icon-heart2"></i></a>
 							</div>
-							<h3>작가와의 만남 1</h3>
-							<p>▶ 작가와의 만남 1 </p>
+							<h3>「바람이 우리를 데려다 주겠지」의 저자 오/소/희 작가와의 만남 </h3>
+							<p>▶ 여행은 어떻게 삶을 변화시키는가?<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &<br>  &nbsp; &nbsp;아이와 함께 여행하기 </p>
 						</div>
 					</div>
 
 					<div class="col_one_third bottommargin-sm col_last">
+					<img src="${pageContext.request.contextPath}/resources/user/images/book/c.png"alt="Clients"><br>
 						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1000">
 							<div class="fbox-icon">
-								<a href="#"><i class="icon-note"></i></a>
+								<a href="${pageContext.request.contextPath }/speech/list.do"><i class="icon-note"></i></a>
 							</div>
-							<h3>작가와의 만남 2</h3>
-							<p>▶ 작가와의 만남 2 </p>
+							<h3>독서모임 & 작가와의 만남<br>PQR BOOKS X 이광호 작가</h3>
+							<p>▶ PQR BOOKS에 입점한 독립/소규모/1인출판물 중 하나를 선정해서 함께 읽고 이야기를 나누는 독서모임입니다.</p>
 						</div>
+						<br><br><br>
+																				
 					</div>
-
+										
 					<div class="clear"></div>
 
 				</div>
@@ -263,16 +276,17 @@
 							<div class="center">
 								<h3>[new]신간도서 안내</h3>
 							</div>
+							<a href="${pageContext.request.contextPath }/book/search.do"><p style="text-align:right">▶더보기</p></a>	
 
 							<div class="col-md-3 col-sm-6 bottommargin">
 
 								<div class="team">
 									<div class="team-image">
-										<img src="${pageContext.request.contextPath}/resources/user/images/team/3.jpg" alt="John Doe">
+										<img src="${pageContext.request.contextPath}/resources/user/images/book/2.png" style="width:460px; height:315;">
 									</div>
 									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>John Doe</h4><span>CEO</span></div>
-										<p>도서에 대한 간략한 소개</p>
+										<div class="team-title"><h4>못 참는 아이 욱하는 부모</h4><span>오은영</span></div>
+										<p>[못 참는 아이 욱하는 부모]는 영유아 시기부터 감정 조절을 올바르게 배울 수 있도록 안내한다.</p>
 									</div>
 								</div>
 
@@ -282,11 +296,11 @@
 
 								<div class="team">
 									<div class="team-image">
-										<img src="${pageContext.request.contextPath}/resources/user/images/team/2.jpg" alt="Josh Clark">
+										<img src="${pageContext.request.contextPath}/resources/user/images/book/3.png" style="width:460px; height:315;">
 									</div>
 									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>Josh Clark</h4><span>Co-Founder</span></div>
-										<p>도서에 대한 간략한 소개</p>
+										<div class="team-title"><h4>설민석의 조선왕조실록</h4><span>설민석</span></div>
+										<p>스타강사 설민석의 재미있고 깊이 있는 한국사 책 『설민석의 조선왕조실록』</p>
 									</div>
 								</div>
 
@@ -296,11 +310,11 @@
 
 								<div class="team">
 									<div class="team-image">
-										<img src="${pageContext.request.contextPath}/resources/user/images/team/8.jpg" alt="Mary Jane">
+										<img src="${pageContext.request.contextPath}/resources/user/images/book/4.png" style="width:460px; height:315;">
 									</div>
 									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>Mary Jane</h4><span>Sales</span></div>
-										<p>도서에 대한 간략한 소개</p>
+										<div class="team-title"><h4>풀꽃도 꽃이다 1</h4><span>조정래</span></div>
+										<p>우리 사회와 교육의 지향점을 제안하는<br> 조정래의 장편소설 『풀꽃도 꽃이다』</p>
 									</div>
 								</div>
 
@@ -310,11 +324,11 @@
 
 								<div class="team">
 									<div class="team-image">
-										<img src="${pageContext.request.contextPath}/resources/user/images/team/4.jpg" alt="Nix Maxwell">
+										<img src="${pageContext.request.contextPath}/resources/user/images/book/1.png" style="width:460px; height:315;">
 									</div>
 									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>책 이름</h4><span>작가명</span></div>
-										<p>도서에 대한 간략한 소개</p>
+										<div class="team-title"><h4>빨강머리 앤이 하는 말 : 아직 너무 늦지 않았을 우리에게</h4><span> [ 백영옥 ]</span></div>
+										<p>우리 곁에 다시 가져온 추억 속 빨강머리앤의 웃음, 실수, 사랑과 희망의 말들! </p>
 									</div>
 								</div>
 
@@ -329,16 +343,16 @@
 
 					<div id="oc-clients" class="owl-carousel image-carousel">
 
-						<div class="oc-item"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/clients/1.png" alt="Clients"></a></div>
-						<div class="oc-item"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/clients/2.png" alt="Clients"></a></div>
-						<div class="oc-item"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/clients/3.png" alt="Clients"></a></div>
-						<div class="oc-item"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/clients/4.png" alt="Clients"></a></div>
-						<div class="oc-item"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/clients/5.png" alt="Clients"></a></div>
-						<div class="oc-item"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/clients/6.png" alt="Clients"></a></div>
-						<div class="oc-item"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/clients/7.png" alt="Clients"></a></div>
-						<div class="oc-item"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/clients/8.png" alt="Clients"></a></div>
-						<div class="oc-item"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/clients/9.png" alt="Clients"></a></div>
-						<div class="oc-item"><a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/clients/10.png" alt="Clients"></a></div>
+						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/5.png"alt="Clients"></div>
+						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/6.jpg"alt="Clients"></div>
+						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/7.jpg"alt="Clients"></div>
+						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/8.png"alt="Clients"></div>
+						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/9.png"alt="Clients"></div>
+						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/10.png"alt="Clients"></div>
+						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/11.png"alt="Clients"></div>
+						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/12.png"alt="Clients"></div>
+						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/13.png"alt="Clients"></div>
+						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/14.png"alt="Clients"></div>
 
 					</div>
 

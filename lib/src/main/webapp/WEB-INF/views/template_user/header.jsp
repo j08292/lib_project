@@ -22,6 +22,7 @@
 					<nav id="primary-menu" class="dark">
 											
 						<ul>
+							<li class="speech"><a href="${pageContext.request.contextPath}/board/operationGuide.do">이용안내</a></li>	
 							<li><a href="#">BOOK</a>
 								<ul>
 									<li><a href="${pageContext.request.contextPath }/book/search.do">도서검색</a></li>
