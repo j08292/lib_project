@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -141,6 +142,27 @@
                     </div>
                 </div>
                 <!-- /.row -->
-
-                
+                <c:if test="${penaltyRowCount > 0}">
+					<div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-fw fa-user"></i> 차단회원</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+                                	<c:forEach var="penalty" items="${penaltyList}">
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">${penalty.regdate_String}</span>
+                                        <i class="fa fa-fw fa-check"></i>ID: ${penalty.mem_id}
+                                    </a>
+                                    </c:forEach>
+                                   
+                                </div>
+                                <div class="text-right">
+                                    <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </c:if>
                 <!-- /.row -->

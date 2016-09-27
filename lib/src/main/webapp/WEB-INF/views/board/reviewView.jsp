@@ -36,13 +36,13 @@
                    		<li>등록날짜 : ${review.review_regdate}</li>                   	
                    		<c:if test="${!empty review.review_file}">
                    		<li>첨부파일 : <a href="file.do?review_file=${review.review_file}">${review.review_file}</a></li>
-                   		
                    		</c:if>
                    	</ul>
                    	<hr size="1" width="100%">
                    	<p>
-                  	 	<img src="file.do?review_file=${review.review_file}" width=512 height=384></img>
-                  	 	
+                   		<c:if test="${!empty review.review_file}">
+                  	 		<img src="file.do?review_file=${review.review_file}" width=512 height=384></img>
+                  	 	</c:if>
                   	 	
                    	  	
                    	  	<br>

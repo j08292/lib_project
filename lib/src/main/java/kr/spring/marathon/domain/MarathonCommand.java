@@ -17,6 +17,7 @@ public class MarathonCommand {
 	//관리자 리스트에서 쓰일 것
 	private String mem_name;
 	private String mem_address;
+	private String mem_cell;
 	
 	
 	public int getList_num() {
@@ -91,13 +92,19 @@ public class MarathonCommand {
 	public void setMem_address(String mem_address) {
 		this.mem_address = mem_address;
 	}
+	public String getMem_cell() {
+		return mem_cell;
+	}
+	public void setMem_cell(String mem_cell) {
+		this.mem_cell = mem_cell;
+	}
+	
 	@Override
 	public String toString() {
 		return "MarathonCommand [list_num=" + list_num + ", list_title=" + list_title + ", list_page=" + list_page
 				+ ", mem_id=" + mem_id + ", rent_regdate=" + rent_regdate + ", gradecheck=" + gradecheck
 				+ ", marathon_num=" + marathon_num + ", marathon_page=" + marathon_page + ", marathon_regdate="
 				+ marathon_regdate + ", marathon_status=" + marathon_status + ", mem_name=" + mem_name
-				+ ", mem_address=" + mem_address + "]";
+				+ ", mem_address=" + mem_address + ", mem_cell=" + mem_cell + "]";
 	}
-	
 }

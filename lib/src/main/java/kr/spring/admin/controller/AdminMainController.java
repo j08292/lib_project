@@ -1,5 +1,8 @@
 package kr.spring.admin.controller;
 
+import java.util.Collections;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.admin.service.AdminService;
+import kr.spring.penalty.domain.PenaltyCommand;
 
 
 @Controller
@@ -38,6 +42,14 @@ public class AdminMainController {
 		int rentWaitingCount = adminService.getRentWaitingCount();
 		int qnaWaitingCount = adminService.getQnaWaitingCount();
 		
+		int penaltyRowCount = adminService.getRowPenaltyCount();
+		
+		List<PenaltyCommand> penaltyList = null;
+		if(penaltyRowCount>0){
+			penaltyList = adminService.penaltyList();
+		}else{
+			penaltyList = Collections.emptyList();
+		}
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("adminMain");
 		mav.addObject("speechReserveCount",speechReserveCount);
@@ -45,6 +57,8 @@ public class AdminMainController {
 		mav.addObject("wishlistCount",wishlistCount);
 		mav.addObject("rentWaitingCount",rentWaitingCount);
 		mav.addObject("qnaWaitingCount",qnaWaitingCount);
+		mav.addObject("penaltyRowCount",penaltyRowCount);
+		mav.addObject("penaltyList",penaltyList);
 		
 		return mav;
 	}

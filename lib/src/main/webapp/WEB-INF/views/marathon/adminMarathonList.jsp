@@ -32,6 +32,7 @@
 					<th style="text-align:center;">ID</th>
 					<th style="text-align:center;">이름</th>
 					<th style="text-align:center;">주소</th>
+					<th style="text-align:center;">전화번호</th>
 					<th style="text-align:center;">페이지</th>
 					<th style="text-align:center;">신청날짜</th>
 					<th style="text-align:center;">완주혜택상태</th>
@@ -45,6 +46,7 @@
 					<td>${article.mem_id}</td>
 					<td>${article.mem_name}</td>
 					<td>${article.mem_address}</td>
+					<td>${article.mem_cell}</td>
 					<td><fmt:formatNumber type="currency" value="${article.marathon_page}" pattern="###,###"/></td>
 					<td>${article.marathon_regdate}</td>
 					<td>

@@ -1,10 +1,6 @@
 package kr.spring.review.domain;
 
-
-
-import java.time.Duration;
 import kr.spring.util.DurationFromNow;
-
 
 public class ReviewReplyCommand {
 	private int review_re_num;//댓글의 글번호

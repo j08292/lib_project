@@ -1,7 +1,11 @@
 package kr.spring.admin.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+
+import kr.spring.penalty.domain.PenaltyCommand;
 
 @Repository
 public interface AdminMapper {
@@ -15,4 +19,7 @@ public interface AdminMapper {
 	public int getRentWaitingCount();
 	@Select("SELECT count(*) FROM (SELECT q.*, (SELECT count(*) FROM qna_reply qr WHERE qr.qna_num=q.qna_num)qna_replyCount FROM qna q) WHERE qna_replyCount = 0")
 	public int getQnaWaitingCount();
+	
+	public List<PenaltyCommand> penaltyList();
+	public int getRowPenaltyCount();
 }

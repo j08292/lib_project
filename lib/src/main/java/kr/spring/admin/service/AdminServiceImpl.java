@@ -1,10 +1,13 @@
 package kr.spring.admin.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
 import kr.spring.admin.dao.AdminMapper;
+import kr.spring.penalty.domain.PenaltyCommand;
 
 @Service("adminService")
 public class AdminServiceImpl implements AdminService{
@@ -35,6 +38,16 @@ public class AdminServiceImpl implements AdminService{
 	@Override
 	public int getQnaWaitingCount() {
 		return adminMapper.getQnaWaitingCount();
+	}
+
+	@Override
+	public List<PenaltyCommand> penaltyList() {
+		return adminMapper.penaltyList();
+	}
+
+	@Override
+	public int getRowPenaltyCount() {
+		return adminMapper.getRowPenaltyCount();
 	}
 
 }

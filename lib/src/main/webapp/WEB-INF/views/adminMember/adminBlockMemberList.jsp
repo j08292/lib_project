@@ -14,6 +14,7 @@
 			<input type="submit" value="찾기">
 		</div>
 	</form>
+	<br>
 	<c:if test="${count == 0}">
 		<div align="center">차단회원이 없습니다.</div>
 	</c:if>
