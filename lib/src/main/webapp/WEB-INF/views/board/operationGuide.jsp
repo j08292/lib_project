@@ -40,7 +40,18 @@
 
                    <!-- 내용입력 시작-->
                    <form:form action="operationGuide.do" enctype="multipart/form-data" id="register_form" method="get">
-         			이용안내사항
+         			
+					- 메뉴에서 공지사항을 앞으로 뺴기<br>
+					- 이용안내 규정 정하기!<br>
+					 1. 이용방법 - 가입, 대여방법<br>
+					 2. 입금기한<br>
+					 3. 연체규정?<br>
+					 4. 문의사항이 있을 시 게시판으로 이동안내 문구<br>
+					 5. 문의사항 - 전화번호, 이메일 안내 문구<br>
+									(전화 이용시간 안내)<br>
+					
+					- 메인화면 사진 or 영상<br>
+					
          			</form:form>
                     <!-- 내용입력 끝-->
 				
