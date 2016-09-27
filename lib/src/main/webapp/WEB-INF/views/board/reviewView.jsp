@@ -50,8 +50,7 @@
                    		${review.review_content}
                    		
                    	</p>
-                   	<input type="button" value="좋아요" class="btn btn-primary btn-sm, align-center" style="margin-left:500px;">
-                   	<input type="button" value="싫어요" class="btn btn-primary btn-sm, align-center" >
+                   	
                    	<hr size="1" width="100%">
                    	<p class="align-right">
                    		<input type="button" value="목록으로" class="btn btn-default btn-sm"

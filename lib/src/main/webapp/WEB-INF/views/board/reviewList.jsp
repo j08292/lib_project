@@ -85,8 +85,7 @@
                    		<th>ID</th>
                    		<th>날짜</th>
                    		<th>조회수</th>
-                   		<th>좋아요</th>
-                   		<th>싫어요</th>
+                   		
                    	</tr>
                    	<c:forEach var="article" items="${list}">
                    		<tr>
@@ -95,8 +94,7 @@
                    			<td>${article.mem_id}</td>
                    			<td>${article.review_regdate}</td>
                    			<td>${article.review_hit}</td>
-                   			<td>${article.review_like}</td>
-                   			<td>${article.review_dislike}</td>
+                   		
                    		</tr>
                    		
                    	
