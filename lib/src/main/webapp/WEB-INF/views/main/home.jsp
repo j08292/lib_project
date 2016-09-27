@@ -4,14 +4,7 @@
 
 			<div class="swiper-container swiper-parent">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide dark" style="background-image: url('images/slider/swiper/1.jpg');">
-						<div class="container clearfix">
-							<div class="slider-caption slider-caption-center">
-								<h2 data-caption-animate="fadeInUp">Welcome to Canvas</h2>
-								<p data-caption-animate="fadeInUp" data-caption-delay="200">Create just what you need for your Perfect Website. Choose from a wide range of Elements &amp; simply put them on your own Canvas.</p>
-							</div>
-						</div>
-					</div>
+					
 					<div class="swiper-slide dark">
 						<div class="container clearfix">
 							<div class="slider-caption slider-caption-center">
@@ -27,17 +20,9 @@
 							<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
 						</div>
 					</div>
-					<div class="swiper-slide" style="background-image: url('images/slider/swiper/3.jpg'); background-position: center top;">
-						<div class="container clearfix">
-							<div class="slider-caption">
-								<h2 data-caption-animate="fadeInUp">Great Performance</h2>
-								<p data-caption-animate="fadeInUp" data-caption-delay="200">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
-							</div>
-						</div>
-					</div>
+					
 				</div>
-				<div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
-				<div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
+				
 			</div>
 
 			<script>
@@ -146,7 +131,7 @@
 							<br>
 							<div class="feature-box fbox-right topmargin" data-animate="fadeIn" data-delay="200">
 								<div class="fbox-icon">
-									<a href="${pageContext.request.contextPath }/book/search.do"><i class="icon-line-paper"></i></a>
+									<a href="${pageContext.request.contextPath}/book/search.do"><i class="icon-line-paper"></i></a>
 								</div>
 								<h3>도서대출</h3>
 								<p>읽고싶은 도서를 편리하게 만나보세요.</p>
@@ -165,7 +150,7 @@
 						</div>
 
 						<div class="col-md-4 hidden-sm bottommargin center">
-							<img src="${pageContext.request.contextPath}/resources/user/images/services/iphone7.png" alt="iphone 2">
+							<img src="${pageContext.request.contextPath}/resources/user/images/book/ㄷ.png" >
 						</div>
 
 						<div class="col-md-4 col-sm-6 bottommargin">
@@ -207,8 +192,7 @@
 					
 					<div class="center">
 					<div class="fbox-icon">
-						<h3><a href="${pageContext.request.contextPath }/speech/list.do"><i class="icon-note"></i></a>			
-						 &nbsp;최신강연 안내</h3>	
+						<h3>[Speech] 최신강연 안내</h3>	
 					</div>	
 					</div>
 					</div>
@@ -240,7 +224,8 @@
 								<a href="${pageContext.request.contextPath }/speech/list.do"><i class="icon-heart2"></i></a>
 							</div>
 							<h3>「바람이 우리를 데려다 주겠지」의 저자 오/소/희 작가와의 만남 </h3>
-							<p>▶ 여행은 어떻게 삶을 변화시키는가?<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &<br>  &nbsp; &nbsp;아이와 함께 여행하기 </p>
+							<p>▶ 여행은 어떻게 삶을 변화시키는가?<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+							&<br>&nbsp; &nbsp;  &nbsp; &nbsp;아이와 함께 여행하기 </p>
 						</div>
 					</div>
 
@@ -260,13 +245,7 @@
 					<div class="clear"></div>
 
 				</div>
-				<br><br>
-				
-				<hr size="1" width="100%">
-				<hr size="1" width="100%">
-
-
-			
+						
 
 				<div class="section">
 					<div class="container clearfix">
@@ -274,7 +253,7 @@
 						<div class="row topmargin-sm">
 					
 							<div class="center">
-								<h3>[new]신간도서 안내</h3>
+								<h3>[new] 신간도서 안내</h3>
 							</div>
 							<a href="${pageContext.request.contextPath }/book/search.do"><p style="text-align:right">▶더보기</p></a>	
 
@@ -285,7 +264,7 @@
 										<img src="${pageContext.request.contextPath}/resources/user/images/book/2.png" style="width:460px; height:315;">
 									</div>
 									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>못 참는 아이 욱하는 부모</h4><span>오은영</span></div>
+										<div class="team-title"><h4>못 참는 아이 욱하는 부모</h4><br><span>오은영</span></div>
 										<p>[못 참는 아이 욱하는 부모]는 영유아 시기부터 감정 조절을 올바르게 배울 수 있도록 안내한다.</p>
 									</div>
 								</div>
@@ -299,7 +278,7 @@
 										<img src="${pageContext.request.contextPath}/resources/user/images/book/3.png" style="width:460px; height:315;">
 									</div>
 									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>설민석의 조선왕조실록</h4><span>설민석</span></div>
+										<div class="team-title"><h4>설민석의 조선왕조실록</h4><br><span>설민석</span></div>
 										<p>스타강사 설민석의 재미있고 깊이 있는 한국사 책 『설민석의 조선왕조실록』</p>
 									</div>
 								</div>
@@ -313,7 +292,7 @@
 										<img src="${pageContext.request.contextPath}/resources/user/images/book/4.png" style="width:460px; height:315;">
 									</div>
 									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>풀꽃도 꽃이다 1</h4><span>조정래</span></div>
+										<div class="team-title"><h4>풀꽃도 꽃이다 1</h4><br><span>조정래</span></div>
 										<p>우리 사회와 교육의 지향점을 제안하는<br> 조정래의 장편소설 『풀꽃도 꽃이다』</p>
 									</div>
 								</div>
@@ -327,7 +306,7 @@
 										<img src="${pageContext.request.contextPath}/resources/user/images/book/1.png" style="width:460px; height:315;">
 									</div>
 									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>빨강머리 앤이 하는 말 : 아직 너무 늦지 않았을 우리에게</h4><span> [ 백영옥 ]</span></div>
+										<div class="team-title"><h4>빨강머리 앤이 하는 말 : 아직 너무 늦지 않았을 우리에게</h4><span>  백영옥 </span></div>
 										<p>우리 곁에 다시 가져온 추억 속 빨강머리앤의 웃음, 실수, 사랑과 희망의 말들! </p>
 									</div>
 								</div>
