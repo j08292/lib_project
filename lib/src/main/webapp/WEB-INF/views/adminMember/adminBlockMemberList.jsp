@@ -32,13 +32,14 @@
 								</div>
 								<div class="col-md-6 text-left">
 									차단해지일: ${article.penalty_blockcanceldate}<br> 
-									<input type="button" value="사유 보기" onclick="selectData('${article.mem_id}'); this.onclick=null;" class="btn btn-xs btn-info">
+									<input type="button" value="사유 보기" id="reasonOpen_${article.mem_id}" onclick="selectData('${article.mem_id}');" class="btn btn-xs btn-info">
+									<input type="button" value="사유 닫기" id="reasonClose_${article.mem_id}" onclick="hideData('${article.mem_id}');" class="btn btn-xs btn-info" style="display:none;">
 								</div>
 							</div>
 								<!-- 사유보기 ajax -->
 								<div id="output_${article.mem_id}">
-								
 								</div>
+								<br>
 								<div id="loading" style="display:none;">
 									<img src="${pageContext.request.contextPath}/resources/event/images/ajax-loader.gif">
 								</div>
