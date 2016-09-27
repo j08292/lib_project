@@ -138,7 +138,7 @@
 
 							<div class="feature-box fbox-right topmargin" data-animate="fadeIn">
 								<div class="fbox-icon">
-									<a href="#"><i class="icon-line-heart"></i></a>
+									<a href="${pageContext.request.contextPath }/board/operationGuide.do"><i class="icon-line-heart"></i></a>
 								</div>
 								<h3>이용안내</h3>
 								<p>온라인 도서관 이용안내 및 규칙</p>
@@ -149,7 +149,7 @@
 									<a href="#"><i class="icon-line-paper"></i></a>
 								</div>
 								<h3>도서대출</h3>
-								<p>읽고싶은 책을 편리하게 만나보세요.</p>
+								<p>읽고싶은 도서를 편리하게 만나보세요.</p>
 							</div>
 							<br>
 							<div class="feature-box fbox-right topmargin" data-animate="fadeIn" data-delay="400">
@@ -183,7 +183,7 @@
 									<a href="#"><i class="icon-line-check"></i></a>
 								</div>
 								<h3>출석체크</h3>
-								<p>매일매일 출석도장 찍고 다양한 혜택을 받아보세요</p>
+								<p>매일매일 출석도장 찍고 다양한 혜택을<br> 받아보세요</p>
 							</div>
 
 							<div class="feature-box topmargin" data-animate="fadeIn" data-delay="400">
@@ -191,7 +191,7 @@
 									<a href="#"><i class="icon-bulb"></i></a>
 								</div>
 								<h3>문의 게시판</h3>
-								<p>도서관 이용 관련 문의 내용은 해당 게시판을 이용해 주세요.</p>
+								<p>온라인 도서관 이용 관련 문의 내용은<br> 해당 게시판을 이용해 주세요.</p>
 							</div>
 
 						</div>
@@ -210,67 +210,7 @@
 				
 				<div class="container clearfix">
 
-					<div class="col_one_third">
-						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn">
-							<div class="fbox-icon">
-								<a href="#"><i class="icon-line-monitor"></i></a>
-							</div>
-							<h3>Responsive Layout</h3>
-							<p>Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
-						</div>
-					</div>
-
-					<div class="col_one_third">
-						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="200">
-							<div class="fbox-icon">
-								<a href="#"><i class="icon-line-eye"></i></a>
-							</div>
-							<h3>Retina Ready Graphics</h3>
-							<p>Looks beautiful &amp; ultra-sharp on Retina Displays with Retina Icons, Fonts &amp; Images.</p>
-						</div>
-					</div>
-
-					<div class="col_one_third col_last">
-						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="400">
-							<div class="fbox-icon">
-								<a href="#"><i class="icon-line-star"></i></a>
-							</div>
-							<h3>Powerful Performance</h3>
-							<p>Optimized code that are completely customizable and deliver unmatched fast performance.</p>
-						</div>
-					</div>
-
-					<div class="clear"></div>
-
-					<div class="col_one_third">
-						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="600">
-							<div class="fbox-icon">
-								<a href="#"><i class="icon-line-play"></i></a>
-							</div>
-							<h3>HTML5 Video</h3>
-							<p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width Background.</p>
-						</div>
-					</div>
-
-					<div class="col_one_third">
-						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="800">
-							<div class="fbox-icon">
-								<a href="#"><i class="icon-params"></i></a>
-							</div>
-							<h3>Parallax Support</h3>
-							<p>Display your Content attractively using Parallax Sections that have unlimited customizable areas.</p>
-						</div>
-					</div>
-
-					<div class="col_one_third col_last">
-						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1000">
-							<div class="fbox-icon">
-								<a href="#"><i class="icon-line-circle-check"></i></a>
-							</div>
-							<h3>Endless Possibilities</h3>
-							<p>Complete control on each &amp; every element that provides endless customization possibilities.</p>
-						</div>
-					</div>
+					
 
 					<div class="clear"></div>
 
@@ -279,8 +219,8 @@
 							<div class="fbox-icon">
 								<a href="#"><i class="icon-bulb"></i></a>
 							</div>
-							<h3>Light &amp; Dark Color Schemes</h3>
-							<p>Change your Website's Primary Scheme instantly by simply adding the dark class to the body.</p>
+							<h3>[서민교수 기생충 콘서트 ]<br> 작가 초청 강연회</h3>
+							<p>▶ 그들은 어떻게 지구의 2인자가 됐을까?<br>  서민교수의 기생충에 관한 유쾌한 강연!</p>
 						</div>
 					</div>
 
@@ -289,8 +229,8 @@
 							<div class="fbox-icon">
 								<a href="#"><i class="icon-heart2"></i></a>
 							</div>
-							<h3>Boxed &amp; Wide Layouts</h3>
-							<p>Stretch your Website to the Full Width or make it boxed to surprise your visitors.</p>
+							<h3>작가와의 만남 1</h3>
+							<p>▶ 작가와의 만남 1 </p>
 						</div>
 					</div>
 
@@ -299,8 +239,8 @@
 							<div class="fbox-icon">
 								<a href="#"><i class="icon-note"></i></a>
 							</div>
-							<h3>Extensive Documentation</h3>
-							<p>We have covered each &amp; everything in our Documentation including Videos &amp; Screenshots.</p>
+							<h3>작가와의 만남 2</h3>
+							<p>▶ 작가와의 만남 2 </p>
 						</div>
 					</div>
 

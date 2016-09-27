@@ -84,6 +84,10 @@
 
 
 
+  <definition name="operationGuide" extends="main">
+    	<put-attribute name="title" value="이용안내"/>
+    	<put-attribute name="body" value="/WEB-INF/views/board/operationGuide.jsp"/>
+    </definition>
  <definition name="pageError" extends="main">
     	<put-attribute name="title" value="에러페이지"/>
     	<put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>
