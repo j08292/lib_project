@@ -14,6 +14,7 @@ public interface AdminService {
 	public int getMarathonCount();
 	public int getWishlistCount();
 	public int getRentWaitingCount();
+	public int getQnaWaitingCount();
 	//메인 - 차단회원 관리
 	public List<PenaltyCommand> penaltyList();
 	public int getRowPenaltyCount();	

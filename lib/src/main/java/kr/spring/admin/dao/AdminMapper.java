@@ -19,6 +19,8 @@ public interface AdminMapper {
 	public int getWishlistCount();
 	@Select("SELECT count(*) FROM bookrent WHERE rent_status = 3")
 	public int getRentWaitingCount();
+	@Select("SELECT count(*) FROM (SELECT q.*, (SELECT count(*) FROM qna_reply qr WHERE qr.qna_num=q.qna_num)qna_replyCount FROM qna q) WHERE qna_replyCount = 0")
+	public int getQnaWaitingCount();
 	//메인 - 차단회원 관리
 	public List<PenaltyCommand> penaltyList();
 	public int getRowPenaltyCount();	

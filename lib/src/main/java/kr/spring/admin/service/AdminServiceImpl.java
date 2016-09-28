@@ -95,4 +95,9 @@ public class AdminServiceImpl implements AdminService{
 	public int getBooklistCount_0() {
 		return adminMapper.getBooklistCount_0();
 	}
+
+	@Override
+	public int getQnaWaitingCount() {
+		return adminMapper.getQnaWaitingCount();
+	}
 }

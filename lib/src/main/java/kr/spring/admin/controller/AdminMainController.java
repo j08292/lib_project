@@ -42,8 +42,10 @@ public class AdminMainController {
 		int marathonCount = adminService.getMarathonCount();
 		int wishlistCount = adminService.getWishlistCount();
 		int rentWaitingCount = adminService.getRentWaitingCount();
+		int qnaWaitingCount = adminService.getQnaWaitingCount();
 		//메인 - 차단회원 관리
 		int penaltyRowCount = adminService.getRowPenaltyCount();
+		
 		
 		List<PenaltyCommand> penaltyList = null;
 		if(penaltyRowCount>0){
@@ -72,6 +74,7 @@ public class AdminMainController {
 		mav.addObject("marathonCount",marathonCount);
 		mav.addObject("wishlistCount",wishlistCount);
 		mav.addObject("rentWaitingCount",rentWaitingCount);
+		mav.addObject("qnaWaitingCount",qnaWaitingCount);
 		mav.addObject("penaltyRowCount",penaltyRowCount);
 		mav.addObject("penaltyList",penaltyList);
 		mav.addObject("rentRankList",rentRankList);
