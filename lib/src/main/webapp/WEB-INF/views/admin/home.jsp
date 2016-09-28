@@ -42,8 +42,7 @@
 					</div>
 				</div>
 			</div>
-			<a
-				href="${pageContext.request.contextPath}/admin/speech/noCheckReserveList.do">
+			<a href="${pageContext.request.contextPath}/admin/speech/noCheckReserveList.do">
 				<div class="panel-footer">
 					<span class="pull-left">View Details</span> <span
 						class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -136,8 +135,7 @@
 					</div>
 				</div>
 			</div>
-			<a
-				href="${pageContext.request.contextPath}/admin/qna/list.do?keyfield=qna_replyCount&keyword=답변대기">
+			<a href="${pageContext.request.contextPath}/admin/qna/list.do?keyfield=qna_replyCount&keyword=답변대기">
 				<div class="panel-footer">
 					<span class="pull-left">View Details</span> <span
 						class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
