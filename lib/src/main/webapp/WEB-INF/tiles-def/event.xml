@@ -48,6 +48,24 @@
 			<add-attribute value="/lib/resources/admin/js/adminEventList.js" />
 		</put-list-attribute>	
     </definition>
+    
+    <definition name="adminEventDetail" extends="adminMain">
+    	<put-attribute name="title" value="관리자 이벤트 상세"/>
+    	<put-attribute name="body" value="/WEB-INF/views/event/adminEventDetail.jsp"/>
+    	<put-list-attribute name="jsList">
+			<!-- jQuery -->
+			<add-attribute value="/lib/resources/admin/js/jquery.js" />
+			<!-- Bootstrap Core JavaScript -->
+			<add-attribute value="/lib/resources/admin/js/bootstrap.min.js" />
+			<!-- Morris Charts JavaScript -->
+			<add-attribute value="/lib/resources/admin/js/plugins/morris/raphael.min.js" />
+			<add-attribute value="/lib/resources/admin/js/plugins/morris/morris.min.js" />
+			<add-attribute value="/lib/resources/admin/js/plugins/morris/morris-data.js" />
+			<add-attribute value="/lib/resources/admin/js/jquery.js" />
+			<add-attribute value="/lib/resources/admin/js/adminEvent.reply.js" />
+		</put-list-attribute>	
+    </definition>
+    
     <definition name="adminPrevEventList" extends="adminMain">
     	<put-attribute name="title" value="관리자 지난 이벤트 목록"/>
     	<put-attribute name="body" value="/WEB-INF/views/event/adminPrevEventList.jsp"/>

@@ -79,6 +79,7 @@
                    	<tr>
                    		<th>번호</th>
                    		<th>제목</th>
+                   		<th>답변여부</th>
                    		<th>ID</th>
                    		<th>날짜</th>
                    		<th>조회수</th>
@@ -87,7 +88,24 @@
                    	<c:forEach var="article" items="${list}">
                    		<tr>
                    			<td>${article.qna_num}</td>
-                   			<td><a href="qnaDetail.do?qna_num=${article.qna_num}">${article.qna_title}</a></td>
+                   			<td>
+                   			<c:if test="${empty article.qna_passwd}">
+                   			<a href="qnaDetail.do?qna_num=${article.qna_num}">${article.qna_title}</a>
+                   			</c:if>
+                   			<c:if test="${!empty article.qna_passwd}">
+                   			<a href="qnaPasswd.do?qna_num=${article.qna_num}"><i class="icon-lock3"></i> ${article.qna_title}</a>
+                   			</c:if>
+                   			</td>
+                   			<td>
+                   			<c:if test="${article.qna_replyCount==0}">
+                   			<span class="label label-warning">답변 대기</span>
+                   			<!-- <i class="icon-remove-circle"></i> -->
+                   			</c:if>
+                   			<c:if test="${article.qna_replyCount>0}">
+                   			<span class="label label-success">답변 완료</span>
+                   			<!-- <i class="icon-ok-circle"></i> -->
+                   			</c:if>
+                   			</td>
                    			<td>${article.mem_id}</td>
                    			<td>${article.qna_regdate}</td>
                    			<td>${article.qna_hit}</td>

@@ -2,7 +2,6 @@ package kr.spring.qna.domain;
 
 import java.sql.Date;
 
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -12,7 +11,6 @@ public class QnaCommand {
 	private int qna_num;//글번호
 	@NotEmpty
 	private String qna_title;//글제목
-	@Size(min=4, max=10, message="비밀번호는 필수입니다.")
 	private String qna_passwd;//글작성 비밀번호
 	@NotEmpty
 	private String qna_content;//qna작성내용
@@ -28,8 +26,6 @@ public class QnaCommand {
 			}
 			return false;
 		}
-	
-	
 	
 	public int getQna_num() {
 		return qna_num;

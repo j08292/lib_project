@@ -28,6 +28,11 @@
         </put-list-attribute>
     </definition>
     
+    <definition name="qnaPasswd" extends="qnaList">
+    	<put-attribute name="title" value="글 상세"/>
+    	<put-attribute name="body" value="/WEB-INF/views/board/qnaPasswd.jsp"/>
+    </definition>
+    
      
 	<definition name="qnaView" extends="qnaList">
     	<put-attribute name="title" value="글 상세"/>
@@ -84,10 +89,6 @@
 
 
 
-  <definition name="operationGuide" extends="main">
-    	<put-attribute name="title" value="이용안내"/>
-    	<put-attribute name="body" value="/WEB-INF/views/board/operationGuide.jsp"/>
-    </definition>
  <definition name="pageError" extends="main">
     	<put-attribute name="title" value="에러페이지"/>
     	<put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>

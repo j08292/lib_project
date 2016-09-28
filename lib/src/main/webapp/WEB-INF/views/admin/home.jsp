@@ -271,8 +271,7 @@
                    pieHole: 0.5,
                    pieSliceTextStyle: {
                      color: 'black'
-                   },
-                   legend: 'none'
+                   }
                  };
 
       var chart1 = new google.charts.Bar(document.getElementById('columnchart_material'));
@@ -290,7 +289,7 @@
 					<i class="fa fa-long-arrow-right fa-fw"></i>인기도서
 				</h3>
 			</div>
-			<div id="donut_single" style="width: 100%;"></div>
+			<div id="donut_single" style="height:350px;"></div>
 		</div>
 	</div>
 	<div class="col-lg-6">

@@ -41,7 +41,7 @@
 					<c:forEach var="article" items="${list}">
 						<tr>
 							<td>${article.event_num}</td>
-							<td><a href="update.do?event_num=${article.event_num}">${article.event_title}</a></td>
+							<td><a href="detail.do?event_num=${article.event_num}">${article.event_title}</a></td>
 							<td><c:choose>
 									<c:when test="${!empty article.event_filename}">						
 										<img src="${pageContext.request.contextPath}/event_upload/${article.event_filename}" height="50px" class="adminListImage" alt="이벤트사진">
@@ -52,7 +52,8 @@
 							<td>${article.event_startdate}</td>
 							<td>${article.event_enddate}</td>
 							<td>${article.event_regdate}</td>
-							<td><a href="javascript:del_event(${article.event_num});" class="btn btn-xs btn-danger">삭제</a></td>
+							<td><a href="update.do?event_num=${article.event_num}" class="btn btn-xs btn-warning">수정</a>
+							<a href="javascript:del_event(${article.event_num});" class="btn btn-xs btn-danger">삭제</a></td>
 						</tr>						
 					</c:forEach>				
 				</tbody>

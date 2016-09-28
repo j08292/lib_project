@@ -8,7 +8,7 @@
 			   b.list_title,
 			   b.list_page,
 			   br.rent_regdate,
-			   br.return_date,
+			   br.rent_returndate,
 			   br.mem_id,
 			   (SELECT count(*) FROM grade WHERE list_num=b.list_num AND mem_id=#{mem_id}) gradecheck
 			FROM (SELECT booklist.*, rownum rnum FROM booklist) b, 

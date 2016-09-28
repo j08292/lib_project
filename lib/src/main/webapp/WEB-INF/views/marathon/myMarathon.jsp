@@ -50,6 +50,7 @@
 					<th style="text-align:center;">책번호</th>
 					<th style="text-align:center;">책제목</th>
 					<th style="text-align:center;">페이지 수</th>
+					<th style="text-align:center;">대여날짜</th>
 					<th style="text-align:center;">반납날짜</th>
 					<th style="text-align:center;">한줄평</th>
 				</tr>
@@ -62,6 +63,7 @@
 				<td>${article.list_title}</td>
 				<td><fmt:formatNumber type="currency" value="${article.list_page}" pattern="###,###"/></td>
 				<td>${article.rent_regdate}</td>
+				<td>${article.rent_returndate}</td>
 				<td>
 				<c:if test="${article.gradecheck eq 1}">
 				한줄평을 남기셨습니다.

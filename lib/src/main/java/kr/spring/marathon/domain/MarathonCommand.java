@@ -9,6 +9,7 @@ public class MarathonCommand {
 	private String mem_id;
 	private Date rent_regdate;
 	private int gradecheck;
+	private Date rent_returndate;
 	//¸¶¶óÅæ Å×ÀÌºí ºó
 	private int marathon_num;
 	private int marathon_page;
@@ -56,6 +57,12 @@ public class MarathonCommand {
 	public void setGradecheck(int gradecheck) {
 		this.gradecheck = gradecheck;
 	}
+	public Date getRent_returndate() {
+		return rent_returndate;
+	}
+	public void setRent_returndate(Date rent_returndate) {
+		this.rent_returndate = rent_returndate;
+	}
 	public int getMarathon_num() {
 		return marathon_num;
 	}
@@ -98,13 +105,12 @@ public class MarathonCommand {
 	public void setMem_cell(String mem_cell) {
 		this.mem_cell = mem_cell;
 	}
-	
 	@Override
 	public String toString() {
 		return "MarathonCommand [list_num=" + list_num + ", list_title=" + list_title + ", list_page=" + list_page
 				+ ", mem_id=" + mem_id + ", rent_regdate=" + rent_regdate + ", gradecheck=" + gradecheck
-				+ ", marathon_num=" + marathon_num + ", marathon_page=" + marathon_page + ", marathon_regdate="
-				+ marathon_regdate + ", marathon_status=" + marathon_status + ", mem_name=" + mem_name
-				+ ", mem_address=" + mem_address + ", mem_cell=" + mem_cell + "]";
+				+ ", rent_returndate=" + rent_returndate + ", marathon_num=" + marathon_num + ", marathon_page="
+				+ marathon_page + ", marathon_regdate=" + marathon_regdate + ", marathon_status=" + marathon_status
+				+ ", mem_name=" + mem_name + ", mem_address=" + mem_address + ", mem_cell=" + mem_cell + "]";
 	}
 }
