@@ -1,4 +1,4 @@
-package kr.spring.event.controller;
+package kr.admin.event.controller;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ import kr.spring.event.service.EventService;
 import kr.spring.util.PagingUtil;
 
 @Controller
-public class AdminEventListController {
+public class AdminNextEventListController {
 private Logger log = Logger.getLogger(this.getClass());
 	
 	private int rowCount = 12;
@@ -26,7 +26,7 @@ private Logger log = Logger.getLogger(this.getClass());
 	@Resource
 	private EventService eventService;
 	
-	@RequestMapping("/admin/event/list.do")
+	@RequestMapping("/admin/event/nextEventList.do")
 	public ModelAndView process(
 			@RequestParam(value="pageNum", defaultValue="1")
 			int currentPage,
@@ -46,23 +46,24 @@ private Logger log = Logger.getLogger(this.getClass());
 		map.put("keyword", keyword);
 		
 		//ÃÑ ±ÛÀÇ °¹¼ö ¶Ç´Â °Ë»öµÈ ±ÛÀÇ °¹¼ö
-		int count = eventService.getRowCount(map);
+		int count = eventService.getAdminNextEventCount(map);
 		
 		PagingUtil page = new PagingUtil(keyfield, keyword, currentPage, 
-								count, rowCount, pageCount,"list.do");
+								count, rowCount, pageCount,"nextEventList.do");
 		
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
 		
 		List<EventCommand> list = null;
+		
 		if(count > 0){
-			list = eventService.list(map);
+			list = eventService.adminNextEventList(map);
 		}else{
 			list = Collections.emptyList();
 		}
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("adminEventList");
+		mav.setViewName("adminNextEventList");
 		mav.addObject("count", count);
 		mav.addObject("list", list);
 		mav.addObject("pagingHtml", page.getPagingHtml());

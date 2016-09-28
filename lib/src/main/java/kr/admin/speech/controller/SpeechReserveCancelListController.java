@@ -17,7 +17,7 @@ import kr.spring.speech.service.SpeechService;
 import kr.spring.util.PagingUtil;
 
 @Controller
-public class NoCheckReserveListController {
+public class SpeechReserveCancelListController {
 
 	private Logger log = Logger.getLogger(this.getClass());
 
@@ -27,28 +27,30 @@ public class NoCheckReserveListController {
 	@Resource
 	private SpeechService speechService;
 	
-	@RequestMapping("/admin/speech/noCheckReserveList.do")
+	@RequestMapping("/admin/speech/speechReserveCancelList.do")
 	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1") int currentPage){
 		if(log.isDebugEnabled()){
 			log.debug("currentPage : " + currentPage);
 		}
 		HashMap<String,Object> map = new HashMap<String, Object>();
 		
-		int count = speechService.getRowCountNoCheck(map);
+		int count = speechService.getReserveCancelCount(map);
 		
-		PagingUtil page = new PagingUtil(null,null,currentPage, count, rowCount,pageCount,"noCheckReserveList.do");
+		PagingUtil page = new PagingUtil(null,null,currentPage, count, rowCount,pageCount,"speechReserveCancelList.do");
 		
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
+		
 		List<SpeechReservationCommand> list = null;
+		
 		if(count>0){
-			list = speechService.noCheckReserveList(map);
+			list = speechService.speechReserveCancelList(map);
 		}else{
 			list = Collections.emptyList();
 		}
 		
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("adminNoCheckReserveList");
+		mav.setViewName("adminSpeechReserveCancelList");
 		mav.addObject("count",count);
 		mav.addObject("list",list);
 		mav.addObject("pagingHtml",page.getPagingHtml());

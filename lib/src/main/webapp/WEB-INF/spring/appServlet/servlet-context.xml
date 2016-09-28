@@ -30,7 +30,8 @@
 	<context:component-scan base-package="kr.admin.qna.controller"/>
 	<context:component-scan base-package="kr.spring.qna.controller"/>
 	<context:component-scan base-package="kr.admin.grade.controller"/>
-	<context:component-scan base-package="kr.spring.grade.controller"/>	
+	<context:component-scan base-package="kr.spring.grade.controller"/>
+	<context:component-scan base-package="kr.admin.event.controller"/>
 	<context:component-scan base-package="kr.spring.event.controller"/>	
 	
 	<!-- 본 프로젝트에 맞게 자동 스캔 수정할 것 -->

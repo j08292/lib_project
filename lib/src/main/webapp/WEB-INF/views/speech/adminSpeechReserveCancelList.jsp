@@ -4,10 +4,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div>
 	  <h1 class="page-header">
-	  강연 미승인 신청자 | <a href="${pageContext.request.contextPath}/admin/speech/speechReserveCancelList.do"><small>강연 예약 취소자</small></a> | <a href="${pageContext.request.contextPath}/admin/speech/list.do"><small>강연 목록</small></a>
+	  강연 예약 취소자 | <a href="${pageContext.request.contextPath}/admin/speech/list.do"><small>강연 목록</small></a> | <a href="${pageContext.request.contextPath}/admin/speech/noCheckReserveList.do"><small>강연 미승인 신청자</small></a>
 	  </h1>
 	<c:if test="${count == 0}">
-	<div align="center">신청중인 회원이 없습니다.</div>
+	<div align="center">예약을 취소한 회원이 없습니다.</div>
 	</c:if>
 	<c:if test="${count > 0}">
 	<div class="table-responsive">
@@ -29,7 +29,7 @@
 					<td>${article.mem_id}</td>
 					<td>${article.speech_reserve_date}</td>
 					<td>
-						신청확인중					
+						취소 신청					
 					</td>
 				</tr>
 			</tbody>

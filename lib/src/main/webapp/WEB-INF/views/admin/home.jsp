@@ -33,8 +33,52 @@
 			<div class="panel-heading">
 				<div class="row">
 					<div class="col-xs-6">
+						<h3>대여 대기자</h3>
+					</div>
+					<div class="col-xs-6 text-right">
+						<div class="huge">${rentWaitingCount}</div>
+						<div>New Lending!</div>
+					</div>
+				</div>
+			</div>
+			<a href="${pageContext.request.contextPath}/admin/bookrent/list.do?keyfield=rent_status&keyword=3">
+				<div class="panel-footer">
+					<span class="pull-left">View Details</span> <span
+						class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+					<div class="clearfix"></div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6">
+		<div class="panel panel-green">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-6">
+						<h3>희망 도서</h3>
+					</div>
+					<div class="col-xs-6 text-right">
+						<div class="huge">${wishlistCount}</div>
+						<div>New Application!</div>
+					</div>
+				</div>
+			</div>
+			<a href="${pageContext.request.contextPath}/admin/wishlist/list.do?keyfield=wish_status&keyword=0">
+				<div class="panel-footer">
+					<span class="pull-left">View Details</span> <span
+						class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+					<div class="clearfix"></div>
+				</div>
+			</a>
+		</div>
+	</div>	
+	<div class="col-lg-3 col-md-6">
+		<div class="panel panel-yellow">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-6">
 						<!-- <i class="fa fa-comments fa-5x"></i> -->
-						<h3>강연</h3>
+						<h3>강연 신청자</h3>
 					</div>
 					<div class="col-xs-6 text-right">
 						<div class="huge">${speechReserveCount}</div>
@@ -46,6 +90,53 @@
 				<div class="panel-footer">
 					<span class="pull-left">View Details</span> <span
 						class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+					<div class="clearfix"></div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6">
+		<div class="panel panel-red">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-6">
+						<!-- <i class="fa fa-comments fa-5x"></i> -->
+						<h3>강연 취소자</h3>
+					</div>
+					<div class="col-xs-6 text-right">
+						<div class="huge">${speechCancelCount}</div>
+						<div>New Revoker!</div>
+					</div>
+				</div>
+			</div>
+			<a href="${pageContext.request.contextPath}/admin/speech/speechReserveCancelList.do">
+				<div class="panel-footer">
+					<span class="pull-left">View Details</span> <span
+						class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+					<div class="clearfix"></div>
+				</div>
+			</a>
+		</div>
+	</div>	
+</div>
+<div class="row">
+	<div class="col-lg-3 col-md-6">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<div class="row">
+					<div class="col-xs-6">
+						<h3>도서 예약자</h3>
+					</div>
+					<div class="col-xs-6 text-right">
+						<div class="huge">${bookReserveCount}</div>
+						<div>New Reservation!</div>
+					</div>
+				</div>
+			</div>
+			<a href="${pageContext.request.contextPath}/admin/bookrent/list.do?keyfield=rent_status&keyword=2">
+				<div class="panel-footer">
+					<span class="pull-left">View Details</span>
+					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 					<div class="clearfix"></div>
 				</div>
 			</a>
@@ -64,8 +155,7 @@
 					</div>
 				</div>
 			</div>
-			<a
-				href="${pageContext.request.contextPath}/admin/marathon/list.do?keyfield=marathon_status&keyword=0">
+			<a href="${pageContext.request.contextPath}/admin/marathon/list.do?keyfield=marathon_status&keyword=0">
 				<div class="panel-footer">
 					<span class="pull-left">View Details</span> <span
 						class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -78,17 +168,16 @@
 		<div class="panel panel-yellow">
 			<div class="panel-heading">
 				<div class="row">
-					<div class="col-xs-6">
-						<h3>희망도서</h3>
+					<div class="col-xs-7">
+						<h3>QnA 답변대기</h3>
 					</div>
-					<div class="col-xs-6 text-right">
-						<div class="huge">${wishlistCount}</div>
-						<div>New Application!</div>
+					<div class="col-xs-5 text-right">
+						<div class="huge">${qnaWaitingCount}</div>
+						<div>New Question!</div>
 					</div>
 				</div>
 			</div>
-			<a
-				href="${pageContext.request.contextPath}/admin/wishlist/list.do?keyfield=wish_status&keyword=0">
+			<a href="${pageContext.request.contextPath}/admin/qna/list.do?keyfield=qna_replyCount&keyword=답변대기">
 				<div class="panel-footer">
 					<span class="pull-left">View Details</span> <span
 						class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -101,41 +190,16 @@
 		<div class="panel panel-red">
 			<div class="panel-heading">
 				<div class="row">
-					<div class="col-xs-6">
-						<h3>대출대기</h3>
-					</div>
-					<div class="col-xs-6 text-right">
-						<div class="huge">${rentWaitingCount}</div>
-						<div>New Lending!</div>
-					</div>
-				</div>
-			</div>
-			<a
-				href="${pageContext.request.contextPath}/admin/bookrent/list.do?keyfield=rent_status&keyword=3">
-				<div class="panel-footer">
-					<span class="pull-left">View Details</span> <span
-						class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-					<div class="clearfix"></div>
-				</div>
-			</a>
-		</div>
-	</div>
-</div>
-<div class="row">
-	<div class="col-lg-3 col-md-6">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<div class="row">
 					<div class="col-xs-7">
-						<h3>QnA 답변대기</h3>
+						<h3>지난 이벤트</h3>
 					</div>
 					<div class="col-xs-5 text-right">
-						<div class="huge">${qnaWaitingCount}</div>
-						<div>New Question!</div>
+						<div class="huge">${prevEventCount}</div>
+						<div>New PrevEvent!</div>
 					</div>
 				</div>
 			</div>
-			<a href="${pageContext.request.contextPath}/admin/qna/list.do?keyfield=qna_replyCount&keyword=답변대기">
+			<a href="${pageContext.request.contextPath}/admin/event/prevEventList.do">
 				<div class="panel-footer">
 					<span class="pull-left">View Details</span> <span
 						class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

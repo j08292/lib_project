@@ -82,4 +82,24 @@ public class EventServiceImpl implements EventService{
 		eventMapper.deleteReply(event_re_num);
 	}
 	
+	//包府磊 - 捞亥飘 包府 =======================================================
+	@Override
+	public List<EventCommand> adminPrevEventList(Map<String, Object> map) {
+		return eventMapper.adminPrevEventList(map);
+	}
+
+	@Override
+	public int getAdminPrevEventCount(Map<String, Object> map) {
+		return eventMapper.getAdminPrevEventCount(map);
+	}
+
+	@Override
+	public List<EventCommand> adminNextEventList(Map<String, Object> map) {
+		return eventMapper.adminNextEventList(map);
+	}
+
+	@Override
+	public int getAdminNextEventCount(Map<String, Object> map) {
+		return eventMapper.getAdminNextEventCount(map);
+	}	
 }

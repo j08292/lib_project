@@ -3,9 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <div>
 	<h1 class="page-header">
-		진행중 이벤트 | <a href="${pageContext.request.contextPath}/admin/event/nextEventList.do"><small>예정 이벤트</small></a> | <a href="${pageContext.request.contextPath}/admin/event/prevEventList.do"><small>지난 이벤트</small></a>
+		지난 이벤트 | <a href="${pageContext.request.contextPath}/admin/event/list.do"><small>진행중 이벤트</small></a> | <a href="${pageContext.request.contextPath}/admin/event/nextEventList.do"><small>예정 이벤트</small></a>
 	</h1>
-	<form action="list.do" id="search_form" method="get">
+	<form action="prevEventList.do" id="search_form" method="get">
 		<div align="center">
 			<select name="keyfield" id="booklistSearch">
 				<option value="event_title">제목</option>
@@ -18,9 +18,8 @@
 			<input type="submit" value="찾기">
 		</div>
 	</form>
-	<div align="right"><input type="button" value="이벤트 등록" class="btn btn-sm btn-primary" onclick="location.href='write.do'"></div>
 	<c:if test="${count == 0}">
-		<div align="center">진행중 이벤트가 없습니다.</div>
+		<div align="center">지난 이벤트가 없습니다.</div>
 	</c:if>
 	<c:if test="${count > 0}">
 		<div class="table-responsive">

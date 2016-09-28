@@ -29,4 +29,12 @@ public interface EventService {
 	public void insertReply(EventReplyCommand eventReply);
 	public void updateReply(EventReplyCommand eventReply);
 	public void deleteReply(Integer event_re_num);
+	
+	//관리자 - 이벤트 관리
+	//지난 이벤트
+	public List<EventCommand> adminPrevEventList(Map<String, Object>map);
+	public int getAdminPrevEventCount(Map<String, Object> map);
+	//예정 이벤트
+	public List<EventCommand> adminNextEventList(Map<String, Object>map);
+	public int getAdminNextEventCount(Map<String, Object> map);
 }

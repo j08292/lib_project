@@ -1,4 +1,4 @@
-package kr.spring.event.controller;
+package kr.admin.event.controller;
 
 import java.io.File;
 

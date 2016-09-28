@@ -38,4 +38,12 @@ public interface EventMapper {
 	public void updateReply(EventReplyCommand eventReply);
 	@Delete("DELETE FROM event_reply WHERE event_re_num=#{event_re_num}")
 	public void deleteReply(Integer event_re_num);
+	
+	//관리자 - 이벤트 관리
+	//지난 이벤트
+	public List<EventCommand> adminPrevEventList(Map<String, Object>map);
+	public int getAdminPrevEventCount(Map<String, Object> map);
+	//예정 이벤트
+	public List<EventCommand> adminNextEventList(Map<String, Object>map);
+	public int getAdminNextEventCount(Map<String, Object> map);
 }
