@@ -23,24 +23,25 @@
 											
 						<ul>
 							<li class="speech"><a href="${pageContext.request.contextPath}/board/operationGuide.do">이용안내</a></li>	
+							<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do">공지사항</a></li>	
 							<li><a href="#">BOOK</a>
 								<ul>
 									<li><a href="${pageContext.request.contextPath }/book/search.do">도서검색</a></li>
 									<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do">희망도서 신청</a></li>
 								</ul>
 							</li>
-							<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do">강연</a></li>							
-							<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do">공지사항</a></li>							
-							<li><a href="#">EVENT</a>
-								<ul>
-									<li><a href="${pageContext.request.contextPath}/event/list.do">이벤트</a></li>
-									<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do">독서마라톤</a></li>
-								</ul>
-							</li>
+							<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do">강연</a></li>													
+							
 							<li><a href="#">BOARD</a>
 								<ul>
 									<li><a href="${pageContext.request.contextPath}/board/list.do">감상평게시판</a></li>
 									<li><a href="${pageContext.request.contextPath}/board/qnaList.do">질문게시판</a></li>								
+								</ul>
+							</li>
+							<li><a href="#">EVENT</a>
+								<ul>
+									<li><a href="${pageContext.request.contextPath}/event/list.do">이벤트</a></li>
+									<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do">독서마라톤</a></li>
 								</ul>
 							</li>
 						</ul>
