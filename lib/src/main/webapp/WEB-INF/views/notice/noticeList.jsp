@@ -2,6 +2,16 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<section id="page-title">
+
+            <div class="container clearfix">
+                <h3>공지사항</h3>               
+            </div>
+
+        </section>
+
+
+
 <div class="container clearfix">
 	
 	
