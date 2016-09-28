@@ -50,10 +50,10 @@
 					<td>${article.qna_regdate}</td>
 					<td>
 					<c:if test="${article.qna_replyCount>0 }">
-					답변 완료
+					<span class="label label-success">답변 완료</span>
 					</c:if>
 					<c:if test="${article.qna_replyCount==0 }">
-					답변 대기
+					<span class="label label-warning">답변 대기</span>
 					</c:if>
 					</td>
 					<td>${article.qna_hit}</td>

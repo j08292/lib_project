@@ -2,22 +2,43 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c"	uri = "http://java.sun.com/jsp/jstl/core" %>
 <div>
-
-	<div align="center"><h1 class="align-center">${qnaCommand.qna_title}</h1></div>
-	<ul style="list-style:none;">
-        <li>번호 : ${qnaCommand.qna_num}</li>
-  		<li>ID : ${qnaCommand.mem_id}</li>
-  		<li>조회수 : ${qnaCommand.qna_hit}</li>
-  		<li>등록날짜 : ${qnaCommand.qna_regdate}</li>
-  	</ul>
+	<h1 class="align-center">Q&A게시판</h1>
+	<div class="table-responsive">
+    	<table class="table table-striped">
+    		
+            <thead>
+                <tr>
+                   <th colspan="4">글 제목: ${qnaCommand.qna_title}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                	<th>번호 : ${qnaCommand.qna_num}</th>
+                    <th>작성자 : ${qnaCommand.mem_id}</th>
+                    <th style="text-align:right;">등록날짜 : ${qnaCommand.qna_regdate}</th>
+                    <th style="text-align:right;">조회수 : ${qnaCommand.qna_hit}</th>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                    <br>
+                    ${qnaCommand.qna_content}<br>
+                    <br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	
+  	<div align="right">
   	<input type="button" value="목록으로" onclick="location.href='list.do'" class="btn btn-sm btn-info">
   	<input type="button" value="삭제"
   			onclick="javascript:delete_event(${qnaCommand.qna_num});" class="btn btn-sm btn-danger">
+  	</div>
   	<hr size="1" width="100%">
   	<p>
   	  	<br>
  	 	<br>                   		
-  		${qnaCommand.qna_content}
+  		
   	</p>
   	<hr size="1" width="100%">
   	<p class="align-right">
@@ -29,19 +50,13 @@
   	<form id="qre_form">
   		<input type="hidden" name="qna_num"  value="${qnaCommand.qna_num}" id="qna_num">
 		<input type="hidden" name="mem_id" value="${userId}" id="userId"> 
-		<textarea rows="3" cols="50" name="qna_re_content" id="qna_re_content" maxlength="300" class="a"
-	<c:if test="${empty userId && mem_level ==2}">disabled="disabled"</c:if>>
-	<c:if test="${empty userId}"></c:if>
-	<c:if test="${mem_level != 2}">관리자만 작성할 수 있습니다.</c:if>
-	</textarea>  
-	<c:if test="${!empty userId && mem_level == 2}">
-    	<div id="qre_first">
-    		<span class="letter-count">300/300</span>
-    	</div>
-    	<div id="qre_second" class="align-right">
-    		<input type="submit" value="전송">
-    	</div>
-	</c:if>            	
+			<textarea rows="3" name="qna_re_content" id="qna_re_content" maxlength="300" class="form-control"></textarea>  
+	    	<div id="qre_first">
+	    		<span class="letter-count">300/300</span>
+	    	</div>
+	    	<div id="qre_second" style="align:right;">
+	    		<input type="submit" value="전송" class="btn btn-default">
+	    	</div>
     </form>
               	
     <!-- 목록출력 -->
