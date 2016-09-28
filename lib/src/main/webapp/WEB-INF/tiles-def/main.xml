@@ -25,6 +25,7 @@
         	<add-attribute value="../resources/user/css/responsive.css"/>
         </put-list-attribute>
         <put-list-attribute name="jsList">
+        <add-attribute value="../resources/user/js/jquery.js"/>
         	<!-- <add-attribute value="//code.jquery.com/jquery-1.9.1.js"/>
 			<add-attribute value="//code.jquery.com/ui/1.10.4/jquery-ui.js"/> -->
         	<add-attribute value="../resources/user/js/plugins.js" />

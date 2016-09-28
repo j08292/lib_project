@@ -9,7 +9,8 @@
             <div class="content-wrap">
 
                 <div class="container clearfix ">
-	<span class="glyphicons glyphicons-puzzle-2"></span><h2><p style="text-align:center;">&lt; <spring:message code="wishlist.write.title"/> &gt;</p></h2>
+	
+	<h2><p style="text-align:center;">&lt; <spring:message code="wishlist.write.title"/> &gt;</p></h2>
 	
 	<br><br><br>
 	<div>
