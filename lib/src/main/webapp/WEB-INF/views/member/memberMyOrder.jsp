@@ -4,15 +4,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:if test='${!empty param.rent_status}'>
-<script type="text/javascript">
-	 $(function() {
-		$('#selectBox').val('${pageContext.request.contextPath}/member/myOrder.do?rent_status{param.rent_status}');
-	});
-</script>
-</c:if>	
-
-
 <!-- Page Title
 		============================================= -->
 <section id="page-title">
@@ -30,16 +21,37 @@
 		<div class="container clearfix">
 		<form:form action="myOrder.do" id="myOrder-form" class="nobottommargin" method = "get">
 				<select id="selectBox" class="form-control" style="width:100px;	float:left;">
-					<option value="${pageContext.request.contextPath}/member/myOrder.do">전체</option>
-					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=3">대여대기</option>
+					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=9" >전체</option>
+					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=3">일반 대여</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=0">대여</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=1">반납</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=2">예약</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=4">취소</option>
-					
+					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=5">무인대여</option>
 				</select>
 				<br><br> 
 		</form:form>
+		<c:if test="${param.rent_status != null }">
+				<script type="text/javascript">
+	 					$('#selectBox').change(function(){
+							location.href=$(this).val();
+						});	
+	 					$(function() {
+	 						$('#selectBox').val('${pageContext.request.contextPath}/member/myOrder.do?rent_status=${param.rent_status}');
+	 					});
+				</script>
+		</c:if>		
+		
+		<c:if test="${param.rent_status == null }">
+				<script type="text/javascript">
+	 					$('#selectBox').change(function(){
+							location.href=$(this).val();
+						});	
+	 					$(function() {
+ 							$('#selectBox').val('${pageContext.request.contextPath}/member/myOrder.do?rent_status=9');
+	 					});
+				</script>
+		</c:if>
 
 
 			<label>도서대여 내역</label>
@@ -68,7 +80,12 @@
 										<tr>
 											<td>${rent.rent_num }</td>
 											<td><a href="${pageContext.request.contextPath}/member/myOrderDetail.do?rent_num=${rent.rent_num}&list_num=${rent.list_num}&list_title=${rent.list_title}">${rent.list_title }</a></td>
+											<c:if test="${rent.rent_status == 3 }">
 											<td>일반</td>
+											</c:if>
+											<c:if test="${rent.rent_status == 5 }">
+											<td>무인</td>
+											</c:if>
 											<td>북수원 도서관</td>
 											<td>${rent.rent_regdate }</td>
 											<td>${rent.rent_returndate }</td>
@@ -88,8 +105,11 @@
 													<c:when test="${rent.rent_status == 4 }">
 														<td>취소
 													</c:when>
+													<c:when test="${rent.rent_status == 5 }">
+														<td>대여대기</td>
+													</c:when>
 												</c:choose>
-											
+												
 											<td>
 												<c:if test="${rent.rent_status == 2 }">
 													<input type="hidden" id="rent_num" name="rent_num"

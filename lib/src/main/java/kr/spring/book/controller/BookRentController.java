@@ -62,12 +62,25 @@ public class BookRentController {
 			log.debug("list : " + list);
 		}
 		
+		int num = basketService.getRowCount(userId);
+		int price = num*1000;
+		int total = 0;
+		
+		if(num>=5){
+			total = price;
+		}else{
+			total =price+2000; 
+		}
+		
 		MemberCommand member = memberService.selectMember(userId);
 		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("bookRent");
 		mav.addObject("member", member);
 		mav.addObject("list", list);
+		mav.addObject("num",num);
+		mav.addObject("price", price);
+		mav.addObject("total", total);
 		return mav;
 	}
 	

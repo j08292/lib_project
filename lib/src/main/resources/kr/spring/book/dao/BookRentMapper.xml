@@ -29,12 +29,16 @@
 		            	<if test="rent_status == 4 ">
 		            		and b2.rent_status = 4
 		            	</if>
+		            	<if test="rent_status == 5 ">
+		            		and b2.rent_status = 5
+		            	</if>
 			            <if test="rent_status == 9 ">
 			            	and (b2.rent_status = 0 or
 			            	b2.rent_status = 1 or
 			            	b2.rent_status = 2 or
 			            	b2.rent_status = 3 or
-			            	b2.rent_status = 4) 
+			            	b2.rent_status = 4 or
+			            	b2.rent_status = 5) 
 		            	</if>
 		            </where>
 		            ORDER BY rent_num DESC)a)
@@ -63,12 +67,16 @@
 		           	<if test="status == '4' ">
 	            		rent_status == 4
 	            	</if>
+	            	<if test="status == '5' ">
+	            		rent_status == 5
+	            	</if>
 	            	<if test="status == '' ">
 			           	rent_status == 0 or
 			           	rent_status == 1 or
 			           	rent_status == 2 or
 			           	rent_status == 3 or
 			           	rent_status == 4 or
+			           	rent_status == 5
 		           	</if>
 		  </where>
 	</select>

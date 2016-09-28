@@ -44,9 +44,11 @@
 										<tr>
 											<th></th>
 											<th>도서명</th>
+											<th>코드</th>
+											<th>저자</th>
+											<th>출판사</th>
 											<th>개수</th>
-											<th>대여일</th>
-											<th>반납일</th>
+											<th>대여 가격</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -55,20 +57,32 @@
 												<td><img src="${basket.list_filename }" width="75"
 													height="113"></td>
 												<td>${basket.list_title}</td>
+												<td>${basket.list_code}</td>
+												<td>${basket.list_writer}</td>
+												<td>${basket.list_publish}</td>
 												<td>${basket.basket_amount }</td>
-												<td>${basket.basket_rentDate }</td>
-												<td>${basket.basket_returnDate }</td>
+												<td>${basket.list_price}</td>
 											</tr>
 										</c:forEach>
 									</tbody>
 								</table>
+								<div style = "text-align:right;">
+									<c:if test="${num>=5}">
+										<td>[도서 대여가격] : ${price } + [배송비] : 0 = [합계] : ${total }원</td>
+									</c:if>
+									<c:if test="${num<5}">
+										<td>[도서 대여가격] : ${price } + [배송비] : 2000 = [합계] : ${total }원</td>
+									</c:if>
+									<br><br>
+									<span class = "glyphicon glyphicon-ok"></span>&nbsp;&nbsp;<span>5권 이상 대여하실 경우 배송비 무료</span>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
 
-				<label>배송지 정보</label><br>
+				<label style = "font-size:18px;">배송지 정보</label><br>
 				<label>기존 배송지</label>&nbsp;&nbsp;<input type = "radio" name="gener" checked="checked" id = "existing-radio">&nbsp;&nbsp;&nbsp;&nbsp;
 				<label>새로운 배송지</label>&nbsp;&nbsp;<input type = "radio" name="gener" id = "new-radio">
 				
@@ -97,22 +111,13 @@
 
 											<!-- daum 우편번호 시작 -->
 											<div class="col_full">
-												<label for="sample3_postcode">우편번호:</label> 
+												<label for="postcode">우편번호:</label> 
 												<br>
-												<form:input path="sample3_postcode" placeholder="우편번호"
+												<input type = "text" placeholder="우편번호"
 													class="form-control"  style = "width:25%;" value = "${member.sample3_postcode }"/>
 												- <br>
-
-												<div id="wrap"
-													style="display: none; border: 1px solid; width: 500px; height: 300px; margin: 5px 0; position: relative">
-													<img
-														src="//i1.daumcdn.net/localimg/localimages/07/postcode/320/close.png"
-														id="btnFoldWrap"
-														style="cursor: pointer; position: absolute; right: 0px; top: -1px; z-index: 1"
-														onclick="foldDaumPostcode()" alt="접기 버튼">
-												</div>
-												<label for="delivery_address">주소:</label>
-												<form:input path="delivery_address" class="form-control"
+												<label for="address">주소:</label>
+												<input type = "text" id = "address" class="form-control"
 													placeholder="주소" style = "width:50%;" value = "${member.mem_address }"/>
 
 											</div>
@@ -255,8 +260,42 @@
 					</div>
 				</div>
 				
+				<label style = "font-size:18px;">결제정보</label>
+				<div class = "panel-group">
+					<div class = "panel panel-default">
+						<div class = "panel-body">
+							<div>
+								<table class = "table table-hover provideList">
+									<thead>
+										<tr>
+											<th>결제 금액</th>
+											<th>${total }</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th>결제방식</th>
+											<td>무통장입금</td>											
+											<th>계좌번호</th>
+											<td>123-4567-890</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 				<p style="text-align: center;">
-					<input type = "submit" id="payment-button" class="btn btn-primary"	value = "결제하기">
+					<input type = "submit" id="payment-button" class="btn btn-primary"	value = "결제하기"
+					onclick = "success()">
+					
+					<script type="text/javascript">
+						function success(){
+							alert("결제가 완료되었습니다.");
+						}
+					</script>
+					
 					<input type="button" value="장바구니로 가기" class="btn btn-primary"
 						onclick="history.go(-1)">
 				</p>

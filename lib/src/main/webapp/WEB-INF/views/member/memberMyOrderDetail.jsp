@@ -50,7 +50,7 @@
 										<c:when test="${rent.rent_status == 2 }">
 											<td>예약</td>
 										</c:when>
-										<c:when test="${rent.rent_status == 3 }">
+										<c:when test="${rent.rent_status == 3 || rent.rent_status == 5}">
 											<td>대여대기</td>
 										</c:when>
 										<c:when test="${rent.rent_status == 4 }">
@@ -82,12 +82,6 @@
 									<td></td>
 									<td></td>
 								</tr>
-								<tr>
-									<th>배송 메세지</th>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
 							</c:if>
 						</tbody>
 					</table>
@@ -115,21 +109,11 @@
 									<th>기본배송</th>
 									<td><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }"><img src="${book.list_filename }" width="60" height="100"></a></td>
 									<td>${book.list_title }</td>
-									<td>1</td>
-									<td>3,000원</td>
-									<td></td>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
 									<td></td>
-									<td></td>
-									<td></td>
-									<td>도서 대여비용: 3,000원</td>
 								</tr>
 							</c:if>
 						</tbody>
@@ -149,11 +133,6 @@
 							</tr>
 							<tr>
 								<td>무통장입금</td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
 								<td></td>
 								<td></td>
 							</tr>

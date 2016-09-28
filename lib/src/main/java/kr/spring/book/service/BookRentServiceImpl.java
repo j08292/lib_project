@@ -92,5 +92,10 @@ public class BookRentServiceImpl implements BookRentService {
 		return bookRentMapper.getRowCount2(map);
 	}
 
+	@Override
+	public void updateunmanned(BookRentCommand bookRentCommand) {
+		bookRentMapper.updateunmanned(bookRentCommand);
+	}
+
 
 }

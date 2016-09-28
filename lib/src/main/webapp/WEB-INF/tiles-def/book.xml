@@ -46,8 +46,9 @@
 		<put-attribute name="title" value="도서 예약" />
 		<put-attribute name="body" value="/WEB-INF/views/book/bookRent.jsp" />
 	</definition>
-	<!-- <definition name="memberLogin" extends="memberWrite"> <put-attribute 
-		name="title" value="로그인"/> <put-attribute name="body" value="/WEB-INF/views/member/memberLogin.jsp"/> 
-		</definition> -->
+	<definition name="bookUnmanned" extends="bookSearch">
+		<put-attribute name="title" value="도서 무인예약" />
+		<put-attribute name="body" value="/WEB-INF/views/book/bookUnmanned.jsp" />
+	</definition>
 
 </tiles-definitions>

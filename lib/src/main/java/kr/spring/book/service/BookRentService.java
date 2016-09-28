@@ -3,6 +3,7 @@ package kr.spring.book.service;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Update;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.spring.book.domain.BookRentCommand;
@@ -47,5 +48,6 @@ public interface BookRentService {
 	public List<BookRentCommand> selectNum(int list_num);
 	@Transactional(readOnly = true)
 	public Integer recentStatus(int list_num);
+	public void updateunmanned(BookRentCommand bookRentCommand);
 
 }
