@@ -3,7 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div class="container clearfix">
-	<h2><spring:message code="notice.list.title" /></h2>
+	
+	
+	
+	<br><br><br><br><br>
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
 			<select name="keyfield">
@@ -12,9 +15,10 @@
 				<option value="all">전체</option>
 			</select>
 			<input type="text" size="16" name="keyword">
-			<input type="submit" value="찾기">
+			<input type="submit" class="btn btn-default btn-sm" value="찾기">
 		</div>
 	</form>
+	<br>
 	<c:if test="${count == 0}">
 		<div align="center">등록된 게시물이 없습니다.</div>
 	</c:if>
@@ -44,5 +48,6 @@
 			</table>
 		</div>
 		<div align="center">${pagingHtml}</div>
+			<br><br><br>
 	</c:if>
 </div>
