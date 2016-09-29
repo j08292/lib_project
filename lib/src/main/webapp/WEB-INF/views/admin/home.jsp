@@ -19,9 +19,8 @@
 		<div class="alert alert-info alert-dismissable">
 			<button type="button" class="close" data-dismiss="alert"
 				aria-hidden="true">&times;</button>
-			<i class="fa fa-info-circle"></i> <strong>Like SB Admin?</strong> Try
-			out <a href="http://startbootstrap.com/template-overviews/sb-admin-2"
-				class="alert-link">SB Admin 2</a> for additional features!
+			<i class="fa fa-info-circle"></i> <strong>Hello ${userId}?</strong> Try
+			out SB Admin 2 for additional features!
 		</div>
 	</div>
 </div>
@@ -211,9 +210,9 @@
 </div>
 
 <!-- 차단회원 관리 -->
-<c:if test="${penaltyRowCount > 0}">
+
 	<div class="row">
-		<div class="col-lg-4">
+		<div class="col-lg-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">
@@ -221,23 +220,25 @@
 					</h3>
 				</div>
 				<div class="panel-body">
+				<c:if test="${penaltyRowCount == 0}">
+				현재 차단된 회원이 없습니다.
+				</c:if>
+				<c:if test="${penaltyRowCount > 0}">
 					<div class="list-group">
 						<c:forEach var="penalty" items="${penaltyList}">
-							<a href="#" class="list-group-item"> <span class="badge">${penalty.regdate_String}에
-									차단</span> <i class="fa fa-fw fa-check"></i>ID: ${penalty.mem_id}
+							<a href="${pageContext.request.contextPath}/admin/blockmember/list.do?keyfield=mem_id&keyword=${penalty.mem_id}" class="list-group-item"> <span class="badge">${penalty.regdate_String}</span>ID: ${penalty.mem_id}
 							</a>
 						</c:forEach>
-
 					</div>
+				</c:if>
 					<div class="text-right">
-						<a href="#">View All Activity <i
+						<a href="${pageContext.request.contextPath}/admin/blockmember/list.do">View All Activity <i
 							class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</c:if>
+
 <!-- 차단회원 관리 -->
 
 <!-- 인기도서 차트 -->
@@ -264,7 +265,6 @@
                </c:forEach>
              ]); 
       
-      
       var options1 = {
       };
       var options2 = {
@@ -279,20 +279,21 @@
       chart1.draw(data1, options1);
       chart2.draw(data2, options2);
    }   
+   
 </script>
 <!-- 인기도서 차트 -->
-<div class="row">
-	<div class="col-lg-6">
+
+	<div class="col-lg-5">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">
 					<i class="fa fa-long-arrow-right fa-fw"></i>인기도서
 				</h3>
 			</div>
-			<div id="donut_single" style="height:350px;"></div>
+			<div id="donut_single" style="width: 100%; height: 300px;"></div>
 		</div>
 	</div>
-	<div class="col-lg-6">
+	<div class="col-lg-5">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">
@@ -300,7 +301,7 @@
 				</h3>
 			</div>
 			<div class="panel-body">
-				<div id="columnchart_material" style="width: 600px; height: 350px;"></div>
+				<div id="columnchart_material" style="width: 100%; height: 270px;"></div>
 			</div>
 		</div>
 	</div>

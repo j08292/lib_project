@@ -3,7 +3,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div>
-	<h2 class="page-header"><spring:message code="speech.update.title"/></h2>
+	<h1 class="page-header"><spring:message code="speech.update.title"/></h1>
+	<div style="width:70%;margin:0 auto;"> 
 	<form:form action="update.do" commandName="command" id="update_form">
 		<form:errors element="div" class="error-color"/>
 			<div class="form-group">
@@ -35,12 +36,13 @@
 			</div>
 			<div class="form-group">
 				<label for="speech_content">강연 내용</label>
-				<form:textarea path="speech_content" class="form-control"/>
+				<form:textarea path="speech_content" rows="8" class="form-control"/>
 				<form:errors path="speech_content" class="error-color"/>
 			</div>
-			<div>
-				<input type="submit" value="전송" class="btn btn-primary">
+			<div align="center">
+				<input type="submit" value="수정" class="btn btn-warning">
 				<input type="button" value="목록" class="btn btn-default" onclick="location.href='list.do'">
 			</div>
 	</form:form>
+	</div>
 </div>

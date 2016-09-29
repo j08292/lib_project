@@ -5,12 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,21 +27,12 @@ public class AdminMemberListController {
 	@Resource
 	private AdminMemberService adminMemberService;
 
-	//커맨드 객체 초기화
-	@ModelAttribute("command")
-	public AdminMemberCommand initCommand() {
-		return new AdminMemberCommand();
-	}
-
-	@RequestMapping(value="/admin/member/list.do", method = RequestMethod.GET)
-	public String form(){
-		return "adminMemberList";
-	}
-
-	@RequestMapping(value="/admin/member/list.do", method = RequestMethod.POST)
+	
+	@RequestMapping("/admin/member/list.do")
 	public ModelAndView submit(@RequestParam(value="pageNum",defaultValue="1")int currentPage,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 							   @RequestParam(value="keyfield",defaultValue="")String keyfield,
-							   @RequestParam(value="keyword",defaultValue="")String keyword){
+							   @RequestParam(value="keyword",defaultValue="")String keyword,
+							   HttpServletRequest request){
 		if(log.isDebugEnabled()){
 			log.debug("currentPage : " + currentPage);
 			log.debug("keyfield : " + keyfield);
@@ -56,7 +46,7 @@ public class AdminMemberListController {
 		//총 글의 갯수 또는 검색된 글의 갯수
 		int count = adminMemberService.getRowCount(map);
 
-		PagingUtil page = new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,"/admin/member/list.do");
+		PagingUtil page = new PagingUtil(keyfield,keyword,currentPage,count,rowCount,pageCount,request.getContextPath()+"/admin/member/list.do");
 
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());

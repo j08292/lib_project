@@ -41,7 +41,7 @@
 					<c:forEach var="article" items="${list}">
 						<tr>
 							<td>${article.event_num}</td>
-							<td><a href="detail.do?event_num=${article.event_num}">${article.event_title}</a></td>
+							<td><a href="detail.do?event_num=${article.event_num}">${article.event_title} <span class="badge">${article.event_replyCount}</span></a></td>
 							<td><c:choose>
 									<c:when test="${!empty article.event_filename}">						
 										<img src="${pageContext.request.contextPath}/event_upload/${article.event_filename}" height="50px" class="adminListImage" alt="이벤트사진">

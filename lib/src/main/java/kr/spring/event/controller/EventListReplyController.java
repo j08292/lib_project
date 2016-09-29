@@ -43,7 +43,7 @@ public class EventListReplyController {
 		//ÃÑ ´ñ±ÛÀÇ °¹¼ö
 		int count = eventService.getRowCountReply(hashMap);
 		
-		PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"listReply.do");
+		PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"listReplyAjax.do");
 		hashMap.put("start", page.getStartCount());
 		hashMap.put("end", page.getEndCount());
 		
@@ -56,7 +56,7 @@ public class EventListReplyController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("count", count);
-		map.put("rowcount", rowCount);
+		map.put("rowCount", rowCount);
 		map.put("list", list);
 				
 		return map;

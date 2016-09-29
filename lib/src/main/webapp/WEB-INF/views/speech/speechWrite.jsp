@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div>
-	<h2 class="page-header"><spring:message code="speech.write.title"/></h2>
+	<h1 class="page-header"><spring:message code="speech.write.title"/></h1>
 	<div style="width:70%;margin:0 auto;"> 
 	<form:form action="write.do" commandName="command" id="register_form">
 		<form:errors element="div" class="error-color"/>
@@ -36,7 +36,7 @@
 			</div>
 			<div class="form-group">
 				<label for="speech_content">강연 내용</label>
-				<form:textarea path="speech_content" class="form-control" rows="5"/>
+				<form:textarea path="speech_content" class="form-control" rows="8"/>
 				<form:errors path="speech_content" class="error-color"/>
 			</div>
 			<div align="center">

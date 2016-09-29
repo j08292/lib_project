@@ -8,8 +8,18 @@
 					<div class="swiper-slide dark">
 						<div class="container clearfix">
 							<div class="slider-caption slider-caption-center">
-								<h2 data-caption-animate="fadeInUp">Beautifully Flexible</h2>
-								<p data-caption-animate="fadeInUp" data-caption-delay="200">Looks beautiful &amp; ultra-sharp on Retina Screen Displays. Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
+								<h2 data-caption-animate="fadeInUp">Book Search</h2>
+								<div data-caption-animate="fadeInUp" data-caption-delay="200">
+									<form action="${pageContext.request.contextPath}/book/search.do" method="get" role="form" class="divcenter nobottommargin">
+					                    <div class="input-group input-group-lg">
+					                        <input type="hidden" name="keyfield" id="keyfield" value="all">
+					                        <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Search for Books...">
+					                        <span class="input-group-btn">
+					                            <button class="btn btn-danger" type="button" onclick="javascript:MainSearchBook();">Search</button>
+					                        </span>
+					                    </div>
+					                </form>
+								</div>
 							</div>
 						</div>
 						<div class="video-wrap">

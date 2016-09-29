@@ -7,8 +7,8 @@
 
 <!-- Content -->
 <div>
-	<h3>이벤트 수정</h3>
-
+	<h1>이벤트 수정</h1>
+	<div style="width:70%;margin:0 auto;"> 
 	<form:form id="register-form" name="register-form" class="nobottommargin" action="update.do" commandName="command" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="event_title">제목:</label> 
@@ -17,7 +17,7 @@
 
 		<div class="form-group">
 			<label for="event_content">내용:</label>
-			<form:textarea path="event_content" class="form-control" />
+			<form:textarea path="event_content" rows="8" class="form-control" />
 		</div>
 
 		<div class="form-group">
@@ -49,6 +49,6 @@
 			<input type="submit" class="btn btn-warning" id="register-form-submit" name="register-form-submit" value="수정" /> 
 			<input type="button" class="btn btn-default" id="register-form-submit" name="register-form-submit" value="목록" onclick="location.href='list.do'" />
 		</div>
-
 	</form:form>
+	</div>
 </div>

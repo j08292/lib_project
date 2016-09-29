@@ -19,6 +19,8 @@ public class EventCommand {
 	private Date event_regdate;
 	private Date event_startdate;
 	private Date event_enddate;
+	private int event_replyCount;
+	
 	public int getEvent_num() {
 		return event_num;
 	}
@@ -79,11 +81,19 @@ public class EventCommand {
 	public void setEvent_enddate(Date event_enddate) {
 		this.event_enddate = event_enddate;
 	}
+	public int getEvent_replyCount() {
+		return event_replyCount;
+	}
+	public void setEvent_replyCount(int event_replyCount) {
+		this.event_replyCount = event_replyCount;
+	}
+	
 	@Override
 	public String toString() {
 		return "EventCommand [event_num=" + event_num + ", mem_id=" + mem_id + ", event_title=" + event_title
 				+ ", event_content=" + event_content + ", event_upload=" + event_upload + ", event_filename="
 				+ event_filename + ", event_hit=" + event_hit + ", event_regdate=" + event_regdate
-				+ ", event_startdate=" + event_startdate + ", event_enddate=" + event_enddate + "]";
+				+ ", event_startdate=" + event_startdate + ", event_enddate=" + event_enddate + ", event_replyCount="
+				+ event_replyCount + "]";
 	}
 }
