@@ -3,6 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div>  
 	<h1 class="page-header"><spring:message code="booklist.write.title"/></h1>
+	<div style="width:70%;margin:0 auto;"> 
 	<form:form action="write.do" enctype="multipart/form-data" commandName="command" id="register_form">
 		<form:errors element="div" class="error-color"/>					
 			<div class="form-group">
@@ -35,9 +36,10 @@
 				<div id="imagePreview"></div><br>
 				<input type="file" name="upload" id="upload" onchange="ImagePreview();">
 			</div>			
-			<div>
+			<div align="center">
 				<input type="submit" value="전송" class="btn btn-primary">
 				<input type="button" value="목록" class="btn btn-default" onclick="location.href='list.do'">
 			</div>		
 	</form:form>
+	</div>
 </div>
