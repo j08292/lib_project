@@ -7,11 +7,13 @@
 	 <section id="content">
 
             <div class="content-wrap">
-
+        
                 <div class="container clearfix ">
-	
-	<h2><p style="text-align:center;">&lt; <spring:message code="wishlist.write.title"/> &gt;</p></h2>
-	
+	<hr size="1" width="30%">
+	<hr size="1" width="30%">
+	<h2><p style="text-align:center;"> <spring:message code="wishlist.write.title"/> </p></h2>
+	<hr size="1" width="30%">
+	<hr size="1" width="30%">
 	<br><br><br>
 	<div>
 	<form:form action="write.do" commandName="command" id="register_form" class="form-horizontal align-center">
@@ -22,7 +24,7 @@
 				<div class="col-sm-4">
 				<form:input path="wish_title" class="form-control"/>
 				<form:errors path="wish_title" class="error-color"/>
-				</div>
+				</div> 
 			</div>
 			
 			<div class="form-group"><br>
@@ -48,7 +50,7 @@
 	</form:form>
 	</div>
 </div>
-
+<br><br>
     </div>
     </section>
 
