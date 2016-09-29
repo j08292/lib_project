@@ -9,7 +9,7 @@
 
             <div class="container clearfix">
                 <h1><spring:message code="review.write.title"/></h1>
-                <span>Start Buying your Favourite Theme</span>
+                <span>REVIEW VIEW</span>
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li class="active">Shop</li>
@@ -28,6 +28,7 @@
                    <!-- ============ 내용입력 시작============ -->
                   
                    <div>
+            
                    	<h2 class="align-center">${review.review_title}</h2>
                    	<ul style="list-style:none;">
                    		<li >번호 : ${review.review_num}</li>
@@ -53,12 +54,13 @@
                    	
                    	<hr size="1" width="100%">
                    	<p class="align-right">
-                   		<input type="button" value="목록으로" class="btn btn-default btn-sm"
+                   	<input type="button" value="목록으로" class="btn btn-primary btn-sm"
 	                   			onclick="location.href='list.do?review_num=${review.review_num}'">
                    		<c:if test="${!empty userId && userId == review.mem_id}">
+                   		
                    		<input type="button" value="수정"  class="btn btn-default btn-sm"
                    			onclick="location.href='update.do?review_num=${review.review_num}'">
-                   		<input type="button" value="삭제"  class="btn btn-danger btn-sm"
+                   		<input type="button" value="삭제"  class="btn btn-default btn-sm"
                    			onclick="location.href='delete.do?review_num=${review.review_num}'">
                    	</c:if>
                    	</p>

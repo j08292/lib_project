@@ -87,7 +87,10 @@
     
     </definition> 
 
-
+<definition name="operationGuide" extends="qnaList">
+    	<put-attribute name="title" value="글 삭제"/>
+    	<put-attribute name="body" value="/WEB-INF/views/board/operationGuide.jsp"/>
+    </definition> 
 
  <definition name="pageError" extends="main">
     	<put-attribute name="title" value="에러페이지"/>

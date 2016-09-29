@@ -50,13 +50,13 @@
                    	<hr size="1" width="100%">
                    	
                    	<p class="align-right">
-	                   	<input type="button" value="목록으로" class="btn btn-default btn-sm"
+	                   	<input type="button" value="목록으로" class="btn btn-primary btn-sm"
 	                   			onclick="location.href='qnaList.do?qna_num=${qnaCommand.qna_num}'">
                    		<c:if test="${!empty userId && userId == qnaCommand.mem_id}">
                    		
                    		<input type="button" value="수정" class="btn btn-default btn-sm"
                    			onclick="location.href='qnaUpdate.do?qna_num=${qnaCommand.qna_num}'">
-                   		<input type="button" value="삭제" class="btn btn-danger btn-sm"
+                   		<input type="button" value="삭제" class="btn btn-default btn-sm"
                    			onclick="location.href='qnaDelete.do?qna_num=${qnaCommand.qna_num}'">
                    	</c:if>
                    	</p>

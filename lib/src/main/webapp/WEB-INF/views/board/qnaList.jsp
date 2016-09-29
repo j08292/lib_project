@@ -37,11 +37,11 @@
 
                    <!-- 내용입력 시작-->
                    
-                 <div>
-                   	<form action="qnaList.do" id="search_form" method="get">
+                 <div class="content-wrap">
+                   	<form action="qnaList.do" id="search_form" method="get"  class="form-inline" style="text-align:center">
                    		<ul class="search">
                    			<li>
-                   				<select name="keyfield">
+                   				<select name="keyfield"  id="slectBox"  class="form-control">
                    					<option value="qna_title">제목</option>
                    					<option value="mem_id">ID</option>
                    					<option value="qna_content">내용</option>
@@ -49,7 +49,7 @@
                    				</select>
                    			</li>
                    			<li>
-                   				<input type="text" size="16" name="keyword">
+                   				<input type="text" size="25" name="keyword" id="keyword" class="form-control">
                    			</li>
                    			<li>
                    				<input type="submit" class="btn btn-default btn-sm" value="찾기">
@@ -74,7 +74,7 @@
                    </c:if>
                    <c:if test="${count > 0 }">
                    <div class="table-responsive">
-                   <table class="table" border="1" style="border:1px solid #FFFFFF;">
+                   <table class="table table-hover" border="1" style="border:1px solid #FFFFFF;">
                   
                    	<tr>
                    		<th>번호</th>
