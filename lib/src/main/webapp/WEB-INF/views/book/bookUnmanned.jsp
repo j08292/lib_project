@@ -47,8 +47,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><img src="${book.list_filename }" width="75"
-											height="113" alt="도서 이미지" /></td>
+										<td><img src="/lib/upload/${book.list_filename }" width="80"
+											height="120" alt="도서 이미지" /></td>
 										<td>${book.list_title }</td>
 										<td>${book.list_code }</td>
 										<td>${book.list_writer }</td>

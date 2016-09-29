@@ -9,7 +9,6 @@ import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.book.domain.BookListCommand;
 import kr.spring.book.service.BookListService;
-import kr.spring.member.domain.MemberCommand;
 import kr.spring.util.PagingUtil;
 
 @Controller
@@ -30,18 +28,12 @@ public class BookListController {
 	@Resource
 	private BookListService bookListService;
 	
-	// 커맨드 객체 초기화
-		@ModelAttribute("command")
-		public MemberCommand initCommand() {
-			return new MemberCommand();
-		}
-	
-	@RequestMapping(value = "/book/search.do", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/book/search.do", method = RequestMethod.GET)
 	public String form(){
 		return "bookSearch";
-	}
+	}*/
 	
-	@RequestMapping(value = "/book/search.do", method = RequestMethod.POST)
+	@RequestMapping("/book/search.do")
 	public ModelAndView submit(
 	                    @RequestParam(value="pageNum",defaultValue="1") 
     					int currentPage,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

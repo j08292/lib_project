@@ -31,10 +31,10 @@
 						<tbody>
 							<c:if test="${rent != null }">
 								<tr>
-									<th>주문 번호</th>
-									<td>${rent.rent_num }</td>
-									<th>주문 일자</th>
-									<td>${rent.rent_regdate }</td>
+									<th style = "width:20%">주문 번호</th>
+									<td style = "width:30%">${rent.rent_num }</td>
+									<th style = "width:20%">주문 일자</th>
+									<td style = "width:30%">${rent.rent_regdate }</td>
 								</tr>
 								<tr>
 									<th>주문자</th>
@@ -42,7 +42,7 @@
 									<th>주문처리상태</th>
 									<c:choose>
 										<c:when test="${rent.rent_status == 0 }">
-											<td>대여중</td>
+											<td>대여</td>
 										</c:when>
 										<c:when test="${rent.rent_status == 1 }">
 											<td>반납</td>
@@ -50,11 +50,14 @@
 										<c:when test="${rent.rent_status == 2 }">
 											<td>예약</td>
 										</c:when>
-										<c:when test="${rent.rent_status == 3 || rent.rent_status == 5}">
+										<c:when test="${rent.rent_status == 3}">
 											<td>대여대기</td>
 										</c:when>
 										<c:when test="${rent.rent_status == 4 }">
 											<td>예약취소</td>
+										</c:when>
+										<c:when test="${rent.rent_status == 5 }">
+											<td>무인대여</td>
 										</c:when>
 									</c:choose>
 								</tr>
@@ -71,16 +74,16 @@
 						<tbody>
 							<c:if test="${member != null }">
 								<tr>
-									<th>수취인</th>
-									<td>${name }</td>
-									<th>연락처</th>
-									<td>${member.mem_cell }</td>
+									<th style = "width:15%">수취인</th>
+									<td style = "width:35%">${name }</td>
+									<th style = "width:15%">연락처</th>
+									<td style = "width:35%">${member.mem_cell }</td>
 								</tr>
 								<tr>
-									<th>주소</th>
+									<th >주소</th>
 									<td>${member.sample3_postcode },&nbsp; ${member.mem_address }</td>
-									<td></td>
-									<td></td>
+									<th>이메일</th>
+									<td>${member.mem_email }</td>
 								</tr>
 							</c:if>
 						</tbody>
@@ -103,11 +106,10 @@
 									<th>가격</th>
 									<th>처리상태</th>
 									<th>배송관련</th>
-									<th>배송추적</th>
 								</tr>
 								<tr>
 									<th>기본배송</th>
-									<td><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }"><img src="${book.list_filename }" width="60" height="100"></a></td>
+									<td><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }"><img src="/lib/upload/${book.list_filename }" width="60" height="100"></a></td>
 									<td>${book.list_title }</td>
 									<td></td>
 									<td></td>

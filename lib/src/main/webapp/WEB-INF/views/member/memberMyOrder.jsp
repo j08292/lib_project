@@ -20,7 +20,7 @@
 	<div class="content-wrap">
 		<div class="container clearfix">
 		<form:form action="myOrder.do" id="myOrder-form" class="nobottommargin" method = "get">
-				<select id="selectBox" class="form-control" style="width:100px;	float:left;">
+				<select id="selectBox" class="form-control" style="width:120px;	float:left;">
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=9" >전체</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=0">대여</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=1">반납</option>
