@@ -44,7 +44,7 @@ private Logger log= Logger.getLogger(this.getClass());
 		//ÃÑ ±ÛÀÇ °¹¼ö ¶Ç´Â °Ë»öµÈ ±ÛÀÇ °¹¼ö
 		int count= bookrentService.getRowCount(map);
 		
-		PagingUtil page= new PagingUtil(keyfield,keyword,currentPage,count, rowCount,pageCount,"/admin/bookrent/list.do");
+		PagingUtil page= new PagingUtil(keyfield,keyword,currentPage,count, rowCount,pageCount,"list.do");
 		
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());

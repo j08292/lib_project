@@ -7,7 +7,6 @@
 	<c:if test="${command.list_status == 0 }">
 		<div align="right"><input type="button" value="대출 정지" onclick="javascript:rentStop_event(${command.list_num},'${command.list_title}');" class="btn btn-danger"></div>
 	</c:if>
-	<div style="width:70%;margin:0 auto;"> 
 	<form:form action="update.do" enctype="multipart/form-data" commandName="command" id="update_form">
 		<form:errors element="div" class="error-color" />
 		<div class="form-group">
@@ -47,10 +46,9 @@
 			<div id="imagePreview"></div><br>
 			<input type="file" name="upload" id="upload" onchange="ImagePreview();">
 		</div>
-		<div align="center">
+		<div>
 			<input type="submit" value="수정" class="btn btn-warning">
 			<input type="button" value="목록" class="btn btn-default" onclick="location.href='list.do'">
 		</div>
-	</form:form>
-	</div>	
+	</form:form>	
 </div>

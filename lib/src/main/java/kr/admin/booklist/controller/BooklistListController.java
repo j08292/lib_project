@@ -44,7 +44,7 @@ public class BooklistListController {
 		//ÃÑ ±ÛÀÇ °¹¼ö ¶Ç´Â °Ë»öµÈ ±ÛÀÇ °¹¼ö
 		int count= booklistService.getRowCount(map);
 		
-		PagingUtil page= new PagingUtil(keyfield,keyword,currentPage,count, rowCount,pageCount,"/admin/booklist/list.do");
+		PagingUtil page= new PagingUtil(keyfield,keyword,currentPage,count, rowCount,pageCount,"list.do");
 		
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
