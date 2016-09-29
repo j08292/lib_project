@@ -10,7 +10,6 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.review.domain.ReviewCommand;
@@ -57,7 +56,7 @@ private Logger log = Logger.getLogger(this.getClass());
 		
 		List<ReviewCommand> list = null;
 		if(count > 0){
-			list = reviewService.list(map);
+			list = reviewService.adminList(map);
 		}else{
 			list=Collections.emptyList();
 		}

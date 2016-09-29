@@ -15,24 +15,7 @@ import kr.spring.review.domain.ReviewCommand;
 import kr.spring.review.domain.ReviewReplyCommand;
 
 @Repository
-public interface ReviewMapper {
-
-	
-/*		private int review_num;//글번호
-	@NotEmpty
-	private String review_title;//글제목
-	@NotEmpty   
-	private String review_content;//내용
-	private Date review_regdate;//날짜
-	private int review_hit;//조회수
-	private int review_like;//좋아요
-	private int review_dislike;//싫어요
-	private MultipartFile upload;	
-	private String review_file;
-	@NotEmpty
-	private String mem_id;//작성자 아이디
-*/	
-	
+public interface ReviewMapper {	
 	//게시글
 	public List<ReviewCommand> list(Map<String,Object> map);
 	public int getRowCount(Map<String,Object> map);//list에서 글번호수? 
@@ -47,16 +30,8 @@ public interface ReviewMapper {
 	public void update(ReviewCommand review);
 	@Delete("DELETE FROM review WHERE review_num = #{review_num}")
 	public void delete(Integer review_num);
-	
-	
-	/*private int Review_re_num;//댓글의 글번호
-	private int Review_num;//게시물의 글번호
-	private String Review_re_contnet;//댓글내용
-	private Date Review_re_regdate;
-	private String mem_id;*/
-	
-	//댓글
-	
+		
+	//댓글	
 	public List<ReviewReplyCommand> listReply (Map<String,Object> map);
 	@Select("SELECT count(*) FROM review_reply WHERE review_num = #{review_num}")
 	public int getRowCountReply(Map <String, Object> map);	
@@ -66,26 +41,13 @@ public interface ReviewMapper {
 	public void updateReply(ReviewReplyCommand reviewReplyCommand);
 	@Delete("DELETE FROM review_reply WHERE review_re_num = #{review_re_num}")
 	public void deleteReply(Integer review_re_num);
-	/*@Update("UPDATE review_reply SET review_re_count = review_re_count+1 where review_num = #{review_num}")	
-	public int getReplyReviewCount(int review_re_count);
-	*/
-/*	SELECT title, contents, (SELECT COUNT(*) AS cnt FROM BOARD_COMMENT WHERE parent.seq = BOARD.seq) as CommentTotalCnt FROM BOARD
- * @Select("SELECT q.*,(SELECT COUNT(*) FROM review_reply r WHERE r.review_num=q.review_num)as replyCount FROM review q")*/
 	
+	//부모글에 댓글이 있으면 부모글삭제시 댓글을 먼저 삭제해야 함
+	//부모글의 글번호로 댓글 삭제
+	@Delete("DELETE FROM review_reply WHERE review_num = #{review_num}")
+	public void deleteReplyByReview_num(Integer review_num);
 		
-		//부모글에 댓글이 있으면 부모글삭제시 댓글을 먼저 삭제해야 함
-		//부모글의 글번호로 댓글 삭제
-		@Delete("DELETE FROM review_reply WHERE review_num = #{review_num}")
-		public void deleteReplyByReview_num(Integer review_num);
-		
-/*
-		@Update ("UPDATE review SET review_hit = review_hit+1 WHERE review_num = #{review_num}")
-	public void updateHit(Integer review_num);
-		 */
-		
-		//댓글 갯수
-		
-	
+	//댓글 갯수
 	
 	//관리자 게시물 관리===================================================================
 	public List<ReviewCommand> adminList(Map<String, Object> map);

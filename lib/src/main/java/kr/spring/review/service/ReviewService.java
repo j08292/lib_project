@@ -22,7 +22,7 @@ public interface ReviewService {
 	public void update(ReviewCommand review);
 	public void delete(Integer review_num);
 
-	
+	//´ñ±Û
 	@Transactional(readOnly=true)
 	public List<ReviewReplyCommand> listReply (Map<String,Object> map);
 	@Transactional(readOnly=true)

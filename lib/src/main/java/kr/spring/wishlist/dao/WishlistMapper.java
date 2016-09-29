@@ -19,7 +19,5 @@ public interface WishlistMapper {
 	@Select("SELECT * FROM wishlist WHERE wish_num= #{wish_num}")
 	public WishlistCommand selectWishlist(Integer wish_num);	
 	@Update("UPDATE wishlist SET wish_status=#{wish_status} WHERE wish_num=#{wish_num}")
-	public void updateStatusChange(WishlistCommand wishlist);
-	public void update(WishlistCommand wishlist);
-	public void delete(Integer wish_num);
+	public void updateStatusChange(WishlistCommand wishlist);	
 }

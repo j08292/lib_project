@@ -17,8 +17,6 @@ public class ReviewServiceImpl implements ReviewService{
 	@Resource
 	private ReviewMapper reviewMapper;
 	
-	
-	
 	@Override
 	public List<ReviewCommand> list(Map<String, Object> map) {
 		return reviewMapper.list(map);
@@ -31,8 +29,7 @@ public class ReviewServiceImpl implements ReviewService{
 
 	@Override
 	public void insert(ReviewCommand review) {
-		reviewMapper.insert(review);
-		
+		reviewMapper.insert(review);		
 	}
 
 	@Override
@@ -42,31 +39,21 @@ public class ReviewServiceImpl implements ReviewService{
 
 	@Override
 	public void updateHit(Integer review_num) {
-		reviewMapper.updateHit(review_num);
-		
+		reviewMapper.updateHit(review_num);		
 	}
 
 	@Override
 	public void update(ReviewCommand review) {
-		reviewMapper.update(review);
-		
+		reviewMapper.update(review);		
 	}
 
 	@Override
-	public void delete(Integer review_num) {
-		
-		reviewMapper.deleteReplyByReview_num(review_num);
-		
-		
-		reviewMapper.delete(review_num);
-		
-	}
-
+	public void delete(Integer review_num) {		
+		reviewMapper.deleteReplyByReview_num(review_num);		
+		reviewMapper.delete(review_num);		
+	}	
 	
-	
-	//댓글!!
-	
-	
+	//댓글!!	
 	@Override
 	public List<ReviewReplyCommand> listReply(Map<String, Object> map) {
 		return reviewMapper.listReply(map);
@@ -80,20 +67,17 @@ public class ReviewServiceImpl implements ReviewService{
 
 	@Override
 	public void insertReply(ReviewReplyCommand reviewReplyCommand) {
-		reviewMapper.insertReply(reviewReplyCommand);
-		
+		reviewMapper.insertReply(reviewReplyCommand);		
 	}
 
 	@Override
 	public void updateReply(ReviewReplyCommand reviewReplyCommand) {
-		reviewMapper.updateReply(reviewReplyCommand);
-		
+		reviewMapper.updateReply(reviewReplyCommand);		
 	}
 
 	@Override
 	public void deleteReply(Integer review_re_num) {
-		reviewMapper.deleteReply(review_re_num);
-		
+		reviewMapper.deleteReply(review_re_num);		
 	}
 
 	//관리자 게시물 관리 시작=======================================
@@ -116,5 +100,4 @@ public class ReviewServiceImpl implements ReviewService{
 		return reviewMapper.selectReviewAdmin(list);
 	}
 	//관리자 게시물 관리 끝=======================================
-
 }

@@ -44,19 +44,5 @@ public class PenaltyServiceImpl implements PenaltyService{
 	@Override
 	public int getReasonCount(String mem_id) {
 		return penaltyMapper.getReasonCount(mem_id);
-	}
-
-	@Override
-	public void update(PenaltyCommand penalty) {
-		
-	}
-
-	@Override
-	public void delete(Integer penalty_num) {
-		
-	}
-
-	
-
-	
+	}	
 }

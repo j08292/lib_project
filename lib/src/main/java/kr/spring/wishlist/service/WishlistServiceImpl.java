@@ -40,14 +40,4 @@ public class WishlistServiceImpl implements WishlistService{
 	public void updateStatusChange(WishlistCommand wishlist) {
 		wishlistMapper.updateStatusChange(wishlist);
 	}
-	
-	@Override
-	public void update(WishlistCommand wishlist) {
-		
-	}
-
-	@Override
-	public void delete(Integer wish_num) {
-		
-	}
 }
