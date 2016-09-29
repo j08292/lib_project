@@ -22,10 +22,10 @@
 		<form:form action="myOrder.do" id="myOrder-form" class="nobottommargin" method = "get">
 				<select id="selectBox" class="form-control" style="width:100px;	float:left;">
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=9" >전체</option>
-					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=3">일반 대여</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=0">대여</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=1">반납</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=2">예약</option>
+					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=3">대여대기</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=4">취소</option>
 					<option value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=5">무인대여</option>
 				</select>
@@ -81,7 +81,13 @@
 											<td>${rent.rent_num }</td>
 											<td><a href="${pageContext.request.contextPath}/member/myOrderDetail.do?rent_num=${rent.rent_num}&list_num=${rent.list_num}&list_title=${rent.list_title}">${rent.list_title }</a></td>
 											<c:if test="${rent.rent_status == 3 }">
+											<td>대기</td>
+											</c:if>
+											<c:if test="${rent.rent_status == 0 }">
 											<td>일반</td>
+											</c:if>
+											<c:if test="${rent.rent_status == 2 || rent.rent_status == 4 }">
+											<td>예약</td>
 											</c:if>
 											<c:if test="${rent.rent_status == 5 }">
 											<td>무인</td>
@@ -106,7 +112,7 @@
 														<td>취소
 													</c:when>
 													<c:when test="${rent.rent_status == 5 }">
-														<td>대여대기</td>
+														<td>무인대여</td>
 													</c:when>
 												</c:choose>
 												

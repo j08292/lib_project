@@ -69,7 +69,7 @@ public class BookBasketController {
 		basket.setList_filename(list_filename);
 		basket.setList_title(list_title);
 		basket.setList_num(list_num);
-
+		
 		List<BasketCommand> list = null;
 
 		list = basketService.list(userId);
@@ -77,9 +77,10 @@ public class BookBasketController {
 		if (log.isDebugEnabled()) {
 			log.debug("book : " + book);
 			log.debug("basket : " + basket);
-			log.debug("list" +list);
+			log.debug("list : " + list);
 		}
 
+		
 		if (list.size() == 0) {
 			basketService.insert(basket);
 		} else if (list.size() != 0) {

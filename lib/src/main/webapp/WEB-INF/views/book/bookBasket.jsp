@@ -18,8 +18,6 @@
 
 	<div class="container clearfix">
 		<h1>책 바구니</h1>
-		<ol class="breadcrumb">
-		</ol>
 	</div>
 
 </section>
@@ -46,22 +44,12 @@
 											<th>출판사</th>
 											<th>비고</th>
 										</tr>
-										<!-- <tr>
-											<td></td>
-											<td></td>
-											<td></td>
-											<td><input type="text" name="rentDate" id="rentDate"
-												size="10"></td>
-											<td><input type="text" name="returnDate" id="returnDate"
-												size="10"></td>
-											<td></td>
-										</tr> -->
 									</thead>
 									<tbody>
 										<c:forEach var="basket" items="${list }">
 											<tr>
-												<td><a href = "${pageContext.request.contextPath}/book/detail.do?list_title=${basket.list_title}&list_filename=${basket.list_filename }&list_num=${basket.list_num }"><img src="${basket.list_filename }" width="75"
-													height="113"></a></td>
+												<td><a href = "${pageContext.request.contextPath}/book/detail.do?list_title=${basket.list_title}&list_filename=${basket.list_filename }&list_num=${basket.list_num }">
+												<img src="/lib/upload/${basket.list_filename }" width="80" height="120"></a></td>
 												<td>${basket.list_title}</td>
 												<td>${basket.list_code}</td>
 												<td>${basket.list_writer }</td>

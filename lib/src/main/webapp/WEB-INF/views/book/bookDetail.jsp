@@ -7,13 +7,7 @@
 <section id="page-title">
 
 	<div class="container clearfix">
-		<h1>Page</h1>
-		<span>A Blank Page</span>
-		<ol class="breadcrumb">
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Library</a></li>
-			<li class="active">Data</li>
-		</ol>
+		<h1>도서 상세정보</h1>
 	</div>
 
 </section>
@@ -27,20 +21,21 @@
 		<div class="container clearfix">
 
 			<div class="panel-group">
+			<label style = "font-size:18px;">도서 상세정보</label>
 				<div class="panel panel-default">
-					<div class="panel-heading" style="text-align: left;">도서 상세정보</div>
+					<div class="panel-heading"></div>
 
 					<div class="panel-body">
 							<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${book.list_title }</h3>
 							<table style="font-size: 10pt;">
 								<tr>
 									<td><img
-										src="${book.list_filename }" width="200" alt="도서 이미지" /></td>
+										src="/lib/upload/${book.list_filename }" alt="도서 이미지" /></td>
 									<td style = "text-align:center;">
 										<dl>
 											<dt style = "text-align:left;">표제/책임표시.</dt>
 											<dd style = "text-align:left;">${book.list_title }</dd>
-											<dt style = "text-align:left;">작가</dt>
+											<dt style = "text-align:left;">저자</dt>
 											<dd style = "text-align:left;">${book.list_writer }</dd>
 											<dt style = "text-align:left;">발행사항.</dt>
 											<dd style = "text-align:left;">${book.list_publish }</dd>
@@ -61,8 +56,9 @@
 					</div>
 				</div>
 
+			<label style = "font-size:18px;">소장정보</label>
 				<div class="panel panel-default">
-					<div class="panel-heading" style="text-align: left;">소장정보</div>
+					<div class="panel-heading" style="text-align: left;"></div>
 					<div class="panel-body">
 						<form action="basket.do" id="detail-form" method = "post">
 							<table class="table table-hover provideList">
@@ -91,31 +87,24 @@
 											대여불가										
 										</c:if>
 										<c:if test="${book.list_status == 0 }">
-										<c:if test="${book.rent_status == 3 || book.rent_status == 0}">
+										<c:if test="${book.rent_status == 3 || book.rent_status == 0 || book.rent_status == 5} ">
 										<input type = "hidden" id = "list_title" name = "list_title" value = "${book.list_title }">
 										<input type = "hidden" id = "list_num" name = "list_num" value = "${book.list_num }">
-											<input type="button" value="예약" id="reserve-button" class = "btn btn-primary"><br>
+											<input type="button" value="도서 예약" id="reserve-button" class = "btn btn-primary"><br>
 										</c:if>
-											<c:if test="${book.rent_status != 2 && book.rent_status == 0 || book.rent_status == 3 }">
-											<span>예약 가능</span>
-											</c:if>
 											<c:if test="${book.rent_status == 2 }">
-											<span>허용인원 초과</span>
+											<span>예약 불가</span>
 											</c:if>
 										<!-- 비치중일때 -->
-										<c:if test="${book.rent_status == 7 || book.rent_status == 1 || book.rent_status == 4 }">
+										<c:if test="${book.rent_status == 9 || book.rent_status == 1 || book.rent_status == 4 }">
 											<input type = "hidden" id = "list_num" name = "list_num" value = "${book.list_num }">
 											<input type = "hidden" id = "list_title" name = "list_title" value = "${book.list_title }"> 
 											<input type = "hidden" id = "list_filename" name = "list_filename" value = "${book.list_filename }">
 
-											<a id="checkbasket-button" onclick="formSubmit()" class="btn btn-primary"
-											href="${pageContext.request.contextPath}/book/basket.do">대여</a>
-											<input class="btn btn-primary" type="button" value="무인">
-										<script type="text/javascript">
-												function formSubmit() {
-													document.getElementById("detail-form").submit();
-												}
-										</script>
+											<input type = "submit" class = "btn btn-primary" value = "책 바구니">	
+											
+											<a id="unmanned-button" class="btn btn-primary"
+											onclick = "location.href='${pageContext.request.contextPath}/book/unmanned.do?list_num=${book.list_num}'">무인 대여</a>											
 										</c:if>
 										</c:if>
 									</td>

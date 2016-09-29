@@ -4,16 +4,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:if test='${!empty param.keyword && param.keyfield == "bk_state"}'>
-	<script type="text/javascript">
-		$(function() {
-			$('#selectBox')
-					.val(
-							'../book/search.do?keyfield=bk_state&keyword=${param.keyword}');
-		});
-	</script>
-</c:if>
-
 <!-- Stylesheets
 	============================================= -->
 <meta name="viewport"
@@ -26,20 +16,14 @@
 	============================================= -->
 <!-- Document Title
 	============================================= -->
-<title>도서검색</title>
+<title>도서 검색</title>
 
 <!-- Page Title
 		============================================= -->
 <section id="page-title">
 
 	<div class="container clearfix">
-		<h1>Page</h1>
-		<span>A Blank Page</span>
-		<ol class="breadcrumb">
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Library</a></li>
-			<li class="active">Data</li>
-		</ol>
+		<h1>도서 검색</h1>
 	</div>
 
 </section>
@@ -55,7 +39,7 @@
 
 			<div class="panel-group">
 				<div class="panel panel-default">
-					<div class="panel-heading" style = "text-align:center">도서 검색</div>
+					<div class="panel-heading" style = "text-align:center"></div>
 
 					<div class="panel-body">
 						<form action="search.do" class="form-inline" id="search-form"
@@ -82,8 +66,9 @@
 					<div>도서 검색결과가 없습니다.</div>
 				</c:if>
 				<c:if test="${count > 0 }">
+				<label style = "font-size:18px">도서 검색결과</label>
 					<div class="panel panel-default">
-						<div class="panel-heading" style = "text-align:center">도서 검색결과</div>
+						<div class="panel-heading"></div>
 						<form action="search.do" class="form-inline" id="detail-form"
 							method="post" style = "text-align:center">
 						
@@ -99,7 +84,7 @@
 								<c:forEach var="book" items="${list}">
 									<tr>
 										<td><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }">
-										<img src="${book.list_filename}" width="75" height="113"></a></td>
+										<img src="/lib/upload/${book.list_filename}" width="80" height="120"></a></td>
 										<td>${book.list_title}</td>
 										<td>${book.list_writer}</td>
 										<td>${book.list_publish}</td>
@@ -109,7 +94,7 @@
 						</table>
 						</form>
 					</div>
-					<div class="align-center">${pagingHtml }</div>
+					<p style = "text-align:center;">${pagingHtml }</p>
 				</c:if>
 			</div>
 

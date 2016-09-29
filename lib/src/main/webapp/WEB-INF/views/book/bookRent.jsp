@@ -18,7 +18,7 @@
 <section id="page-title">
 
 	<div class="container clearfix">
-		<h1>결제하기</h1>
+		<h1>결제</h1>
 	</div>
 
 </section>
@@ -54,14 +54,14 @@
 									<tbody>
 										<c:forEach var="basket" items="${list }">
 											<tr>
-												<td><img src="${basket.list_filename }" width="75"
-													height="113"></td>
+												<td><a href = "${pageContext.request.contextPath}/book/detail.do?list_title=${basket.list_title}&list_filename=${basket_list_filename}&list_num=${list_num}">
+												<img src="/lib/upload/${basket.list_filename }" width="80" height="120"></a></td>
 												<td>${basket.list_title}</td>
 												<td>${basket.list_code}</td>
 												<td>${basket.list_writer}</td>
 												<td>${basket.list_publish}</td>
 												<td>${basket.basket_amount }</td>
-												<td>${basket.list_price}</td>
+												<td>${basket.basket_price }</td>
 											</tr>
 										</c:forEach>
 									</tbody>

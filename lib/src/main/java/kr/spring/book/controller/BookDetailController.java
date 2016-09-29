@@ -40,7 +40,7 @@ public class BookDetailController {
 		if(status == bookRentService.recentStatus(list_num)){
 			if(log.isDebugEnabled()){
 				log.debug("status : " + status);
-				status = 7;
+				status = 9;
 			}
 		}else{
 			status = bookRentService.recentStatus(list_num);

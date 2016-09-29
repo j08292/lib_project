@@ -79,7 +79,7 @@ public class BookUnmannedController {
 		
 		BookRentCommand rentCommand2 = new BookRentCommand();
 		rentCommand2 = bookRentService.select(list_num);
-		rentCommand2.setRent_status(5);
+		rentCommand2.setRent_status(3);
 		
 		bookRentService.updateunmanned(rentCommand2);
 		

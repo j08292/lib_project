@@ -70,7 +70,7 @@ public class MemberMyOrderController {
 		int count2 = bookRentService.getRowCount2(map);
 
 		PagingUtil page = new PagingUtil(currentPage,
-                count2,rowCount,pageCount,"myOrder.do");
+                count,rowCount,pageCount,"myOrder.do");
 		
 		map.put("mem_id", mem_id);
 		map.put("rent_status", rent_status);
