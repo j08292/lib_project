@@ -141,58 +141,6 @@
 				</div>
 			</form:form>
 
-
-
-			<%-- <label>도서예약 내역</label>
-			<form:form action="myOrder.do" id="myOrder-form" class="nobottommargin">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<table class="table table-hover provideList">
-						<thead>
-							<tr>
-								<th>주문번호</th>
-								<th>도서정보</th>
-								<th>도서관</th>
-								<th>대여날짜<br>(예약날짜)</th>
-								<th>반납날짜<br>(예약취소 날짜)</th>
-								<th>상태</th>
-								<th>비고</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach var="res" items="${list_reserve}">
-								<tr>
-									<td>${res.rent_num }</td>
-									<td><a href = "${pageContext.request.contextPath}/book/detail.do?list_num=${res.list_num}&list_title=${res.list_title}&list_filename=${res.list_filename}">${res.list_title }</a></td>
-									<td>북수원 도서관</td>
-									<td>${res.reserve_date}</td>
-									<c:if test="${res.reserve_dateCancel != null }">
-									<td>${res.reserve_dateCancel }</td>
-									</c:if>
-									<c:if test="${res.reserve_dateCancel == null }">
-									<td></td>
-									</c:if>
-									<c:choose>
-										<c:when test="${res.reserve_order == 2 }">
-											<td>예약</td>
-											<td><a id = "reserveDateCancel-button" class = "btn btn-primary"
-											href = "${pageContext.request.contextPath}/member/myOrder.do">취소</a></td>
-										</c:when>
-										<c:when test="${res.reserve_order == 3 }">
-											<td>예약취소</td>
-										</c:when>
-									</c:choose>
-								</tr>
-								<input type = "hidden" id = "list_title" name = "list_title" value = "${res.list_title }">
-								<input type = "hidden" id = "rent_num" name = "rent_num" value = "${res.rent_num }">
-								<input type = "hidden" id = "list_num" name = "list_num" value = "${res.list_num }">
-							</c:forEach>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</form:form> --%>
-		
 		</div>
 	</div>
 </section>

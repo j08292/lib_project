@@ -68,12 +68,27 @@
 								<hr />
 								<br />
 								<p style = "text-align:center; ">
-								<select name="a_tolib">
-									<option value="SUBSW">수원역 (예약가능)</option>
-									<option value="SUBSC">수원시청역 (예약가능)</option>
+								<select class = "form-control" style = "width:120px;" id = "selectBox"
+								name = "selectBox" onchange = "getSelectValue(this.form)">
+									<option value="s1">수원역</option>
+									<option value="s2">수원시청역</option>
+									<option value="s3">성균관대역</option>
 								</select>
 								<span>&nbsp;&nbsp;(으)로 무인 예약 신청 하시겠습니까?</span>
 								</p>
+								<script type="text/javascript">
+									function getSelectValue(frm){
+										frm.textValue.value = frm.selectBox.options[frm.selectBox.selectedIndex].text;
+										var value = frm.selectBox.options[frm.selectBox.selectIndex].text;
+										alert(value);
+										$('.textValue').val(value);
+										alert($('.textValue').val());
+									}
+								</script>
+								<input type = "hidden" name = "textValue" class = "textValue">
+								<input type = "text" name = "textValue">
+								<input type = "text" name = "optionValue">
+								
 							</div>
 						</div>
 					</div>

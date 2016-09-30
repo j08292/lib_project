@@ -33,8 +33,6 @@ public class BookDetailController {
 								@RequestParam(value="list_num") Integer list_num){
 		
 		BookListCommand book = bookListService.select_num(list_num);
-		BookRentCommand rent = new BookRentCommand();
-		BookRentCommand reserve = new BookRentCommand();
 		Integer status = null; 
 		
 		if(status == bookRentService.recentStatus(list_num)){
@@ -57,14 +55,10 @@ public class BookDetailController {
 			log.debug("list_filename : " + list_filename);
 			log.debug("list_num : " + list_num);
 			log.debug("book : " + book.getRent_status());
-			log.debug("rent : " + rent);
-			log.debug("reserve : " + reserve);
 		}
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("bookDetail");
 		mav.addObject("book", book);
-		mav.addObject("reserve", reserve);
-		mav.addObject("rent", rent);
 		
 		return mav;
 		

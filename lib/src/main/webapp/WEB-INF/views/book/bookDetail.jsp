@@ -84,7 +84,7 @@
 										<!-- 대출중일때 -->
 									<td style = "width:20%; text-align:center;">
 										<c:if test="${book.list_status == 1 }">
-											대여불가										
+											<span></span>										
 										</c:if>
 										<c:if test="${book.list_status == 0 }">
 										<c:if test="${book.rent_status == 3 || book.rent_status == 0 || book.rent_status == 5} ">
@@ -92,9 +92,11 @@
 										<input type = "hidden" id = "list_num" name = "list_num" value = "${book.list_num }">
 											<input type="button" value="도서 예약" id="reserve-button" class = "btn btn-primary"><br>
 										</c:if>
-											<c:if test="${book.rent_status == 2 }">
+										
+										<c:if test="${book.rent_status == 2 }">
 											<span>예약 불가</span>
-											</c:if>
+										</c:if>
+
 										<!-- 비치중일때 -->
 										<c:if test="${book.rent_status == 9 || book.rent_status == 1 || book.rent_status == 4 }">
 											<input type = "hidden" id = "list_num" name = "list_num" value = "${book.list_num }">
@@ -123,6 +125,8 @@
 						</div>
 					</div>
 				</div>
+				
+				
 				<!--별점 및 한줄평 -->
 				<div class="panel panel-default">
 					<div class="panel-heading" align="center">별점 및 한줄평</div>
@@ -202,7 +206,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
 </section>
 <!-- #content end -->

@@ -9,7 +9,16 @@ public class DeliveryCommand {
 	private String delivery_address;
 	private String delivery_receiveDate;
 	private String mem_id;
-	
+	private int delivery_status;
+
+	public int getDelivery_status() {
+		return delivery_status;
+	}
+
+	public void setDelivery_status(int delivery_status) {
+		this.delivery_status = delivery_status;
+	}
+
 	public int getDelivery_num() {
 		return delivery_num;
 	}

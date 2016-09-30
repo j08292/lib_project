@@ -44,6 +44,9 @@ public class BookUnmannedController {
 	@Resource
 	private BasketService basketService;
 	
+	@Resource
+	private DeliveryService deliveryService;
+	
 	@RequestMapping(value = "/book/unmanned.do", method = RequestMethod.GET)
 	public ModelAndView form(HttpSession session, 
 			@RequestParam(value="list_num") int list_num){
@@ -70,18 +73,33 @@ public class BookUnmannedController {
 		
 		String userId = (String) session.getAttribute("userId");
 		int list_num = Integer.parseInt(request.getParameter("list_num"));
+		String loc = request.getParameter("textValue");
+		
+		if(log.isDebugEnabled()){
+			log.debug("loc : " + loc);
+		}
 		
 		BookRentCommand rentCommand = new BookRentCommand();
+		List<BookRentCommand> rentCommand2 = null;
+
+		rentCommand2 = bookRentService.selectList(list_num);
+		
+		int st = bookRentService.recentStatus(list_num);
+		
 		rentCommand.setList_num(list_num);
 		rentCommand.setMem_id(userId);
-		
 		bookRentService.insert(rentCommand);
 		
-		BookRentCommand rentCommand2 = new BookRentCommand();
-		rentCommand2 = bookRentService.select(list_num);
-		rentCommand2.setRent_status(3);
-		
-		bookRentService.updateunmanned(rentCommand2);
+		MemberCommand member = memberService.selectMember(userId);
+		DeliveryCommand delivery = new DeliveryCommand();
+		delivery.setDelivery_address(loc);
+		delivery.setSample3_postcode("");
+		delivery.setDelivery_cell(member.getMem_cell());
+		delivery.setDelivery_email(member.getMem_email());
+		delivery.setDelivery_name(member.getMem_name());
+		delivery.setMem_id(userId);
+		delivery.setDelivery_status(1);
+		deliveryService.insert(delivery);
 		
 		if(log.isDebugEnabled()){  
 			log.debug("list_num : " + list_num);
