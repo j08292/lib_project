@@ -38,30 +38,30 @@
 					<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do"><i class="icon-bookmark2"></i>공지사항</a></li>
 					<li><a href="#"><i class="icon-book3"></i>BOOK</a>
 						<ul>
-							<li><a href="${pageContext.request.contextPath }/book/search.do">도서검색</a></li>
-							<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do">희망도서 신청</a></li>
+							<li><a href="${pageContext.request.contextPath }/book/search.do"><i class="icon-bookmark2"></i>도서검색</a></li>
+							<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do"><i class="icon-bookmark2"></i>희망도서 신청</a></li>
 						</ul>
 					</li>
 					<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do"><i class="icon-signal"></i>강연</a></li>
 
 					<li><a href="#"><i class="icon-inbox"></i>BOARD</a>
 						<ul>
-							<li><a href="${pageContext.request.contextPath}/board/list.do">감상평게시판</a></li>
-							<li><a href="${pageContext.request.contextPath}/board/qnaList.do">질문게시판</a></li>
+							<li><a href="${pageContext.request.contextPath}/board/list.do"><i class="icon-inbox"></i>감상평게시판</a></li>
+							<li><a href="${pageContext.request.contextPath}/board/qnaList.do"><i class="icon-inbox"></i>질문게시판</a></li>
 						</ul>
 					</li>
 					<li><a href="#"><i class="icon-line-heart"></i>EVENT</a>
 						<ul>
-							<li><a href="${pageContext.request.contextPath}/event/list.do">이벤트</a></li>
-							<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do">독서마라톤</a></li>
+							<li><a href="${pageContext.request.contextPath}/event/list.do"><i class="icon-line-heart"></i>이벤트</a></li>
+							<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do"><i class="icon-line-heart"></i>독서마라톤</a></li>
 						</ul>
 					</li>
 				</ul>
 
 				<ul>
 					<c:if test="${empty userId }">
-						<li><a href="${pageContext.request.contextPath }/member/write.do">회원가입</a></li>
-						<li><a href="${pageContext.request.contextPath }/member/login.do">로그인</a></li>
+						<li><a href="${pageContext.request.contextPath }/member/write.do"><i class="icon-line-paper"></i>회원가입</a></li>
+						<li><a href="${pageContext.request.contextPath }/member/login.do"><i class="icon-off"></i>로그인</a></li>
 					</c:if>
 					<c:if test="${!empty userId && mem_level == 2 }">
 						<li><a href="#" style="text-transform: lowercase;">[관리자 ${userId}님 로그인 중]</a></li>

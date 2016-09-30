@@ -19,11 +19,11 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <h3><spring:message code="review.list.title"/></h3>
-                <span>Start Buying your Favourite Theme</span>
+                <h3><spring:message code="qna.update.title"/></h3>
+                <span>Guest Relation</span>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Shop</li>
+                    <li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+                    <li><a href="${pageContext.request.contextPath}/board/qnaList.do">Qna List</a></li>
                 </ol>
             </div>
 

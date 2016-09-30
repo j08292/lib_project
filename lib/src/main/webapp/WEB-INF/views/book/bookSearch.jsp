@@ -61,12 +61,12 @@
 						</form>
 					</div>
 				</div>
-					
+					<br><br><br>
 				<c:if test="${count == 0 }">
 					<div>도서 검색결과가 없습니다.</div>
 				</c:if>
 				<c:if test="${count > 0 }">
-				<label style = "font-size:18px">도서 검색결과</label>
+				<label style = "font-size:18px">도서 목록</label>
 					<div class="panel panel-default">
 						<div class="panel-heading"></div>
 						<form action="search.do" class="form-inline" id="detail-form"

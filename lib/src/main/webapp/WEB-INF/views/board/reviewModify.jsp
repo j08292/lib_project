@@ -23,11 +23,11 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1><spring:message code="review.write.title"/></h1>
-                <span>Start Buying your Favourite Theme</span>
+                <h1><spring:message code="review.update.title"/></h1>
+               <span>see appreciation review</span>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Shop</li>
+                    <li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+                    <li><a href="${pageContext.request.contextPath}/board/list.do">Review List</a></li>
                 </ol>
             </div>
 

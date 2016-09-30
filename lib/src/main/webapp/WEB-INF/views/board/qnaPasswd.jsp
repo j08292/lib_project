@@ -6,9 +6,8 @@
             <div class="container clearfix">
                 <h1>Password Forms</h1>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="qnaList.do">QnA List</a></li>
-                    <li class="active">Password Forms</li>
+                    <li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+                    <li><a href="qnaList.do">QnA List</a></li>                   
                 </ol>
             </div>
 

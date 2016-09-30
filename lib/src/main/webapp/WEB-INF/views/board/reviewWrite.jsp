@@ -4,8 +4,19 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>   
  
    
-    <!-- Stylesheets(지우면안됨X)-->
+        <!-- Page Title(지우면안됨X) -->
+        <section id="page-title">
 
+            <div class="container clearfix">
+                <h1><spring:message code="review.write.title"/></h1>
+                <span>see appreciation review</span>
+                <ol class="breadcrumb">
+                    <li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+                    <li><a href="${pageContext.request.contextPath}/board/list.do">Review List</a></li>
+                </ol>
+            </div>
+
+        </section><!-- #page-title end -->
   
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>

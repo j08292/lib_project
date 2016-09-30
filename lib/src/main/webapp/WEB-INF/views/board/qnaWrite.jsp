@@ -21,11 +21,11 @@
 		<h1>
 			<spring:message code="qna.write.title" />
 		</h1>
-		<span>Start Buying your Favourite Theme</span>
-		<ol class="breadcrumb">
-			<li><a href="#">Home</a></li>
-			<li class="active">Shop</li>
-		</ol>
+		<span>Guest Relation</span>
+        <ol class="breadcrumb">
+            <li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+            <li><a href="${pageContext.request.contextPath}/board/qnaList.do">Qna List</a></li>
+        </ol>
 	</div>
 
 </section>

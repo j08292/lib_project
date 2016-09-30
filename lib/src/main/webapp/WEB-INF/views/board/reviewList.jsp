@@ -19,10 +19,10 @@
 
             <div class="container clearfix">
                 <h3><spring:message code="review.list.title"/></h3>
-                <span>감상평게시판 한줄 설명?</span>
+                <span>see appreciation review</span>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Shop</li>
+                    <li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+                    <li><a href="${pageContext.request.contextPath}/board/list.do">Review List</a></li>
                 </ol>
             </div>
 

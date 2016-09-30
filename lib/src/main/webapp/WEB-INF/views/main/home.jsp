@@ -330,8 +330,11 @@
 
 				<div class="container clearfix">
 
-					<div id="oc-clients" class="owl-carousel image-carousel">
-						<span class="glyphicon glyphicon-chevron-left"></span>
+				  &nbsp; &nbsp;<span class="glyphicon glyphicon-chevron-left">
+				</span><span class="glyphicon glyphicon-chevron-left"><span class="glyphicon glyphicon-chevron-left"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
+				</span><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span>
+				 <div id="oc-clients" class="owl-carousel image-carousel">
+						
 						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/5.png"alt="Clients"></div>
 						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/6.jpg"alt="Clients"></div>
 						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/7.jpg"alt="Clients"></div>
