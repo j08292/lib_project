@@ -22,23 +22,23 @@
 					<nav id="primary-menu" class="dark">
 											
 						<ul>
-							<li class="speech"><a href="${pageContext.request.contextPath}/board/operationGuide.do">이용안내</a></li>	
-							<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do">공지사항</a></li>	
-							<li><a href="#">BOOK</a>
+							<li class="speech"><a href="${pageContext.request.contextPath}/board/operationGuide.do"><i class="icon-ok"></i>이용안내</a></li>	
+							<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do"><i class="icon-bookmark2"></i>공지사항</a></li>	
+							<li><a href="#"><i class="icon-book3"></i>BOOK</a>
 								<ul>
 									<li><a href="${pageContext.request.contextPath }/book/search.do">도서검색</a></li>
 									<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do">희망도서 신청</a></li>
 								</ul>
 							</li>
-							<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do">강연</a></li>													
+							<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do"><i class="icon-signal"></i>강연</a></li>													
 							
-							<li><a href="#">BOARD</a>
+							<li><a href="#"><i class="icon-inbox"></i>BOARD</a>
 								<ul>
 									<li><a href="${pageContext.request.contextPath}/board/list.do">감상평게시판</a></li>
 									<li><a href="${pageContext.request.contextPath}/board/qnaList.do">질문게시판</a></li>								
 								</ul>
 							</li>
-							<li><a href="#">EVENT</a>
+							<li><a href="#"><i class="icon-line-heart"></i>EVENT</a>
 								<ul>
 									<li><a href="${pageContext.request.contextPath}/event/list.do">이벤트</a></li>
 									<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do">독서마라톤</a></li>
@@ -52,63 +52,24 @@
 								<li><a href = "${pageContext.request.contextPath }/member/login.do">로그인</a></li>
 							</c:if>
 							<c:if test = "${!empty userId && mem_level == 2 }">
-								<li><a href = "#">[관리자 ${userId }님 로그인 중]</a></li>
+								<li><a href = "#" style="text-transform:lowercase;">[관리자 ${userId}님 로그인 중]</a></li>
 								<li><a href="${pageContext.request.contextPath}/admin/main.do">관리자 페이지</a></li>
 								<li><a href = "${pageContext.request.contextPath }/member/logout.do">로그아웃</a></li>
 							</c:if>
 							<c:if test = "${!empty userId && mem_level == 0 }">
-								<li><a href = "#">[일반회원 ${userId }님 로그인 중]</a></li>
-								<li><a href ="${pageContext.request.contextPath }/book/basket.do">장바구니</a>
-								<li><a href = "${pageContext.request.contextPath }/member/myOrder.do">나의 예약/취소</a></li>
-								<li><a
-									href="${pageContext.request.contextPath }/member/update.do">회원정보수정</a></li>
-								<li><a href="${pageContext.request.contextPath }/member/logout.do">로그아웃</a></li>								
+								<li><a href = "#" style="text-transform:lowercase;">[일반회원 ${userId}님 로그인 중]</a></li>
+					
+							<li><a href="#"><i class="icon-tags"></i>MY PAGE</a>
+								<ul>
+								<li><a href ="${pageContext.request.contextPath }/book/basket.do"><i class="icon-shopping-cart"></i>장바구니</a>
+								<li><a href ="${pageContext.request.contextPath }/member/myOrder.do">도서 주문 내역 (예약/취소)</a></li>
+								<li><a href ="#">희망도서신청내역</a>
+								<li><a href="${pageContext.request.contextPath }/member/update.do">회원정보수정</a></li>
+							</ul>
+							</li>
+								<li><a href="${pageContext.request.contextPath }/member/logout.do"><i class="icon-off"></i>로그아웃</a></li>								
 							</c:if>
 						</ul>
-
-						<!-- Top Cart 	============================================= -->
-						<div id="top-cart">
-							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
-							<div class="top-cart-content">
-								<div class="top-cart-title">
-									<h4>Shopping Cart</h4>
-								</div>
-								<div class="top-cart-items">
-									<div class="top-cart-item clearfix">
-										<div class="top-cart-item-image">
-											<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
-										</div>
-										<div class="top-cart-item-desc">
-											<a href="#">Blue Round-Neck Tshirt</a>
-											<span class="top-cart-item-price">$19.99</span>
-											<span class="top-cart-item-quantity">x 2</span>
-										</div>
-									</div>
-									<div class="top-cart-item clearfix">
-										<div class="top-cart-item-image">
-											<a href="#"><img src="${pageContext.request.contextPath}/resources/user/images/shop/small/6.jpg" alt="Light Blue Denim Dress" /></a>
-										</div>
-										<div class="top-cart-item-desc">
-											<a href="#">Light Blue Denim Dress</a>
-											<span class="top-cart-item-price">$24.99</span>
-											<span class="top-cart-item-quantity">x 3</span>
-										</div>
-									</div>
-								</div>
-								<div class="top-cart-action clearfix">
-									<span class="fleft top-checkout-price">$114.95</span>
-									<button class="button button-3d button-small nomargin fright">View Cart</button>
-								</div>
-							</div>
-						</div><!-- #top-cart end -->
-
-						<!-- Top Search ============================================= -->
-						<div id="top-search">
-							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
-							<form action="search.html" method="get">
-								<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
-							</form>
-						</div><!-- #top-search end -->
 
 					</nav><!-- #primary-menu end -->
 

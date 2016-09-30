@@ -133,7 +133,7 @@
 
 							<div class="feature-box fbox-right topmargin" data-animate="fadeIn">
 								<div class="fbox-icon">
-									<a href="${pageContext.request.contextPath }/board/operationGuide.do"><i class="icon-line-heart"></i></a>
+									<a href="${pageContext.request.contextPath }/board/operationGuide.do"><i class="icon-ok"></i></a>
 								</div>
 								<h3>이용안내</h3>
 								<p>온라인 도서관 이용안내 및 규칙</p>
@@ -167,7 +167,7 @@
 
 							<div class="feature-box topmargin" data-animate="fadeIn">
 								<div class="fbox-icon">
-									<a href="${pageContext.request.contextPath }/event/marathonInfo.do"><i class="icon-line-power"></i></a>
+									<a href="${pageContext.request.contextPath }/event/marathonInfo.do"><i class="icon-line-heart"></i></a>
 								</div>
 								<h3>[EVENT] 독서 마라톤</h3>
 								<p>독서 활동을 마라톤에 접목시켜<br> 42.195페이지를 읽으면 완주!</p>
@@ -331,7 +331,7 @@
 				<div class="container clearfix">
 
 					<div id="oc-clients" class="owl-carousel image-carousel">
-
+						<span class="glyphicon glyphicon-chevron-left"></span>
 						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/5.png"alt="Clients"></div>
 						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/6.jpg"alt="Clients"></div>
 						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/7.jpg"alt="Clients"></div>
@@ -342,7 +342,7 @@
 						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/12.png"alt="Clients"></div>
 						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/13.png"alt="Clients"></div>
 						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/14.png"alt="Clients"></div>
-
+						
 					</div>
 
 					<script type="text/javascript">
