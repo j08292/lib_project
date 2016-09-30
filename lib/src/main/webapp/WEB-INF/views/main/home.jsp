@@ -15,7 +15,7 @@
 					                        <input type="hidden" name="keyfield" id="keyfield" value="all">
 					                        <input type="text" name="keyword" id="keyword" class="form-control" placeholder="Search for Books...">
 					                        <span class="input-group-btn">
-					                            <button class="btn btn-danger" type="button" onclick="javascript:MainSearchBook();">Search</button>
+					                            <button class="btn btn-danger" type="submit">Search</button>
 					                        </span>
 					                    </div>
 					                </form>

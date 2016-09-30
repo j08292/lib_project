@@ -37,7 +37,7 @@
 					<c:forEach var="article" items="${list}">
 						<tr>
 							<td>${article.review_num}</td>
-							<td><a href="detail.do?review_num=${article.review_num}" class="detail_btn">${article.review_title} (${article.review_replyCount})</a></td>
+							<td><a href="detail.do?review_num=${article.review_num}" class="detail_btn">${article.review_title} <span class="badge">${article.review_replyCount} </span></a></td>
 							<td>${article.mem_id}</td>
 							<td>${article.review_regdate}</td>							
 							<td>							
