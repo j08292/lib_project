@@ -2,11 +2,23 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:if test="${member.mrt_status eq 1 || member.mrt_status eq 2}">
+<section id="page-title">
+	<div class="container clearfix">
+		<h1>내 마라톤 현황</h1>
+				<ol class="breadcrumb">
+					<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+					<li><a href="${pageContext.request.contextPath}/event/marathonInfo.do">Marathon Info</a></li>
+					<li class="active">My Marathon</li>
+				</ol>
+	</div>
+</section>
+
 <div class="container clearfix">
-	<c:if test="${member.mrt_status eq 1 || member.mrt_status eq 2}">
-	<h2>내 마라톤 현황</h2>
+	
+	<h2></h2>
 	<div>
-	<c:set var="sumPage" value="0"/>
+	<c:set var="sum" value="0"/>
 	
 	<c:forEach var="page" items="${pageList}">
 		<c:set var="sum" value="${sum + page.list_page}"/>
@@ -46,18 +58,19 @@
 	<c:if test="${count > 0}">
 	<table class="table table-hover"  style="text-align:center;">
 		<thead>
-				<tr>
-					<th style="text-align:center;">책번호</th>
-					<th style="text-align:center;">책제목</th>
-					<th style="text-align:center;">페이지 수</th>
-					<th style="text-align:center;">대여날짜</th>
-					<th style="text-align:center;">반납날짜</th>
-					<th style="text-align:center;">한줄평</th>
-				</tr>
-			</thead>
+			<tr>
+				<th style="text-align:center;">책번호</th>
+				<th style="text-align:center;">책제목</th>
+				<th style="text-align:center;">페이지 수</th>
+				<th style="text-align:center;">대여날짜</th>
+				<th style="text-align:center;">반납날짜</th>
+				<th style="text-align:center;">한줄평</th>
+			</tr>
+		</thead>
 		
-		<c:forEach var="article" items="${rentedList}">
+		
 		<tbody>
+		<c:forEach var="article" items="${rentedList}">
 			<tr>
 				<td>${article.list_num}</td>
 				<td>${article.list_title}</td>
@@ -69,16 +82,15 @@
 				한줄평을 남기셨습니다.
 				</c:if>
 				<c:if test="${article.gradecheck eq 0}">
-				<input type="button" value="한줄평쓰기" onclick="location.href=''">
+				<input type="button" value="한줄평쓰기" onclick="">
 				</c:if>
 				</td>
 			</tr>
-		</tbody>
 		</c:forEach>
+		</tbody>
+		
 	</table>
 	
 	</c:if>
-	
-	</c:if>
-	
 </div>
+</c:if>
