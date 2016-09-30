@@ -30,7 +30,7 @@ public class GradeListController {
 	@ResponseBody
 	public Map<String, Object> process(
 							@RequestParam(value="pageNum", defaultValue="1") int currentPage,
-							@RequestParam("list_num") int list_num){
+							@RequestParam(value="list_num") int list_num){
 		if(log.isDebugEnabled()){
 			log.debug("pageNum : " + currentPage);
 			log.debug("list_num : " + list_num );
@@ -42,7 +42,7 @@ public class GradeListController {
 			//ÃÑ ´ñ±ÛÀÇ °¹¼ö
 			int count = gradeService.getRowCountGrade(hashMap);
 			
-			PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"list.do");
+			PagingUtil page = new PagingUtil(currentPage,count,rowCount,pageCount,"listGradeAjax.do");
 			hashMap.put("start", page.getStartCount());
 			hashMap.put("end", page.getEndCount());
 			
@@ -55,7 +55,7 @@ public class GradeListController {
 			
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("count", count);
-			map.put("rowcount", rowCount);
+			map.put("rowCount", rowCount);
 			map.put("list", list);
 					
 			return map;			
