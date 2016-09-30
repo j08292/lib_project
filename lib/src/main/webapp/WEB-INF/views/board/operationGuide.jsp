@@ -39,7 +39,7 @@
                 <div class="container clearfix">
 
                    <!-- 내용입력 시작-->
-                   <form:form action="operationGuide.do" enctype="multipart/form-data" id="register_form" method="get">
+                   <form:form action="operationGuide.do" enctype="multipart/form-data" method="get">
          			
          			<h4>1. 온라인 도서관 이용하기</h4>
          				 ▶  &nbsp;&nbsp;저희 온라인 도서관 OOOO은 희망하는 도서를 <b>온라인으로 예약 및 대여</b> 등의 서비스를 제공하는 홈페이지 입니다.<br>

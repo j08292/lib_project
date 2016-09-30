@@ -20,14 +20,15 @@
 				  
 				  ORDER BY grade_num DESC)a)
 		<![CDATA[
-		WHERE rnum >= #{start} AND rnum <= #{end}
+		WHERE rnum >= #{start} AND rnum <= #{end} AND list_num=#{list_num}
 		]]>
 	</select>
 	
 	<select id="getRowCountGrade" parameterType="map" resultType="integer">
 		SELECT
 			count(*)
-		FROM grade
+		FROM grade 
+			WHERE list_num = #{list_num}
 	</select>
 	
 	<!-- 관리자 한줄평 관리 -->

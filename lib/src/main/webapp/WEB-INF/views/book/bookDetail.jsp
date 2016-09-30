@@ -128,8 +128,8 @@
 					<div class="panel-heading" align="center">별점 및 한줄평</div>
 					<div class="panel-body">
 						<form id="grade_form">
-							<input type="hidden" name="list_num" value="${book.list_num}">
-							<input type="hidden" name="mem_id" value="${userId}" id="userId">
+							<input type="hidden" name="list_num" id="list_num" value="${book.list_num}">
+							<input type="hidden" name="mem_id" id="mem_id" value="${userId}" id="userId">
 
 							<div class="fb-like"
 								data-href="http://www.your-domain.com/your-page.html"
@@ -138,23 +138,30 @@
 
 							<!-- 별점 -->
 							<div class="col-md-2">
-								<span class="star-input"> <span class="input"> <input
-										type="radio" name="grade_star" id="p1" value="1"><label
-										for="p1">1</label> <input type="radio" name="grade_star"
-										id="p2" value="2"><label for="p2">2</label> <input
-										type="radio" name="grade_star" id="p3" value="3"><label
-										for="p3">3</label> <input type="radio" name="grade_star"
-										id="p4" value="4"><label for="p4">4</label> <input
-										type="radio" name="grade_star" id="p5" value="5"><label
-										for="p5">5</label> <input type="radio" name="grade_star"
-										id="p6" value="6"><label for="p6">6</label> <input
-										type="radio" name="grade_star" id="p7" value="7"><label
-										for="p7">7</label> <input type="radio" name="grade_star"
-										id="p8" value="8"><label for="p8">8</label> <input
-										type="radio" name="grade_star" id="p9" value="9"><label
-										for="p9">9</label> <input type="radio" name="grade_star"
-										id="p10" value="10"><label for="p10">10</label>
-								</span> <output for="star-input">
+								<span class="star-input"> 
+									<span class="input"> 
+									<input type="radio" name="grade_star" id="p1" value="1">
+									<label for="p1">1</label> 
+									<input type="radio" name="grade_star" id="p2" value="2">
+									<label for="p2">2</label> 
+									<input type="radio" name="grade_star" id="p3" value="3">
+									<label for="p3">3</label> 
+									<input type="radio" name="grade_star" id="p4" value="4">
+									<label for="p4">4</label> 
+									<input type="radio" name="grade_star" id="p5" value="5">
+									<label for="p5">5</label> 
+									<input type="radio" name="grade_star" id="p6" value="6">
+									<label for="p6">6</label> 
+									<input type="radio" name="grade_star" id="p7" value="7">
+									<label for="p7">7</label> 
+									<input type="radio" name="grade_star" id="p8" value="8">
+									<label for="p8">8</label> 
+									<input type="radio" name="grade_star" id="p9" value="9">
+									<label for="p9">9</label> 
+									<input type="radio" name="grade_star" id="p10" value="10">
+									<label for="p10">10</label>
+									</span> 
+									<output for="star-input">
 										<b id="star_point">0</b>점
 									</output>
 								</span>

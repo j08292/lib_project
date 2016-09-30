@@ -7,6 +7,7 @@
 		SELECT b.list_num,
 			   b.list_title,
 			   b.list_page,
+			   b.list_filename,
 			   br.rent_regdate,
 			   br.rent_returndate,
 			   br.mem_id,
@@ -51,7 +52,7 @@
 							AND br.rent_status=1 
 							AND br.mem_id=#{mem_id}) a, 
 					grade b
-						WHERE a.list_num=b.list_num 
+						WHERE a.list_num=b.list_num AND b.mem_id=#{mem_id}
 	</select>
 	<select id="finishList" parameterType="map" resultType="marathonCommand">
 		SELECT
