@@ -8,11 +8,11 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1><spring:message code="review.detail.title"/></h1>
-                <span>see appreciation review</span>
+                <h1><spring:message code="review.write.title"/></h1>
+                <span>REVIEW VIEW</span>
                 <ol class="breadcrumb">
-                    <li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
-                    <li><a href="${pageContext.request.contextPath}/board/list.do">Review List</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Shop</li>
                 </ol>
             </div>
 
@@ -44,14 +44,63 @@
                    		<c:if test="${!empty review.review_file}">
                   	 		<img src="file.do?review_file=${review.review_file}" width=512 height=384></img>
                   	 	</c:if>
-                  	 	
-                   	  	
                    	  	<br>
                   	 	<br>                   		
                    		${review.review_content}
                    		
                    	</p>
-                   	
+                   	<c:if test="${checkCount==0 || empty userId}">
+                   	<div align="center">
+                   		<table>
+	                   		<colgroup>
+								<col style="width: 36px;">
+								<col style="width: 36px;">
+							</colgroup>
+                   			<tr>
+                   				<td style="text-align:center;">
+                   					<a href="insertLike.do?review_num=${review.review_num}&review_like_status=0">
+		                   				<i class="i-plain icon-thumbs-up2"></i>
+		                   			</a>
+		                   		</td>
+                   				<td style="text-align:center;">
+                   					<a href="insertLike.do?review_num=${review.review_num}&review_like_status=1">
+		                   				<i class="i-plain icon-thumbs-down2"></i>
+		                   			</a>
+		                   		</td>
+                   			</tr>
+                   			<tr>
+                   				<td>${reviewLikeCount}</td>
+                   				<td>${reviewUnlikeCount}</td>
+                   			</tr>
+                   		</table>
+                   	</div>
+                   	</c:if>
+                   	<c:if test="${checkCount>0 && !empty userId}">
+                   	<div align="center">
+                   		<table>
+                   			<colgroup>
+								<col style="width: 36px;">
+								<col style="width: 36px;">
+							</colgroup>
+                   			<tr>
+                   				<td style="width: 36px;">
+                   					<a href="javascript:alreadyCheck(${likeOrUnlike});">
+		                   				<i class="i-plain icon-thumbs-up2"></i>
+		                   			</a>
+		                   		</td>
+                   				<td style="width: 36px;">
+                   					<a href="javascript:alreadyCheck(${likeOrUnlike});">
+		                   			<i class="i-plain icon-thumbs-down2"></i>
+		                   			</a>
+		                   		</td>
+                   			</tr>
+                   			<tr>
+                   				<td style="width: 36px;">${reviewLikeCount}</td>
+                   				<td style="width: 36px;">${reviewUnlikeCount}</td>
+                   			</tr>
+                   		</table>
+                   	</div>
+                   	</c:if>
                    	<hr size="1" width="100%">
                    	<p class="align-right">
                    	<input type="button" value="목록으로" class="btn btn-primary btn-sm"
