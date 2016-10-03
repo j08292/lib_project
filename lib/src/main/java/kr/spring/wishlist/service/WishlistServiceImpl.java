@@ -40,4 +40,15 @@ public class WishlistServiceImpl implements WishlistService{
 	public void updateStatusChange(WishlistCommand wishlist) {
 		wishlistMapper.updateStatusChange(wishlist);
 	}
+
+	//사용자별 희망도서 신청내역===============================================
+	@Override
+	public List<WishlistCommand> myWishlist(Map<String, Object> map) {
+		return wishlistMapper.myWishlist(map);
+	}
+
+	@Override
+	public int getMyWishlistCount(Map<String, Object> map) {
+		return wishlistMapper.getMyWishlistCount(map);
+	}
 }

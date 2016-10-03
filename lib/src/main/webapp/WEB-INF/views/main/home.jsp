@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix">
 
 			<div class="swiper-container swiper-parent">
@@ -24,9 +25,8 @@
 						</div>
 						<div class="video-wrap">
 							<video id="slide-video" poster="images/videos/explore-poster.jpg" preload="auto" loop autoplay muted>
-								<%-- <source src='${pageContext.request.contextPath}/resources/user/images/videos/explore.webm' type='video/webm' />
-								<source src='${pageContext.request.contextPath}/resources/user/images/videos/explore.mp4' type='video/mp4' /> --%>
-								<source src='${pageContext.request.contextPath}/resources/user/images/videos/Main.mp4' type='video/mp4' />
+								<source src='${pageContext.request.contextPath}/resources/user/images/videos/explore.webm' type='video/webm' />
+								<source src='${pageContext.request.contextPath}/resources/user/images/videos/explore.mp4' type='video/mp4' />
 							</video>
 							<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
 						</div>
@@ -115,23 +115,13 @@
 
 		</section>
 
-		<!-- Content
-		============================================= -->
+		<!-- Content ============================================= -->
+		<!-- 홈페이지 주요 서비스 간단 설명/바로가기 -->
 		<section id="content">
-
 			<div class="content-wrap">
-
-				
-
-				
 				<div class="container clearfix">
-
 					<div class="row topmargin-lg bottommargin-sm">
-
-						
-
 						<div class="col-md-4 col-sm-6 bottommargin">
-
 							<div class="feature-box fbox-right topmargin" data-animate="fadeIn">
 								<div class="fbox-icon">
 									<a href="${pageContext.request.contextPath }/board/operationGuide.do"><i class="icon-ok"></i></a>
@@ -155,17 +145,12 @@
 								<h3>희망도서신청</h3>
 								<p>원하는 도서가 소장되어 있지 않을 경우<br>
 								도서를 신청 하실 수 있는 서비스입니다.</p>
-								
 							</div>
-
 						</div>
-
 						<div class="col-md-4 hidden-sm bottommargin center">
 							<img src="${pageContext.request.contextPath}/resources/user/images/book/ㄷ.png" >
 						</div>
-
 						<div class="col-md-4 col-sm-6 bottommargin">
-
 							<div class="feature-box topmargin" data-animate="fadeIn">
 								<div class="fbox-icon">
 									<a href="${pageContext.request.contextPath }/event/marathonInfo.do"><i class="icon-line-heart"></i></a>
@@ -173,7 +158,6 @@
 								<h3>[EVENT] 독서 마라톤</h3>
 								<p>독서 활동을 마라톤에 접목시켜<br> 42.195페이지를 읽으면 완주!</p>
 							</div>
-
 							<div class="feature-box topmargin" data-animate="fadeIn" data-delay="200">
 								<div class="fbox-icon">
 									<a href="#"><i class="icon-line-check"></i></a>
@@ -181,7 +165,6 @@
 								<h3>출석체크</h3>
 								<p>매일매일 출석도장 찍고 다양한 혜택을<br> 받아보세요</p>
 							</div>
-
 							<div class="feature-box topmargin" data-animate="fadeIn" data-delay="400">
 								<div class="fbox-icon">
 									<a href="${pageContext.request.contextPath }/board/qnaList.do"><i class="icon-bulb"></i></a>
@@ -189,18 +172,15 @@
 								<h3>문의 게시판</h3>
 								<p>온라인 도서관 이용 관련 문의 내용은<br> 해당 게시판을 이용해 주세요.</p>
 							</div>
-
 						</div>
-
 					</div>
-
+				
+				<!-- 신규 강연 안내 -->
 				</div>
 					<hr size="1" width="100%">
 					<hr size="1" width="100%">
 					<br><br>
 					<div>
-					
-					
 					<div class="center">
 					<div class="fbox-icon">
 						<h3>[Speech] 최신강연 안내</h3>	
@@ -208,28 +188,21 @@
 					</div>
 					</div>
 					<br>
-
 				<div class="container clearfix">
-
 					<a href="${pageContext.request.contextPath }/speech/list.do"><p style="text-align:right">▶더보기</p></a>	
-
 					<div class="clear"></div>
-			
 					<div class="col_one_third bottommargin-sm">
-					<img src="${pageContext.request.contextPath}/resources/user/images/book/a.png"alt="Clients"><br>
+					<img src="${pageContext.request.contextPath}/resources/user/images/book/a.png" alt="Clients"><br>
 						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="600">
-						
 							<div class="fbox-icon">
 								<a href="${pageContext.request.contextPath }/speech/list.do"><i class="icon-bulb"></i></a>
 							</div>
-							
 							<h3>[서민교수 기생충 콘서트 ]<br> 작가 초청 강연회</h3>
 							<p>▶ 그들은 어떻게 지구의 2인자가 됐을까?<br>  서민교수의 기생충에 관한 유쾌한 강연!</p>
 						</div>
 					</div>
-
 					<div class="col_one_third bottommargin-sm">
-					<img src="${pageContext.request.contextPath}/resources/user/images/book/b.png"alt="Clients"><br>
+					<img src="${pageContext.request.contextPath}/resources/user/images/book/b.png" alt="Clients"><br>
 						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="800">
 							<div class="fbox-icon">
 								<a href="${pageContext.request.contextPath }/speech/list.do"><i class="icon-heart2"></i></a>
@@ -239,9 +212,8 @@
 							&<br>&nbsp; &nbsp;  &nbsp; &nbsp;아이와 함께 여행하기 </p>
 						</div>
 					</div>
-
 					<div class="col_one_third bottommargin-sm col_last">
-					<img src="${pageContext.request.contextPath}/resources/user/images/book/c.png"alt="Clients"><br>
+					<img src="${pageContext.request.contextPath}/resources/user/images/book/c.png" alt="Clients"><br>
 						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="1000">
 							<div class="fbox-icon">
 								<a href="${pageContext.request.contextPath }/speech/list.do"><i class="icon-note"></i></a>
@@ -250,111 +222,101 @@
 							<p>▶ PQR BOOKS에 입점한 독립/소규모/1인출판물 중 하나를 선정해서 함께 읽고 이야기를 나누는 독서모임입니다.</p>
 						</div>
 						<br><br><br>
-																				
 					</div>
-										
 					<div class="clear"></div>
-
 				</div>
-						
-
+				
+				<!-- 신규 도서 안내 -->
 				<div class="section">
 					<div class="container clearfix">
-
 						<div class="row topmargin-sm">
-					
 							<div class="center">
 								<h3>[new] 신간도서 안내</h3>
 							</div>
-							<a href="${pageContext.request.contextPath }/book/search.do"><p style="text-align:right">▶더보기</p></a>	
-
-							<div class="col-md-3 col-sm-6 bottommargin">
-
-								<div class="team">
-									<div class="team-image">
-										<img src="${pageContext.request.contextPath}/resources/user/images/book/2.png" style="width:460px; height:315;">
-									</div>
-									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>못 참는 아이 욱하는 부모</h4><br><span>오은영</span></div>
-										<p>[못 참는 아이 욱하는 부모]는 영유아 시기부터 감정 조절을 올바르게 배울 수 있도록 안내한다.</p>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-md-3 col-sm-6 bottommargin">
-
-								<div class="team">
-									<div class="team-image">
-										<img src="${pageContext.request.contextPath}/resources/user/images/book/3.png" style="width:460px; height:315;">
-									</div>
-									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>설민석의 조선왕조실록</h4><br><span>설민석</span></div>
-										<p>스타강사 설민석의 재미있고 깊이 있는 한국사 책 『설민석의 조선왕조실록』</p>
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-md-3 col-sm-6 bottommargin">
-
-								<div class="team">
-									<div class="team-image">
-										<img src="${pageContext.request.contextPath}/resources/user/images/book/4.png" style="width:460px; height:315;">
-									</div>
-									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>풀꽃도 꽃이다 1</h4><br><span>조정래</span></div>
-										<p>우리 사회와 교육의 지향점을 제안하는<br> 조정래의 장편소설 『풀꽃도 꽃이다』</p>
+							<a href="${pageContext.request.contextPath }/book/search.do"><p style="text-align:right">▶더보기</p></a>
+						<c:if test="${newBookCount == 0}"> 현재 등록된 신규 도서가 없습니다. </c:if>
+						<c:if test="${newBookCount > 0}">
+							<c:forEach var="article" items="${mainNewBooklist}">
+								<div class="col-md-3 col-sm-6 bottommargin">
+									<div class="team">
+										<div class="team-image">
+											<a href="${pageContext.request.contextPath}/book/detail.do?list_title=${article.list_title}&list_filename=${article.list_filename}&list_num=${article.list_num}">
+												<c:choose>
+													<c:when test="${!empty article.list_filename}">
+														<img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="width: 460px; height: 315;">
+													</c:when>
+													<c:otherwise>
+														<img src="${pageContext.request.contextPath}/upload/NoImage.jpg" style="width: 460px; height: 315;">
+													</c:otherwise>
+												</c:choose>
+											</a>
+										</div>
+										<div class="team-desc team-desc-bg">
+											<div class="team-title">
+												<h4>${article.list_title}</h4>
+												<br> <span>${article.list_writer}</span>
+											</div>
+											<p>${article.list_comment}</p>
+										</div>
 									</div>
 								</div>
-
-							</div>
-
-							<div class="col-md-3 col-sm-6 bottommargin">
-
-								<div class="team">
-									<div class="team-image">
-										<img src="${pageContext.request.contextPath}/resources/user/images/book/1.png" style="width:460px; height:315;">
-									</div>
-									<div class="team-desc team-desc-bg">
-										<div class="team-title"><h4>빨강머리 앤이 하는 말 : 아직 너무 늦지 않았을 우리에게</h4><span>  백영옥 </span></div>
-										<p>우리 곁에 다시 가져온 추억 속 빨강머리앤의 웃음, 실수, 사랑과 희망의 말들! </p>
-									</div>
-								</div>
-
-							</div>
-
+							</c:forEach>
+						</c:if>
 						</div>
-
 					</div>
 				</div>
-
+				
+				<!-- 인기 도서 안내 -->
 				<div class="container clearfix">
-
-				  &nbsp; &nbsp;<span class="glyphicon glyphicon-chevron-left">
-				</span><span class="glyphicon glyphicon-chevron-left"><span class="glyphicon glyphicon-chevron-left"></span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
-				</span><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span><span class="glyphicon glyphicon-chevron-right"></span>
-				 <div id="oc-clients" class="owl-carousel image-carousel">
-						
-						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/5.png"alt="Clients"></div>
-						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/6.jpg"alt="Clients"></div>
-						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/7.jpg"alt="Clients"></div>
-						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/8.png"alt="Clients"></div>
-						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/9.png"alt="Clients"></div>
-						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/10.png"alt="Clients"></div>
-						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/11.png"alt="Clients"></div>
-						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/12.png"alt="Clients"></div>
-						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/13.png"alt="Clients"></div>
-						<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/14.png"alt="Clients"></div>
-						
-					</div>
-
+					<div class="row topmargin-sm">
+							<div class="center">
+								<h3>[best] 인기도서 안내</h3>
+							</div>
+				
+				<!-- 화살표 시작 -->
+				&nbsp; &nbsp;<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="glyphicon glyphicon-chevron-left">
+				  	<span class="glyphicon glyphicon-chevron-left"></span>
+				  	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
+				</span>
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<!-- 화살표 끝 -->
+				<c:if test="${mainBookCount == 0}"> 현재 인기 도서가 없습니다. </c:if>
+				<c:if test="${mainBookCount > 0}">
+					<c:forEach var="article" items="${mainBooklist}">
+						 <div id="oc-clients" class="owl-carousel image-carousel">
+								<%-- <c:choose>
+									<c:when test="${!empty article.list_filename}">
+										<div class="oc-item">
+											<img src="${pageContext.request.contextPath}/upload/${article.list_filename}">
+											${article.list_title}
+										</div>
+									</c:when>
+									<c:otherwise>
+										<div class="oc-item">
+											<img src="${pageContext.request.contextPath}/upload/NoImage.jpg">${article.list_title}
+										</div>
+									</c:otherwise>
+								</c:choose> --%>
+								
+								<%-- <img src="${pageContext.request.contextPath}/upload/${article.list_filename}"alt="Clients">${article.list_title}</div> --%>
+								<div class="oc-item"><img src="${pageContext.request.contextPath}/upload/${article.list_filename}" alt="Clients">${article.list_title}</div>
+								<%-- <div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/7.jpg"alt="Clients"></div>
+								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/8.png"alt="Clients"></div>
+								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/9.png"alt="Clients"></div>
+								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/10.png"alt="Clients"></div>
+								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/11.png"alt="Clients"></div>
+								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/12.png"alt="Clients"></div>
+								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/13.png"alt="Clients"></div>
+								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/14.png"alt="Clients"></div> --%>
+						</div>
+					</c:forEach>
+				</c:if>
 					<script type="text/javascript">
-
 						jQuery(document).ready(function($) {
-
 							var ocClients = $("#oc-clients");
-
 							ocClients.owlCarousel({
 								margin: 60,
 								loop: true,
@@ -370,11 +332,7 @@
 									1200:{ items:6 }
 								}
 							});
-
 						});
-
 					</script>
-
 				</div>
-
 			</div>

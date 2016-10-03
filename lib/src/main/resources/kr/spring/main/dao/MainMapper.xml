@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.main.dao.MainMapper">
+	<!-- 메인화면 신규 도서 목록 -->
+	<select id="mainNewBooklist" resultType="adminBooklistCommand">
+		SELECT
+		  list_num,
+		  list_regdate,
+		  list_title,
+	      list_writer,
+	      list_filename,
+	      list_comment
+			FROM (SELECT
+			        a.*,
+			        rownum rnum
+			      FROM (SELECT * FROM booklist ORDER BY list_regdate DESC)a)
+	      <![CDATA[
+	      WHERE rnum<=4
+		  ]]>
+	</select>
+	
+	<select id="getNewBookCount" resultType="Integer">
+		SELECT
+			count(*)
+		FROM booklist
+	</select>
+	<!-- 메인화면 하단 도서 목록 -->
+	<select id="mainBooklist" resultType="adminBooklistCommand">
+		SELECT 
+		   * 
+		  FROM (SELECT 
+		            a.*, 
+		            rownum rnum 
+		        FROM (SELECT 
+		                list_title,
+		                list_filename,
+		                count(*) rent_count
+		              FROM (SELECT 
+		                        br.list_num, 
+		                        bl.list_title,
+		                        bl.list_filename
+		                    FROM bookrent br, booklist bl 
+		                    WHERE br.list_num=bl.list_num AND br.rent_status=1)
+		                GROUP BY list_title,list_filename ORDER BY rent_count DESC)a)		            
+	      <![CDATA[
+	      WHERE rnum<=10
+		  ]]>
+	</select>
+	
+	<select id="getNewBookCount" resultType="Integer">
+		SELECT
+			count(*)
+		FROM booklist
+	</select>
+	
+</mapper>

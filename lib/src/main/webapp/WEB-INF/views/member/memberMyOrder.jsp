@@ -3,19 +3,20 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<!-- Page Title
-		============================================= -->
+<!-- Page Title ============================================= -->
 <section id="page-title">
 	<div class="container clearfix">
 		<h1>주문 내역</h1>
+		<ol class="breadcrumb">
+			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+			<li><a href="${pageContext.request.contextPath}/book/basket.do">My Book Basket</a></li>
+			<li class="active">My Order</li>
+		</ol>
 	</div>
 </section>
 <!-- #page-title end -->
 
-<!-- Content
-		============================================= -->
- 	
+<!-- Content ============================================= --> 	
 <section id="content">
 	<div class="content-wrap">
 		<div class="container clearfix">
@@ -53,7 +54,6 @@
 				</script>
 		</c:if>
 
-
 			<label>도서대여 내역</label>
 			<form:form action="myOrder.do" id="myOrder-form"
 				class="nobottommargin">
@@ -75,6 +75,7 @@
 								</tr>
 							</thead>
 							<tbody>
+								
 								<c:if test="${count > 0 }">
 									<c:forEach var="rent" items="${list_rent }">
 										<tr>
@@ -93,8 +94,8 @@
 											<td>무인</td>
 											</c:if>
 											<td>북수원 도서관</td>
-											<td>${rent.rent_regdate }</td>
-											<td>${rent.rent_returndate }</td>
+											<td>${rent.rent_regdate}</td>
+											<td>${rent.rent_returndate}</td>
 												<c:choose>
 													<c:when test="${rent.rent_status == 0 }">
 														<td>대여</td>
@@ -115,15 +116,11 @@
 														<td>무인대여</td>
 													</c:when>
 												</c:choose>
-												
 											<td>
 												<c:if test="${rent.rent_status == 2 }">
-													<input type="hidden" id="rent_num" name="rent_num"
-														class="rent_num" value="${rent.rent_num }">
-													<input type="hidden" id="list_num" name="list_num"
-														class="list_num" value="${rent.list_num }">
-													<a id="reserveCancel-button"
-														class="btn btn-primary reserveCancel-button" data-num ="${rent.rent_num }" data-num1="${rent.list_num }"
+													<input type="hidden" id="rent_num" name="rent_num" class="rent_num" value="${rent.rent_num }">
+													<input type="hidden" id="list_num" name="list_num" class="list_num" value="${rent.list_num }">
+													<a id="reserveCancel-button" class="btn btn-primary reserveCancel-button" data-num ="${rent.rent_num }" data-num1="${rent.list_num }"
 														onclick="${pageContext.request.contextPath}/book/reserveCancel.do?list_num=${rent.list_num}&rent_num=${rent.rent_num}"
 														href="${pageContext.request.contextPath}/member/myOrder.do">취소</a>
 												</c:if>
@@ -131,16 +128,16 @@
 										</tr>
 									</c:forEach>
 								</c:if>
+								
 							</tbody>
-						</table>
+						</table>	
 						<c:if test="${count == 0 }">
-							<p style="text-align: center; font-size: 20px;">도서대여 및 예약 내역이 없습니다.</p>
-						</c:if>
+								<p style="text-align: center; font-size: 20px;">도서대여 및 예약 내역이 없습니다.</p>
+						</c:if>					
 						<div style="text-align: center;">${pagingHtml }</div>
 					</div>
 				</div>
 			</form:form>
-
 		</div>
 	</div>
 </section>

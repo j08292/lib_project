@@ -5,7 +5,7 @@ create table member(
   mem_cell varchar2(15) not null,
   mem_email varchar2(50) not null,
   mem_address varchar2(100) not null,
-  SAMPLE3_POSTCODE number,
+  SAMPLE3_POSTCODE varchar2(100) not null,
   mem_regdate date not null,
   mrt_status number(1) default(0) not null,
   mem_level number(1) default(0) not null
@@ -48,6 +48,8 @@ create table booklist(
   list_publish varchar2(50) not null,
   list_page number(5) not null,
   list_filename varchar2(100),
+  list_comment varchar2(100) not null,
+  list_content clob not null,
   list_regdate date not null,
   list_grade number(1),
   list_status number(1) default 0 not null,

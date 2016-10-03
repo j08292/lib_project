@@ -5,6 +5,7 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+	<!-- 희망도서 : 사용자 -->
 	<definition name="wishlistWrite" extends="main">
 		<put-attribute name="title" value="희망 도서 신청" />
 		<put-attribute name="body" value="/WEB-INF/views/wishlist/wishlistWrite.jsp" />
@@ -14,7 +15,18 @@
         	<add-attribute value="/lib/resources/user/js/userWishlist.js"/>
         </put-list-attribute>
 	</definition>
+	<definition name="myWishlist" extends="main">
+		<put-attribute name="title" value="희망도서 신청내역" />
+		<put-attribute name="body" value="/WEB-INF/views/wishlist/myWishlist.jsp" />
+		<put-list-attribute name="jsList">
+        	<add-attribute value="/lib/resources/user/js/jquery.js"/>
+        	<add-attribute value="/lib/resources/user/js/plugins.js"/>
+        	<!-- <add-attribute value="/lib/resources/user/js/userWishlist.js"/> -->
+        </put-list-attribute>
+	</definition>
 	
+	
+	<!-- 희망도서 : 관리자 -->
 	<definition name="adminWishlistList" extends="adminMain">
 		<put-attribute name="title" value="희망 도서 목록" />
 		<put-attribute name="body"

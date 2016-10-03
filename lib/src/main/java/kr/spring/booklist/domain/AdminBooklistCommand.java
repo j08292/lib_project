@@ -22,6 +22,10 @@ public class AdminBooklistCommand {
 	private int list_page;
 	private MultipartFile upload;
 	private String list_filename;
+	@NotEmpty
+	private String list_comment;
+	@NotEmpty
+	private String list_content;
 	private Date list_regdate;
 	private int list_grade;
 	private int list_status;
@@ -76,6 +80,18 @@ public class AdminBooklistCommand {
 	}
 	public void setList_filename(String list_filename) {
 		this.list_filename = list_filename;
+	}	
+	public String getList_comment() {
+		return list_comment;
+	}
+	public void setList_comment(String list_comment) {
+		this.list_comment = list_comment;
+	}
+	public String getList_content() {
+		return list_content;
+	}
+	public void setList_content(String list_content) {
+		this.list_content = list_content;
 	}
 	public Date getList_regdate() {
 		return list_regdate;
@@ -108,13 +124,12 @@ public class AdminBooklistCommand {
 		this.rent_count = rent_count;
 	}
 	
-	
 	@Override
 	public String toString() {
 		return "AdminBooklistCommand [list_num=" + list_num + ", list_code=" + list_code + ", list_title=" + list_title
 				+ ", list_writer=" + list_writer + ", list_publish=" + list_publish + ", list_page=" + list_page
-				+ ", upload=" + upload + ", list_filename=" + list_filename + ", list_regdate=" + list_regdate
-				+ ", list_grade=" + list_grade + ", list_status=" + list_status + ", mem_id=" + mem_id + ", rent_count="
-				+ rent_count + "]";
+				+ ", upload=" + upload + ", list_filename=" + list_filename + ", list_comment=" + list_comment
+				+ ", list_content=" + list_content + ", list_regdate=" + list_regdate + ", list_grade=" + list_grade
+				+ ", list_status=" + list_status + ", mem_id=" + mem_id + ", rent_count=" + rent_count + "]";
 	}
 }

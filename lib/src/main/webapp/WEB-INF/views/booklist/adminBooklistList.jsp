@@ -50,9 +50,9 @@
 							<td>${article.list_page}</td>
 							<td><c:choose>
 									<c:when test="${!empty article.list_filename}">						
-										<img src="/lib/upload/${article.list_filename}" class="adminListImage" data-num="${article.list_num}" height="20px"/>
+										<img src="${pageContext.request.contextPath}/upload/${article.list_filename}" class="adminListImage" data-num="${article.list_num}" height="20px"/>
 									</c:when>
-									<c:otherwise>파일 없음</c:otherwise>
+									<c:otherwise><img src="${pageContext.request.contextPath}/upload/NoImage.jpg" class="adminListImage" data-num="${article.list_num}" height="20px"/></c:otherwise>
 								</c:choose></td>
 							<td>${article.list_regdate}</td>
 							<td><c:if test="${article.list_status == 1}">대출정지</c:if>

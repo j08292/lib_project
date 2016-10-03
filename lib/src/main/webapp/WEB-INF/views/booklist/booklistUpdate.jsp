@@ -36,6 +36,16 @@
 			<form:errors path="list_page" class="error-color" />
 		</div>
 		<div class="form-group">
+			<label for="list_comment">한줄 소개</label>
+			<form:input path="list_comment" class="form-control"/>
+			<form:errors path="list_comment" class="error-color"/>
+		</div>
+		<div class="form-group">
+			<label for="list_content">책 소개</label>
+			<form:textarea path="list_content" class="form-control" rows="8"/>
+			<form:errors path="list_content" class="error-color"/>
+		</div>
+		<div class="form-group">
 			<label for="upload">업로드</label>
 			<div id="beforeImage">			
 				<c:if test="${!empty command.list_filename}"><br>

@@ -16,5 +16,9 @@ public interface WishlistService {
 	public void insert(WishlistCommand wishlist);
 	@Transactional(readOnly=true)
 	public WishlistCommand selectWishlist(Integer wish_num);
-	public void updateStatusChange(WishlistCommand wishlist);	
+	public void updateStatusChange(WishlistCommand wishlist);
+	
+	//사용자별 희망도서 신청내역
+	public List<WishlistCommand> myWishlist(Map<String, Object> map);	
+	public int getMyWishlistCount(Map<String, Object> map);
 }

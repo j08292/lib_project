@@ -1,10 +1,12 @@
-package kr.admin.wishlist.controller;
+package kr.user.wishlist.controller;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -17,7 +19,7 @@ import kr.spring.wishlist.domain.WishlistCommand;
 import kr.spring.wishlist.service.WishlistService;
 
 @Controller
-public class WishlistListController {
+public class MyWishlistController {
 	private Logger log= Logger.getLogger(this.getClass());
 
 	private int rowCount=10;
@@ -26,40 +28,49 @@ public class WishlistListController {
 	@Resource
 	private WishlistService wishlistService;
 	
-	@RequestMapping("/admin/wishlist/list.do")
+	@RequestMapping("/wishlist/list.do")
 	public ModelAndView process(@RequestParam(value="pageNum",defaultValue="1")int currentPage,
-			@RequestParam(value="keyfield",defaultValue="")String keyfield,
-			@RequestParam(value="keyword",defaultValue="")String keyword){
-
-		if(log.isDebugEnabled()){
-			log.debug("currentPage : "+currentPage);
-			log.debug("keyfield : "+keyfield);
-			log.debug("keyword : "+keyword);
+								HttpServletRequest request, HttpSession session){
+		
+		String mem_id = (String)session.getAttribute("userId");
+		String status = request.getParameter("wish_status");
+		int wish_status;
+		
+		if(status == null){
+			wish_status = 9;
+		}else{
+			wish_status = Integer.parseInt(status);
 		}
-
+		
+		if(log.isDebugEnabled()){
+			log.debug("currentPage : " + currentPage);			
+			log.debug("mem_id : " + mem_id);
+			log.debug("wish_status" + wish_status);
+		}
+		
 		HashMap<String, Object> map= new HashMap<String, Object>();
-		map.put("keyfield", keyfield);
-		map.put("keyword", keyword);
-
+		map.put("mem_id", mem_id);
+		map.put("wish_status", wish_status);		
+		
 		//ÃÑ ±ÛÀÇ °¹¼ö ¶Ç´Â °Ë»öµÈ ±ÛÀÇ °¹¼ö
-		int count= wishlistService.getRowCount(map);
-
-		PagingUtil page= new PagingUtil(keyfield,keyword,currentPage,count, rowCount,pageCount,"list.do");
+		int count= wishlistService.getMyWishlistCount(map);		
+		
+		PagingUtil page = new PagingUtil(null,null,currentPage,count,rowCount,pageCount,"list.do");
 
 		map.put("start", page.getStartCount());
 		map.put("end", page.getEndCount());
 
-		List<WishlistCommand> list= null;
+		List<WishlistCommand> myWishlist= null;
 		if(count>0){
-			list= wishlistService.list(map);
+			myWishlist= wishlistService.myWishlist(map);			
 		}else{
-			list= Collections.emptyList();
+			myWishlist= Collections.emptyList();
 		}
-
+		
 		ModelAndView mav= new ModelAndView();
-		mav.setViewName("adminWishlistList");
+		mav.setViewName("myWishlist");
 		mav.addObject("count", count);
-		mav.addObject("list", list);
+		mav.addObject("list", myWishlist);
 		mav.addObject("pagingHtml", page.getPagingHtml());
 		return mav;
 	}
