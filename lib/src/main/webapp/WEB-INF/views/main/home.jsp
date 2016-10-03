@@ -25,8 +25,9 @@
 						</div>
 						<div class="video-wrap">
 							<video id="slide-video" poster="images/videos/explore-poster.jpg" preload="auto" loop autoplay muted>
-								<source src='${pageContext.request.contextPath}/resources/user/images/videos/explore.webm' type='video/webm' />
-								<source src='${pageContext.request.contextPath}/resources/user/images/videos/explore.mp4' type='video/mp4' />
+								<%-- <source src='${pageContext.request.contextPath}/resources/user/images/videos/explore.webm' type='video/webm' />
+								<source src='${pageContext.request.contextPath}/resources/user/images/videos/explore.mp4' type='video/mp4' /> --%>
+								<source src='${pageContext.request.contextPath}/resources/user/images/videos/Main.mp4' type='video/mp4' />
 							</video>
 							<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
 						</div>
@@ -288,7 +289,7 @@
 					<div id="oc-clients" class="owl-carousel image-carousel">
 					<c:forEach var="article" items="${mainBooklist}">
 						 
-								<%-- <c:choose>
+								<c:choose>
 									<c:when test="${!empty article.list_filename}">
 										<div class="oc-item">
 											<img src="${pageContext.request.contextPath}/upload/${article.list_filename}">
@@ -300,10 +301,10 @@
 											<img src="${pageContext.request.contextPath}/upload/NoImage.jpg">${article.list_title}
 										</div>
 									</c:otherwise>
-								</c:choose> --%>
+								</c:choose> 
 								
 								<%-- <img src="${pageContext.request.contextPath}/upload/${article.list_filename}"alt="Clients">${article.list_title}</div> --%>
-								<div class="oc-item"><img src="${pageContext.request.contextPath}/upload/${article.list_filename}" alt="Clients">${article.list_title}</div>
+								<%-- <div class="oc-item"><img src="${pageContext.request.contextPath}/upload/${article.list_filename}" alt="Clients">${article.list_title}</div> --%>
 								<%-- <div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/7.jpg"alt="Clients"></div>
 								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/8.png"alt="Clients"></div>
 								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/9.png"alt="Clients"></div>
