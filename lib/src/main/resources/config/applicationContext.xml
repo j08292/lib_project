@@ -69,7 +69,8 @@
 												    <!-- 계속 추가해야함 -->
 	</bean>
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="kr.spring.admin.dao,
+		<property name="basePackage" value="kr.spring.main.dao,
+											kr.spring.admin.dao,
 											kr.spring.member.dao,
 											kr.spring.adminMember.dao,
 											kr.spring.penalty.dao,
@@ -83,14 +84,7 @@
 											kr.spring.notice.dao,
 											kr.spring.qna.dao,
 											kr.spring.event.dao,
-											kr.spring.grade.dao,
-											kr.spring.main.dao"/>
+											kr.spring.grade.dao"/>
 											<!-- 계속 추가해야함 -->
 	</bean>
 </beans>
-
-
-
-
-
-

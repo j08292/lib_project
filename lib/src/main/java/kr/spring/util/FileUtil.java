@@ -11,11 +11,11 @@ import javax.imageio.ImageIO;
 
 public class FileUtil {
 
-	//학원
-	public static String UPLOAD_PATH="D:/JavaStudy/Workspace/lib_project/lib/src/main/webapp/upload";
+	//test
+	//public static String UPLOAD_PATH="D:/JavaStudy/Workspace/lib_project/lib/src/main/webapp/upload";
 	
 	//학원
-	//public static String UPLOAD_PATH="F:/javaStudy/workspace/lib_project/lib/src/main/webapp/upload";
+	public static String UPLOAD_PATH="F:/javaStudy/workspace/lib_project/lib/src/main/webapp/upload";
 	
 	public static String rename(String fileName)throws Exception{
 
