@@ -285,8 +285,9 @@
 				<!-- 화살표 끝 -->
 				<c:if test="${mainBookCount == 0}"> 현재 인기 도서가 없습니다. </c:if>
 				<c:if test="${mainBookCount > 0}">
+					<div id="oc-clients" class="owl-carousel image-carousel">
 					<c:forEach var="article" items="${mainBooklist}">
-						 <div id="oc-clients" class="owl-carousel image-carousel">
+						 
 								<%-- <c:choose>
 									<c:when test="${!empty article.list_filename}">
 										<div class="oc-item">
@@ -311,8 +312,9 @@
 								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/12.png"alt="Clients"></div>
 								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/13.png"alt="Clients"></div>
 								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/14.png"alt="Clients"></div> --%>
-						</div>
+						
 					</c:forEach>
+					</div>
 				</c:if>
 					<script type="text/javascript">
 						jQuery(document).ready(function($) {

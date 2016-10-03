@@ -49,7 +49,7 @@
 		  ]]>
 	</select>
 	
-	<select id="getNewBookCount" resultType="Integer">
+	<select id="getMainBookCount" resultType="Integer">
 		SELECT
 			count(*)
 		FROM booklist
