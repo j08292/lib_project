@@ -36,6 +36,10 @@
     	<put-attribute name="title" value="주문내역"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberMyOrder.jsp"/>
     </definition>
+    <definition name="memberMyOrderS" extends="memberWrite">
+    	<put-attribute name="title" value="강연 예약내역"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberMyOrderS.jsp"/>
+    </definition>
      <definition name="memberMyOrderDetail" extends="memberWrite">
     	<put-attribute name="title" value="주문내역"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberMyOrderDetail.jsp"/>

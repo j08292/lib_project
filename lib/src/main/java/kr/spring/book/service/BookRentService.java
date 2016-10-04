@@ -12,7 +12,7 @@ import kr.spring.book.domain.BookRentCommand;
 public interface BookRentService {
 	@Transactional(readOnly = true)
 	public List<BookRentCommand> list2(Map<String, Object> map);
-	
+
 	@Transactional(readOnly = true)
 	public int getRowCount2(Map<String, Object> map);
 
@@ -33,7 +33,7 @@ public interface BookRentService {
 
 	@Transactional(readOnly = true)
 	public BookRentCommand select(int list_num);
-	
+
 	public void insertReserve(BookRentCommand bookRentCommand);
 
 	public void insert(BookRentCommand bookRentCommand);
@@ -44,10 +44,16 @@ public interface BookRentService {
 
 	@Transactional(readOnly = true)
 	public List<BookRentCommand> selectList(int list_num);
+
 	@Transactional(readOnly = true)
 	public List<BookRentCommand> selectNum(int list_num);
+
 	@Transactional(readOnly = true)
 	public Integer recentStatus(int list_num);
+
 	public void updateunmanned(BookRentCommand bookRentCommand);
+
+	@Transactional(readOnly = true)
+	public int recentRent_num(int list_num);
 
 }

@@ -47,13 +47,6 @@ public class MemberMyOrderController {
 			@RequestParam(value="pageNum",defaultValue="1") 
 				int currentPage){
 		
-		
-//		String keyfield = request.getParameter("keyfield");
-//		String keyword = request.getParameter("keyword");
-//		
-//		if(keyfield == null) keyfield = "";
-//		if(keyword == null) keyword = "";
-
 		String mem_id = (String)session.getAttribute("userId");
 		String status = request.getParameter("rent_status");
 		int rent_status;

@@ -47,12 +47,13 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td><img src="/lib/upload/${book.list_filename }" width="80"
-											height="120" alt="도서 이미지" /></td>
-										<td>${book.list_title }</td>
-										<td>${book.list_code }</td>
-										<td>${book.list_writer }</td>
-										<td>${book.list_publish }</td>
+										<td style = "width:10%; margin:0 20;"><img src="/lib/upload/${book.list_filename }" 
+											width="80" height="120" alt="도서 이미지">
+										</td>
+										<td style = "width:27%;">${book.list_title }</td>
+										<td style = "width:21%;">${book.list_code }</td>
+										<td style = "width:21%;">${book.list_writer }</td>
+										<td style = "width:21%;">${book.list_publish }</td>
 									</tr>
 								</tbody>
 							</table>
@@ -66,37 +67,25 @@
 									<li style = "color:red;">대출지연도서가 3권째일 경우 무인예약 신청이 30일간 정지됩니다.</li>
 								</ul>
 								<hr />
-								<br />
-								<p style = "text-align:center; ">
-								<select class = "form-control" style = "width:120px;" id = "selectBox"
-								name = "selectBox" onchange = "getSelectValue(this.form)">
-									<option value="s1">수원역</option>
-									<option value="s2">수원시청역</option>
-									<option value="s3">성균관대역</option>
-								</select>
-								<span>&nbsp;&nbsp;(으)로 무인 예약 신청 하시겠습니까?</span>
+								<br/>
+								<p style = "text-align:center;">
+									<select name = "selectBox" class = "form-control selectBox" style = "width:120px; text-align:center;" 
+									 id = "selectBox" name = "selectBox" onchange = "getSelectValue(this.form);">
+										<option value="s1">수원역</option>
+										<option value="s2">수원시청역</option>
+										<option value="s3">성균관대역</option>
+									</select>
+									<span>(으)로 무인 예약 신청 하시겠습니까?</span>
 								</p>
-								<script type="text/javascript">
-									function getSelectValue(frm){
-										frm.textValue.value = frm.selectBox.options[frm.selectBox.selectedIndex].text;
-										var value = frm.selectBox.options[frm.selectBox.selectIndex].text;
-										alert(value);
-										$('.textValue').val(value);
-										alert($('.textValue').val());
-									}
-								</script>
-								<input type = "hidden" name = "textValue" class = "textValue">
-								<input type = "text" name = "textValue">
-								<input type = "text" name = "optionValue">
 								
+								<input type = "hidden" name = "textValue" class = "textValue">
 							</div>
 						</div>
 					</div>
 				</div>
 				<p style="text-align: center;">
-					<input type="hidden" id="list_num" name="list_num"
-						value="${book.list_num }"> <input type="submit"
-						id="unmannedrent-button" class="btn btn-primary" value="대여하기">
+					<input type="hidden" id="list_num" name="list_num" value="${book.list_num }"> 
+					<input type="submit" id="unmannedrent-button" class="btn btn-primary" value="대여하기">
 
 					<script type="text/javascript">
 						$(document).ready(function() {
@@ -109,6 +98,8 @@
 					<input type="button" value="취소" class="btn btn-primary"
 						onclick="location.href='${pageContext.request.contextPath}/book/search.do'">
 				</p>
+				
+				
 
 			</form>
 		</div>

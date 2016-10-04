@@ -39,6 +39,8 @@ public class ReserveBookAjaxController {
 
 		List<BookRentCommand> rentCommand = bookRentService.selectNum(list_num);
 
+		int status = bookRentService.recentStatus(list_num);
+		
 		if (log.isDebugEnabled()) {
 			log.debug("userId : " + userId);
 			log.debug("list_num : " + list_num);
@@ -47,40 +49,48 @@ public class ReserveBookAjaxController {
 			log.debug("size : " + rentCommand.size());
 		}
 
+
 		try {
 			if(userId != null){
-				if (rentCommand.size() != 0) {
-					for (int i = 0; i < rentCommand.size(); i++) {
-						if ((rentCommand.get(i).getList_num() == list_num) && (!rentCommand.get(i).getMem_id().equals(userId))) {
-							if(rentCommand.get(i).getRent_status() == 2){
-								map.put("result", "fail");
-								break;
-							}else if((rentCommand.get(i).getRent_status() == 3) || (bookRentCommand.getRent_status() == 0)){
-								if (log.isDebugEnabled()) {
-									log.debug("rentCommand.get(i).getMem_id() : " + rentCommand.get(i).getMem_id());
-									log.debug("userId : " + userId);
-								}
-								map.put("result", "success");
-								bookRentCommand.setList_num(list_num);
-								bookRentCommand.setMem_id(userId);
-								bookRentCommand.setRent_status(2);
-								bookRentService.insertReserve(bookRentCommand);
-								break;
-							}else if((rentCommand.get(i).getList_num() == list_num) && (rentCommand.get(i).getMem_id().equals(userId))){
-								if((rentCommand.get(i).getRent_status() == 3) || (bookRentCommand.getRent_status() == 0)){
-									map.put("result", "duplicated");
-									break;
-								}else if((rentCommand.get(i).getRent_status() == 2)){
-									map.put("result", "already");
-									break;
-								}	
+				if(status == 2){
+					for(int i=0; i<rentCommand.size(); i++){
+						if(!rentCommand.get(i).getMem_id().equals(userId)){
+							if (log.isDebugEnabled()) {
+								log.debug("num : " + status);
 							}
-							
-						}else{
+							map.put("result", "fail");
+							break;
+						}else if(rentCommand.get(i).getMem_id().equals(userId)){
+							if (log.isDebugEnabled()) {
+								log.debug("num : " + status);
+							}
+							map.put("result", "already");
 							break;
 						}
 					}
+				}else if(status == 3 || status == 0 || status == 5){
+					for(int i=0; i<rentCommand.size(); i ++){
+						if(rentCommand.get(i).getMem_id().equals(userId)){
+							if (log.isDebugEnabled()) {
+								log.debug("num : " + status);
+							}
+							map.put("result", "duplicated");
+							break;
+						}else if(!rentCommand.get(i).getMem_id().equals(userId)){
+							if (log.isDebugEnabled()) {
+								log.debug("num : " + status);
+							}
+							map.put("result", "success");
+							bookRentCommand. setList_num(list_num);
+							bookRentCommand.setMem_id(userId);
+							bookRentCommand.setRent_status(2);
+							bookRentService.insertReserve(bookRentCommand);
+							break;
+						}
+					}
+					
 				}
+				
 			}else if (userId == null) {
 				map.put("result", "noUserId");
 			}

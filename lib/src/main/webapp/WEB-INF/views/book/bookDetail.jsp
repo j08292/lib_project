@@ -26,30 +26,32 @@
 					<div class="panel-heading"></div>
 
 					<div class="panel-body">
-							<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${book.list_title }</h3>
-							<table style="font-size: 10pt;">
+							<h3>&nbsp;${book.list_title }</h3>
+							<table style="font-size: 11pt;">
 								<tr>
-									<td><img
-										src="/lib/upload/${book.list_filename }" alt="도서 이미지" /></td>
-									<td style = "text-align:center;">
-										<dl>
-											<dt style = "text-align:left;">표제/책임표시.</dt>
-											<dd style = "text-align:left;">${book.list_title }</dd>
-											<dt style = "text-align:left;">저자</dt>
-											<dd style = "text-align:left;">${book.list_writer }</dd>
-											<dt style = "text-align:left;">발행사항.</dt>
-											<dd style = "text-align:left;">${book.list_publish }</dd>
-											<dt style = "text-align:left;">표준번호/부호.</dt>
-											<dd style = "text-align:left;">${book.list_code }</dd>
-											<dt style = "text-align:left;">분류기호.</dt>
-											<dd style = "text-align:left;">한국십진분류법 -> 005.135</dd>
+									<td style = "width:30%;"">
+									<img src="/lib/upload/${book.list_filename }" alt="도서 이미지" style = "width:250px;height:350px;">
+									</td>
+									
+									<td style = "width:70%;">
+										<dl style = "margin:0 50px;">
+											<dt style = "text-align:left; margin:7px 20px;">표제/책임표시.</dt>
+											<dd style = "text-align:left; margin:10px 20px;">${book.list_title }</dd>
+											<dt style = "text-align:left; margin:7px 20px;">저자</dt>
+											<dd style = "text-align:left; margin:10px 20px;">${book.list_writer }</dd>
+											<dt style = "text-align:left; margin:7px 20px;">발행사항.</dt>
+											<dd style = "text-align:left; margin:10px 20px;">${book.list_publish }</dd>
+											<dt style = "text-align:left; margin:7px 20px;">표준번호/부호.</dt>
+											<dd style = "text-align:left; margin:10px 20px;">${book.list_code }</dd>
+											<dt style = "text-align:left; margin:7px 20px;">분류기호.</dt>
+											<dd style = "text-align:left; margin:7px 20px;">한국십진분류법 -> 005.135</dd>
 										</dl>
 									</td>
 								</tr>
 							</table>
 
 							<p style="margin: 0 auto; text-align: right;">
-								<input type="button" value="목록으로" onclick="history.go(-1)">
+								<input type="button" value="목록으로" onclick="location.href='${pageContext.request.contextPath}/book/search.do'">
 							</p>
 
 						</div>
@@ -64,7 +66,7 @@
 							<table class="table table-hover provideList">
 								<tr>
 									<th style = "width:20%; text-align:center;">상태</th>
-									<th style = "width:20%; text-align:center;">도서정보</th>
+									<th style = "width:20%; text-align:center;">도서명</th>
 									<th style = "width:20%; text-align:center;">자료실</th>
 									<th style = "width:20%; text-align:center;">반납예정</th>
 									<th style = "width:20%; text-align:center;">예약</th>
@@ -72,36 +74,68 @@
 								<tr>
 									<td style = "width:20%; text-align:center;">
 										<c:if test="${book.list_status == 0 }">
-											대여 가능
+											비치된 도서
 										</c:if> <c:if test="${book.list_status == 1 }">
-											대여 불가
+											파손된 도서
 										</c:if>
 									</td>
 									<td style = "width:20%; text-align:center;">${book.list_title}</td>
-									<td style = "width:20%; text-align:center;">북수원도서관<br>서수원도서관
-									</td>
-									<td style = "width:20%; text-align:center;"></td>
+									<td style = "width:20%; text-align:center;">북수원도서관</td>
+									<td style = "width:20%; text-align:center;">${date }</td>
 										<!-- 대출중일때 -->
 									<td style = "width:20%; text-align:center;">
+										
 										<c:if test="${book.list_status == 1 }">
-											<span></span>										
+											<span>대여불가</span>										
 										</c:if>
 										<c:if test="${book.list_status == 0 }">
-										<c:if test="${book.rent_status == 3 || book.rent_status == 0 || book.rent_status == 5} ">
-										<input type = "hidden" id = "list_title" name = "list_title" value = "${book.list_title }">
-										<input type = "hidden" id = "list_num" name = "list_num" value = "${book.list_num }">
-											<input type="button" value="도서 예약" id="reserve-button" class = "btn btn-primary"><br>
+										<c:if test="${book.rent_status == 3 || book.rent_status == 0 || book.rent_status == 5}">
+											<input type = "hidden" id = "cih_list_title" name = "cih_list_title" class = "list_title" value = "${book.list_title }">
+											<input type = "hidden" id = "cih_list_num" name = "cih_list_num" class = "list_num" value = "${book.list_num }">
+											<input type="button" value="도서 예약" id="reserve-button" class = "btn btn-primary reserve-button"><br>
 										</c:if>
+										<script type="text/javascript">
+										$(document).ready(function(){
+											$('.reserve-button').click(function(){
+												$.ajax({
+													url:'reserveBook.do',
+													type:'post',
+													data:{list_title:$('.list_title').val(), list_num:$('.list_num').val()},
+													dataType:'json',
+													timeout:30000,
+													success:function(data){
+														if(data.result=="success"){
+															alert("예약되었습니다.");
+															history.go(0);
+														}else if(data.result=="fail"){
+															alert("예약 허용인원 초과했습니다.");
+														}else if(data.result=="duplicated"){
+															alert("이미 대여한 책입니다.");
+														}else if(data.result == "noUserId"){
+															alert("로그인을 해주세요.")
+															location.href="http://localhost:8080/lib_cih/member/login.do";
+														}
+													},
+													error:function(data) {
+														if(data.result=="failure"){
+														alert('네트워크 오류 발생.');
+														}
+													}	
+												})
+											});
+										});
+										</script>
 										
-										<c:if test="${book.rent_status == 2 }">
+										
+										<c:if test="${book.rent_status == 2}">
 											<span>예약 불가</span>
 										</c:if>
 
 										<!-- 비치중일때 -->
 										<c:if test="${book.rent_status == 9 || book.rent_status == 1 || book.rent_status == 4 }">
-											<input type = "hidden" id = "list_num" name = "list_num" value = "${book.list_num }">
-											<input type = "hidden" id = "list_title" name = "list_title" value = "${book.list_title }"> 
-											<input type = "hidden" id = "list_filename" name = "list_filename" value = "${book.list_filename }">
+											<input type = "hidden" id = "cih_list_num" name = "cih_list_num" value = "${book.list_num }">
+											<input type = "hidden" id = "cih_list_title" name = "cih_list_title" value = "${book.list_title }"> 
+											<input type = "hidden" id = "cih_list_filename" name = "cih_list_filename" value = "${book.list_filename }">
 
 											<input type = "submit" class = "btn btn-primary" value = "책 바구니">	
 											
@@ -121,7 +155,7 @@
 
 					<div class="panel-body">
 						<div>
-							${book.list_contents }
+							${book.list_content }
 						</div>
 					</div>
 				</div>

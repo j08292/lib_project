@@ -94,15 +94,26 @@ public class BookRentController {
 		List<BasketCommand> list = null;
 		list = basketService.select_book_basket(userId);
 		
-		
-		
 		BookRentCommand bookRentCommand = new BookRentCommand();
 		for(int i=0; i<list.size(); i++){
+			
 			bookRentCommand.setList_num(list.get(i).getList_num());
 			bookRentCommand.setMem_id(userId);
 			
 			bookRentService.insert(bookRentCommand);
 			basketService.delete(list.get(i).getBasket_num());
+			
+			int num = bookRentService.recentRent_num(list.get(i).getList_num());
+			
+			if (log.isDebugEnabled()) {
+				log.debug("num : " + num);
+			}
+			
+			deliveryCommand.setMem_id(userId);
+			deliveryCommand.setRent_num(num);
+			deliveryCommand.setList_num(list.get(i).getList_num());
+			deliveryCommand.setDelivery_status(0);
+			deliveryService.insert(deliveryCommand);
 		}
 		
 		if(log.isDebugEnabled()){  
@@ -111,10 +122,6 @@ public class BookRentController {
 			log.debug("deliveryCommand : " + deliveryCommand );
 			log.debug("list : " + list);
 		}
-		
-		
-		deliveryCommand.setMem_id(userId);
-		deliveryService.insert(deliveryCommand);
 		
 		return "redirect:/member/myOrder.do";
 	}

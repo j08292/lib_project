@@ -10,6 +10,25 @@ public class DeliveryCommand {
 	private String delivery_receiveDate;
 	private String mem_id;
 	private int delivery_status;
+	private int list_num;
+	private int rent_num;
+
+	public int getList_num() {
+		return list_num;
+	}
+
+	public void setList_num(int list_num2) {
+		this.list_num = list_num2;
+	}
+
+	public int getRent_num() {
+		return rent_num;
+	}
+
+	public void setRent_num(int num) {
+		this.rent_num = num;
+	}
+
 
 	public int getDelivery_status() {
 		return delivery_status;

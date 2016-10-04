@@ -9,7 +9,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>도서</title>
+<title>책 바구니</title>
 
 <!-- Page Title
 		============================================= -->
@@ -40,7 +40,7 @@
 											<th></th>
 											<th>도서명</th>
 											<th>코드</th>
-											<th>글쓴이</th>
+											<th>저자</th>
 											<th>출판사</th>
 											<th>비고</th>
 										</tr>

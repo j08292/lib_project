@@ -97,5 +97,10 @@ public class BookRentServiceImpl implements BookRentService {
 		bookRentMapper.updateunmanned(bookRentCommand);
 	}
 
+	@Override
+	public int recentRent_num(int list_num) {
+		return bookRentMapper.recentRent_num(list_num);
+	}
+
 
 }

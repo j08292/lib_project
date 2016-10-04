@@ -18,14 +18,14 @@ public class BookListCommand {
 	private Date rent_regdate;
 	private Date rent_returndate;
 	private int rent_status;
-	private String list_contents;
+	private String list_content;
 
-	public String getList_contents() {
-		return list_contents;
+	public String getList_content() {
+		return list_content;
 	}
 
-	public void setList_contents(String list_contents) {
-		this.list_contents = list_contents;
+	public void setList_content(String list_content) {
+		this.list_content = list_content;
 	}
 
 	public Date getRent_regdate() {
@@ -66,7 +66,7 @@ public class BookListCommand {
 
 	public void setList_num(int list_num) {
 		this.list_num = list_num;
-	}	
+	}
 
 	public String getList_code() {
 		return list_code;

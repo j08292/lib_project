@@ -16,7 +16,6 @@
 	============================================= -->
 <!-- Document Title
 	============================================= -->
-<title>도서 검색</title>
 
 <!-- Page Title
 		============================================= -->
@@ -66,7 +65,7 @@
 					<div>도서 검색결과가 없습니다.</div>
 				</c:if>
 				<c:if test="${count > 0 }">
-				<label style = "font-size:18px">도서 목록</label>
+				<label style = "font-size:18px">도서 목록 : ${count } 권</label>
 					<div class="panel panel-default">
 						<div class="panel-heading"></div>
 						<form action="search.do" class="form-inline" id="detail-form"
@@ -75,19 +74,22 @@
 						<table class="table table-hover provideList">
 							<thead>
 								<tr>
-									<th>제목</th>
-									<th>작가</th>
+									<th style = "width:10%;"></th>
+									<th>도서명</th>
+									<th>저자</th>
 									<th>출판사</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="book" items="${list}">
 									<tr>
-										<td><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }">
+										<td style = "text-align:center; width:15%;"><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }">
 										<img src="/lib/upload/${book.list_filename}" width="80" height="120"></a></td>
-										<td>${book.list_title}</td>
-										<td>${book.list_writer}</td>
-										<td>${book.list_publish}</td>
+										<td style = "text-align:left; width:20%;">${book.list_title}</td>
+										<td style = "text-align:left; width:20%;">${book.list_writer}</td>
+										<td style = "text-align:left; width:20%;">${book.list_publish}</td>
+										<td style = "text-align:left; width:15%;" ></td>
 									</tr>
 								</c:forEach>
 							</tbody>

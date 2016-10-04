@@ -61,4 +61,8 @@ public interface BookRentMapper {
 	@Update("UPDATE bookrent SET rent_status=#{rent_status} WHERE rent_num=#{rent_num}")
 	public void updateunmanned(BookRentCommand bookRentCommand);
 	
+	@Select("SELECT rent_num FROM (SELECT a.*, rownum rnum FROM(SELECT max(rent_returndate)returndate,list_num,rent_status,rent_num"
+			+ " FROM bookrent GROUP BY list_num,rent_status,rent_num HAVING list_num=#{list_num} ORDER BY returndate DESC)a) WHERE rnum=1")
+	public int recentRent_num(int list_num);
+	
 }

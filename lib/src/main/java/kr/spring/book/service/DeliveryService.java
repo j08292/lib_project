@@ -11,5 +11,6 @@ public interface DeliveryService {
 	@Transactional(readOnly=true)
 	public List<DeliveryCommand> list(String mem_id);
 	public void insert(DeliveryCommand delivery);
-
+	@Transactional(readOnly=true)
+	public DeliveryCommand delivery(int rent_num);
 }

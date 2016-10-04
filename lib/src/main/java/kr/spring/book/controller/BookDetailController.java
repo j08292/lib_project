@@ -2,6 +2,8 @@ package kr.spring.book.controller;
 
 
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -34,6 +36,15 @@ public class BookDetailController {
 		
 		BookListCommand book = bookListService.select_num(list_num);
 		Integer status = null; 
+		String date = null;
+		
+		List<BookRentCommand> bookrentCommand = bookRentService.selectList(list_num);
+		for(int i=0; i<bookrentCommand.size(); i++){
+			if(bookrentCommand.get(i).getRent_status() == 0){
+				date = bookrentCommand.get(i).getRent_returndate();
+				date = date.substring(0, 10);
+			}
+		}
 		
 		if(status == bookRentService.recentStatus(list_num)){
 			if(log.isDebugEnabled()){
@@ -59,6 +70,7 @@ public class BookDetailController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("bookDetail");
 		mav.addObject("book", book);
+		mav.addObject("date", date);
 		
 		return mav;
 		

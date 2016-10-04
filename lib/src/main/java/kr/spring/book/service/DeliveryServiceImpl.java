@@ -25,4 +25,9 @@ public class DeliveryServiceImpl implements DeliveryService{
 		return deliveryMapper.list(mem_id);
 	}
 
+	@Override
+	public DeliveryCommand delivery(int rent_num) {
+		return deliveryMapper.delivery(rent_num);
+	}
+
 }

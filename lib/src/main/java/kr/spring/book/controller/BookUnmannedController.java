@@ -80,18 +80,22 @@ public class BookUnmannedController {
 		}
 		
 		BookRentCommand rentCommand = new BookRentCommand();
-		List<BookRentCommand> rentCommand2 = null;
-
-		rentCommand2 = bookRentService.selectList(list_num);
 		
-		int st = bookRentService.recentStatus(list_num);
+//		List<BookRentCommand> rentCommand2 = null;
+//
+//		rentCommand2 = bookRentService.selectList(list_num);
+//		
+//		int st = bookRentService.recentStatus(list_num);
 		
 		rentCommand.setList_num(list_num);
 		rentCommand.setMem_id(userId);
 		bookRentService.insert(rentCommand);
 		
+		int num = bookRentService.recentRent_num(list_num);
 		MemberCommand member = memberService.selectMember(userId);
 		DeliveryCommand delivery = new DeliveryCommand();
+		delivery.setList_num(list_num);
+		delivery.setRent_num(num);
 		delivery.setDelivery_address(loc);
 		delivery.setSample3_postcode("");
 		delivery.setDelivery_cell(member.getMem_cell());
@@ -100,6 +104,7 @@ public class BookUnmannedController {
 		delivery.setMem_id(userId);
 		delivery.setDelivery_status(1);
 		deliveryService.insert(delivery);
+		
 		
 		if(log.isDebugEnabled()){  
 			log.debug("list_num : " + list_num);

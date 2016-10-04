@@ -111,13 +111,13 @@
 
 											<!-- daum 우편번호 시작 -->
 											<div class="col_full">
-												<label for="postcode">우편번호:</label> 
+												<label for="sample3_postcode">우편번호:</label> 
 												<br>
-												<input type = "text" placeholder="우편번호"
+												<form:input path = "sample3_postcode" placeholder="우편번호"
 													class="form-control"  style = "width:25%;" value = "${member.sample3_postcode }"/>
 												- <br>
-												<label for="address">주소:</label>
-												<input type = "text" id = "address" class="form-control"
+												<label for="delivery_address">주소:</label>
+												<form:input path = "delivery_address" class="form-control"
 													placeholder="주소" style = "width:50%;" value = "${member.mem_address }"/>
 
 											</div>
@@ -269,7 +269,7 @@
 									<thead>
 										<tr>
 											<th>결제 금액</th>
-											<th>${total }</th>
+											<th>${total } 원</th>
 										</tr>
 									</thead>
 									<tbody>

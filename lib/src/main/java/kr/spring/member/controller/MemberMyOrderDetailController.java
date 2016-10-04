@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.book.domain.BookListCommand;
 import kr.spring.book.domain.BookRentCommand;
+import kr.spring.book.domain.DeliveryCommand;
 import kr.spring.book.service.BookListService;
 import kr.spring.book.service.BookRentService;
 import kr.spring.book.service.DeliveryService;
@@ -51,19 +52,23 @@ public class MemberMyOrderDetailController {
 		
 		BookRentCommand rent = new BookRentCommand();
 		rent = bookRentService.selectRent(rent_num);
+		
+		DeliveryCommand delivery = new DeliveryCommand();
+		delivery = deliveryService.delivery(rent_num);
 
 		if (log.isDebugEnabled()) {
 			log.debug("rent : " + rent );
 			log.debug("member : " + member);
 			log.debug("book : " + book);
+			log.debug("delivery : " + delivery);
 		}
-
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("memberMyOrderDetail");
 		mav.addObject("rent", rent);
 		mav.addObject("member", member);
 		mav.addObject("name", name);
 		mav.addObject("book", book);
+		mav.addObject("delivery", delivery);
 		
 		return mav;
 	}
