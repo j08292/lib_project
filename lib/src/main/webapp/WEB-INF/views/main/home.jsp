@@ -119,7 +119,7 @@
 		<!-- Content ============================================= -->
 		<!-- 홈페이지 주요 서비스 간단 설명/바로가기 -->
 		<section id="content" >
-			<div style="background-color:#FFF2E6;">
+			<div>
 			<div class="content-wrap container clearfix" >
 				<div class="container clearfix" >
 					<div class="row topmargin-lg bottommargin-sm" >
@@ -180,18 +180,17 @@
 				<!-- 신규 강연 안내 -->
 				</div>
 				</div>
-					<div>
-					<div class="center" >
-					<div class="fbox-icon">
+					<div style="background-color:#FFF2E6;">
+					<div class="center"  style="background-color:#FFF2E6;">
+					<div class="fbox-icon" style="background-color:#FFF2E6;">
 					<br><br>
 						<h3>[Speech] 최신강연 안내</h3>	
 					</div>	
 					</div>
 					
-					<br>
-				<div class="container clearfix">
+				<div class="container clearfix"  style="background-color:#FFF2E6;">
 					<a href="${pageContext.request.contextPath }/speech/list.do"><p style="text-align:right">▶더보기</p></a>	
-					<div class="clear"></div>
+					<div class="clear" style="background-color:#FFF2E6;"></div>
 					<div class="col_one_third bottommargin-sm">
 					<img src="${pageContext.request.contextPath}/resources/user/images/book/a.png" alt="Clients"><br>
 						<div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="600">
@@ -228,12 +227,13 @@
 				<br><br><br><br>
 				</div>
 				<!-- 신규 도서 안내 -->
-				<div class="section"style="background-color:#FFF2E6;" >
-					<div class="container clearfix" style="background-color:#FFF2E6;">
+				<div class="section">
+					<div class="container clearfix">
 						<div class="row topmargin-sm">
 							<div class="center">
 								<h3>[new] 신간도서 안내</h3>
 							</div>
+							
 							<a href="${pageContext.request.contextPath }/book/search.do"><p style="text-align:right">▶더보기</p></a>
 						<c:if test="${newBookCount == 0}"> 현재 등록된 신규 도서가 없습니다. </c:if>
 						<c:if test="${newBookCount > 0}">
@@ -265,55 +265,49 @@
 						</c:if>
 						</div>
 					</div>
+					
 				</div>
 				
 				<!-- 인기 도서 안내 -->
-				
+					
 				<div class="container clearfix" >
 				
-					<div class="row topmargin-sm"  >
+					<div class="row topmargin-sm"  style="background-color:#FFF2E6;" >
+					
 							<div class="center" >
 								<h3>[best] 인기도서 안내</h3>
+								
 							</div>
 				
 				
+			
+					 
+			
 				<c:if test="${mainBookCount == 0}"> 현재 인기 도서가 없습니다. </c:if>
 				<c:if test="${mainBookCount > 0}">
 					<div id="oc-clients" class="owl-carousel image-carousel">
+					
 					<c:forEach var="article" items="${mainBooklist}">
 						 
 								<c:choose>
 									<c:when test="${!empty article.list_filename}">
 										<div class="oc-item">
 											<img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="height:200px; whith:50px;">
-											${article.list_title}
+										<br><br><br><br><br><br>
 										</div>
 									</c:when>
-									<c:otherwise>
-										<div class="oc-item">
-											<img src="${pageContext.request.contextPath}/upload/NoImage.jpg"><h5>${article.list_title}</h5>
-										</div>
-									</c:otherwise>
-								</c:choose> 
+									</c:choose> 
+									
 					</c:forEach>
+					
 					</div>
 					</c:if>
-					
-					
-					
-				
-					
-					
+					 
 					</div>
-					
-					
-				
-	
-
-    
   </div>
- 
-</div>
+
+		
+
 	</section>
 	<script type="text/javascript">
 						jQuery(document).ready(function($) {
@@ -335,7 +329,7 @@
 							});
 						});
 					</script>
- <br><br><br><br><br>
+
 					
 			
 		
