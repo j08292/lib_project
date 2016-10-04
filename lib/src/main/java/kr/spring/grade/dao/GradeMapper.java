@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import kr.spring.grade.domain.GradeCommand;
@@ -21,7 +22,9 @@ public interface GradeMapper {
 	//중복 평가 방지
 	@Select("SELECT count(*) FROM grade WHERE list_num=#{list_num} AND mem_id=#{mem_id}")
 	public int checkGrade(GradeCommand grade);
-	
+	//책평점 계산
+	@Update("UPDATE booklist SET list_grade=(SELECT round(AVG(grade_star)) FROM grade WHERE list_num=#{list_num}) WHERE list_num=#{list_num}")
+	public void updateAvgGrade(int list_num);
 	
 	//관리자 게시물 관리
 	//관리자 글 목록

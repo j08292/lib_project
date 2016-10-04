@@ -78,7 +78,7 @@
 									<th>도서명</th>
 									<th>저자</th>
 									<th>출판사</th>
-									<th></th>
+									<th>평점</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -89,7 +89,7 @@
 										<td style = "text-align:left; width:20%;">${book.list_title}</td>
 										<td style = "text-align:left; width:20%;">${book.list_writer}</td>
 										<td style = "text-align:left; width:20%;">${book.list_publish}</td>
-										<td style = "text-align:left; width:15%;" ></td>
+										<td style = "text-align:left; width:15%;" ><img src="${pageContext.request.contextPath}/resources/grade/images/${book.list_grade}.PNG"></td>
 									</tr>
 								</c:forEach>
 							</tbody>

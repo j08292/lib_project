@@ -17,6 +17,7 @@ public interface GradeService {
 	public void deleteGrade(Integer grade_num);
 	
 	public int checkGrade(GradeCommand grade);
+	public void updateAvgGrade(int list_num);//책평점 계산
 	
 	//관리자 게시물 관리
 	//관리자 글 목록

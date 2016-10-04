@@ -19,7 +19,7 @@
 				  FROM grade
 				  
 				  ORDER BY
-				  <if test="mem_id != ''">
+				  <if test="mem_id != null">
 				  CASE WHEN mem_id in(#{mem_id}) then 0 else 1 end,
 				  </if>
 				   grade_num DESC)a)

@@ -25,6 +25,7 @@ public class GradeDeleteController {
 	@ResponseBody
 	public Map<String, String> process(@RequestParam("grade_num") int grade_num,
 									   @RequestParam("mem_id") String mem_id,
+									   @RequestParam("list_num") int list_num,
 									   HttpSession session){
 		if(log.isDebugEnabled()){
 			log.debug("grade_num : " + grade_num);
@@ -39,6 +40,8 @@ public class GradeDeleteController {
 			}else if(userId!=null && userId.equals(mem_id)){
 				//삭제
 				gradeService.deleteGrade(grade_num);
+				//평점 업데이트
+				gradeService.updateAvgGrade(list_num);
 				map.put("result", "success");
 			}else{
 				map.put("result", "wrongAccess");

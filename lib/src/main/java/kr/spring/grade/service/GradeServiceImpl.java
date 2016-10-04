@@ -60,4 +60,9 @@ public class GradeServiceImpl implements GradeService{
 	public int checkGrade(GradeCommand grade) {
 		return gradeMapper.checkGrade(grade);
 	}
+
+	@Override
+	public void updateAvgGrade(int list_num) {
+		gradeMapper.updateAvgGrade(list_num);
+	}
 }
