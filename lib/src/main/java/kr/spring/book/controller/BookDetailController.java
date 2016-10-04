@@ -75,5 +75,4 @@ public class BookDetailController {
 		return mav;
 		
 	}
-	
 }

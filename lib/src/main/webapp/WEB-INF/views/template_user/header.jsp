@@ -75,7 +75,7 @@
 							<ul>
 								<li><a href="${pageContext.request.contextPath }/book/basket.do"><i class="icon-shopping-cart"></i>장바구니</a>
 								<li><a href="${pageContext.request.contextPath }/member/myOrder.do">도서 주문 내역 (예약/취소)</a></li>
-								<li><a href="#">희망도서신청내역</a>
+								<li><a href="${pageContext.request.contextPath}/wishlist/list.do">희망도서신청내역</a>
 								<li><a href="${pageContext.request.contextPath }/member/update.do">회원정보수정</a></li>
 							</ul>
 						</li>

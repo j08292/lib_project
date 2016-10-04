@@ -244,10 +244,10 @@
 											<a href="${pageContext.request.contextPath}/book/detail.do?list_title=${article.list_title}&list_filename=${article.list_filename}&list_num=${article.list_num}">
 												<c:choose>
 													<c:when test="${!empty article.list_filename}">
-														<img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="width: 460px; height: 315;">
+														<img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="width: 460px; height: 315px;">
 													</c:when>
 													<c:otherwise>
-														<img src="${pageContext.request.contextPath}/upload/NoImage.jpg" style="width: 460px; height: 315;">
+														<img src="${pageContext.request.contextPath}/upload/NoImage.jpg" style="width: 460px; height: 315px;">
 													</c:otherwise>
 												</c:choose>
 											</a>
