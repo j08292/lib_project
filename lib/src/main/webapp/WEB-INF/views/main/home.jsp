@@ -118,10 +118,11 @@
 
 		<!-- Content ============================================= -->
 		<!-- 홈페이지 주요 서비스 간단 설명/바로가기 -->
-		<section id="content">
-			<div class="content-wrap">
-				<div class="container clearfix">
-					<div class="row topmargin-lg bottommargin-sm">
+		<section id="content" >
+			<div style="background-color:#FFF2E6;">
+			<div class="content-wrap container clearfix" >
+				<div class="container clearfix" >
+					<div class="row topmargin-lg bottommargin-sm" >
 						<div class="col-md-4 col-sm-6 bottommargin">
 							<div class="feature-box fbox-right topmargin" data-animate="fadeIn">
 								<div class="fbox-icon">
@@ -149,7 +150,7 @@
 							</div>
 						</div>
 						<div class="col-md-4 hidden-sm bottommargin center">
-							<img src="${pageContext.request.contextPath}/resources/user/images/book/ㄷ.png" >
+							<img src="${pageContext.request.contextPath}/resources/user/images/book/ㄷ.png"  style="background-color:#FFF2E6;">
 						</div>
 						<div class="col-md-4 col-sm-6 bottommargin">
 							<div class="feature-box topmargin" data-animate="fadeIn">
@@ -175,19 +176,18 @@
 							</div>
 						</div>
 					</div>
-				
+				</div>
 				<!-- 신규 강연 안내 -->
 				</div>
-					<hr size="1" width="100%">
-					<hr size="1" width="100%">
-					<br><br>
+				</div>
 					<div>
-					<div class="center">
+					<div class="center" >
 					<div class="fbox-icon">
+					<br><br>
 						<h3>[Speech] 최신강연 안내</h3>	
 					</div>	
 					</div>
-					</div>
+					
 					<br>
 				<div class="container clearfix">
 					<a href="${pageContext.request.contextPath }/speech/list.do"><p style="text-align:right">▶더보기</p></a>	
@@ -222,14 +222,14 @@
 							<h3>독서모임 & 작가와의 만남<br>PQR BOOKS X 이광호 작가</h3>
 							<p>▶ PQR BOOKS에 입점한 독립/소규모/1인출판물 중 하나를 선정해서 함께 읽고 이야기를 나누는 독서모임입니다.</p>
 						</div>
-						<br><br><br>
+						
 					</div>
-					<div class="clear"></div>
+					
+				<br><br><br><br>
 				</div>
-				
 				<!-- 신규 도서 안내 -->
-				<div class="section">
-					<div class="container clearfix">
+				<div class="section"style="background-color:#FFF2E6;" >
+					<div class="container clearfix" style="background-color:#FFF2E6;">
 						<div class="row topmargin-sm">
 							<div class="center">
 								<h3>[new] 신간도서 안내</h3>
@@ -238,8 +238,8 @@
 						<c:if test="${newBookCount == 0}"> 현재 등록된 신규 도서가 없습니다. </c:if>
 						<c:if test="${newBookCount > 0}">
 							<c:forEach var="article" items="${mainNewBooklist}">
-								<div class="col-md-3 col-sm-6 bottommargin">
-									<div class="team">
+								<div class="col-md-3 col-sm-6 bottommargin" >
+									<div class="team" >
 										<div class="team-image">
 											<a href="${pageContext.request.contextPath}/book/detail.do?list_title=${article.list_title}&list_filename=${article.list_filename}&list_num=${article.list_num}">
 												<c:choose>
@@ -252,7 +252,7 @@
 												</c:choose>
 											</a>
 										</div>
-										<div class="team-desc team-desc-bg">
+										<div class="team-desc team-desc-bg" style="height:250px; background-color:#FFFFf9;">
 											<div class="team-title">
 												<h4>${article.list_title}</h4>
 												<br> <span>${article.list_writer}</span>
@@ -269,21 +269,14 @@
 				
 				<!-- 인기 도서 안내 -->
 				
-				<div class="container clearfix">
+				<div class="container clearfix" >
 				
-					<div class="row topmargin-sm" >
-							<div class="center">
+					<div class="row topmargin-sm"  >
+							<div class="center" >
 								<h3>[best] 인기도서 안내</h3>
 							</div>
 				
-				<table>
-				<tr>
 				
-				<td align="center" valign="middle" width="20">
-				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true" onmouseover="left(); copyspeed=5" onmouseout="copyspeed=1"></span>
-				</td>
-				
-				<td >
 				<c:if test="${mainBookCount == 0}"> 현재 인기 도서가 없습니다. </c:if>
 				<c:if test="${mainBookCount > 0}">
 					<div id="oc-clients" class="owl-carousel image-carousel">
@@ -305,7 +298,24 @@
 					</c:forEach>
 					</div>
 					</c:if>
-					<script type="text/javascript">
+					
+					
+					
+				
+					
+					
+					</div>
+					
+					
+				
+	
+
+    
+  </div>
+ 
+</div>
+	</section>
+	<script type="text/javascript">
 						jQuery(document).ready(function($) {
 							var ocClients = $("#oc-clients");
 							ocClients.owlCarousel({
@@ -325,24 +335,6 @@
 							});
 						});
 					</script>
-					</td>
-					
-					
-					<td width="20" align="center" valign="middle"><img src="images/btn_right.gif">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"  onmouseover="right();copyspeed=5" onmouseout="copyspeed=1" style="cursor:hand"></span>
-					</td>
-					</tr>
-					</table>
-					</div>
-					
-				
-	
-
-    
-  </div>
- 
-</div>
-	</section>
  <br><br><br><br><br>
 					
 			

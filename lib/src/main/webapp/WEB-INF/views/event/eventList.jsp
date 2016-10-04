@@ -36,7 +36,7 @@
 				
 							
 		<!-- 이벤트 목록 -->
-		<div id="event" class="clearfix" style="padding-left:300px; padding-right:300px;">
+		<div id="event" class="clearfix" style="padding-left:400px; padding-right:300px;">
 		
 			<c:if test="${count == 0}">
 				<div class="panel-body" >
