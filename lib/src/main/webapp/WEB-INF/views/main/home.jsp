@@ -268,22 +268,22 @@
 				</div>
 				
 				<!-- 인기 도서 안내 -->
+				
 				<div class="container clearfix">
-					<div class="row topmargin-sm">
+				
+					<div class="row topmargin-sm" >
 							<div class="center">
 								<h3>[best] 인기도서 안내</h3>
 							</div>
 				
-				<!-- 화살표 시작 -->
-				&nbsp; &nbsp;<span class="glyphicon glyphicon-chevron-left"></span>
-				<span class="glyphicon glyphicon-chevron-left">
-				  	<span class="glyphicon glyphicon-chevron-left"></span>
-				  	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
-				</span>
-				<span class="glyphicon glyphicon-chevron-right"></span>
-				<span class="glyphicon glyphicon-chevron-right"></span>
-				<span class="glyphicon glyphicon-chevron-right"></span>
-				<!-- 화살표 끝 -->
+				<table>
+				<tr>
+				
+				<td align="center" valign="middle" width="20">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true" onmouseover="left(); copyspeed=5" onmouseout="copyspeed=1"></span>
+				</td>
+				
+				<td >
 				<c:if test="${mainBookCount == 0}"> 현재 인기 도서가 없습니다. </c:if>
 				<c:if test="${mainBookCount > 0}">
 					<div id="oc-clients" class="owl-carousel image-carousel">
@@ -292,31 +292,19 @@
 								<c:choose>
 									<c:when test="${!empty article.list_filename}">
 										<div class="oc-item">
-											<img src="${pageContext.request.contextPath}/upload/${article.list_filename}">
+											<img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="height:200px; whith:50px;">
 											${article.list_title}
 										</div>
 									</c:when>
 									<c:otherwise>
 										<div class="oc-item">
-											<img src="${pageContext.request.contextPath}/upload/NoImage.jpg">${article.list_title}
+											<img src="${pageContext.request.contextPath}/upload/NoImage.jpg"><h5>${article.list_title}</h5>
 										</div>
 									</c:otherwise>
 								</c:choose> 
-								
-								<%-- <img src="${pageContext.request.contextPath}/upload/${article.list_filename}"alt="Clients">${article.list_title}</div> --%>
-								<%-- <div class="oc-item"><img src="${pageContext.request.contextPath}/upload/${article.list_filename}" alt="Clients">${article.list_title}</div> --%>
-								<%-- <div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/7.jpg"alt="Clients"></div>
-								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/8.png"alt="Clients"></div>
-								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/9.png"alt="Clients"></div>
-								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/10.png"alt="Clients"></div>
-								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/11.png"alt="Clients"></div>
-								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/12.png"alt="Clients"></div>
-								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/13.png"alt="Clients"></div>
-								<div class="oc-item"><img src="${pageContext.request.contextPath}/resources/user/images/book/14.png"alt="Clients"></div> --%>
-						
 					</c:forEach>
 					</div>
-				</c:if>
+					</c:if>
 					<script type="text/javascript">
 						jQuery(document).ready(function($) {
 							var ocClients = $("#oc-clients");
@@ -337,5 +325,26 @@
 							});
 						});
 					</script>
-				</div>
-			</div>
+					</td>
+					
+					
+					<td width="20" align="center" valign="middle"><img src="images/btn_right.gif">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"  onmouseover="right();copyspeed=5" onmouseout="copyspeed=1" style="cursor:hand"></span>
+					</td>
+					</tr>
+					</table>
+					</div>
+					
+				
+	
+
+    
+  </div>
+ 
+</div>
+	</section>
+ <br><br><br><br><br>
+					
+			
+		
+			

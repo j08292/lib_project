@@ -47,7 +47,7 @@
 							<td>${article.rent_num}</td>
 							<td>${article.list_title}</td>
 							<td>${article.list_code}</td>
-							<td>${article.mem_id}</td>
+							<td><a href="javascript:popup(${article.rent_num})">${article.mem_id}</a></td>
 							<td>${article.rent_regdate}</td>
 							<td><c:choose>
 									<c:when test="${article.rent_status == 0}">
@@ -78,7 +78,7 @@
 								</c:choose></td>
 							<td><c:if test="${article.rent_status == 0}">대출중</c:if>
 								<c:if test="${article.rent_status == 2}">예약중</c:if>
-								<c:if test="${article.rent_status == 3}">대출대기</c:if></td>
+								<c:if test="${article.rent_status == 3 || article.rent_status == 5}">대출대기</c:if></td>
 							<td>
 								<c:if test="${article.rent_status == 0}"><!-- 대출 도서 -->
 									<c:if test="${(nowDays - oldDays) > 0}"><!-- 연체 도서 -->
@@ -88,7 +88,7 @@
 										<input type="button" onclick="javascript:bookReturn_event(${article.rent_num},${article.rent_status},'${article.list_title}',${article.list_num});" value="반납" class="btn btn-xs btn-warning">										
 									</c:if>
 								</c:if>								
-								<c:if test="${article.rent_status == 3}"><!-- 대출대기 도서 -->
+								<c:if test="${article.rent_status == 3 || article.rent_status == 5}"><!-- 대출대기 도서 -->
 									<input type="button" onclick="javascript:bookRent_event(${article.rent_num},'${article.list_title}');" value="대출" class="btn btn-xs btn-primary">
 									<input type="button" onclick="javascript:bookCancel_event(${article.rent_num},'${article.list_title}');" value="취소" class="btn btn-xs btn-danger">
 								</c:if>

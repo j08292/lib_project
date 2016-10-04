@@ -26,19 +26,9 @@
     <!-- External JavaScripts(지우면안됨X) -->
 	
 
-        <!-- Page Title(지우면안됨X) -->
-        <section id="page-title">
+    
+        
 
-            <div class="container clearfix">
-                <h1><spring:message code="review.write.title"/></h1>
-                <span>Start Buying your Favourite Theme</span>
-                <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">Shop</li>
-                </ol>
-            </div>
-
-        </section><!-- #page-title end -->
 
         <!-- Content(지우면안됨X)-->
         <section id="content">

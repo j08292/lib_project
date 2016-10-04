@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import kr.spring.book.domain.DeliveryCommand;
 import kr.spring.bookrent.domain.AdminBookrentCommand;
 import kr.spring.penalty.domain.PenaltyCommand;
 
@@ -21,4 +22,6 @@ public interface AdminBookrentService {
 	public void insertPenalty(PenaltyCommand penalty);//연체일 존재하는 책 반납시 -> 패널티 테이블에 삽입
 	public void reserveToWaiting(Integer list_num);//예약도서 -> 대출대기	
 	public void updateRentCancel(AdminBookrentCommand bookrent);//입금 지연등의 이유로 대여 취소
+
+	public DeliveryCommand selectDelivery(int rent_num);//배송지
 }
