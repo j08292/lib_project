@@ -12,12 +12,14 @@
 	<form:form id="register-form" name="register-form" class="nobottommargin" action="update.do" commandName="command" enctype="multipart/form-data">
 		<div class="form-group">
 			<label for="event_title">제목:</label> 
-			<input type="text" id="event_title" name="event_title" value="" class="form-control" />
+			<form:input path="event_title" class="form-control"/>
+			<form:errors path="event_title" class="error-color"/>
 		</div>
 
 		<div class="form-group">
 			<label for="event_content">내용:</label>
 			<form:textarea path="event_content" rows="8" class="form-control" />
+			<form:errors path="event_content" class="error-color"/>
 		</div>
 
 		<div class="form-group">
@@ -31,19 +33,20 @@
 				</c:if>
 			</div>
 			<div id="imagePreview"></div><br>
-			<input type="file" name="upload" id="upload" class="form-control" onchange="ImagePreview();">
+			<input type="file" name="event_upload" id="event_upload" class="form-control" onchange="ImagePreview();">
 		</div>
 
 		<div class="form-group">
 			<label for="event_startdate">이벤트 시작일:</label> 
-			<input type="date" id="event_startdate" name="event_startdate" value="" class="form-control" />
+			<form:input path="event_startdate" class="datepicker form-control" id="event_startdate"/>
+			<form:errors path="event_startdate" class="error-color"/>
 		</div>
 
 		<div class="form-group">
 			<label for="event_enddate">이벤트 종료일:</label> 
-			<input type="date" id="event_enddate" name="event_enddate" value="" class="form-control" />
+			<form:input path="event_enddate" class="datepicker form-control" id="event_enddate"/>
+			<form:errors path="event_enddate" class="error-color"/>
 		</div>
-
 
 		<div class="col_full nobottommargin" align="center">
 			<input type="submit" class="btn btn-warning" id="register-form-submit" name="register-form-submit" value="수정" /> 

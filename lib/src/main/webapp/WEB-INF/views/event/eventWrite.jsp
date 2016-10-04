@@ -13,13 +13,14 @@
 		<form:errors element="div" class="error-color"/>
 		<div class="form-group">
 			<label for="event_title">제목:</label> 
-			<input type="text" id="event_title" name="event_title" value=""
-				class="form-control"/>
+			<form:input path="event_title" class="form-control"/>
+			<form:errors path="event_title" class="error-color"/>
 		</div>
 
 		<div class="form-group">
 			<label for="event_content">내용:</label>
 			<form:textarea path="event_content" rows="8" class="form-control" />
+			<form:errors path="event_content" class="error-color"/>
 		</div>
 
 		<div class="form-group">
@@ -30,12 +31,14 @@
 
 		<div class="form-group">
 			<label for="event_startdate">이벤트 시작일:</label> 
-			<input type="date" id="event_startdate" name="event_startdate" value="" class="form-control" />
+			<form:input path="event_startdate" class="datepicker form-control" id="event_startdate"/>
+			<form:errors path="event_startdate" class="error-color"/>
 		</div>
 
 		<div class="form-group">
 			<label for="event_enddate">이벤트 종료일:</label> 
-			<input type="date" id="event_enddate" name="event_enddate" value="" class="form-control" />
+			<form:input path="event_enddate" class="datepicker form-control" id="event_enddate"/>
+			<form:errors path="event_enddate" class="error-color"/>
 		</div>
 
 		<div class="col_full nobottommargin" align="center">
@@ -44,5 +47,5 @@
 		</div>
 	</form:form>
 	</div>
-</div>
+</div> 
 <!-- #content end -->

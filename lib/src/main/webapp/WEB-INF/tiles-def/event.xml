@@ -8,6 +8,19 @@
     <definition name="eventWrite" extends="adminMain">
     	<put-attribute name="title" value="글쓰기"/>
     	<put-attribute name="body" value="/WEB-INF/views/event/eventWrite.jsp"/>
+    	<put-list-attribute name="cssList">
+        	<!-- Bootstrap Core CSS -->
+		    <add-attribute value="/lib/resources/admin/css/bootstrap.min.css"/>
+		    <!-- Custom CSS -->
+		    <add-attribute value="/lib/resources/admin/css/sb-admin.css"/>
+		    <!-- Morris Charts CSS -->
+		    <add-attribute value="/lib/resources/admin/css/plugins/morris.css"/>
+		    <!-- Custom Fonts -->
+		    <add-attribute value="/lib/resources/admin/font-awesome/css/font-awesome.min.css"/>
+		    
+		    <!-- jquery ui datepicker -->
+		    <add-attribute value="/lib/resources/admin/css/jquery-ui.css"/>
+        </put-list-attribute>
    		<put-list-attribute name="jsList">
 			<!-- jQuery -->
 			<add-attribute value="/lib/resources/admin/js/jquery.js" />
@@ -17,6 +30,8 @@
 			<add-attribute value="/lib/resources/admin/js/plugins/morris/raphael.min.js" />
 			<add-attribute value="/lib/resources/admin/js/plugins/morris/morris.min.js" />
 			<add-attribute value="/lib/resources/admin/js/plugins/morris/morris-data.js" />
+			<add-attribute value="/lib/resources/admin/js/jquery-1.12.4.js"/>
+		    <add-attribute value="/lib/resources/admin/js/jquery-ui.js"/>
 			<add-attribute value="/lib/resources/admin/js/eventWrite.js" />
 		</put-list-attribute>	
     </definition>
@@ -140,6 +155,19 @@
      <definition name="eventModify" extends="adminMain">
     	<put-attribute name="title" value="이벤트 글수정"/>
     	<put-attribute name="body" value="/WEB-INF/views/event/eventModify.jsp"/>
+    	<put-list-attribute name="cssList">
+        	<!-- Bootstrap Core CSS -->
+		    <add-attribute value="/lib/resources/admin/css/bootstrap.min.css"/>
+		    <!-- Custom CSS -->
+		    <add-attribute value="/lib/resources/admin/css/sb-admin.css"/>
+		    <!-- Morris Charts CSS -->
+		    <add-attribute value="/lib/resources/admin/css/plugins/morris.css"/>
+		    <!-- Custom Fonts -->
+		    <add-attribute value="/lib/resources/admin/font-awesome/css/font-awesome.min.css"/>
+		    
+		    <!-- jquery ui datepicker -->
+		    <add-attribute value="/lib/resources/admin/css/jquery-ui.css"/>
+        </put-list-attribute>
 		<put-list-attribute name="jsList">
 			<!-- jQuery -->
 			<add-attribute value="/lib/resources/admin/js/jquery.js" />
@@ -149,6 +177,8 @@
 			<add-attribute value="/lib/resources/admin/js/plugins/morris/raphael.min.js" />
 			<add-attribute value="/lib/resources/admin/js/plugins/morris/morris.min.js" />
 			<add-attribute value="/lib/resources/admin/js/plugins/morris/morris-data.js" />
+			<add-attribute value="/lib/resources/admin/js/jquery-1.12.4.js"/>
+		    <add-attribute value="/lib/resources/admin/js/jquery-ui.js"/>
 			<add-attribute value="/lib/resources/admin/js/eventModify.js" />
 		</put-list-attribute>
 	 </definition>
