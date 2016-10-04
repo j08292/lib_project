@@ -22,7 +22,7 @@ public class EventFileUtil {
 		if(fileName==null) return null;
 
 		String newName = Long.toString(System.currentTimeMillis())+(int)(Math.random()*50);
-
+ 
 		return rename(fileName,newName);
 	}
 	public static String rename(String fileName,String newName)
