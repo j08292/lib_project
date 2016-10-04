@@ -22,7 +22,7 @@ public class GradeWriteController {
 	private GradeService gradeService;
 	
 	@RequestMapping("/book/writeGradeAjax.do")
-	@ResponseBody
+	@ResponseBody 
 	public Map<String, String> process(GradeCommand gradeCommand, HttpSession session){
 		if(log.isDebugEnabled()){
 			log.debug("gradeCommand : " + gradeCommand);

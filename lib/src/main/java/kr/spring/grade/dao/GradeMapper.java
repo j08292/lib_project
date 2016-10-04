@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import kr.spring.grade.domain.GradeCommand;
-
+ 
 @Repository
 public interface GradeMapper {
 	public List<GradeCommand> list(Map<String, Object> map);

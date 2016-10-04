@@ -22,8 +22,8 @@ public class GradeDeleteController {
 	private GradeService gradeService;
 	
 	@RequestMapping("book/deleteGradeAjax.do")
-	@ResponseBody
-	public Map<String, String> process(@RequestParam("grade_num") int grade_num,
+	@ResponseBody 
+	public Map<String,  String> process(@RequestParam("grade_num") int grade_num,
 									   @RequestParam("mem_id") String mem_id,
 									   @RequestParam("list_num") int list_num,
 									   HttpSession session){

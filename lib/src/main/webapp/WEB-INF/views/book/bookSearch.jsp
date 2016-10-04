@@ -83,7 +83,7 @@
 							</thead>
 							<tbody>
 								<c:forEach var="book" items="${list}">
-									<tr>
+									<tr> 
 										<td style = "text-align:center; width:15%;"><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }">
 										<img src="/lib/upload/${book.list_filename}" width="80" height="120"></a></td>
 										<td style = "text-align:left; width:20%;">${book.list_title}</td>
