@@ -7,11 +7,19 @@
 <section id="content">
 
 	<!-- 이벤트 검색 -->
-	<div class="content-wrap">
-		<div class="panel-group">
-			<div class="panel panel-default">
-				<div class="panel-heading" style="text-align:center">이벤트</div>
-			</div>
+	
+	<section id="page-title">
+
+            <div class="container clearfix">
+                <h3>[EVENT]이벤트</h3>               
+                <ol class="breadcrumb">
+                    <li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+                    <li><a href="${pageContext.request.contextPath}/board/eventList.do">Event List</a></li>
+                </ol>
+            </div>
+
+        </section>
+	
 		<div class="panel-body">
 			<form action="list.do" id="search_form"  class="form-inline" method="get" style="text-align:center">
 				<select name="keyfield" id="slectBox" class="form-control">
@@ -28,9 +36,10 @@
 				
 							
 		<!-- 이벤트 목록 -->
-		<div id="event" class="clearfix">
+		<div id="event" class="clearfix" style="padding-left:300px; padding-right:300px;">
+		
 			<c:if test="${count == 0}">
-				<div class="panel-body" style="padding: 40px;">
+				<div class="panel-body" >
 					<h3>등록된 게시물이 없습니다.</h3>
 				</div>
 			</c:if>
@@ -77,9 +86,6 @@
 
 </section>
 <!-- 이벤트 content 끝 -->
-
-
-
 
 <!-- Go To Top
     ============================================= -->

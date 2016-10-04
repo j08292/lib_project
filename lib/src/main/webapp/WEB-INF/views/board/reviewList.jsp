@@ -60,14 +60,13 @@
                    		<tr>
                    			<td class="align-right">
                    				
-								<input type="button" value="글쓰기" class="btn btn-primary btn-sm"
-                   						 onclick="location.href='write.do'"<c:if test="${empty userId }">disabled="disabled"</c:if>>
+								
 
                    				
-                   				<c:if test="${userId }">
+                   				
                    				<input type="button" value="글쓰기" class="btn btn-primary btn-sm"
                    						 onclick="location.href='write.do'">
-                   				 </c:if>
+                   				
                    			</td>
                    		</tr>                   		
                    	</table>

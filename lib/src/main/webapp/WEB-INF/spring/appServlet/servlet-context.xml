@@ -108,6 +108,8 @@
 			<mvc:mapping path="/book/basket.do"/>
 			<mvc:mapping path="/book/rent.do"/>
 			<mvc:mapping path="/board/insertLike.do"/>
+			<mvc:mapping path="/board/write.do"/>
+			<mvc:mapping path="/board/qnaWrite.do"/>
 			<beans:bean class="kr.spring.member.interceptor.LogonCheckInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
