@@ -18,6 +18,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import kr.spring.event.domain.EventCommand;
 import kr.spring.event.service.EventService;
+import kr.spring.util.EventFileUtil;
 import kr.spring.util.FileUtil;
 
 @Controller
@@ -55,7 +56,7 @@ public class EventWriteController {
 		
 		String newName = "";
 		if(!eventCommand.getEvent_upload().isEmpty()){
-			newName=FileUtil.rename(eventCommand.getEvent_upload().getOriginalFilename());
+			newName=EventFileUtil.rename(eventCommand.getEvent_upload().getOriginalFilename());
 			eventCommand.setEvent_filename(newName);
 		}
 		//±Û µî·Ï
@@ -63,7 +64,7 @@ public class EventWriteController {
 		status.setComplete();
 		
 		if(!eventCommand.getEvent_upload().isEmpty()){
-			File file = new File(FileUtil.UPLOAD_PATH+"/"+newName);
+			File file = new File(EventFileUtil.UPLOAD_PATH+"/"+newName);
 			eventCommand.getEvent_upload().transferTo(file);
 		}
 		return "redirect:/admin/event/list.do";

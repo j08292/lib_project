@@ -18,6 +18,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import kr.spring.event.domain.EventCommand;
 import kr.spring.event.service.EventService;
+import kr.spring.util.EventFileUtil;
 import kr.spring.util.FileUtil;
 
 @Controller
@@ -59,7 +60,7 @@ public class EventUpdateController {
 		//업로드되는 파일이 없을 경우 기존 파일명 셋팅
 		oldFileName = event.getEvent_filename();
 		if(!eventCommand.getEvent_upload().isEmpty()){
-			eventCommand.setEvent_filename(FileUtil.rename(eventCommand.getEvent_upload().getOriginalFilename()));
+			eventCommand.setEvent_filename(EventFileUtil.rename(eventCommand.getEvent_upload().getOriginalFilename()));
 		}else{
 			//전송된 파일이 없을 경우
 			eventCommand.setEvent_filename(oldFileName);
@@ -69,7 +70,7 @@ public class EventUpdateController {
 		status.setComplete();
 		
 		if(!eventCommand.getEvent_upload().isEmpty()){
-			File file = new File(FileUtil.UPLOAD_PATH+"/"+eventCommand.getEvent_filename());
+			File file = new File(EventFileUtil.UPLOAD_PATH+"/"+eventCommand.getEvent_filename());
 			eventCommand.getEvent_upload().transferTo(file);
 			
 			if(oldFileName!=null){
