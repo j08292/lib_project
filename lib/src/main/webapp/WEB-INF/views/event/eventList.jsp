@@ -19,7 +19,7 @@
             </div>
 
         </section>
-	
+	<br><br>
 		<div class="panel-body">
 			<form action="list.do" id="search_form"  class="form-inline" method="get" style="text-align:center">
 				<select name="keyfield" id="slectBox" class="form-control">
@@ -32,7 +32,7 @@
 				<input type="submit" value="찾기" class="btn btn-default">
 			</form>					
 		</div>
-	</div>
+	
 				
 							
 		<!-- 이벤트 목록 -->
@@ -76,13 +76,12 @@
 				</c:forEach>
 			</c:if>
 		</div>
-		
+		<br><br>
 		<!-- pagingHtml -->	
 		<div align="center">${pagingHtml}</div>
 
-	</div>
-		<!-- 이벤트 목록  끝 -->
-	</div>
+	<br><br><br><br><br><br>
+	
 
 </section>
 <!-- 이벤트 content 끝 -->
