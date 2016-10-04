@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
+import kr.spring.book.domain.DeliveryCommand;
 import kr.spring.bookrent.domain.AdminBookrentCommand;
 import kr.spring.penalty.domain.PenaltyCommand;
 
@@ -28,4 +29,7 @@ public interface AdminBookrentMapper {
 	public void reserveToWaiting(Integer list_num);//예약도서 -> 대출대기
 	@Update("UPDATE bookrent SET rent_status=#{rent_status},rent_returndate=sysdate WHERE rent_num=#{rent_num}")
 	public void updateRentCancel(AdminBookrentCommand bookrent);//입금 지연등의 이유로 대여 취소
+	
+	@Select("SELECT * FROM delivery WHERE rent_num=#{rent_num}")
+	public DeliveryCommand selectDelivery(int rent_num);//배송지정보
 }

@@ -8,7 +8,7 @@ public class BookRentCommand {
 	private String mem_id;
 	private Date rent_regdate;
 	private int rent_status;
-	private String rent_returndate;
+	private Date rent_returndate;
 	private String list_title;
 	private String list_filename;
 
@@ -52,11 +52,11 @@ public class BookRentCommand {
 		this.rent_status = rent_status;
 	}
 
-	public String getRent_returndate() {
+	public Date getRent_returndate() {
 		return rent_returndate;
 	}
 
-	public void setRent_returndate(String rent_returndate) {
+	public void setRent_returndate(Date rent_returndate) {
 		this.rent_returndate = rent_returndate;
 	}
 
@@ -76,4 +76,10 @@ public class BookRentCommand {
 		this.list_filename = list_filename;
 	}
 
+	@Override
+	public String toString() {
+		return "BookRentCommand [rent_num=" + rent_num + ", list_num=" + list_num + ", mem_id=" + mem_id
+				+ ", rent_regdate=" + rent_regdate + ", rent_status=" + rent_status + ", rent_returndate="
+				+ rent_returndate + ", list_title=" + list_title + ", list_filename=" + list_filename + "]";
+	}
 }

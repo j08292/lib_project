@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import kr.spring.book.domain.DeliveryCommand;
 import kr.spring.bookrent.dao.AdminBookrentMapper;
 import kr.spring.bookrent.domain.AdminBookrentCommand;
 import kr.spring.penalty.domain.PenaltyCommand;
@@ -55,5 +56,11 @@ public class AdminBookrentServiceImpl implements AdminBookrentService{
 	@Override
 	public void updateRentCancel(AdminBookrentCommand bookrent) {
 		bookrentMapper.updateRentCancel(bookrent);
-	}	
+	}
+
+	@Override
+	public DeliveryCommand selectDelivery(int rent_num) {
+		return bookrentMapper.selectDelivery(rent_num);
+	}
+
 }

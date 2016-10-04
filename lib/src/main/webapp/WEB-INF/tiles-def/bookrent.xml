@@ -19,6 +19,9 @@
 			<add-attribute value="/lib/resources/admin/js/plugins/morris/morris-data.js" />
 			<add-attribute value="/lib/resources/admin/js/adminBookrent.js" />
 		</put-list-attribute>	
+	</definition>
+	
+	<definition name="deliveryAddress"  template="/WEB-INF/views/bookrent/deliveryAddress.jsp">
 	</definition>	
 	
 </tiles-definitions>
