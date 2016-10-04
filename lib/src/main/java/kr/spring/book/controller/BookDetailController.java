@@ -39,12 +39,12 @@ public class BookDetailController {
 		String date = null;
 		
 		List<BookRentCommand> bookrentCommand = bookRentService.selectList(list_num);
-		for(int i=0; i<bookrentCommand.size(); i++){
+		/*for(int i=0; i<bookrentCommand.size(); i++){
 			if(bookrentCommand.get(i).getRent_status() == 0){
 				date = bookrentCommand.get(i).getRent_returndate();
 				date = date.substring(0, 10);
 			}
-		}
+		}*/
 		
 		if(status == bookRentService.recentStatus(list_num)){
 			if(log.isDebugEnabled()){
