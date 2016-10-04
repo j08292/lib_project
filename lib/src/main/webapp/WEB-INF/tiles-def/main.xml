@@ -34,7 +34,7 @@
 			<add-attribute value="../resources/user/js/datepicker.js" />
 			<add-attribute value="../resources/user/js/view.js" />
 			<add-attribute value="../resources/user/js/reserve.js" />
-			<add-attribute value="../resources/user/js/search.js"/>
+			<add-attribute value="../resources/user/js/searchBox.js"/>
         </put-list-attribute>
     </definition>
     
