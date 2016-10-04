@@ -15,7 +15,7 @@ public class EventFileUtil {
 	//public static String UPLOAD_PATH="D:/JavaStudy/Workspace/lib_project/lib/src/main/webapp/upload";
 	
 	//ÇÐ¿ø
-	public static String UPLOAD_PATH="F:/javaStudy/workspace/lib_cys/src/main/webapp/event_upload";
+	public static String UPLOAD_PATH="F:/javaStudy/workspace/lib_project/lib/src/main/webapp/event_upload";
 	
 	public static String rename(String fileName)throws Exception{
 
