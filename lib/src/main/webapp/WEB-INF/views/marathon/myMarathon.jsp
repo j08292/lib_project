@@ -82,7 +82,7 @@
 				한줄평을 남기셨습니다.
 				</c:if>
 				<c:if test="${article.gradecheck eq 0}">
-				<input type="button" value="한줄평쓰기" onclick="">
+				<input type="button" value="한줄평쓰기" onclick="location.href='${pageContext.request.contextPath}/book/detail.do?list_title=${article.list_title}&list_filename=${article.list_filename}&list_num=${article.list_num}'">
 				</c:if>
 				</td>
 			</tr>
