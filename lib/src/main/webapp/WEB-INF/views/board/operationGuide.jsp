@@ -1,3 +1,5 @@
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -16,6 +18,10 @@
 <section id="page-title">
 	<div class="container clearfix">
 		<h1>체감On도 이용안내</h1>
+		&nbsp;&nbsp;<font color="pink" size="5pt">체</font><font color="gray" size="4pt">험하고</font> <font color="pink" size="5pt">감</font><font color="gray" size="4pt">상하는</font> <font color="pink" size="5pt">On</font>line<font color="pink" size="5pt">도</font><font color="gray" size="4pt">서관</font>
+				<br><br>
+		&nbsp;&nbsp;<font  size="5pt">체</font><font color="gray" size="4pt">험하고</font> <font size="5pt">감</font><font color="gray" size="4pt">상하는</font> <font size="5pt">On</font>line<font size="5pt">도</font><font color="gray" size="4pt">서관</font>
+				<br><br>
 		<ol class="breadcrumb">
 			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
 			<li class="active">Library Use Guidance</li>
@@ -31,8 +37,7 @@
 			<!-- 내용입력 시작-->
 			<form:form action="operationGuide.do" enctype="multipart/form-data"
 				method="get">
-				<font color="pink" size="14pt">체</font>험하고 <font color="pink" size="14pt">감</font>상하는  <font color="pink" size="14pt">On</font>line <font color="pink" size="14pt">도</font>서관
-				<br><br>
+				
 				<h4>1. 체감On도 이용하기</h4>
          				 ▶  &nbsp;저희 <font color="pink">체감On도</font>는 희망하는 도서를 <b>온라인으로 예약 및 대여</b> 등의 서비스를 제공하는 홈페이지 입니다.<br>
          				  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;또한 회원들을 대상으로 다양한 <b>강연
@@ -48,11 +53,20 @@
 
 				<h4>2. 도서대여</h4>
          			
-         				 ▶ &nbsp; 로그인 후 상단의<b> &lt;BOOK &gt;</b>메뉴의 <b>'도서검색'</b>을 통해 희망하는 책을 검색한 후 대여가 가능합니다.<br>
-         				 ▶&nbsp; 대여한 도서의 분실 또는 훼손시 동일 도서로 구입 또는 해당 도서의 현시가로 변상해야 합니다.<br>
-         				 ▶&nbsp; 1인당 최대 대여 권수는 5권으로 제한됩니다.<br>
+         				 ▶ &nbsp; 로그인 후 상단의<b> &lt;BOOK &gt;</b>메뉴의 <b>'도서검색'</b>을 통해 희망하는 책을 검색한 후 대여가 가능합니다.<br><br>
+         				 ▶&nbsp; 대여한 도서의 분실 또는 훼손시 동일 도서로 구입 또는 해당 도서의 현시가로 변상해야 합니다.<br><br>
+         				 ▶&nbsp; 1인당 최대 대여 권수는 5권으로 제한됩니다.<br><br>
          				 ▶&nbsp; 대여한 도서를 연체할 경우 연체한 기간만큼 도서대여가 정지됩니다.<br>
-         				 ▶&nbsp; 서비스 제공을 통해 발생하는 수익금은 도서추가 및 서비스 발전을 위해 사용됩니다.
+         				 &nbsp;&nbsp; 단, 금, 토·일요일, 법정 공휴일,예약도서관이 휴관인 경우는 수령가능일이 연기될 수 있습니다.<br><br>
+         				 
+						 
+						 ▶&nbsp; 도서 대여가격은 무료입니다. 단 택배대여시 별도의 비용이 발생합니다.<br><br>
+						 ▶&nbsp; 도서대여·반납는 무인대여와 택배대여방법이 있습니다. <br>
+						 	 &nbsp;&nbsp;<b>-택배대여 이용시 배송비는 왕복배송비이며, 반납할 시 무인반납을 이용하더라도 택배비는 환불되지 않습니다.</b><br>
+							 &nbsp;&nbsp;-도서무인대여서비스는 <b>수원역, 수원시청역, 성균관대역</b>에서 가능합니다.<br><br>
+						 ▶&nbsp; 서비스 제공을 통해 발생하는 수익금은 도서추가 및 서비스 발전을 위해 사용됩니다.<br><br>
+						 ▶&nbsp; 반납할 도서는 무인반납, 택배반납을 통해 반납해주시길 바랍니다.<br><br>
+						▶&nbsp; 서비스 제공을 통해 발생하는 수익금은 도서추가 및 서비스 발전을 위해 사용됩니다.<br><br>
          				 
          			<br>
 				<br>
