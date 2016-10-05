@@ -14,13 +14,13 @@
 			<div id="logo">
 				<a href="${pageContext.request.contextPath}/main/main.do"
 					class="standard-logo"
-					data-dark-logo="${pageContext.request.contextPath}/resources/user/images/logo-dark.png"><img
-					src="${pageContext.request.contextPath}/resources/user/images/logo.png"
+					data-dark-logo="${pageContext.request.contextPath}/resources/user/images/logo-dark_1.png"><img
+					src="${pageContext.request.contextPath}/resources/user/images/logo_1.png"
 					alt="Canvas Logo"></a> <a
 					href="${pageContext.request.contextPath}/main/main.do"
 					class="retina-logo"
-					data-dark-logo="${pageContext.request.contextPath}/resources/user/images/logo-dark@2x.png"><img
-					src="${pageContext.request.contextPath}/resources/user/images/logo@2x.png"
+					data-dark-logo="${pageContext.request.contextPath}/resources/user/images/logo-dark@2x_1.png"><img
+					src="${pageContext.request.contextPath}/resources/user/images/logo@2x_1.png"
 					alt="Canvas Logo"></a>
 			</div>
 			<!-- #logo end -->
