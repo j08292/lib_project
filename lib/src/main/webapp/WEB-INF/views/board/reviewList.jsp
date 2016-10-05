@@ -28,7 +28,7 @@
 	<form action="list.do" id="search_form" method="get" class="form-inline">
 		<div align="center">
 			<ul class="search">
-				<li><select name="keyfield" class="form-control">
+				<li><select name="keyfield" id="slectBox" class="form-control">
 						<option value="review_title">제목</option>
 						<option value="mem_id">ID</option>
 						<option value="review_content">내용</option>

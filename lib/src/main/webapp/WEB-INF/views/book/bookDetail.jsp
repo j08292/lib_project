@@ -53,7 +53,7 @@
 								</tr>
 							</table>
 							<p style="margin: 0 auto; text-align: right;">
-								<input type="button" value="목록으로" onclick="location.href='${pageContext.request.contextPath}/book/search.do'">
+								<input type="button" value="목록으로" class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/book/search.do'">
 							</p>
 						</div>
 					</div>
@@ -204,7 +204,7 @@
 									<span class="letter-count">140/140</span>
 								</div>
 								<div id="grade_second" align="right">
-									<input type="submit" class="col-md-2" value="등록">
+									<input type="submit" class="col-md-2" class="btn btn-default"  value="등록">
 								</div>
 							</c:if>
 						</form>
@@ -214,7 +214,7 @@
 					<div class="panel-body">
 						<div id="output"></div>
 						<div class="paging_button" style="display: none;">
-							<input type="button" value="다음글보기	">
+							<input type="button" value="다음글보기	" class="btn btn-default" >
 						</div>
 
 						<div id="loading" style="display: none;">

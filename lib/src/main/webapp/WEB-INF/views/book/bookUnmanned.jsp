@@ -64,7 +64,7 @@
 								<p style = "text-align:left;">
 									<select name = "selectBox" class = "form-control selectBox" style = "float:left; width:120px; text-align:center;"
 									 id = "selectBox" name = "selectBox" onchange = "getSelectValue(this.form);" >
-										<option value="s1">수원역</option>
+										<option value="s1" selected = "selected">수원역</option>
 										<option value="s2">수원시청역</option>
 										<option value="s3">성균관대역</option>
 									</select>
