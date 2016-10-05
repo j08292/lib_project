@@ -34,7 +34,7 @@
 	</c:if>
 	<c:if test="${count > 0}">
 		<div class="table-responsive">
-			<table class="table table-hover"  style="text-align:center;">
+			<table class="table table-hover">
 				<thead>
 					<tr>
 						<th style="text-align:center;">번호</th>
@@ -47,11 +47,11 @@
 				<tbody>
 					<c:forEach var="article" items="${list}">
 						<tr>
-							<td>${article.notice_num}</td>
+							<td style="text-align:center;">${article.notice_num}</td>
 							<td><a href="detail.do?notice_num=${article.notice_num}">${article.notice_title}</a></td>
-							<td>관리자</td>
-							<td>${article.notice_regdate}</td>
-							<td>${article.notice_hit}</td>							
+							<td style="text-align:center;">관리자</td>
+							<td style="text-align:center;">${article.notice_regdate}</td>
+							<td style="text-align:center;">${article.notice_hit}</td>							
 						</tr>
 					</c:forEach>
 				</tbody>

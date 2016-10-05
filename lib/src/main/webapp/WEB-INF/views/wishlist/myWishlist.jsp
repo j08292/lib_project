@@ -33,7 +33,7 @@
 						value="${pageContext.request.contextPath}/wishlist/list.do?wish_status=3">소장중</option>
 				</select>
 			</form>
-
+			<br>
 			<c:if test="${param.wish_status != null }">
 				<script type="text/javascript">
 					$('#selectBox').change(function() {
@@ -62,11 +62,11 @@
 						<table class="table table-hover provideList">
 							<thead>
 								<tr>
-									<th>신청번호</th>
-									<th>책제목</th>
-									<th>신청날짜</th>
-									<th>진행상태</th>
-									<th>비고</th>
+									<th style="text-align:center;">신청번호</th>
+									<th style="text-align:center;">책제목</th>
+									<th style="text-align:center;">신청날짜</th>
+									<th style="text-align:center;">진행상태</th>
+									<th style="text-align:center;">비고</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -78,14 +78,14 @@
 								<c:if test="${count > 0 }">
 									<c:forEach var="article" items="${list}">
 										<tr>
-											<td>${article.wish_num}</td>
-											<td><a href="#">${article.wish_title}</a></td>
-											<td>${article.wish_regdate}</td>
-											<td><c:if test="${article.wish_status == 0}">신청중</c:if>
+											<td style="text-align:center;">${article.wish_num}</td>
+											<td style="text-align:center;"><a href="#">${article.wish_title}</a></td>
+											<td style="text-align:center;">${article.wish_regdate}</td>
+											<td style="text-align:center;"><c:if test="${article.wish_status == 0}">신청중</c:if>
 												<c:if test="${article.wish_status == 1}">처리중</c:if> <c:if
 													test="${article.wish_status == 2}">취소됨</c:if> <c:if
 													test="${article.wish_status == 3}">소장중</c:if></td>
-											<td></td>
+											<td style="text-align:center;"></td>
 										</tr>
 									</c:forEach>
 								</c:if>
