@@ -90,36 +90,69 @@ public class BookRentController {
 			@ModelAttribute("command") @Valid DeliveryCommand deliveryCommand, BindingResult result) {
 		
 		String userId = (String) session.getAttribute("userId");
-		
+
 		List<BasketCommand> list = null;
 		list = basketService.select_book_basket(userId);
-		
+
 		BookRentCommand bookRentCommand = new BookRentCommand();
-		for(int i=0; i<list.size(); i++){
+		
+		int num = 0;
+		String rnum = null;
+		String lnum = null;
+		String list_num = null;
+		String rent_num = null;
+		String list_str = "";
+		String rent_str = "";
+		
+		for (int i = 0; i < list.size(); i++) {
 			
 			bookRentCommand.setList_num(list.get(i).getList_num());
 			bookRentCommand.setMem_id(userId);
-			
+			bookRentCommand.setRent_status(3);
+
 			bookRentService.insert(bookRentCommand);
 			basketService.delete(list.get(i).getBasket_num());
-			
-			int num = bookRentService.recentRent_num(list.get(i).getList_num());
+			num = bookRentService.recentRent_num(list.get(i).getList_num());
 			
 			if (log.isDebugEnabled()) {
 				log.debug("num : " + num);
 			}
 			
-			deliveryCommand.setMem_id(userId);
-			deliveryCommand.setRent_num(num);
+			list_num = null;
+			rent_num = null;
+			
+			num = bookRentService.recentRent_num(list.get(i).getList_num());
+			
 			deliveryCommand.setList_num(list.get(i).getList_num());
-			deliveryCommand.setDelivery_status(0);
-			deliveryService.insert(deliveryCommand);
+			deliveryCommand.setRent_num(num);
+
+			lnum = Integer.toString(list.get(i).getList_num());
+			rnum = Integer.toString(num);
+			
+			list_str += lnum + ",";; 
+			rent_str += rnum + ",";
+
+			if (log.isDebugEnabled()) {
+				log.debug("lnum : " + lnum);
+				log.debug("rnum : " + rnum);
+				log.debug("list_num : " + list_num);
+				log.debug("rent_num : " + rent_num);
+				log.debug("str : " + list_str); 
+			}
+			
 		}
 		
-		if(log.isDebugEnabled()){  
-			log.debug("list.size(): " + list.size()); 
+			deliveryCommand.setMem_id(userId);
+			deliveryCommand.setString_rentnum(rent_str);
+			deliveryCommand.setString_listnum(list_str);
+			deliveryCommand.setDelivery_status(0);
+		
+			deliveryService.insert(deliveryCommand);
+
+		if (log.isDebugEnabled()) {
+			log.debug("list.size(): " + list.size());
 			log.debug("userId : " + userId);
-			log.debug("deliveryCommand : " + deliveryCommand );
+			log.debug("deliveryCommand : " + deliveryCommand);
 			log.debug("list : " + list);
 		}
 		
