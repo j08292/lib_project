@@ -51,7 +51,7 @@
 
 				<h4>1. 도서대여</h4>
          			
-         				 ▶ &nbsp; 로그인 후 상단의<b> &lt;BOOK &gt;</b>메뉴의 <b>'도서검색'</b>을 통해 희망하는 책을 검색한 후 대여가 가능합니다.<br><br>
+         				 ▶ &nbsp; 로그인 후 상단의<b> &lt;도서 &gt;</b>메뉴의 <b>'도서검색'</b>을 통해 희망하는 책을 검색한 후 대여가 가능합니다.<br><br>
          				 ▶&nbsp; 대여한 도서의 분실 또는 훼손시 동일 도서로 구입 또는 해당 도서의 현시가로 변상해야 합니다.<br><br>
          				 ▶&nbsp; 1인당 최대 대여 권수는 5권으로 제한됩니다.<br><br>
          				 ▶&nbsp; 대여한 도서를 연체할 경우 연체한 기간만큼 도서대여가 정지됩니다.<br>
@@ -73,8 +73,8 @@
 				<br>
 
 				<h4>2. 그 밖의 문의사항</h4>	 
-         				 ▶ &nbsp;홈페이지 이용에 관한 문의사항이 있을 경우 상단의 <b>&lt;BOARD&gt;</b>메뉴의 <span
-					href="${pageContext.request.contextPath}/board/qnaList.do"><b>질문게시판</b></span>을 이용해주시길 바랍니다.<br>
+         				 ▶ &nbsp;홈페이지 이용에 관한 문의사항이 있을 경우 상단의 <b>&lt;게시판&gt;</b>메뉴의 <span
+					href="${pageContext.request.contextPath}/board/qnaList.do"><b>QnA</b></span>를 이용해주시길 바랍니다.<br>
          				 &nbsp; &nbsp; &nbsp;	-  &nbsp;전화 문의(09:00am ~ 18:00pm) :☎ 123-456-7890 
          				 
 					<!--
@@ -98,6 +98,3 @@
 <div id="gotoTop" class="icon-angle-up"></div>
 <!-- Footer Scripts (지우면안됨X)-->
 <script type="text/javascript" src="js/functions.js"></script>
-
-
-OO

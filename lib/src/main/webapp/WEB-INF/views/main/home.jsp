@@ -121,14 +121,14 @@
                            <a href="${pageContext.request.contextPath }/board/operationGuide.do"><i class="icon-ok"></i></a>
                         </div>
                         <h3>이용안내</h3>
-                        <p>온라인 도서관 이용안내 및 규칙</p>
+                        <p>체감On도 이용안내 및 규칙</p>
                      </div>
                      <br>
                      <div class="feature-box fbox-right topmargin" data-animate="fadeIn" data-delay="200">
                         <div class="fbox-icon">
                            <a href="${pageContext.request.contextPath}/book/search.do"><i class="icon-line-paper"></i></a>
                         </div>
-                        <h3>도서대출</h3>
+                        <h3>도서대여</h3>
                         <p>읽고싶은 도서를 편리하게 만나보세요.</p>
                      </div>
                      <br>
@@ -165,7 +165,7 @@
                            <a href="${pageContext.request.contextPath }/board/qnaList.do"><i class="icon-bulb"></i></a>
                         </div>
                         <h3>문의 게시판</h3>
-                        <p>온라인 도서관 이용 관련 문의 내용은<br> 해당 게시판을 이용해 주세요.</p>
+                        <p>체감On도 이용 관련 문의 내용은<br> 해당 게시판을 이용해 주세요.</p>
                      </div>
                   </div>
                </div>
