@@ -110,7 +110,7 @@
 															alert("이미 대여한 책입니다.");
 														}else if(data.result == "noUserId"){
 															alert("로그인을 해주세요.")
-															location.href="http://localhost:8080/lib_cih/member/login.do";
+															location.href="http://localhost:8080/lib/member/login.do";
 														}
 													},
 													error:function(data) {

@@ -120,14 +120,6 @@
 								<img src="/lib/upload/${book.list_filename }" class ="bookfilename" width="30"></a></td>
 								<td>${book.list_title }</td>
 								<td>1 권</td>
-								<td>
-								<c:if test="${delivery.delivery_status == 0 }">
-								3000원								
-								</c:if>
-								<c:if test="${delivery.delivery_status == 1 }">
-								-								
-								</c:if>
-								</td>								
 									<c:choose>
 										<c:when test="${rent.rent_status == 0 }">
 											<td>배송완료</td>
