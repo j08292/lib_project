@@ -30,7 +30,7 @@
 						<th style="text-align:center;">제목</th>
 						<th style="text-align:center;">작성자</th>
 						<th style="text-align:center;">작성일</th>
-						<th style="text-align:center;">전체 선택/해제<input type="checkbox" id="allCheck" name="review_num"></th>
+						<th style="text-align:center;">전체 선택/해제<input type="checkbox" id="allCheck"></th>
 					</tr>
 				</thead>				
 				<tbody style="text-align:center;">

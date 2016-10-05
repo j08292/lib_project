@@ -36,7 +36,7 @@
 					<th style="text-align:center;">작성일</th>
 					<th style="text-align:center;">답변여부</th>
 					<th style="text-align:center;">조회수</th>
-					<th style="text-align:center;">전체 선택/해제<input type="checkbox" id="allCheck" name="qna_num"></th>
+					<th style="text-align:center;">전체 선택/해제<input type="checkbox" id="allCheck"></th>
 				</tr>
 			</thead>
 			<c:forEach var="article" items="${list}">

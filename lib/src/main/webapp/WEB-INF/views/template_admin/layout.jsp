@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>관리자</title>
+    <title>체감On도 관리자페이지</title>
 	<c:forEach var="cssName" items="${cssList}">
 	<link rel="stylesheet" href="<c:out value='${cssName}' />"/>
 	</c:forEach>
