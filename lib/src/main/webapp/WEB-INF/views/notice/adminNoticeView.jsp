@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <div>
-	<h1 class="align-center">공지사항</h1>
+	<h1 class="align-center"><spring:message code="notice.detail.title"/></h1>
 	<div class="table-responsive">
 		<table class="table table-striped">
 			<thead>
