@@ -43,7 +43,7 @@
 	<table>
 		<tr>
 			<td class="align-right"><input type="button" value="글쓰기" 
-				class="btn btn-primary btn-sm" onclick="location.href='write.do'">
+				class="btn btn-primary btn-sm" onclick="location.href='qnaWrite.do'">
 			</td>
 		</tr>
 	</table><br>

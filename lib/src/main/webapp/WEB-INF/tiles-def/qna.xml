@@ -29,7 +29,7 @@
     </definition>
     
     <definition name="qnaPasswd" extends="qnaList">
-    	<put-attribute name="title" value="글 상세"/>
+    	<put-attribute name="title" value="글 비밀번호 확인"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/qnaPasswd.jsp"/>
     </definition>
     
