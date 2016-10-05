@@ -42,7 +42,7 @@ public class MemberMyOrderDetailController {
 			@RequestParam(value = "list_num")Integer list_num,
 			@RequestParam(value = "list_title")String list_title) {
 
-		String mem_id = (String) session.getAttribute("userId");
+String mem_id = (String) session.getAttribute("userId");
 		
 		MemberCommand member = new MemberCommand();
 		member = memberService.selectMember(mem_id);
@@ -53,15 +53,27 @@ public class MemberMyOrderDetailController {
 		BookRentCommand rent = new BookRentCommand();
 		rent = bookRentService.selectRent(rent_num);
 		
+		String string_rentnum = Integer.toString(rent_num);
+		
 		DeliveryCommand delivery = new DeliveryCommand();
-		delivery = deliveryService.delivery(rent_num);
+		delivery = deliveryService.delivery_string(string_rentnum);
+		
+//		String lstr = delivery.getString_listnum();
+//		String [] larr = lstr.split(",");
+//		int [] intlarr = null;
+//		for(int i=0; i<larr.length; i++){
+//			intlarr[i] = Integer.parseInt(larr[i]);
+//		}
+		
 
 		if (log.isDebugEnabled()) {
+//			log.debug("intlarr[] : " + intlarr);
 			log.debug("rent : " + rent );
 			log.debug("member : " + member);
 			log.debug("book : " + book);
 			log.debug("delivery : " + delivery);
 		}
+
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("memberMyOrderDetail");
 		mav.addObject("rent", rent);

@@ -44,7 +44,7 @@
 						<option
 							value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=4">취소</option>
 						<option
-							value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=5">무인대여</option>
+							value="${pageContext.request.contextPath}/member/myOrder.do?rent_status=5">무인대여 대기</option>
 					</select>
 					<br>
 					<br>
@@ -135,7 +135,7 @@
 														취소
 														</c:when>
 														<c:when test="${rent.rent_status == 5 }">
-														무인대여
+														무인대여 대기
 														</c:when>
 													</c:choose>
 												</td>

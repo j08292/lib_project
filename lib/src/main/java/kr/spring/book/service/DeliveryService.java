@@ -13,4 +13,6 @@ public interface DeliveryService {
 	public void insert(DeliveryCommand delivery);
 	@Transactional(readOnly=true)
 	public DeliveryCommand delivery(int rent_num);
+	@Transactional(readOnly=true)
+	public DeliveryCommand delivery_string(String string_rentnum);
 }

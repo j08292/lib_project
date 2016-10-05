@@ -36,13 +36,17 @@
     	<put-attribute name="title" value="주문내역"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberMyOrder.jsp"/>
     </definition>
-    <definition name="memberMyOrderS" extends="memberWrite">
+     <definition name="memberMyOrderS" extends="memberWrite">
     	<put-attribute name="title" value="강연 예약내역"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberMyOrderS.jsp"/>
     </definition>
      <definition name="memberMyOrderDetail" extends="memberWrite">
-    	<put-attribute name="title" value="주문내역"/>
+    	<put-attribute name="title" value="도서 상세내역"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberMyOrderDetail.jsp"/>
+    </definition> 
+    <definition name="memberMyOrderSDetail" extends="memberWrite">
+    	<put-attribute name="title" value="강연 예약내역"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberMyOrderSDetail.jsp"/>
     </definition>
     <definition name="pageError" extends="main">
     	<put-attribute name="title" value="에러페이지"/>

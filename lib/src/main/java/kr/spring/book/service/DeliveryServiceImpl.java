@@ -30,4 +30,10 @@ public class DeliveryServiceImpl implements DeliveryService{
 		return deliveryMapper.delivery(rent_num);
 	}
 
+	@Override
+	public DeliveryCommand delivery_string(String string_rentnum) {
+		return deliveryMapper.delivery_string(string_rentnum);
+	}
+
+
 }

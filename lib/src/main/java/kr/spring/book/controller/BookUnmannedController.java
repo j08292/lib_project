@@ -89,6 +89,7 @@ public class BookUnmannedController {
 		
 		rentCommand.setList_num(list_num);
 		rentCommand.setMem_id(userId);
+		rentCommand.setRent_status(5);
 		bookRentService.insert(rentCommand);
 		
 		int num = bookRentService.recentRent_num(list_num);
@@ -96,6 +97,8 @@ public class BookUnmannedController {
 		DeliveryCommand delivery = new DeliveryCommand();
 		delivery.setList_num(list_num);
 		delivery.setRent_num(num);
+		delivery.setString_listnum(Integer.toString(list_num));
+		delivery.setString_rentnum(Integer.toString(num));
 		delivery.setDelivery_address(loc);
 		delivery.setSample3_postcode("");
 		delivery.setDelivery_cell(member.getMem_cell());
@@ -104,7 +107,6 @@ public class BookUnmannedController {
 		delivery.setMem_id(userId);
 		delivery.setDelivery_status(1);
 		deliveryService.insert(delivery);
-		
 		
 		if(log.isDebugEnabled()){  
 			log.debug("list_num : " + list_num);

@@ -47,6 +47,7 @@ public class MemberMyOrderController {
 			@RequestParam(value="pageNum",defaultValue="1") 
 				int currentPage){
 		
+
 		String mem_id = (String)session.getAttribute("userId");
 		String status = request.getParameter("rent_status");
 		int rent_status;

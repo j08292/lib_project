@@ -37,7 +37,6 @@
 											<th style="text-align:center;">저자</th>
 											<th style="text-align:center;">출판사</th>
 											<th style="text-align:center;">권수</th>
-											<th style="text-align:center;">대여 가격</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -50,18 +49,11 @@
 												<td style="vertical-align:middle;text-align:center;">${basket.list_writer}</td>
 												<td style="vertical-align:middle;text-align:center;">${basket.list_publish}</td>
 												<td style="vertical-align:middle;text-align:center;">${basket.basket_amount }</td>
-												<td style="vertical-align:middle;text-align:center;">${basket.basket_price }</td>
 											</tr>
 										</c:forEach>
 									</tbody>
 								</table>
 								<div style = "text-align:right;">
-									<c:if test="${num>=5}">
-										<td>[도서 대여가격] : ${price } + [배송비] : 0 = [합계] : ${total }원</td>
-									</c:if>
-									<c:if test="${num<5}">
-										<td>[도서 대여가격] : ${price } + [배송비] : 2000 = [합계] : ${total }원</td>
-									</c:if>
 									<!-- <br><br>
 									<span class = "glyphicon glyphicon-ok"></span>&nbsp;&nbsp;<span>5권 이상 대여하실 경우 배송비 무료</span> -->
 								</div>
@@ -249,7 +241,7 @@
 									<thead>
 										<tr>
 											<th>결제 금액</th>
-											<th>${total } 원</th>
+											<th>[배송비] : 3000 원</th>
 										</tr>
 									</thead>
 									<tbody>

@@ -140,5 +140,25 @@ public class SpeechServiceImpl implements SpeechService{
 		return speechMapper.getReserveCancelCount(map);
 	}
 
+	@Override
+	public int getRowCount_cih(String mem_id) {
+		return speechMapper.getRowCount_cih(mem_id);
+		
+	}
+
+	@Override
+	public List<SpeechReservationCommand> selectSpeechRes_cih(String mem_id) {
+		return speechMapper.selectSpeechRes_cih(mem_id);
+	}
+
+	@Override
+	public List<SpeechReservationCommand> speech_list_cih(Map<String, Object> map) {
+		return speechMapper.speech_list_cih(map);
+	}
+
+	@Override
+	public SpeechReservationCommand selectSpeechResNum_cih(int speech_reserve_num) {
+		return speechMapper.selectSpeechResNum_cih(speech_reserve_num);
+	}
 
 }

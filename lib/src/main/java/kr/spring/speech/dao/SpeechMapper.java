@@ -63,4 +63,15 @@ public interface SpeechMapper {
 	//강연 취소 신청자
 	public List<SpeechReservationCommand> speechReserveCancelList(Map<String, Object> map);
 	public int getReserveCancelCount(Map<String, Object> map);
+
+	//마이페이지에서 아이디별로 예약 내역 불러오기----CIH 추가
+	public List<SpeechReservationCommand> speech_list_cih(Map<String,Object> map);
+	@Select("SELECT count(*) FROM speech s1, speech_reservation s2 WHERE s1.speech_num=s2.speech_num and s2.mem_id = #{mem_id}")
+	public int getRowCount_cih(String mem_id);
+	@Select("SELECT * FROM speech s1, speech_reservation s2 WHERE s1.speech_num=s2.speech_num and s2.mem_id = #{mem_id}")
+	public List<SpeechReservationCommand> selectSpeechRes_cih(String mem_id);
+	@Select("SELECT * FROM speech s1, speech_reservation s2 WHERE s1.speech_num=s2.speech_num and s2.speech_reserve_num = #{speech_reserve_num}")
+	public SpeechReservationCommand selectSpeechResNum_cih(int speech_reserve_num);
+		
+		
 }

@@ -50,4 +50,13 @@ public interface SpeechService {
 	//강연 취소 신청자
 	public List<SpeechReservationCommand> speechReserveCancelList(Map<String, Object> map);
 	public int getReserveCancelCount(Map<String, Object> map);
+	
+	@Transactional(readOnly=true)
+	public List<SpeechReservationCommand> speech_list_cih(Map<String,Object> map);
+	@Transactional(readOnly=true)
+	public int getRowCount_cih(String mem_id);
+	@Transactional(readOnly=true)
+	public List<SpeechReservationCommand> selectSpeechRes_cih(String mem_id);
+	@Transactional(readOnly=true)
+	public SpeechReservationCommand selectSpeechResNum_cih(int speech_reserve_num);
 }

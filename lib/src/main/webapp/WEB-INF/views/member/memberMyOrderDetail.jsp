@@ -97,7 +97,6 @@
 								<th>도서정보</th>
 								<th>도서명</th>
 								<th>수량</th>
-								<th>가격</th>
 								<th>배송관련</th>
 							</tr>
 							<tr>
@@ -123,7 +122,7 @@
 								<td>1 권</td>
 								<td>
 								<c:if test="${delivery.delivery_status == 0 }">
-								1000원								
+								3000원								
 								</c:if>
 								<c:if test="${delivery.delivery_status == 1 }">
 								-								
@@ -146,7 +145,7 @@
 											<td>취소</td>
 										</c:when>
 										<c:when test="${rent.rent_status == 5 }">
-											<td>무인대여 완료</td>
+											<td>무인대여 대여</td>
 										</c:when>
 									</c:choose>
 							</tr>
@@ -167,7 +166,7 @@
 							</tr>
 							<tr>
 								<td style = "width:30%;">무통장입금</td>
-								<td style = "width:35%;"></td>
+								<td style = "width:35%;">3000원</td>
 								<td style = "width:35%;"></td>
 							</tr>
 						</tbody>

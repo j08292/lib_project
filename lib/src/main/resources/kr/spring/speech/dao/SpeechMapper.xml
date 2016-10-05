@@ -203,4 +203,44 @@
 		WHERE speech_reserve_status=2
 	</select>
 	<!-- 강연 예약 취소자 -->
+	
+	
+	<!--마이페이지에서 불러오기  -->
+	<select id="speech_list_cih" parameterType="map" resultType="speechReservationCommand">
+		SELECT
+		 	*
+		FROM (SELECT 
+		        a.*,
+		        rownum rnum
+		      FROM (SELECT 
+		      	s2.*, s1.speech_title, s1.speech_price,s1.speech_regdate
+		            FROM speech s1, speech_reservation s2
+		            <where>
+		            	s1.speech_num = s2.speech_num and s2.mem_id = #{mem_id} 
+		            	<if test="reserve_status == 0 ">
+		            		and s2.speech_reserve_status = 0
+		            	</if>
+		            	<if test="reserve_status == 1 ">
+		            		and s2.speech_reserve_status = 1
+		            	</if>
+		            	<if test="reserve_status == 2 ">
+		            		and s2.speech_reserve_status = 2
+		            	</if>
+		            	<if test="reserve_status == 3 ">
+		            		and s2.speech_reserve_status = 3
+		            	</if>
+			            <if test="reserve_status == 9 ">
+			            	and (s2.speech_reserve_status = 0 or
+			            	s2.speech_reserve_status = 1 or
+			            	s2.speech_reserve_status = 2 or
+			            	s2.speech_reserve_status = 3) 
+		            	</if>
+		            </where>
+		            ORDER BY s1.speech_num DESC)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>              
+	</select>
+	
+	
 </mapper>
