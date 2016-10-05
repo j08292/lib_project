@@ -51,7 +51,7 @@
 						href="${pageContext.request.contextPath}/admin/booklist/list.do">도서
 							현황</a></li>
 					<li><a
-						href="${pageContext.request.contextPath}/admin/bookrent/list.do">대출
+						href="${pageContext.request.contextPath}/admin/bookrent/list.do">대여
 							현황</a></li>
 					<li><a
 						href="${pageContext.request.contextPath}/admin/wishlist/list.do">희망
