@@ -33,7 +33,7 @@
 						<th style="text-align:center;">시작날짜</th>
 						<th style="text-align:center;">종료날짜</th>
 						<th style="text-align:center;">작성일</th>
-						<th style="text-align:center;">삭제</th>
+						<th style="text-align:center;">수정/삭제</th>
 						
 					</tr>
 				</thead>
