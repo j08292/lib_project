@@ -59,8 +59,8 @@ public class AdminBookrentServiceImpl implements AdminBookrentService{
 	}
 
 	@Override
-	public DeliveryCommand selectDelivery(int rent_num) {
-		return bookrentMapper.selectDelivery(rent_num);
+	public DeliveryCommand selectDelivery(AdminBookrentCommand bookrent) {
+		return bookrentMapper.selectDelivery(bookrent);
 	}
 
 }

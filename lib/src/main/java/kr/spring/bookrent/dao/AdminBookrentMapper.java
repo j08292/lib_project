@@ -30,6 +30,6 @@ public interface AdminBookrentMapper {
 	@Update("UPDATE bookrent SET rent_status=#{rent_status},rent_returndate=sysdate WHERE rent_num=#{rent_num}")
 	public void updateRentCancel(AdminBookrentCommand bookrent);//입금 지연등의 이유로 대여 취소
 	
-	@Select("SELECT * FROM delivery WHERE rent_num=#{rent_num}")
-	public DeliveryCommand selectDelivery(int rent_num);//배송지정보
+	@Select("SELECT * FROM delivery WHERE string_listnum like '%' || #{list_num} || ',%' AND string_rentnum like '%' || #{rent_num} || ',%' AND mem_id=#{mem_id}")
+	public DeliveryCommand selectDelivery(AdminBookrentCommand bookrent);//배송지정보
 }

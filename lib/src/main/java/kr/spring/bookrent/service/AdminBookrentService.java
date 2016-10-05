@@ -23,5 +23,5 @@ public interface AdminBookrentService {
 	public void reserveToWaiting(Integer list_num);//예약도서 -> 대출대기	
 	public void updateRentCancel(AdminBookrentCommand bookrent);//입금 지연등의 이유로 대여 취소
 
-	public DeliveryCommand selectDelivery(int rent_num);//배송지
+	public DeliveryCommand selectDelivery(AdminBookrentCommand bookrent);//배송지
 }

@@ -26,7 +26,7 @@
 		<div class="align-center">대출된 도서가 없습니다.</div>
 	</c:if>
 	<c:if test="${count > 0}">
-		<div class="table-responsive"><br>
+		<div class="table-responsive">
 			<table class="table table-hover">
 				<thead>
 					<tr>
@@ -47,7 +47,7 @@
 							<td>${article.rent_num}</td>
 							<td>${article.list_title}</td>
 							<td>${article.list_code}</td>
-							<td><a href="javascript:popup(${article.rent_num})">${article.mem_id}</a></td>
+							<td><a href="javascript:popup(${article.rent_num},${article.list_num},'${article.mem_id}')">${article.mem_id}</a></td>
 							<td>${article.rent_regdate}</td>
 							<td><c:choose>
 									<c:when test="${article.rent_status == 0}">
