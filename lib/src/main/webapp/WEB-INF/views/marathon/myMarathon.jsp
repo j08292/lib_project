@@ -29,7 +29,7 @@
 	<br>
 	</div>
 	<c:if test="${sum >=42195 && member.mrt_status eq 1 }">
-		<input type="button" value="완주혜택 신청하기" onclick="javascript:finish_event(${sum},${member.mrt_status});">
+		<input type="button" value="완주혜택 신청하기" class="button button-3d button-small button-rounded button-green" onclick="javascript:finish_event(${sum},${member.mrt_status});">
 	</c:if>
 	<br>
 	<hr size="100%">
@@ -82,7 +82,7 @@
 				한줄평을 남기셨습니다.
 				</c:if>
 				<c:if test="${article.gradecheck eq 0}">
-				<input type="button" value="한줄평쓰기" onclick="location.href='${pageContext.request.contextPath}/book/detail.do?list_title=${article.list_title}&list_filename=${article.list_filename}&list_num=${article.list_num}'">
+				<input type="button" value="한줄평쓰기" class="button button-3d button-mini button-rounded button-dirtygreen" onclick="location.href='${pageContext.request.contextPath}/book/detail.do?list_title=${article.list_title}&list_filename=${article.list_filename}&list_num=${article.list_num}'">
 				</c:if>
 				</td>
 			</tr>

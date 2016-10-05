@@ -13,9 +13,9 @@
 		FROM (SELECT 
 		        a.*,
 		        rownum rnum 
-		      FROM (SELECT * FROM penalty  ORDER BY penalty_regdate DESC)a)
+		      FROM (SELECT * FROM penalty WHERE penalty_blockcanceldate>sysdate ORDER BY penalty_regdate DESC)a)
 	      <![CDATA[
-	      WHERE penalty_blockcanceldate>sysdate AND rnum<=8
+	      WHERE rnum<=8
 		  ]]>              
 	</select>
 	
