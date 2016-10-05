@@ -19,11 +19,11 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <h3><spring:message code="qna.update.title"/></h3>
-                <span>Guest Relation</span>
+                <h1><spring:message code="qna.update.title"/></h1>
                 <ol class="breadcrumb">
                     <li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
-                    <li><a href="${pageContext.request.contextPath}/board/qnaList.do">Qna List</a></li>
+                    <li><a href="${pageContext.request.contextPath}/board/qnaList.do">QnA List</a></li>
+                    <li class="active">QnA Update</li>
                 </ol>
             </div>
 
@@ -80,6 +80,3 @@
 
     <!-- Footer Scripts (지우면안됨X)-->
     <script type="text/javascript" src="js/functions.js"></script>
-
-</body>
-</html>

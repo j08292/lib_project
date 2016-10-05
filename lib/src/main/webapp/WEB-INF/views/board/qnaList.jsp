@@ -22,7 +22,6 @@
 <!-- #page-title end -->
 
 <!-- Content(지우면안됨X)-->
-
 <div class="container clearfix">
 	<br><br>
 	<div class="panel-body">

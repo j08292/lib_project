@@ -9,7 +9,7 @@
 		<h1><spring:message code="speech.list.title"/></h1>
 		<ol class="breadcrumb">
 			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
-			<li><a href="#">나의 강연 신청 목록 추가할것</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/myOrderS.do">My Speech Reservation</a></li>
 			<li class="active">Speech List</li>
 		</ol>		
 	</div>

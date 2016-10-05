@@ -30,8 +30,8 @@
 								<tr>
 									<td style = "width:30%;">
 										<c:choose>
-											<c:when test="${!empty article.list_filename}">						
-												<img src="${pageContext.request.contextPath}/upload/${article.list_filename}"  alt="도서 이미지" style="width:250px;height:350px;">
+											<c:when test="${!empty book.list_filename}">						
+												<img src="${pageContext.request.contextPath}/upload/${book.list_filename}"  alt="도서 이미지" style="width:250px;height:350px;">
 											</c:when>
 											<c:otherwise><img src="${pageContext.request.contextPath}/upload/NoImage.jpg" alt="도서 이미지" style = "width:250px;height:350px;"></c:otherwise>
 										</c:choose>
@@ -53,7 +53,7 @@
 								</tr>
 							</table>
 							<p style="margin: 0 auto; text-align: right;">
-								<input type="button" class="btn btn-primary" value="목록으로" onclick="location.href='${pageContext.request.contextPath}/book/search.do'">
+								<input type="button" value="목록으로" onclick="location.href='${pageContext.request.contextPath}/book/search.do'">
 							</p>
 						</div>
 					</div>
@@ -110,7 +110,7 @@
 															alert("이미 대여한 책입니다.");
 														}else if(data.result == "noUserId"){
 															alert("로그인을 해주세요.")
-															location.href="http://localhost:8080/lib/member/login.do";
+															location.href="http://localhost:8080/lib_cih/member/login.do";
 														}
 													},
 													error:function(data) {
@@ -204,7 +204,7 @@
 									<span class="letter-count">140/140</span>
 								</div>
 								<div id="grade_second" align="right">
-									<input type="submit" class="btn btn-default" value="등록">
+									<input type="submit" class="col-md-2" value="등록">
 								</div>
 							</c:if>
 						</form>
@@ -214,7 +214,7 @@
 					<div class="panel-body">
 						<div id="output"></div>
 						<div class="paging_button" style="display: none;">
-							<input type="button" class="btn btn-default" value="다음글보기	">
+							<input type="button" value="다음글보기	">
 						</div>
 
 						<div id="loading" style="display: none;">
@@ -230,3 +230,5 @@
 
 <!-- Go To Top ============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>
+<!-- Footer Scripts ============================================= -->
+<script type="text/javascript" src="js/functions.js"></script>

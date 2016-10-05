@@ -22,11 +22,9 @@
 	<c:if test="${count == 0}">
 	<div align="center">QnA에 등록된 글이 없습니다.</div>
 	</c:if>
-	
-	
 	<c:if test="${count > 0}">
 	<div align="right">
-		<input type="button" value="삭제"  onclick="ajaxQnaDelete();" class="btn btn-xs btn-danger">
+		<input type="button" value="삭제"  onclick="ajaxQnaDelete();" class="btn btn-sm btn-danger">
 	</div>
 	<div class="table-responsive">
 		<table class="table table-hover">

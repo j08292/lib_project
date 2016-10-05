@@ -21,8 +21,14 @@
         	<add-attribute value="../resources/user/css/responsive.css"/>
         	<add-attribute value="../resources/css/board.css"/>
         </put-list-attribute>
+        <put-list-attribute name="jsList">
+        	<add-attribute value="../resources/user/js/jquery.js"/>
+        	<add-attribute value="../resources/user/js/plugins.js"/>
+        	<add-attribute value="../resources/user/js/reviewView.js"/>
+        	<add-attribute value="../resources/user/js/reviewWrite.js"/>
+        </put-list-attribute>
     </definition>
-    <definition name="reviewList" extends="reviewWrite">
+    <definition name="reviewList" extends="main">
     	<put-attribute name="title" value="감상평게시판 목록"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/reviewList.jsp"/>
     </definition>    
@@ -30,15 +36,21 @@
     	<put-attribute name="title" value="글 상세"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/reviewView.jsp"/>
     	<put-list-attribute name="jsList">
-        	<add-attribute value="/lib/resources/user/js/jquery.js"/>
-        	<add-attribute value="/lib/resources/user/js/plugins.js"/>
-        	<add-attribute value="/lib/resources/user/js/review.reply.js"/>
-        	<add-attribute value="/lib/resources/user/js/reviewView.js"/>
+        	<add-attribute value="../resources/user/js/jquery.js"/>
+        	<add-attribute value="../resources/user/js/plugins.js"/>
+        	<add-attribute value="../resources/user/js/review.reply.js"/>
+        	<add-attribute value="../resources/user/js/reviewView.js"/>
         </put-list-attribute>
     </definition>    
 	<definition name="reviewModify" extends="reviewWrite">
     	<put-attribute name="title" value="글 수정"/>
     	<put-attribute name="body" value="/WEB-INF/views/board/reviewModify.jsp"/>
+    	<put-list-attribute name="jsList">
+        	<add-attribute value="../resources/user/js/jquery.js"/>
+        	<add-attribute value="../resources/user/js/plugins.js"/>
+        	<add-attribute value="../resources/user/js/reviewView.js"/>
+        	<add-attribute value="../resources/user/js/reviewModify.js"/>
+        </put-list-attribute>
     </definition>
 
 	<!-- 관리자 감상평 관리 -->

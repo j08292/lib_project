@@ -26,7 +26,7 @@
 		<div class="align-center">대출된 도서가 없습니다.</div>
 	</c:if>
 	<c:if test="${count > 0}">
-		<div class="table-responsive">
+		<div class="table-responsive"><br>
 			<table class="table table-hover">
 				<thead>
 					<tr>
