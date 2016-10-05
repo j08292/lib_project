@@ -16,7 +16,7 @@
 					<div class="col_half">
 					
 					
-							<img src="${pageContext.request.contextPath}/resources/user/images/footer-widget-logo.png" alt="" class="footer-logo">
+							<img src="${pageContext.request.contextPath}/resources/user/images/footer-widget-logo_1.png" alt="" class="footer-logo">
 
 								<p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
 
