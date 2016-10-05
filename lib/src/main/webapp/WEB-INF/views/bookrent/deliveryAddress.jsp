@@ -8,9 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <title>배송지 정보</title>
-<link rel="stylesheet" href="/lib_cys/resources/admin/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/lib/resources/admin/css/bootstrap.min.css"/>
 <!-- Morris Charts CSS -->
-<link rel="stylesheet" href="/lib_cys/resources/admin/css/plugins/morris.css"/>
+<link rel="stylesheet" href="/lib/resources/admin/css/plugins/morris.css"/>
 </head>
 <body>
 	<div>
