@@ -12,7 +12,7 @@
 <!-- Morris Charts CSS -->
 <link rel="stylesheet" href="/lib/resources/admin/css/plugins/morris.css"/>
 </head>
-<body>
+<body>  
 	<div>
 	   <h1 class="page-header">&nbsp;${delivery.mem_id}님의 <spring:message code="bookrent.delivery.title"/></h1>
 	   <div class="col-sm-4">
