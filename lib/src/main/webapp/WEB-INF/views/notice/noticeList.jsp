@@ -15,17 +15,19 @@
 <!-- #page-title end -->
 <div class="container clearfix">
 	<br><br>
-	<form action="list.do" id="search_form" method="get">
+	<div class="panel-body">
+	<form action="list.do" id="search_form" method="get" class="form-inline">
 		<div align="center">
-			<select name="keyfield">
+			<select name="keyfield" class="form-control">
 				<option value="notice_title">제목</option>
 				<option value="notice_content">내용</option>
 				<option value="all">전체</option>
 			</select>
-			<input type="text" size="16" name="keyword">
-			<input type="submit" class="btn btn-default btn-sm" value="찾기">
+			<input type="text" size="16" name="keyword" class="form-control">
+			<input type="submit" class="btn btn-default" value="찾기">
 		</div>
 	</form>
+	</div>
 	<br>
 	<c:if test="${count == 0}">
 		<div align="center">등록된 공지사항이 없습니다.</div>

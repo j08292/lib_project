@@ -24,20 +24,22 @@
 <!-- Content(지우면안됨X)-->
 <div class="container clearfix">
 	<br><br>
-	<form action="list.do" id="search_form" method="get">
+	<div class="panel-body">
+	<form action="list.do" id="search_form" method="get" class="form-inline">
 		<div align="center">
 			<ul class="search">
-				<li><select name="keyfield">
+				<li><select name="keyfield" class="form-control">
 						<option value="review_title">제목</option>
 						<option value="mem_id">ID</option>
 						<option value="review_content">내용</option>
 						<option value="all">전체</option>
 				</select></li>
-				<li><input type="text" size="16" name="keyword"></li>
-				<li><input type="submit" class="btn btn-default btn-sm" value="찾기"></li>
+				<li><input type="text" size="16" name="keyword" class="form-control"></li>
+				<li><input type="submit" class="btn btn-default" value="찾기"></li>
 			</ul>
 		</div>
 	</form>
+	</div>
 	<table>
 		<tr>
 			<td class="align-right"><input type="button" value="글쓰기" 
@@ -75,7 +77,7 @@
 				</c:forEach>
 			</table>
 		</div>
-		<div class="align-center">${pagingHtml}</div><br><br>
+		<div class="align-center">${pagingHtml}</div><br><br><br><br><br><br>
 	</c:if>
 </div>
 <!-- #content end -->

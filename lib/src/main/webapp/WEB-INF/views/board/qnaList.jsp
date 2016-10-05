@@ -25,7 +25,8 @@
 
 <div class="container clearfix">
 	<br><br>
-	<form action="list.do" id="search_form" method="get">
+	<div class="panel-body">
+	<form action="list.do" id="search_form" method="get" class="form-inline">
 		<div align="center">
 			<ul class="search">
 				<li><select name="keyfield" id="slectBox" class="form-control">
@@ -35,10 +36,11 @@
 						<option value="all">전체</option>
 				</select></li>
 				<li><input type="text" size="25" name="keyword" id="keyword" class="form-control"></li>
-				<li><input type="submit" class="btn btn-default btn-sm" value="찾기"></li>
+				<li><input type="submit" class="btn btn-default" value="찾기"></li>
 			</ul>
 		</div>
 	</form>
+	</div>
 	<table>
 		<tr>
 			<td class="align-right"><input type="button" value="글쓰기" 

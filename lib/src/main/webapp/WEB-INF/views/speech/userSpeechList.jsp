@@ -18,20 +18,24 @@
 <!-- Content ============================================= -->
 <div class="container clearfix">
 	<br><br>
-	<form action="list.do" id="search_form" method="get">
+	<div class="panel-body">
+	<form action="list.do" id="search_form" method="get" class="form-inline">
 		<div align="center">
-				<select name="keyfield" id="speechSearch">
+				<select name="keyfield" id="speechSearch" class="form-control">
 					<option value="speech_title">제목</option>
 					<option value="speech_content">내용</option>
 					<option value="speech_location">장소</option>
 					<!-- <option value="speech_date">날짜</option> -->
 				</select>
-				<span id="output">
-					<input type="text" size="16" name="keyword" id="textbox">
-				</span>
-				<input type="submit" value="찾기">
+				
+					<input type="text" size="16" name="keyword" id="textbox" class="form-control">
+				
+				<input type="submit" value="찾기" class="btn btn-default">
+				
 		</div>
+		
 	</form>
+	</div>
 	<c:if test="${count == 0}">
 	<div align="center">등록된 강연이 없습니다.</div>
 	</c:if>
@@ -75,7 +79,7 @@
 			</c:forEach>
 		</table>
 	</div>
-	<div align="center">${pagingHtml}</div><br><br>
+	<div align="center">${pagingHtml}</div><br><br><br><br><br><br>
 	</c:if>
 </div>
 <!-- #content end -->
