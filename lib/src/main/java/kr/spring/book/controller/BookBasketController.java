@@ -31,19 +31,27 @@ public class BookBasketController {
 
 		String userId = (String) session.getAttribute("userId");
 		String list_title = (String) session.getAttribute("list_title");
-//		Integer list_num = (Integer) session.getAttribute("list_num");
-		
+		// Integer list_num = (Integer) session.getAttribute("list_num");
+
 		List<BasketCommand> list = null;
 		list = basketService.select_book_basket(userId);
+
+		int count = basketService.getRowCount(userId);
 		
 		if (log.isDebugEnabled()) {
 			log.debug("userId : " + userId);
 			log.debug("list_title : " + list_title);
-//			log.debug("list_num : " + list_num);
+			// log.debug("list_num : " + list_num);
 			log.debug("list : " + list);
+			log.debug("count : " + count);
 		}
 
-		return new ModelAndView("bookBasket", "list", list);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("bookBasket");
+		mav.addObject("list", list);
+		mav.addObject("count", count);
+		
+		return mav;
 
 	}
 
@@ -55,7 +63,7 @@ public class BookBasketController {
 		String list_title = (String) session.getAttribute("list_title");
 		String list_filename = (String) session.getAttribute("list_filename");
 		int list_num = (Integer) session.getAttribute("list_num");
-		
+
 		if (log.isDebugEnabled()) {
 			log.debug("userId : " + userId);
 			log.debug("list_title : " + list_title);
@@ -63,24 +71,26 @@ public class BookBasketController {
 			log.debug("list_num : " + list_num);
 		}
 
+		int count = basketService.getRowCount(userId);
+
 		BookListCommand book = bookListService.select_num(list_num);
 		BasketCommand basket = new BasketCommand();
 		basket.setMem_id(userId);
 		basket.setList_filename(list_filename);
 		basket.setList_title(list_title);
 		basket.setList_num(list_num);
-		
+
 		List<BasketCommand> list = null;
 
 		list = basketService.list(userId);
-		
+
 		if (log.isDebugEnabled()) {
 			log.debug("book : " + book);
 			log.debug("basket : " + basket);
 			log.debug("list : " + list);
+			log.debug("count : " + count);
 		}
 
-		
 		if (list.size() == 0) {
 			basketService.insert(basket);
 		} else if (list.size() != 0) {
@@ -99,12 +109,13 @@ public class BookBasketController {
 		if (log.isDebugEnabled()) {
 			log.debug("list : " + list);
 		}
-		
+
 		session.setAttribute("basket", basket);
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("bookBasket");
 		mav.addObject("book", book);
 		mav.addObject("list", list);
+		mav.addObject("count", count);
 
 		return mav;
 	}

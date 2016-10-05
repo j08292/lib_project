@@ -69,6 +69,16 @@
 				<input type="button" value="도서 검색" class="btn btn-primary"
 					onclick="location.href='${pageContext.request.contextPath}/book/search.do'">
 			</p>
+			<input type = "hidden" id = "basket-count" class = "basket-count" name = "basket-count" value = "${count }">
+			<script type="text/javascript">
+			$('.rent-button').click(function(event){
+				var value = $('#basket-count').val();
+				if(value>5){
+					alert("최대 5권까지 대여할 수 있습니다.");
+					return false;
+					}
+				});
+			</script>
 		</div>
 	</div>
 </section>
