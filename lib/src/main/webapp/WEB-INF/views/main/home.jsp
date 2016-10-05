@@ -172,16 +172,16 @@
             <!-- 신규 강연 안내 -->
             </div>
             </div>
-               <div style="background-color:#FFF2E6;">
-               <div class="center"  style="background-color:#FFF2E6;">
-               <div class="fbox-icon" style="background-color:#FFF2E6;">
+               <div style="background-color:#FDF8F8;">
+               <div class="center"  style="background-color:#FDF8F8;">
+               <div class="fbox-icon" style="background-color:#FDF8F8;">
                <br><br>
                   <h3>[Speech] 최신강연 안내</h3>   
                </div>   
                </div>
-            <div class="container clearfix"  style="background-color:#FFF2E6;">
+            <div class="container clearfix"  style="background-color:#FDF8F8;">
                <a href="${pageContext.request.contextPath }/speech/list.do"><p style="text-align:right">▶더보기</p></a>   
-               <div class="clear" style="background-color:#FFF2E6;"></div>
+               <div class="clear" style="background-color:#FDF8F8;"></div>
                <div class="col_one_third bottommargin-sm">
                <img src="${pageContext.request.contextPath}/resources/user/images/book/a.png" alt="Clients"><br>
                   <div class="feature-box fbox-small fbox-plain" data-animate="fadeIn" data-delay="600">
@@ -216,7 +216,7 @@
             <br><br><br><br>
             </div>
             <!-- 신규 도서 안내 -->
-            <div class="section">
+            <div class="section" style="background-color:#FFFFFF;">
                <div class="container clearfix">
                   <div class="row topmargin-sm">
                      <div class="center">
@@ -257,7 +257,7 @@
             
             <!-- 인기 도서 안내 -->
             <div class="container clearfix" >
-               <div class="row topmargin-sm"  style="background-color:#FFF2E6;" >
+               <div class="row topmargin-sm"  style="background-color:#FDF8F8;" >
                      <div class="center" >
                         <h3>[best] 인기도서 안내</h3>
                      </div>

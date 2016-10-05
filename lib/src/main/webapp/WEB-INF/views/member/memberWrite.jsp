@@ -32,7 +32,7 @@
 									<div class="col_full">
 										<label for="mem_id">아이디:</label> 
 										<form:input path="mem_id" class="form-control id" maxlength="12" />
-										<input type="button" id="confirmId" value="아이디 중복검사">
+										<input type="button" id="confirmId" value="아이디 중복검사" class="btn btn-primary btn-sm">
 										<span id="id_signed" class="error-color"></span> 
 										<img src="${pageContext.request.contextPath }/resources/user/images/ajax-loader.gif"
 											width="16" height="16" id="loading" style="display: none;">
@@ -65,7 +65,7 @@
 									<!-- daum 우편번호 시작 -->
 									<div class="col_full">
 										<label for="sample3_postcode">우편번호:</label>
-										<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br> 
+										<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기" class="btn btn-primary btn-sm"><br> 
 											<form:input path="sample3_postcode" placeholder="우편번호" class="form-control"/>	-
 											<br>
 										<div id="wrap"

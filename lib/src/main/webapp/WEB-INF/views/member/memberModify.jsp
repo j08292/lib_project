@@ -89,7 +89,7 @@
 									<!-- daum 우편번호 시작 -->
 									<div class="col_full">
 										<label for="mem_address">우편번호:</label><br> 
-										<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br> 
+										<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"class="btn btn-default btn-sm"><br> 
 											<form:input path="sample3_postcode" placeholder="우편번호" class="form-control"/>	-
 											<br>
 
@@ -183,9 +183,9 @@
 									</script>
 									<!-- daum 우편번호 끝 -->
 									
-									<div class="col_full nobottommargin">
+									<div class="col_full nobottommargin" style="text-align:center">
 										<input type="submit"
-											class="button button-3d button-black nomargin" value="수정">
+											class="button button-3d button-black nomargin " value="수정">
 										<input type = "button" value = "홈으로" class = "button button-3d button-black nomargin"
 											onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
 									</div>
