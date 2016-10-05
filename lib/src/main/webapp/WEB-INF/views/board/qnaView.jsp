@@ -61,25 +61,8 @@
                    	</c:if>
                    	</p>
                    	<!-- 댓글 -->
-                   	<span class="reply title">▶ 댓글 달기 </span>
-                   	
-                   	 	<br><br>
-                   	<form id="qre_form">
-                   		<input type="hidden" name="qna_num"  value="${qnaCommand.qna_num}" id="qna_num">
-					    <input type="hidden" name="mem_id" value="${userId}" id="userId"> 
-					    <textarea rows="3" cols="50" name="qna_re_content" class="content"
-					    id="qna_re_content" maxlength="300" class="a"
-					    <c:if test="${empty userId && mem_level ==2}">disabled="disabled"</c:if>
-					    ><c:if test="${empty userId }"></c:if><c:if test="${mem_level != 2}">관리자만 작성할 수 있습니다.</c:if></textarea>  
-					    <c:if test="${!empty userId && mem_level == 2}">
-					    	<div id="qre_first">
-					    		<span class="letter-count">300/300</span>
-					    	</div>
-					    	<div id="qre_second" class="align-right">
-					    		<input type="submit"  class="btn btn-default btn-sm" value="전송">
-					    	</div>
-					</c:if>            	
-                   	</form>
+                   	<input type="hidden" name="qna_num" id="qna_num" value="${qnaCommand.qna_num}">
+                   	<input type="hidden" name="mem_id" id="mem_id" value="${userId}">
                    	<!-- 목록출력 -->
                    	<div id="output"></div>
                    	<div class="paging_button" style="display:none;">
@@ -90,20 +73,6 @@
                    	  	
                    	</div>
                    	<!-- 댓글수정 -->
-                   	<div id="modify_div" style="display:none;">
-                   	<form id="mqre_form">
-                   		<input type="hidden" name="qna_re_num" id="mqna_re_num">
-                   	 	<input type="hidden" name="mem_id" id="muserId">
-                   	 	<textarea rows="3" cols="50" name="qna_re_content"
-                   	 	id="mqna_re_content" class="a"></textarea>
-                   	  	<div id="mqre_first"><span class="letter-count">300/300</span></div>  
-						<div id="mqre_second" class="align-right">
-							<input type="submit" class="btn btn-default btn-sm" value="수정">
-							<input type="button" value="취소" class ="btn btn-danger btn-sm, re-reset">
-						</div>
-						<hr size="1" noshade width="96%">
-                   	</form>
-                   	</div>
                    </div> 	
                    	
                    	

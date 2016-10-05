@@ -58,8 +58,8 @@ public interface QnaMapper {
 	public List<QnaReplyCommand> listReply(Map<String, Object> map);
 	@Select("SELECT count(*) FROM qna_reply WHERE qna_num= #{qna_num}")
 	public int getRowCountReply(Map <String, Object> map);
-	@Insert("INSERT INTO qna_reply (qna_re_num, qna_re_content, qna_re_regdate,qna_num,mem_id,mem_level) "
-			+ "VALUES (qna_re_num.nextval,#{qna_re_content},sysdate,#{qna_num}, #{mem_id}, #{mem_level})")
+	@Insert("INSERT INTO qna_reply (qna_re_num, qna_re_content, qna_re_regdate,qna_num,mem_id) "
+			+ "VALUES (qna_re_num.nextval,#{qna_re_content},sysdate,#{qna_num}, #{mem_id})")
 	public void insertReply(QnaReplyCommand qnaReplyCommand);
 	@Update("UPDATE qna_reply SET qna_re_content = #{qna_re_content} WHERE qna_re_num = #{qna_re_num}")
 	public void updateReply(QnaReplyCommand qnaRepluCommand);

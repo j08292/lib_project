@@ -77,8 +77,7 @@
 		  qna_re_content,
 		  to_char(qna_re_regdate,'YYYY-MM-DD HH24:MI:SS') qna_re_regdate,
 		  qna_num,
-		  mem_id,
-		  mem_level
+		  mem_id
 		FROM (SELECT 
 		        a.*,
 		        rownum rnum

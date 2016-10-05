@@ -36,17 +36,9 @@ public class AdminQnaReplyDeleteController {
 		
 		
 		try{
-			String userId = (String)session.getAttribute("userId");
-			if(userId == null){
-				map.put("result","logout");
-			}else if(userId!=null && userId.equals(mem_id)){
 				
 				qnaService.deleteReply(qna_re_num);
 				map.put("result", "success");
-				
-			}else{
-				map.put("result", "wrongAcess");
-			}
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result", "failure");

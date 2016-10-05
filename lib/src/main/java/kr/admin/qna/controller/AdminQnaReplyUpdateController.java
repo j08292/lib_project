@@ -37,15 +37,8 @@ public class AdminQnaReplyUpdateController {
 		
 		
 		try{
-			String userId = (String) session.getAttribute("userId");
-			if(userId == null){
-				map.put("result", "logout");
-			}else if(userId != null &&userId.equals(qnaReplyCommand.getMem_id())){
 				qnaservice.updateReply(qnaReplyCommand);
 				map.put("result", "success");
-			}else{
-				map.put("result", "worngAccess");
-			}
 		}catch(Exception e){
 			e.printStackTrace();
 			map.put("result","failure");
