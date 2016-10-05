@@ -2,10 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix">
-
 			<div class="swiper-container swiper-parent">
 				<div class="swiper-wrapper">
-					
 					<div class="swiper-slide dark">
 						<div class="container clearfix">
 							<div class="slider-caption slider-caption-center">
@@ -32,11 +30,8 @@
 							<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
 						</div>
 					</div>
-					
 				</div>
-				
 			</div>
-
 			<script>
 				jQuery(document).ready(function($){
 					var swiperSlider = new Swiper('.swiper-parent',{
@@ -111,11 +106,8 @@
 					});
 				});
 			</script>
-
 			<a href="#" data-scrollto="#content" data-offset="100" class="dark one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
-
 		</section>
-
 		<!-- Content ============================================= -->
 		<!-- 홈페이지 주요 서비스 간단 설명/바로가기 -->
 		<section id="content" >
@@ -187,7 +179,6 @@
 						<h3>[Speech] 최신강연 안내</h3>	
 					</div>	
 					</div>
-					
 				<div class="container clearfix"  style="background-color:#FFF2E6;">
 					<a href="${pageContext.request.contextPath }/speech/list.do"><p style="text-align:right">▶더보기</p></a>	
 					<div class="clear" style="background-color:#FFF2E6;"></div>
@@ -221,9 +212,7 @@
 							<h3>독서모임 & 작가와의 만남<br>PQR BOOKS X 이광호 작가</h3>
 							<p>▶ PQR BOOKS에 입점한 독립/소규모/1인출판물 중 하나를 선정해서 함께 읽고 이야기를 나누는 독서모임입니다.</p>
 						</div>
-						
 					</div>
-					
 				<br><br><br><br>
 				</div>
 				<!-- 신규 도서 안내 -->
@@ -233,9 +222,8 @@
 							<div class="center">
 								<h3>[new] 신간도서 안내</h3>
 							</div>
-							
 							<a href="${pageContext.request.contextPath }/book/search.do"><p style="text-align:right">▶더보기</p></a>
-						<c:if test="${newBookCount == 0}"> 현재 등록된 신규 도서가 없습니다. </c:if>
+						<c:if test="${newBookCount == 0}"> 현재 등록된 신간 도서가 없습니다. </c:if>
 						<c:if test="${newBookCount > 0}">
 							<c:forEach var="article" items="${mainNewBooklist}">
 								<div class="col-md-3 col-sm-6 bottommargin" >
@@ -244,10 +232,10 @@
 											<a href="${pageContext.request.contextPath}/book/detail.do?list_title=${article.list_title}&list_filename=${article.list_filename}&list_num=${article.list_num}">
 												<c:choose>
 													<c:when test="${!empty article.list_filename}">
-														<img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="width: 460px; height: 315px;">
+														<img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="width: 460px; height: 315px;" alt="신간도서">
 													</c:when>
 													<c:otherwise>
-														<img src="${pageContext.request.contextPath}/upload/NoImage.jpg" style="width: 460px; height: 315px;">
+														<img src="${pageContext.request.contextPath}/upload/NoImage.jpg" style="width: 460px; height: 315px;" alt="신간도서">
 													</c:otherwise>
 												</c:choose>
 											</a>
@@ -265,49 +253,31 @@
 						</c:if>
 						</div>
 					</div>
-					
 				</div>
 				
 				<!-- 인기 도서 안내 -->
-					
 				<div class="container clearfix" >
-				
 					<div class="row topmargin-sm"  style="background-color:#FFF2E6;" >
-					
 							<div class="center" >
 								<h3>[best] 인기도서 안내</h3>
-								
 							</div>
-				
-				
-			
-					 
-			
 				<c:if test="${mainBookCount == 0}"> 현재 인기 도서가 없습니다. </c:if>
 				<c:if test="${mainBookCount > 0}">
 					<div id="oc-clients" class="owl-carousel image-carousel">
-					
 					<c:forEach var="article" items="${mainBooklist}">
-						 
 								<c:choose>
 									<c:when test="${!empty article.list_filename}">
 										<div class="oc-item">
-											<img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="height:200px; whith:50px;">
+											<img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="height:200px; whith:50px;" alt="인기도서">
 										<br><br><br><br><br><br>
 										</div>
 									</c:when>
 									</c:choose> 
-									
 					</c:forEach>
-					
 					</div>
 					</c:if>
-					 
 					</div>
   </div>
-
-		
-
 	</section>
 	<script type="text/javascript">
 						jQuery(document).ready(function($) {
@@ -328,9 +298,4 @@
 								}
 							});
 						});
-					</script>
-
-					
-			
-		
-			
+					</script>		

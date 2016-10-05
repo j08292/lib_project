@@ -3,47 +3,32 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!-- Stylesheets ============================================= -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<!-- External JavaScripts ============================================= -->
+<!-- Document Title ============================================= -->
 
-<!-- Stylesheets
-	============================================= -->
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1" />
-<!--[if lt IE 9]>
-		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-	<![endif]-->
-
-<!-- External JavaScripts
-	============================================= -->
-<!-- Document Title
-	============================================= -->
-
-<!-- Page Title
-		============================================= -->
+<!-- Page Title ============================================= -->
 <section id="page-title">
-
 	<div class="container clearfix">
 		<h1>도서 검색</h1>
+		<ol class="breadcrumb">
+			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+			<li class="active">Book List</li>
+		</ol>
 	</div>
-
 </section>
 <!-- #page-title end -->
 
-<!-- Content
-		============================================= -->
+<!-- Content ============================================= -->
 <section id="content">
-
 	<div class="content-wrap">
-
 		<div class="container clearfix">
-
 			<div class="panel-group">
 				<div class="panel panel-default">
 					<div class="panel-heading" style = "text-align:center"></div>
-
 					<div class="panel-body">
-						<form action="search.do" class="form-inline" id="search-form"
-							method="post" style = "text-align:center">
-
+						<form action="search.do" class="form-inline" id="search-form" method="post" style = "text-align:center">
 							<select name="keyfield" id="selectBox" class="form-control">
 								<!-- 컬럼명 -->
 								<option value="list_title">도서명</option>
@@ -52,7 +37,6 @@
 								<option value="list_code">ISBN코드</option>
 								<option value="all">전체</option>
 							</select>
-
 							<!-- 검색어 -->
 							<input type="text" size="25" name="keyword" id="keyword"
 								class="form-control"> <input type="submit" value="찾기"
@@ -65,7 +49,7 @@
 					<div>도서 검색결과가 없습니다.</div>
 				</c:if>
 				<c:if test="${count > 0 }">
-				<label style = "font-size:18px">도서 목록 : ${count } 권</label>
+				<label style = "font-size:18px">도서 목록 : ${count} 권</label>
 					<div class="panel panel-default">
 						<div class="panel-heading"></div>
 						<form action="search.do" class="form-inline" id="detail-form"
@@ -74,42 +58,38 @@
 						<table class="table table-hover provideList">
 							<thead>
 								<tr>
-									<th style = "width:10%;"></th>
-									<th>도서명</th>
-									<th>저자</th>
-									<th>출판사</th>
-									<th>평점</th>
+									<th style="text-align:center;width:10%;"></th>
+									<th style="text-align:center;">도서명</th>
+									<th style="text-align:center;">저자</th>
+									<th style="text-align:center;">출판사</th>
+									<th style="text-align:center;">평점</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="book" items="${list}">
 									<tr> 
-										<td style = "text-align:center; width:15%;"><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }">
-										<img src="/lib/upload/${book.list_filename}" width="80" height="120"></a></td>
-										<td style = "text-align:left; width:20%;">${book.list_title}</td>
-										<td style = "text-align:left; width:20%;">${book.list_writer}</td>
-										<td style = "text-align:left; width:20%;">${book.list_publish}</td>
-										<td style = "text-align:left; width:15%;" ><img src="${pageContext.request.contextPath}/resources/grade/images/${book.list_grade}.PNG"></td>
+										<td style="vertical-align:middle;text-align:center;width:15%;"><a href="${pageContext.request.contextPath}/book/detail.do?list_title=${book.list_title}&list_filename=${book.list_filename }&list_num=${book.list_num }">
+											<img src="/lib/upload/${book.list_filename}" width="80" height="120"></a></td>
+										<td style="vertical-align:middle;text-align:center;width:20%;">${book.list_title}</td>
+										<td style="vertical-align:middle;text-align:center;width:20%;">${book.list_writer}</td>
+										<td style="vertical-align:middle;text-align:center;width:20%;">${book.list_publish}</td>
+										<td style="vertical-align:middle;text-align:center;width:15%;"><img src="${pageContext.request.contextPath}/resources/grade/images/${book.list_grade}.PNG"></td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
 						</form>
 					</div>
-					<p style = "text-align:center;">${pagingHtml }</p>
+					<br><div align="center">${pagingHtml}</div>
 				</c:if>
 			</div>
-
 		</div>
 	</div>
-
 </section>
 <!-- #content end -->
 
-<!-- Go To Top
-	============================================= -->
+<!-- Go To Top ============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>
 
-<!-- Footer Scripts
-	============================================= -->
+<!-- Footer Scripts ============================================= -->
 <script type="text/javascript" src="js/functions.js"></script>

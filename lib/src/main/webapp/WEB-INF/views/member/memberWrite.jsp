@@ -3,101 +3,71 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
-<!-- Stylesheets
-	============================================= -->
-	
-
-<!-- Document Title
-	============================================= -->
-<title>회원가입</title>
-
-
-<!-- Page Title
-		============================================= -->
+<!-- Page Title ============================================= -->
 <section id="page-title">
-
 	<div class="container clearfix">
 		<h1>회원가입</h1>
-		<ol class="breadcrumb">
-			<li><a href = "${pageContext.request.contextPath}/member/write.do" style = "font-size: 10pt;">회원가입</a></li>
-			<li><a href = "${pageContext.request.contextPath}/member/login.do" style = "font-size: 10pt;">로그인</a></li>
+		<ol class="breadcrumb">			
+			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/login.do">Login</a></li>
+			<li class="active">Join</li>
 		</ol>
 	</div>
-
 </section>
 <!-- #page-title end -->
 
-<!-- Content
-		============================================= -->
+<!-- Content ============================================= -->
 <section id="content">
-
 	<div class="content-wrap">
-
 		<div class="container clearfix">
-
-			<div class="tabs divcenter nobottommargin clearfix"
-				id="tab-login-register" style="max-width: 500px;">
-
+			<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
 				<ul class="tab-nav tab-nav2 center clearfix">
 					<li class="inline-block"><a href="#tab-register">회원가입</a></li>
 				</ul>
-
 				<div class="tab-container">
-
 					<div class="tab-content clearfix" id="tab-register">
 						<div class="panel panel-default nobottommargin">
 							<div class="panel-body" style="padding: 40px;">
-
-								<form:form action="write.do" commandName="command"
-									id="register-form" class="nobottommargin" method = "post">
-
+								<form:form action="write.do" commandName="command" id="register-form" class="nobottommargin" method = "post">
 									<div class="col_full">
 										<label for="mem_id">아이디:</label> 
 										<form:input path="mem_id" class="form-control id" maxlength="12" />
 										<input type="button" id="confirmId" value="아이디 중복검사">
 										<span id="id_signed" class="error-color"></span> 
-										<img
-											src="${pageContext.request.contextPath }/resources/user/images/ajax-loader.gif"
+										<img src="${pageContext.request.contextPath }/resources/user/images/ajax-loader.gif"
 											width="16" height="16" id="loading" style="display: none;">
 										<form:errors path="mem_id" class="error-color" />
 									</div>
-
 									<div class="col_full">
 										<label for="mem_passwd">비밀번호:</label>
 										<form:password path="mem_passwd" class="form-control passwd" />
 										<span id="passwd_signed" class="error-color"></span>
 										<form:errors path="mem_passwd" class="error-color" />	
 									</div>
-
 									<div class="col_full">
 										<label for="mem_name">이름:</label> 
 										<form:input path="mem_name" class="form-control" />
 										<span id="name_signed" class="error-color"></span>
 										<form:errors path="mem_name" class="error-color" />
 									</div>
-
 									<div class="col_full">
 										<label for="mem_cell">전화번호:</label> 
 										<form:input path="mem_cell" class="form-control" />
 										<span id="cell_signed" class="error-color"></span>
 										<form:errors path="mem_cell" class="error-color" />
 									</div>
-
 									<div class="col_full">
 										<label for="mem_email">이메일 주소:</label> 
 										<form:input path="mem_email" class="form-control" />
 										<span id="email_signed" class="error-color"></span>
 										<form:errors path="mem_email" class="error-color" />
 									</div>
-								
 									<!-- daum 우편번호 시작 -->
 									<div class="col_full">
 										<label for="sample3_postcode">우편번호:</label>
 										<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br> 
 											<form:input path="sample3_postcode" placeholder="우편번호" class="form-control"/>	-
 											<br>
-
 										<div id="wrap"
 											style="display: none; border: 1px solid; width: 500px; height: 300px; margin: 5px 0; position: relative">
 											<img
@@ -110,9 +80,7 @@
 										<form:input path="mem_address" class="form-control"
 											placeholder="주소"/>
 										<form:errors path="mem_address" class="error-color" />
-
 									</div>
-									
 									<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 									<script>
 										// 우편번호 찾기 찾기 화면을 넣을 element
@@ -188,33 +156,23 @@
 										}
 									</script>
 									<!-- daum 우편번호 끝 -->
-									
 									<div class="col_full nobottommargin">
 										<input type="submit"
 											class="button button-3d button-black nomargin" value="등록">
 									</div>
-
 								</form:form>
 							</div>
 						</div>
 					</div>
-
 				</div>
-
 			</div>
-
 		</div>
-
 	</div>
-
 </section>
 <!-- #content end -->
 
-<!-- Go To Top
-	============================================= -->
+<!-- Go To Top ============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>
 
-<!-- Footer Scripts
-	============================================= -->
+<!-- Footer Scripts ============================================= -->
 <script type="text/javascript" src="js/functions.js"></script>
-

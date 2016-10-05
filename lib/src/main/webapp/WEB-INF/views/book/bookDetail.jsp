@@ -3,61 +3,61 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<!-- Page Title ============================================= -->
 <section id="page-title">
-
 	<div class="container clearfix">
 		<h1>도서 상세정보</h1>
+		<ol class="breadcrumb">
+			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+			<li><a href="${pageContext.request.contextPath}/book/search.do">Book List</a></li>
+			<li class="active">Book Detail</li>
+		</ol>
 	</div>
-
 </section>
 <!-- #page-title end -->
 
-<!-- Content
-		============================================= -->
+<!-- Content ============================================= -->
 <section id="content">
-
 	<div class="content-wrap">
 		<div class="container clearfix">
-
 			<div class="panel-group">
 			<label style = "font-size:18px;">도서 상세정보</label>
 				<div class="panel panel-default">
 					<div class="panel-heading"></div>
-
 					<div class="panel-body">
-							<h3>&nbsp;${book.list_title }</h3>
+							<h3>&nbsp;${book.list_title}</h3>
 							<table style="font-size: 11pt;">
 								<tr>
-									<td style = "width:30%;"">
-									<img src="/lib/upload/${book.list_filename }" alt="도서 이미지" style = "width:250px;height:350px;">
+									<td style = "width:30%;">
+										<c:choose>
+											<c:when test="${!empty article.list_filename}">						
+												<img src="${pageContext.request.contextPath}/upload/${article.list_filename}"  alt="도서 이미지" style="width:250px;height:350px;">
+											</c:when>
+											<c:otherwise><img src="${pageContext.request.contextPath}/upload/NoImage.jpg" alt="도서 이미지" style = "width:250px;height:350px;"></c:otherwise>
+										</c:choose>
 									</td>
-									
 									<td style = "width:70%;">
 										<dl style = "margin:0 50px;">
 											<dt style = "text-align:left; margin:7px 20px;">표제/책임표시.</dt>
-											<dd style = "text-align:left; margin:10px 20px;">${book.list_title }</dd>
+											<dd style = "text-align:left; margin:10px 20px;">${book.list_title}</dd>
 											<dt style = "text-align:left; margin:7px 20px;">저자</dt>
-											<dd style = "text-align:left; margin:10px 20px;">${book.list_writer }</dd>
+											<dd style = "text-align:left; margin:10px 20px;">${book.list_writer}</dd>
 											<dt style = "text-align:left; margin:7px 20px;">발행사항.</dt>
-											<dd style = "text-align:left; margin:10px 20px;">${book.list_publish }</dd>
+											<dd style = "text-align:left; margin:10px 20px;">${book.list_publish}</dd>
 											<dt style = "text-align:left; margin:7px 20px;">표준번호/부호.</dt>
-											<dd style = "text-align:left; margin:10px 20px;">${book.list_code }</dd>
+											<dd style = "text-align:left; margin:10px 20px;">${book.list_code}</dd>
 											<dt style = "text-align:left; margin:7px 20px;">분류기호.</dt>
-											<dd style = "text-align:left; margin:7px 20px;">한국십진분류법 -> 005.135</dd>
+											<dd style = "text-align:left; margin:10px 20px;">한국십진분류법 -> 005.135</dd>
 										</dl>
 									</td>
 								</tr>
 							</table>
-
 							<p style="margin: 0 auto; text-align: right;">
 								<input type="button" value="목록으로" onclick="location.href='${pageContext.request.contextPath}/book/search.do'">
 							</p>
-
 						</div>
 					</div>
 				</div>
-
 			<label style = "font-size:18px;">소장정보</label>
 				<div class="panel panel-default">
 					<div class="panel-heading" style="text-align: left;"></div>
@@ -65,28 +65,25 @@
 						<form action="basket.do" id="detail-form" method = "post">
 							<table class="table table-hover provideList">
 								<tr>
-									<th style = "width:20%; text-align:center;">상태</th>
-									<th style = "width:20%; text-align:center;">도서명</th>
-									<th style = "width:20%; text-align:center;">자료실</th>
-									<th style = "width:20%; text-align:center;">반납예정</th>
-									<th style = "width:20%; text-align:center;">예약</th>
+									<th style = "width:25%; text-align:center;">상태</th>
+									<th style = "width:25%; text-align:center;">도서명</th>
+									<th style = "width:25%; text-align:center;">반납예정</th>
+									<th style = "width:25%; text-align:center;">예약</th>
 								</tr>	
 								<tr>
-									<td style = "width:20%; text-align:center;">
+									<td style = "width:25%; text-align:center;">
 										<c:if test="${book.list_status == 0 }">
 											비치된 도서
 										</c:if> <c:if test="${book.list_status == 1 }">
-											파손된 도서
+											<font color="red">파손된 도서</font>
 										</c:if>
 									</td>
-									<td style = "width:20%; text-align:center;">${book.list_title}</td>
-									<td style = "width:20%; text-align:center;">북수원도서관</td>
-									<td style = "width:20%; text-align:center;">${date }</td>
+									<td style = "width:25%; text-align:center;">${book.list_title}</td>
+									<td style = "width:25%; text-align:center;">${date }</td>
 										<!-- 대출중일때 -->
-									<td style = "width:20%; text-align:center;">
-										
+									<td style = "width:25%; text-align:center;">
 										<c:if test="${book.list_status == 1 }">
-											<span>대여불가</span>										
+											<span><font color="red">대여불가</font></span>										
 										</c:if>
 										<c:if test="${book.list_status == 0 }">
 										<c:if test="${book.rent_status == 3 || book.rent_status == 0 || book.rent_status == 5}">
@@ -126,21 +123,16 @@
 										});
 										</script>
 										
-										
 										<c:if test="${book.rent_status == 2}">
 											<span>예약 불가</span>
 										</c:if>
-
 										<!-- 비치중일때 -->
 										<c:if test="${book.rent_status == 9 || book.rent_status == 1 || book.rent_status == 4 }">
 											<input type = "hidden" id = "cih_list_num" name = "cih_list_num" value = "${book.list_num }">
 											<input type = "hidden" id = "cih_list_title" name = "cih_list_title" value = "${book.list_title }"> 
 											<input type = "hidden" id = "cih_list_filename" name = "cih_list_filename" value = "${book.list_filename }">
-
 											<input type = "submit" class = "btn btn-primary" value = "책 바구니">	
-											
-											<a id="unmanned-button" class="btn btn-primary"
-											onclick = "location.href='${pageContext.request.contextPath}/book/unmanned.do?list_num=${book.list_num}'">무인 대여</a>											
+											<a id="unmanned-button" class="btn btn-primary" onclick = "location.href='${pageContext.request.contextPath}/book/unmanned.do?list_num=${book.list_num}'">무인 대여</a>											
 										</c:if>
 										</c:if>
 									</td>
@@ -159,7 +151,6 @@
 						</div>
 					</div>
 				</div>
-				
 				
 				<!--별점 및 한줄평 -->
 				<div class="panel panel-default">
@@ -205,10 +196,6 @@
 								</span>
 							</div>
 
-
-
-
-
 							<textarea rows="2" cols="70" name="grade_content"
 								id="grade_content" maxlength="140" class="col-md-8"></textarea>
 
@@ -221,8 +208,6 @@
 								</div>
 							</c:if>
 						</form>
-
-
 					</div>
 
 					<!-- 목록 출력 -->
@@ -240,10 +225,8 @@
 				</div>
 			</div>
 		</div>
-
 </section>
 <!-- #content end -->
 
-<!-- Go To Top
-	============================================= -->
+<!-- Go To Top ============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>

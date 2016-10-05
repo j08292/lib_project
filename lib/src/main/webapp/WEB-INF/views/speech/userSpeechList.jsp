@@ -3,9 +3,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<!-- Page Title ============================================= -->
+<section id="page-title">
+	<div class="container clearfix">
+		<h1><spring:message code="speech.list.title"/></h1>
+		<ol class="breadcrumb">
+			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+			<li><a href="#">나의 강연 신청 목록 추가할것</a></li>
+			<li class="active">Speech List</li>
+		</ol>		
+	</div>
+</section>
+<!-- #page-title end -->
+<!-- Content ============================================= -->
 <div class="container clearfix">
-	<h2><spring:message code="speech.list.title"/></h2>
-	
+	<br><br>
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
 				<select name="keyfield" id="speechSearch">
@@ -20,11 +32,9 @@
 				<input type="submit" value="찾기">
 		</div>
 	</form>
-	
 	<c:if test="${count == 0}">
-	<div align="center">등록된 게시물이 없습니다.</div>
+	<div align="center">등록된 강연이 없습니다.</div>
 	</c:if>
-
 	<c:if test="${count > 0}">
 	<div class="table-responsive">
 		<table class="table table-hover"  style="text-align:center;">
@@ -65,6 +75,12 @@
 			</c:forEach>
 		</table>
 	</div>
-	<div align="center">${pagingHtml}</div>
+	<div align="center">${pagingHtml}</div><br><br>
 	</c:if>
 </div>
+<!-- #content end -->
+
+<!-- Go To Top ============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+<!-- Footer Scripts ============================================= -->
+<script type="text/javascript" src="js/functions.js"></script>

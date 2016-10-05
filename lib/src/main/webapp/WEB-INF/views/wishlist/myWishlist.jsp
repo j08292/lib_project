@@ -3,17 +3,18 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!-- Page Title ============================================= -->
 <section id="page-title">
 	<div class="container clearfix">
-		<h1>희망도서 신청내역</h1>
+		<h1><spring:message code="wishlist.list.title"/></h1>
 		<ol class="breadcrumb">
 			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
 			<li><a href="${pageContext.request.contextPath}/wishlist/write.do">Request for Wish Books</a></li>
 			<li class="active">My Wish Books</li>
-		</ol>		
+		</ol>
 	</div>
 </section>
-
+<!-- #page-title end -->
 <section id="content">
 	<div class="content-wrap">
 		<div class="container clearfix">

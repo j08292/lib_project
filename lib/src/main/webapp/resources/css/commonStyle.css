@@ -1,0 +1,5 @@
+@CHARSET "UTF-8";
+/* 에러메세지 스타일 */
+.error-color{
+	font-color:red;
+}

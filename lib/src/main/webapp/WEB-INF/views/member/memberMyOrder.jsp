@@ -3,18 +3,21 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<!-- Page Title
-		============================================= -->
+<!-- Page Title ============================================= -->
 <section id="page-title">
 	<div class="container clearfix">
 		<h1>도서 대여내역</h1>
+		<ol class="breadcrumb">
+			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+			<li class="active">My Bookrent List</li>
+		</ol>
 	</div>
 </section>
 <!-- #page-title end -->
 
-<!-- Content
-		============================================= -->
+<!-- Content ============================================= -->
 <section id="content">
 	<div class="content-wrap">
 		<div class="container clearfix">
@@ -78,17 +81,15 @@
 							<table class="table table-hover provideList">
 								<thead>
 									<tr>
-										<th>주문번호</th>
-										<th>도서정보</th>
-										<th>도서관</th>
-										<th>대여날짜</th>
-										<th>반납날짜</th>
-										<th>상태</th>
-										<th>비고</th>
-										<th>연체</th>
+										<th style="text-align:center;">주문번호</th>
+										<th style="text-align:center;">도서정보</th>
+										<th style="text-align:center;">대여날짜</th>
+										<th style="text-align:center;">반납날짜</th>
+										<th style="text-align:center;">상태</th>
+										<th style="text-align:center;">비고</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody style="text-align:center;">
 									<c:if test="${count > 0 }">
 										<c:forEach var="rent" items="${list_rent }">
 											<tr>
@@ -96,31 +97,48 @@
 												<td><a
 													href="${pageContext.request.contextPath}/member/myOrderDetail.do?
 											rent_num=${rent.rent_num}&list_num=${rent.list_num}&list_title=${rent.list_title}">
-														${rent.list_title }</a></td>
-												<td>북수원 도서관</td>
-												<td>${rent.rent_regdate }</td>
-												<td>${rent.rent_returndate }</td>
-												<c:choose>
-													<c:when test="${rent.rent_status == 0 }">
-														<td>대여</td>
-													</c:when>
-													<c:when test="${rent.rent_status == 1 }">
-														<td>반납</td>
-													</c:when>
-													<c:when test="${rent.rent_status == 2 }">
-														<td>예약</td>
-													</c:when>
-													<c:when test="${rent.rent_status == 3 }">
-														<td>대여대기</td>
-													</c:when>
-													<c:when test="${rent.rent_status == 4 }">
-														<td>취소
-													</c:when>
-													<c:when test="${rent.rent_status == 5 }">
-														<td>무인대여</td>
-													</c:when>
-												</c:choose>
-
+														${rent.list_title}</a></td>
+												<td>${rent.rent_regdate}</td>
+												<td>
+													<c:if test="${rent.rent_returndate == null }">-</c:if>
+													<c:if test="${rent.rent_returndate != null }">${rent.rent_returndate}</c:if>
+												</td>
+												<td><c:choose>							
+														<c:when test="${rent.rent_status == 0}">
+															<!-- 대출중 도서의 연체일 구하기 -->
+															<jsp:useBean id="toDay" class="java.util.Date" />
+															<fmt:parseDate var="returnDate" value="${rent.rent_returndate}" pattern="yyyy-MM-dd" />
+															<fmt:parseNumber value="${toDay.time / (1000*60*60*24)}" integerOnly="true" var="nowDays" scope="request" />
+															<fmt:parseNumber value="${returnDate.time / (1000*60*60*24)}" integerOnly="true" var="oldDays" scope="request" />
+															<c:choose>
+																<c:when test="${toDay > rent.rent_returndate}">
+																	<c:if test="${(nowDays - oldDays) != 0}">
+																		대여  (<font color="red"> ${nowDays - oldDays}</font>일 연체)
+																	</c:if>
+																	<c:if test="${(nowDays - oldDays) == 0}">
+																		대여
+																	</c:if>								
+																</c:when>
+																<c:otherwise>대여</c:otherwise>
+															</c:choose>
+														</c:when>
+														<c:when test="${rent.rent_status == 1 }">
+														반납
+														</c:when>
+														<c:when test="${rent.rent_status == 2 }">
+														예약
+														</c:when>
+														<c:when test="${rent.rent_status == 3 }">
+														대여대기
+														</c:when>
+														<c:when test="${rent.rent_status == 4 }">
+														취소
+														</c:when>
+														<c:when test="${rent.rent_status == 5 }">
+														무인대여
+														</c:when>
+													</c:choose>
+												</td>
 												<td><c:if test="${rent.rent_status == 2 }">
 														<input type="hidden" id="rent_num" name="rent_num"
 															class="rent_num" value="${rent.rent_num }">
@@ -139,15 +157,13 @@
 								</tbody>
 							</table>
 							<c:if test="${count == 0 }">
-								<p style="text-align: center; font-size: 20px;">도서대여 및 예약
-									내역이 없습니다.</p>
+								<p style="text-align: center; font-size: 20px;">도서대여 및 예약 내역이 없습니다.</p>
 							</c:if>
 							<div style="text-align: center;">${pagingHtml }</div>
 						</div>
 					</div>
 				</form:form>
 			</div>
-
 			</div>
 		</div>
 </section>

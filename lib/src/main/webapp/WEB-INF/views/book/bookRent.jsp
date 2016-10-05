@@ -3,37 +3,26 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
-<!-- Stylesheets
-	============================================= -->
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-<title>도서</title>
-
-<!-- Page Title
-		============================================= -->
-
+<!-- Stylesheets ============================================= -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<!-- Page Title ============================================= -->
 <section id="page-title">
-
 	<div class="container clearfix">
-		<h1>결제</h1>
+		<h1>결제 정보</h1>
+		<ol class="breadcrumb">
+			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+			<li><a href="${pageContext.request.contextPath}/book/basket.do">My Book Basket</a></li>
+			<li class="active">My Payment</li>
+		</ol>
 	</div>
-
 </section>
 <!-- #page-title end -->
 
-<!-- Content
-		============================================= -->
+<!-- Content ============================================= -->
 <section id="content">
-
 	<div class="content-wrap">
-
 		<div class="container clearfix">
-			<form:form action="rent.do" commandName="command" id="rent-form"
-				class="nobottommargin" method="post">
-				
+			<form:form action="rent.do" commandName="command" id="rent-form" class="nobottommargin" method="post">
 				<label>도서 대여정보</label>
 				<div class="panel-group">
 					<div class="panel panel-default">
@@ -42,26 +31,26 @@
 								<table class="table table-hover provideList">
 									<thead>
 										<tr>
-											<th></th>
-											<th>도서명</th>
-											<th>코드</th>
-											<th>저자</th>
-											<th>출판사</th>
-											<th>개수</th>
-											<th>대여 가격</th>
+											<th style="text-align:center;"></th>
+											<th style="text-align:center;">도서명</th>
+											<th style="text-align:center;">ISBN</th>
+											<th style="text-align:center;">저자</th>
+											<th style="text-align:center;">출판사</th>
+											<th style="text-align:center;">권수</th>
+											<th style="text-align:center;">대여 가격</th>
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="basket" items="${list }">
+										<c:forEach var="basket" items="${list}">
 											<tr>
-												<td><a href = "${pageContext.request.contextPath}/book/detail.do?list_title=${basket.list_title}&list_filename=${basket_list_filename}&list_num=${list_num}">
-												<img src="/lib/upload/${basket.list_filename }" width="80" height="120"></a></td>
-												<td>${basket.list_title}</td>
-												<td>${basket.list_code}</td>
-												<td>${basket.list_writer}</td>
-												<td>${basket.list_publish}</td>
-												<td>${basket.basket_amount }</td>
-												<td>${basket.basket_price }</td>
+												<td style="vertical-align:middle;text-align:center;"><a href = "${pageContext.request.contextPath}/book/detail.do?list_title=${basket.list_title}&list_filename=${basket_list_filename}&list_num=${list_num}">
+													<img src="/lib/upload/${basket.list_filename }" width="80" height="120"></a></td>
+												<td style="vertical-align:middle;text-align:center;">${basket.list_title}</td>
+												<td style="vertical-align:middle;text-align:center;">${basket.list_code}</td>
+												<td style="vertical-align:middle;text-align:center;">${basket.list_writer}</td>
+												<td style="vertical-align:middle;text-align:center;">${basket.list_publish}</td>
+												<td style="vertical-align:middle;text-align:center;">${basket.basket_amount }</td>
+												<td style="vertical-align:middle;text-align:center;">${basket.basket_price }</td>
 											</tr>
 										</c:forEach>
 									</tbody>
@@ -73,19 +62,16 @@
 									<c:if test="${num<5}">
 										<td>[도서 대여가격] : ${price } + [배송비] : 2000 = [합계] : ${total }원</td>
 									</c:if>
-									<br><br>
-									<span class = "glyphicon glyphicon-ok"></span>&nbsp;&nbsp;<span>5권 이상 대여하실 경우 배송비 무료</span>
+									<!-- <br><br>
+									<span class = "glyphicon glyphicon-ok"></span>&nbsp;&nbsp;<span>5권 이상 대여하실 경우 배송비 무료</span> -->
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-
 				<label style = "font-size:18px;">배송지 정보</label><br>
 				<label>기존 배송지</label>&nbsp;&nbsp;<input type = "radio" name="gener" checked="checked" id = "existing-radio">&nbsp;&nbsp;&nbsp;&nbsp;
 				<label>새로운 배송지</label>&nbsp;&nbsp;<input type = "radio" name="gener" id = "new-radio">
-				
 				<div class="panel-group" id = "existing-panel">
 					<div class="panel panel-default">
 						<div class="panel-body">
@@ -127,9 +113,6 @@
 						</div>
 					</div>
 				</div>
-				
-				
-								
 				<div class="panel-group" id = "new-panel">
 					<div class="panel panel-default">
 						<div class="panel-body">
@@ -173,9 +156,7 @@
 												<label for="delivery_address">주소:</label>
 												<form:input path="delivery_address" class="form-control"
 													placeholder="주소" style = "width:50%;"/>
-
 											</div>
-
 											<script
 												src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 											<script>
@@ -259,7 +240,6 @@
 						</div>
 					</div>
 				</div>
-				
 				<label style = "font-size:18px;">결제정보</label>
 				<div class = "panel-group">
 					<div class = "panel panel-default">
@@ -285,29 +265,21 @@
 						</div>
 					</div>
 				</div>
-				
 				<p style="text-align: center;">
-					<input type = "submit" id="payment-button" class="btn btn-primary"	value = "결제하기"
-					onclick = "success()">
+					<input type = "submit" id="payment-button" class="btn btn-primary"	value = "결제하기" onclick = "success()">
 					
 					<script type="text/javascript">
 						function success(){
 							alert("결제가 완료되었습니다.");
 						}
 					</script>
-					
-					<input type="button" value="장바구니로 가기" class="btn btn-primary"
-						onclick="history.go(-1)">
+					<input type="button" value="책바구니" class="btn btn-primary" onclick="history.go(-1)">
 				</p>
 			</form:form>
 		</div>
 	</div>
-
 </section>
 <!-- #content end -->
 
-<!-- Go To Top
-	============================================= -->
+<!-- Go To Top ============================================= -->
 <div id="gotoTop" class="icon-angle-up"></div>
-
-

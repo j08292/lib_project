@@ -212,12 +212,16 @@ create sequence basket_seq;
 create table delivery(
   delivery_num number not null primary key,
   mem_id varchar2(20) not null,
+  list_num number not null,
+  rent_num number not null,
   delivery_name varchar2(40),
   delivery_email varchar2(40),
   delivery_cell varchar2(40),
   sample3_postcode varchar2(40),
   delivery_address varchar2(300),
-  constraint delivery_fk1 foreign key (mem_id) references member (mem_id)
+  constraint delivery_fk1 foreign key (mem_id) references member (mem_id),
+  constraint delivery_fk2 foreign key (list_num) references booklist (list_num),
+  constraint delivery_fk3 foreign key (rent_num) references bookrent (rent_num)
 );
 create sequence delivery_seq;
 

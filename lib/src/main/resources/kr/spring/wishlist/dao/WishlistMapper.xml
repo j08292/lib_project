@@ -45,4 +45,76 @@
 			</if>
 		</where>
 	</select>
+	
+	<!-- 마이페이지 : 희망도서 신청 내역 -->
+	<select id="myWishlist" parameterType="map" resultType="wishlistCommand">
+		SELECT
+			wish_num,		
+				<![CDATA[
+				REPLACE(REPLACE(wish_title,'<','&lt;'),'>','&gt;')wish_title,
+				]]>
+			wish_writer,
+			wish_publish,
+			wish_regdate,
+			wish_status,
+			mem_id
+		FROM (SELECT
+				a.*,
+				rownum rnum
+			FROM (SELECT
+					*
+				FROM wishlist
+				<where>
+	            	<if test="wish_status == 0 ">
+	            		wish_status = 0
+	            	</if>
+	            	<if test="wish_status == 1 ">
+	            		wish_status = 1
+	            	</if>
+	            	<if test="wish_status == 2 ">
+	            		wish_status = 2
+	            	</if>
+	            	<if test="wish_status == 3 ">
+	            		wish_status = 3
+	            	</if>	            	
+		            <if test="wish_status == 9 ">
+		            	(wish_status = 0 OR
+		            	wish_status = 1 OR
+		            	wish_status = 2 OR
+		            	wish_status = 3 )
+	            	</if>
+	            	AND mem_id=#{mem_id}
+	            </where>
+			ORDER BY wish_num DESC)a)
+		<![CDATA[		
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
+	<select id="getMyWishlistCount" parameterType="map" resultType="Integer">
+		SELECT
+			count(*)
+		FROM wishlist
+		<where>
+           	<if test="wish_status == 0 ">
+           		wish_status = 0
+           	</if>
+           	<if test="wish_status == 1 ">
+           		wish_status = 1
+           	</if>
+           	<if test="wish_status == 2 ">
+           		wish_status = 2
+           	</if>
+           	<if test="wish_status == 3 ">
+           		wish_status = 3
+           	</if>	            	
+            <if test="wish_status == 9 ">
+            	(wish_status = 0 OR
+            	wish_status = 1 OR
+            	wish_status = 2 OR
+            	wish_status = 3 ) 
+           	</if>
+           	AND mem_id=#{mem_id}
+           </where>
+	</select>
+	
 </mapper>

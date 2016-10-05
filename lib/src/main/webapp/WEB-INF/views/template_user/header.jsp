@@ -4,17 +4,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- Header ============================================ -->
-<header id="header" class="transparent-header full-header"
-	data-sticky-class="not-dark">
-
+<header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
 	<div id="header-wrap">
-
 		<div class="container clearfix">
-
 			<div id="primary-menu-trigger">
 				<i class="icon-reorder"></i>
 			</div>
-
 			<!-- Logo ============================================= -->
 			<div id="logo">
 				<a href="${pageContext.request.contextPath}/main/main.do"
@@ -32,11 +27,9 @@
 
 			<!-- Primary Navigation ============================================= -->
 			<nav id="primary-menu" class="dark">
-
 				<ul>
-					<li class="speech"><a href="${pageContext.request.contextPath}/board/operationGuide.do"><i class="icon-ok"></i>이용안내</a></li>
-					<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do"><i class="icon-bookmark2"></i>공지사항</a></li>
-					<li><a href="#"><i class="icon-book3"></i>BOOK</a>
+					<li class="speech"><a href="${pageContext.request.contextPath}/board/operationGuide.do"><i class="icon-ok"></i>이용안내</a></li>					
+					<li><a href="#"><i class="icon-book3"></i>도서</a>
 						<ul>
 							<li><a href="${pageContext.request.contextPath }/book/search.do"><i class="icon-bookmark2"></i>도서검색</a></li>
 							<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do"><i class="icon-bookmark2"></i>희망도서 신청</a></li>
@@ -44,12 +37,13 @@
 					</li>
 					<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do"><i class="icon-signal"></i>강연</a></li>
 
-					<li><a href="#"><i class="icon-inbox"></i>BOARD</a>
+					<li><a href="#"><i class="icon-inbox"></i>게시판</a>
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/board/list.do"><i class="icon-inbox"></i>감상평게시판</a></li>
-							<li><a href="${pageContext.request.contextPath}/board/qnaList.do"><i class="icon-inbox"></i>질문게시판</a></li>
+							<li><a href="${pageContext.request.contextPath}/board/qnaList.do"><i class="icon-inbox"></i>QnA</a></li>
 						</ul>
 					</li>
+					<li class="notice"><a href="${pageContext.request.contextPath}/notice/list.do"><i class="icon-bookmark2"></i>공지사항</a></li>
 					<li><a href="#"><i class="icon-line-heart"></i>EVENT</a>
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/event/list.do"><i class="icon-line-heart"></i>이벤트</a></li>
@@ -57,7 +51,6 @@
 						</ul>
 					</li>
 				</ul>
-
 				<ul>
 					<c:if test="${empty userId }">
 						<li><a href="${pageContext.request.contextPath }/member/write.do"><i class="icon-line-paper"></i>회원가입</a></li>
@@ -73,16 +66,15 @@
 
 						<li><a href="#"><i class="icon-tags"></i>MY PAGE</a>
 							<ul>
-								<li><a href="${pageContext.request.contextPath }/book/basket.do"><i class="icon-shopping-cart"></i>장바구니</a>
-								<li><a href="${pageContext.request.contextPath }/member/myOrder.do">도서 주문 내역 (예약/취소)</a></li>
+								<li><a href="${pageContext.request.contextPath }/book/basket.do"><i class="icon-shopping-cart"></i>책 바구니</a>
+								<li><a href="${pageContext.request.contextPath }/member/myOrder.do">도서 대여내역</a></li>
 								<li><a href="${pageContext.request.contextPath}/wishlist/list.do">희망도서신청내역</a>
-								<li><a href="${pageContext.request.contextPath }/member/update.do">회원정보수정</a></li>
+								<li><a href="${pageContext.request.contextPath }/member/update.do">회원정보 수정</a></li>
 							</ul>
 						</li>
 						<li><a href="${pageContext.request.contextPath }/member/logout.do"><i class="icon-off"></i>로그아웃</a></li>
 					</c:if>
 				</ul>
-				
 			</nav>
 			<!-- #primary-menu end -->
 		</div>

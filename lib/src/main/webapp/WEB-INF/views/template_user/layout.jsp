@@ -8,36 +8,27 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
-
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="SemiColonWeb" />
-
-	<!-- Stylesheets
-	============================================= -->
+	<!-- Stylesheets ============================================= -->
 	<c:forEach var="cssName" items="${cssList}">
 		<link rel="stylesheet" href="<c:out value='${cssName}'/>" type="text/css" />
 	</c:forEach>   
-	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 	<!--[if lt IE 9]>
 		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<![endif]-->
 
-	<!-- External JavaScripts
-	============================================= -->
+	<!-- External JavaScripts ============================================= -->
 	<c:forEach var="jsName" items="${jsList}">
 		<script src="<c:out value='${jsName}' />"></script>
 	</c:forEach>
-	<!-- Document Title
-	============================================= -->
-	<title>Library</title>
-
+	<!-- Document Title ============================================= -->
+	<title>체감On도</title>
 </head>
 
 <body class="stretched">
-
-	<!-- Document Wrapper
-	============================================= -->
+	<!-- Document Wrapper ============================================= -->
 	<div id="wrapper" class="clearfix">
 		<!-- 헤더 시작 -->
 		<tiles:insertAttribute name="header"/>
@@ -51,13 +42,10 @@
 		<!-- 푸터 끝 -->
 	</div><!-- #wrapper end -->
 
-	<!-- Go To Top
-	============================================= -->
+	<!-- Go To Top ============================================= -->
 	<div id="gotoTop" class="icon-angle-up"></div>
 
-	<!-- Footer Scripts
-	============================================= -->
+	<!-- Footer Scripts ============================================= -->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/user/js/functions.js"></script>
-
 </body>
 </html>

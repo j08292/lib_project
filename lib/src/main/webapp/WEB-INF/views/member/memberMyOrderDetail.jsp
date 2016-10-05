@@ -3,23 +3,20 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<!-- Page Title
-		============================================= -->
-
+<!-- Page Title ============================================= -->
 <section id="page-title">
-
 	<div class="container clearfix">
 		<h1>대여 상세내역</h1>
 		<ol class="breadcrumb">
+			<li><a href="${pageContext.request.contextPath}/main/main.do">Home</a></li>
+			<li><a href="${pageContext.request.contextPath}/member/myOrder.do">My Bookrent List</a></li>
+			<li class="active">My Bookrent Info</li>
 		</ol>
 	</div>
-
 </section>
 <!-- #page-title end -->
 
-<!-- Content
-		============================================= -->
+<!-- Content ============================================= -->
 <section id="content">
 	<div class="content-wrap">
 		<div class="container clearfix">

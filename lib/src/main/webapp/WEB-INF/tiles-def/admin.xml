@@ -18,6 +18,8 @@
 		    <add-attribute value="/lib/resources/admin/css/plugins/morris.css"/>
 		    <!-- Custom Fonts -->
 		    <add-attribute value="/lib/resources/admin/font-awesome/css/font-awesome.min.css"/>
+		    <!-- 공통 스타일 -->
+		    <add-attribute value="../resources/css/commonStyle.css"/>
         </put-list-attribute>
         <put-list-attribute name="jsList">
         	<!-- jQuery -->
@@ -32,11 +34,3 @@
     </definition>
     
 </tiles-definitions>
-
-
-
-
-
-
-
-

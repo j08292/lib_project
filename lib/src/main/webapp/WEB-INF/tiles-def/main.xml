@@ -23,6 +23,7 @@
         	<add-attribute value="../resources/user/css/animate.css"/>
         	<add-attribute value="../resources/user/css/magnific-popup.css"/>
         	<add-attribute value="../resources/user/css/responsive.css"/>
+        	<add-attribute value="../resources/css/commonStyle.css"/>
         </put-list-attribute>
         <put-list-attribute name="jsList">
         <add-attribute value="../resources/user/js/jquery.js"/>
