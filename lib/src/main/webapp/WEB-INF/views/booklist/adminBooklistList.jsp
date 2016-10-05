@@ -55,7 +55,7 @@
 									<c:otherwise><img src="${pageContext.request.contextPath}/upload/NoImage.jpg" class="adminListImage" data-num="${article.list_num}" height="20px"/></c:otherwise>
 								</c:choose></td>
 							<td>${article.list_regdate}</td>
-							<td><c:if test="${article.list_status == 1}">대출정지</c:if>
+							<td><c:if test="${article.list_status == 1}"><font color="red">대여정지</font></c:if>
 								<c:if test="${article.list_status == 0}"></c:if></td>
 						</tr>						
 					</c:forEach>				

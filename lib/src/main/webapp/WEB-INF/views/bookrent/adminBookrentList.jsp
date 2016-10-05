@@ -9,10 +9,10 @@
 	<form action="list.do" id="search_form" method="get">
 		<div align="center">
 			<select name="keyfield" id="bookrentSearch">
-				<option value="rent_num">대출번호</option>
+				<option value="rent_num">대여번호</option>
 				<option value="list_title">제목</option>
 				<option value="list_code">ISBN</option>
-				<option value="mem_id">대출자</option>
+				<option value="mem_id">대여자</option>
 				<option value="rent_status">도서상태</option>
 				<option value="all">전체</option>
 			</select>
@@ -23,18 +23,18 @@
 		</div>
 	</form>
 	<c:if test="${count == 0}">
-		<div class="align-center">대출된 도서가 없습니다.</div>
+		<div class="align-center">대여된 도서가 없습니다.</div>
 	</c:if>
 	<c:if test="${count > 0}">
 		<div class="table-responsive">
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th style="text-align:center;">대출번호</th>
+						<th style="text-align:center;">대여번호</th>
 						<th style="text-align:center;">제목</th>
 						<th style="text-align:center;">ISBN</th>
-						<th style="text-align:center;">대출자</th>
-						<th style="text-align:center;">대출일</th>
+						<th style="text-align:center;">대여자</th>
+						<th style="text-align:center;">대여일</th>
 						<th style="text-align:center;">반납예정일</th>
 						<th style="text-align:center;">연체일</th>
 						<th style="text-align:center;">도서상태</th>
@@ -57,7 +57,7 @@
 								</c:choose></td>
 							<td><c:choose>							
 									<c:when test="${article.rent_status == 0}">
-										<!-- 대출중 도서의 연체일 구하기 -->
+										<!-- 대여중 도서의 연체일 구하기 -->
 										<jsp:useBean id="toDay" class="java.util.Date" />
 										<fmt:parseDate var="returnDate" value="${article.rent_returndate}" pattern="yyyy-MM-dd" />
 										<fmt:parseNumber value="${toDay.time / (1000*60*60*24)}" integerOnly="true" var="nowDays" scope="request" />
@@ -76,11 +76,11 @@
 									</c:when>
 									<c:otherwise>-</c:otherwise>
 								</c:choose></td>
-							<td><c:if test="${article.rent_status == 0}">대출중</c:if>
+							<td><c:if test="${article.rent_status == 0}">대여중</c:if>
 								<c:if test="${article.rent_status == 2}">예약중</c:if>
-								<c:if test="${article.rent_status == 3 || article.rent_status == 5}">대출대기</c:if></td>
+								<c:if test="${article.rent_status == 3 || article.rent_status == 5}">대여대기</c:if></td>
 							<td>
-								<c:if test="${article.rent_status == 0}"><!-- 대출 도서 -->
+								<c:if test="${article.rent_status == 0}"><!-- 대여 도서 -->
 									<c:if test="${(nowDays - oldDays) > 0}"><!-- 연체 도서 -->
 										<input type="button" onclick="javascript:insertPenalty_event(${article.rent_num},'${article.mem_id}','${article.list_title}',${nowDays - oldDays});" value="반납" class="btn btn-xs btn-warning">
 									</c:if>
@@ -88,8 +88,8 @@
 										<input type="button" onclick="javascript:bookReturn_event(${article.rent_num},${article.rent_status},'${article.list_title}',${article.list_num});" value="반납" class="btn btn-xs btn-warning">										
 									</c:if>
 								</c:if>								
-								<c:if test="${article.rent_status == 3 || article.rent_status == 5}"><!-- 대출대기 도서 -->
-									<input type="button" onclick="javascript:bookRent_event(${article.rent_num},'${article.list_title}');" value="대출" class="btn btn-xs btn-primary">
+								<c:if test="${article.rent_status == 3 || article.rent_status == 5}"><!-- 대여대기 도서 -->
+									<input type="button" onclick="javascript:bookRent_event(${article.rent_num},'${article.list_title}');" value="대여" class="btn btn-xs btn-primary">
 									<input type="button" onclick="javascript:bookCancel_event(${article.rent_num},'${article.list_title}');" value="취소" class="btn btn-xs btn-danger">
 								</c:if>
 							</td>
