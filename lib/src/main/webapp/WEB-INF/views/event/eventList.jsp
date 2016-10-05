@@ -66,6 +66,7 @@
 									<a href="detail.do?event_num=${article.event_num}">${article.event_title}</a>
 								</h3>
 							</div>
+							<br>
 							<div class="product-price">
 								<ins>${article.event_startdate}</ins>
 								<ins>~</ins>

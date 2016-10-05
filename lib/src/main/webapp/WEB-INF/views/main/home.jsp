@@ -154,11 +154,12 @@
                      </div>
                      <div class="feature-box topmargin" data-animate="fadeIn" data-delay="200">
                         <div class="fbox-icon">
-                           <a href="#"><i class="icon-line-check"></i></a>
+                           <a href="${pageContext.request.contextPath }/notice/list.do"><i class="icon-line-check"></i></a>
                         </div>
-                        <h3>출석체크</h3>
-                        <p>매일매일 출석도장 찍고 다양한 혜택을<br> 받아보세요</p>
-                     </div>
+                        <h3>공지사항</h3>
+                        <p>체감On도의 새로운소식 및 안내 </p>
+                     </div>    
+                     <br>                
                      <div class="feature-box topmargin" data-animate="fadeIn" data-delay="400">
                         <div class="fbox-icon">
                            <a href="${pageContext.request.contextPath }/board/qnaList.do"><i class="icon-bulb"></i></a>

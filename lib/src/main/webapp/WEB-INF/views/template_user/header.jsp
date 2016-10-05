@@ -31,8 +31,8 @@
 					<li class="speech"><a href="${pageContext.request.contextPath}/board/operationGuide.do"><i class="icon-ok"></i>이용안내</a></li>					
 					<li><a href="#"><i class="icon-book3"></i>도서</a>
 						<ul>
-							<li><a href="${pageContext.request.contextPath }/book/search.do"><i class="icon-bookmark2"></i>도서검색</a></li>
-							<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do"><i class="icon-bookmark2"></i>희망도서 신청</a></li>
+							<li><a href="${pageContext.request.contextPath }/book/search.do"><i class="icon-book3"></i>도서검색</a></li>
+							<li class="wishlist"><a href="${pageContext.request.contextPath}/wishlist/write.do"><i class="icon-book3"></i>희망도서 신청</a></li>
 						</ul>
 					</li>
 					<li class="speech"><a href="${pageContext.request.contextPath}/speech/list.do"><i class="icon-signal"></i>강연</a></li>
@@ -58,8 +58,8 @@
 					</c:if>
 					<c:if test="${!empty userId && mem_level == 2 }">
 						<li><a href="#" style="text-transform: lowercase;">[관리자 ${userId}님 로그인 중]</a></li>
-						<li><a href="${pageContext.request.contextPath}/admin/main.do">관리자	페이지</a></li>
-						<li><a href="${pageContext.request.contextPath }/member/logout.do">로그아웃</a></li>
+						<li><a href="${pageContext.request.contextPath}/admin/main.do"><i class="icon-tags"></i>관리자 페이지</a></li>
+						<li><a href="${pageContext.request.contextPath }/member/logout.do"><i class="icon-off"></i>로그아웃</a></li>
 					</c:if>
 					<c:if test="${!empty userId && mem_level == 0 }">
 						<li><a href="#" style="text-transform: lowercase;">[일반회원 ${userId}님 로그인 중]</a></li>
