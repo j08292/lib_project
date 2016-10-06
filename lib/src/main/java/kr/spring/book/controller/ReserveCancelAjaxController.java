@@ -59,7 +59,11 @@ public class ReserveCancelAjaxController {
 							log.debug("rent_num : " + rent_num);
 						}
 						
-						if((rentCommand.get(i).getRent_num() == rent_num) && status == 2){
+						if (log.isDebugEnabled()) {
+							log.debug("rentCommand.get(i).getRent_num() : " + rentCommand.get(i).getRent_num());
+						}
+						
+						if((rentCommand.get(i).getRent_num() == rent_num) && rentCommand.get(i).getRent_status() == 2){
 							
 							if (log.isDebugEnabled()) {
 								log.debug("i : " + i);
@@ -70,10 +74,10 @@ public class ReserveCancelAjaxController {
 							bookRentService.updateStatus(bookRentCommand);
 							map.put("result", "success");
 							break;
-						}else{
+						}/*else{
 							map.put("result", "fail");
 							break;
-						}
+						}*/
 					}
 				}
 			} else if (userId == null) {
