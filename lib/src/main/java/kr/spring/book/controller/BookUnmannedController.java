@@ -1,23 +1,17 @@
 package kr.spring.book.controller;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.spring.book.domain.BasketCommand;
 import kr.spring.book.domain.BookListCommand;
 import kr.spring.book.domain.BookRentCommand;
 import kr.spring.book.domain.DeliveryCommand;
@@ -87,18 +81,24 @@ public class BookUnmannedController {
 //		
 //		int st = bookRentService.recentStatus(list_num);
 		
+		String list_str = "";
+		String rent_str = "";
+		
 		rentCommand.setList_num(list_num);
 		rentCommand.setMem_id(userId);
 		rentCommand.setRent_status(5);
 		bookRentService.insert(rentCommand);
 		
 		int num = bookRentService.recentRent_num(list_num);
+		list_str = list_num + ","; 
+		rent_str = num + ",";
+		
 		MemberCommand member = memberService.selectMember(userId);
 		DeliveryCommand delivery = new DeliveryCommand();
 		delivery.setList_num(list_num);
 		delivery.setRent_num(num);
-		delivery.setString_listnum(Integer.toString(list_num));
-		delivery.setString_rentnum(Integer.toString(num));
+		delivery.setString_listnum(list_str);
+		delivery.setString_rentnum(rent_str);
 		delivery.setDelivery_address(loc);
 		delivery.setSample3_postcode("");
 		delivery.setDelivery_cell(member.getMem_cell());

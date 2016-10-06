@@ -19,8 +19,8 @@ public interface BookRentMapper {
 	@Select("SELECT * FROM booklist b1, bookrent b2 WHERE b1.list_num = b2.list_num")
 	public List<BookRentCommand> allbookrent();
 	
-	@Insert("INSERT INTO bookrent(rent_num,list_num,mem_id,rent_regdate) "
-			+ "VALUES(bookrent_seq.nextval,#{list_num},#{mem_id},sysdate)")
+	@Insert("INSERT INTO bookrent(rent_num,list_num,mem_id,rent_regdate,rent_status) "
+			+ "VALUES(bookrent_seq.nextval,#{list_num},#{mem_id},sysdate,#{rent_status})")
 	public void insert(BookRentCommand bookRentCommand);
 
 	@Insert("INSERT INTO bookrent(rent_num,list_num,mem_id,rent_regdate,rent_status) "
