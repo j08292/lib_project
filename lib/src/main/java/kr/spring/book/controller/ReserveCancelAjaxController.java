@@ -54,7 +54,16 @@ public class ReserveCancelAjaxController {
 			if (userId != null) {
 				if (rentCommand.size() != 0 ) {
 					for (int i = 0; i < rentCommand.size(); i++) {
-						if(rentCommand.get(i).getRent_num() == rent_num && status == 2){
+
+						if (log.isDebugEnabled()) {
+							log.debug("rent_num : " + rent_num);
+						}
+						
+						if((rentCommand.get(i).getRent_num() == rent_num) && status == 2){
+							
+							if (log.isDebugEnabled()) {
+								log.debug("i : " + i);
+							}
 							
 							bookRentCommand.setRent_status(4);
 							bookRentCommand.setRent_num(rent_num);

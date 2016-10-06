@@ -41,16 +41,16 @@
 								<th>강연 예약상태</th>
 								<td>
 								<c:choose>
-									<c:when test="${speech.speech_reserve_num == 0}">
+									<c:when test="${speech.speech_reserve_status == 0}">
 										예약 신청
 									</c:when>
-									<c:when test="${speech.speech_reserve_num == 1}">
+									<c:when test="${speech.speech_reserve_status == 1}">
 										예약 완료
 									</c:when>
-									<c:when test="${speech.speech_reserve_num == 2}">
+									<c:when test="${speech.speech_reserve_status == 2}">
 										취소 신청
 									</c:when>
-									<c:when test="${speech.speech_reserve_num == 3}">
+									<c:when test="${speech.speech_reserve_status == 3}">
 										취소 완료
 									</c:when>
 								</c:choose>

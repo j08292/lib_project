@@ -21,9 +21,13 @@
 		<div class="container clearfix">
 
 			<div class="divcenter nobottommargin clearfix">
-				<ul class="nav nav-pils center clearfix">
-					<li class="inline-block"><a	href="${pageContext.request.contextPath}/member/myOrder.do">도서	예약내역</a></li>
-					<li class="inline-block active"><a href="${pageContext.request.contextPath}/member/myOrderS.do">강연 예약내역</a></li>
+				<ul class="tab-nav tab-nav2 center clearfix">
+					<li class="inline-block"><a
+						href="${pageContext.request.contextPath}/member/myOrder.do">도서
+							예약내역</a></li>
+					<li class="inline-block"><a
+						href="${pageContext.request.contextPath}/member/myOrderS.do">강연
+							예약내역</a></li>
 				</ul>
 
 				<form:form action="myOrderS.do" id="myOrder-form"
