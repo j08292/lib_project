@@ -269,7 +269,7 @@
                         <c:choose>
                            <c:when test="${!empty article.list_filename}">
                               <div class="oc-item">
-                                 <img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="height:200px; whith:50px;" alt="인기도서">
+                                 <a href="${pageContext.request.contextPath}/book/detail.do?list_title=${article.list_title}&list_filename=${article.list_filename}&list_num=${article.list_num}"><img src="${pageContext.request.contextPath}/upload/${article.list_filename}" style="height:200px; whith:50px;" alt="인기도서"></a>
                               <br><br><br><br><br><br>
                               </div>
                            </c:when>

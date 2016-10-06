@@ -36,6 +36,7 @@
 		        FROM (SELECT 
 		                list_title,
 		                list_filename,
+		                list_num,
 		                count(*) rent_count
 		              FROM (SELECT 
 		                        br.list_num, 
@@ -43,7 +44,7 @@
 		                        bl.list_filename
 		                    FROM bookrent br, booklist bl 
 		                    WHERE br.list_num=bl.list_num AND br.rent_status=1)
-		                GROUP BY list_title,list_filename ORDER BY rent_count DESC)a)		            
+		                GROUP BY list_title,list_filename,list_num ORDER BY rent_count DESC)a)		            
 	      <![CDATA[
 	      WHERE rnum<=10
 		  ]]>
