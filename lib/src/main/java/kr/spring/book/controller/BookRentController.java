@@ -129,7 +129,7 @@ public class BookRentController {
 			lnum = Integer.toString(list.get(i).getList_num());
 			rnum = Integer.toString(num);
 			
-			list_str += lnum + ",";; 
+			list_str += lnum + ","; 
 			rent_str += rnum + ",";
 
 			if (log.isDebugEnabled()) {
