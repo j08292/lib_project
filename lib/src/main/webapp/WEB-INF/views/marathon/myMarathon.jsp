@@ -90,7 +90,7 @@
 		</tbody>
 		
 	</table>
-	
+	<div align="center">${pagingHtml}</div>
 	</c:if>
 </div>
 </c:if>
