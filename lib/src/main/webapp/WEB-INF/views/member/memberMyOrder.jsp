@@ -145,7 +145,7 @@
 														<input type="hidden" id="list_num" name="list_num"
 															class="list_num" value="${rent.list_num }">
 														<a id="reserveCancel-button"
-															class="btn btn-primary reserveCancel-button"
+															class="btn-sm btn-primary reserveCancel-button"
 															data-num="${rent.rent_num }"
 															data-num1="${rent.list_num }"
 															onclick="${pageContext.request.contextPath}/book/reserveCancel.do?list_num=${rent.list_num}&rent_num=${rent.rent_num}"
