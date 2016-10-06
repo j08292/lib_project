@@ -65,7 +65,7 @@
 			<p style="text-align: center;">
 				<input type="hidden" name="list_title" id="list_title" value="${basket.list_title }"> 
 				<input type="hidden" name="list" id="list" value="${list}"> 
-				<a id="rent-button"	class="btn btn-primary"	href="${pageContext.request.contextPath}/book/rent.do">결제</a> 
+				<a id="rent-button"	class="btn btn-primary rent-button"	href="${pageContext.request.contextPath}/book/rent.do">결제</a> 
 				<input type="button" value="도서 검색" class="btn btn-primary"
 					onclick="location.href='${pageContext.request.contextPath}/book/search.do'">
 			</p>
