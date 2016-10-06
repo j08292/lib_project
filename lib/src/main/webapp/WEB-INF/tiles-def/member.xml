@@ -43,6 +43,21 @@
      <definition name="memberMyOrderDetail" extends="memberWrite">
     	<put-attribute name="title" value="도서 상세내역"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberMyOrderDetail.jsp"/>
+    	<put-list-attribute name="cssList">
+    		<add-attribute  value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    		<!-- <add-attribute value="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/> -->
+        	<add-attribute value="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic"/>
+        	<add-attribute value="../resources/user/css/bootstrap.css"/>
+        	<add-attribute value="../resources/user/style.css"/>
+        	<add-attribute value="../resources/user/css/dark.css"/>
+        	<add-attribute value="../resources/user/css/font-icons.css"/>
+        	<add-attribute value="../resources/user/css/animate.css"/>
+        	<add-attribute value="../resources/user/css/magnific-popup.css"/>
+        	<add-attribute value="../resources/user/css/responsive.css"/>
+        	<add-attribute value="../resources/css/commonStyle.css"/>
+         	<!-- 목록 사진미리보기 -->
+          	<add-attribute value="/lib/resources/admin/css/adminBooklist.css"/>
+        </put-list-attribute>
     </definition> 
     <definition name="memberMyOrderSDetail" extends="memberWrite">
     	<put-attribute name="title" value="강연 예약내역"/>

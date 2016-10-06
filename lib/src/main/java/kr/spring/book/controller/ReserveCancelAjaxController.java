@@ -59,7 +59,7 @@ public class ReserveCancelAjaxController {
 							log.debug("rent_num : " + rent_num);
 						}
 						
-						if((rentCommand.get(i).getRent_num() == rent_num) && status == 2){
+						if((rentCommand.get(i).getRent_num() == rent_num) && rentCommand.get(i).getRent_status() == 2){
 							
 							if (log.isDebugEnabled()) {
 								log.debug("i : " + i);
