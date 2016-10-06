@@ -16,6 +16,9 @@ public interface BookRentMapper {
 
 	public int getRowCount2(Map<String, Object> map);
 	
+	@Select("SELECT * FROM booklist b1, bookrent b2 WHERE b1.list_num = b2.list_num")
+	public List<BookRentCommand> allbookrent();
+	
 	@Insert("INSERT INTO bookrent(rent_num,list_num,mem_id,rent_regdate) "
 			+ "VALUES(bookrent_seq.nextval,#{list_num},#{mem_id},sysdate)")
 	public void insert(BookRentCommand bookRentCommand);

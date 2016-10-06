@@ -3,7 +3,6 @@ package kr.spring.book.service;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.annotations.Update;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.spring.book.domain.BookRentCommand;
@@ -15,6 +14,9 @@ public interface BookRentService {
 
 	@Transactional(readOnly = true)
 	public int getRowCount2(Map<String, Object> map);
+	
+	@Transactional(readOnly = true)
+	public List<BookRentCommand> allbookrent();
 
 	@Transactional(readOnly = true)
 	public List<BookRentCommand> list(String mem_id);

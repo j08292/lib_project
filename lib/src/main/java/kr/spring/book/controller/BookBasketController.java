@@ -14,7 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.book.service.BasketService;
 import kr.spring.book.domain.BasketCommand;
 import kr.spring.book.domain.BookListCommand;
+import kr.spring.book.domain.BookRentCommand;
 import kr.spring.book.service.BookListService;
+import kr.spring.book.service.BookRentService;
 
 @Controller
 public class BookBasketController {
@@ -25,23 +27,63 @@ public class BookBasketController {
 
 	@Resource
 	private BasketService basketService;
+	
+	@Resource
+	private BookRentService bookRentService;
 
 	@RequestMapping(value = "/book/basket.do", method = RequestMethod.GET)
 	public ModelAndView form(HttpSession session) {
 
 		String userId = (String) session.getAttribute("userId");
 		String list_title = (String) session.getAttribute("list_title");
-		// Integer list_num = (Integer) session.getAttribute("list_num");
+
+		List<BookRentCommand> rentCommand = null;
+		List<BookRentCommand> rentCommand2 = null;
+		rentCommand = bookRentService.allbookrent();
 
 		List<BasketCommand> list = null;
 		list = basketService.select_book_basket(userId);
 
 		int count = basketService.getRowCount(userId);
-		
+
+		if (log.isDebugEnabled()) {
+			log.debug("count : " + count);
+		}
+
+		if(count > 0){
+			int list_num = 0;
+			for(int i = 0; i<list.size(); i++){
+				list_num = list.get(i).getList_num();
+
+				if (log.isDebugEnabled()) {
+					log.debug("i : " + i);
+					log.debug("rentCommand.size() : " + rentCommand.size());
+					log.debug("list_num  : " + list_num);
+				}
+
+				rentCommand2 = bookRentService.selectNum(list_num);
+				for(int j = 0; j<rentCommand2.size(); j++){
+					if((!rentCommand2.isEmpty()) && (userId != rentCommand2.get(j).getMem_id()) && (list_num == rentCommand2.get(j).getList_num()) && (rentCommand2.get(j).getRent_status() == 0 || rentCommand2.get(j).getRent_status() == 3 
+							|| rentCommand2.get(j).getRent_status() == 5)){
+						int basket_num = list.get(i).getBasket_num();
+
+						if (log.isDebugEnabled()) {
+							log.debug("list_num2  : " + list_num);
+							log.debug("basket_num : " + basket_num);
+						}
+
+						basketService.delete(basket_num);
+						continue;
+					}else{
+						continue;
+					}
+				}
+			}
+		}
+
 		if (log.isDebugEnabled()) {
 			log.debug("userId : " + userId);
 			log.debug("list_title : " + list_title);
-			// log.debug("list_num : " + list_num);
 			log.debug("list : " + list);
 			log.debug("count : " + count);
 		}
@@ -50,9 +92,8 @@ public class BookBasketController {
 		mav.setViewName("bookBasket");
 		mav.addObject("list", list);
 		mav.addObject("count", count);
-		
-		return mav;
 
+		return mav;
 	}
 
 	@RequestMapping(value = "/book/basket.do", method = RequestMethod.POST)
@@ -77,7 +118,7 @@ public class BookBasketController {
 		BasketCommand basket = new BasketCommand();
 		basket.setMem_id(userId);
 		basket.setList_filename(list_filename);
-		basket.setList_title(list_title);
+		basket.setList_title(list_title);  
 		basket.setList_num(list_num);
 
 		List<BasketCommand> list = null;

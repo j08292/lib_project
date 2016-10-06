@@ -101,6 +101,10 @@ public class BookRentServiceImpl implements BookRentService {
 	public int recentRent_num(int list_num) {
 		return bookRentMapper.recentRent_num(list_num);
 	}
-
+	
+	@Override
+	public List<BookRentCommand> allbookrent() {
+		return bookRentMapper.allbookrent();
+	}
 
 }
