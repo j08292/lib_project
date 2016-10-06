@@ -21,11 +21,6 @@
 		<hr size="1" width="100%">
 		
 		<!-- 관리자만 할 수 있도록 레벨값을 줘야함 -->
-		<p align="right">
-			<input type="button" value="수정" onclick="location.href='update.do?event_num=${event.event_num}'">
-			<input type="button" value="삭제" onclick="location.href='delete.do?event_num=${event.event_num}'">
-		</p>
-		
 		
 		<div class="panel-group">
 			<div class="panel panel-default">
