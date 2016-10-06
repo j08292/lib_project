@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 import kr.spring.book.domain.DeliveryCommand;
 import kr.spring.bookrent.domain.AdminBookrentCommand;
 import kr.spring.bookrent.service.AdminBookrentService;
+import kr.spring.member.domain.MemberCommand;
+import kr.spring.member.service.MemberService;
 
 @Controller
 public class DeliveryAddressController {
@@ -18,6 +20,9 @@ public class DeliveryAddressController {
 
 	@Resource
 	private AdminBookrentService bookrentService;
+	
+	@Resource
+	private MemberService memberService;
 	
 	@RequestMapping("/admin/bookrent/delivery.do")
 	public ModelAndView process(@RequestParam("rent_num") int rent_num,
@@ -33,8 +38,21 @@ public class DeliveryAddressController {
 		bookrent.setList_num(list_num);
 		bookrent.setMem_id(mem_id);
 		DeliveryCommand delivery = bookrentService.selectDelivery(bookrent);
-		
-		return new ModelAndView("deliveryAddress","delivery",delivery);
-		
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("deliveryAddress");
+			mav.addObject("delivery", delivery);
+			MemberCommand member = memberService.selectMember(mem_id);
+			mav.addObject("member", member);
+			
+			if(log.isDebugEnabled()){
+				log.debug("delivery : " +delivery);
+				log.debug("member : " +member);
+				
+			}
+			return mav;
+			
 	}
 }
+
+
+

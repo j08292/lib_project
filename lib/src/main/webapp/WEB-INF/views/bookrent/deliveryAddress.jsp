@@ -14,6 +14,7 @@
 </head>
 <body>  
 	<div>
+	<c:if test="${delivery!=null}">
 	   <h1 class="page-header">&nbsp;${delivery.mem_id}님의 <spring:message code="bookrent.delivery.title"/></h1>
 	   <div class="col-sm-4">
 	         <ul class="list-group">
@@ -36,6 +37,33 @@
 	             </li>
 	         </ul>
 	    </div>
+	   </c:if>
+		<c:if test="${delivery==null}">
+		<h1 class="page-header">&nbsp;${member.mem_id}님의 <spring:message code="bookrent.delivery.title"/></h1>
+	   <div class="col-sm-4">
+	         <ul class="list-group">
+	             <li class="list-group-item">주문자 성명 : 
+	             	<c:forTokens items="${member.mem_name}" delims="," var="name">${name}</c:forTokens>
+	             </li>
+	             <li class="list-group-item">주문자 연락처 : 
+	             	<c:forTokens items="${member.mem_cell}" delims="," var="cell">${cell}</c:forTokens>
+	             </li>
+	             <li class="list-group-item">주문자 email : 
+	             	<c:forTokens items="${member.mem_email}" delims="," var="email">${email}</c:forTokens>
+	             </li>
+	             <c:if test="${!empty member.sample3_postcode}">
+	                <li class="list-group-item">배송지 우편번호 : 
+	                	<c:forTokens items="${member.sample3_postcode}" delims="," var="postcode">${postcode}</c:forTokens>
+	             	</li>
+	             </c:if>
+	             <li class="list-group-item">배송지 주소 : 
+	             	<c:forTokens items="${member.mem_address}" delims="," var="address">${address}</c:forTokens>
+	             </li>
+	         </ul>
+	    </div>
+		
+		</c:if>
 	</div>
+	
 </body>
 </html>
