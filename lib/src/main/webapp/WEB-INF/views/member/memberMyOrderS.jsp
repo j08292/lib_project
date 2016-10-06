@@ -21,11 +21,11 @@
 		<div class="container clearfix">
 
 			<div class="divcenter nobottommargin clearfix">
-				<ul class="tab-nav tab-nav2 center clearfix">
+				<ul class="nav nav-pils center clearfix">
 					<li class="inline-block"><a
 						href="${pageContext.request.contextPath}/member/myOrder.do">도서
 							예약내역</a></li>
-					<li class="inline-block"><a
+					<li class="inline-block active"><a
 						href="${pageContext.request.contextPath}/member/myOrderS.do">강연
 							예약내역</a></li>
 				</ul>
@@ -35,19 +35,15 @@
 					<select id="selectBox" class="form-control"
 						style="width: 120px; float: left;">
 						<option
-							value="${pageContext.request.contextPath}/member/myOrders.do?rent_status=9">전체</option>
+							value="${pageContext.request.contextPath}/member/myOrderS.do?speech_reserve_status=9">전체</option>
 						<option
-							value="${pageContext.request.contextPath}/member/myOrders.do?rent_status=0">대여</option>
+							value="${pageContext.request.contextPath}/member/myOrderS.do?speech_reserve_status=0">예약신청</option>
 						<option
-							value="${pageContext.request.contextPath}/member/myOrders.do?rent_status=1">반납</option>
+							value="${pageContext.request.contextPath}/member/myOrderS.do?speech_reserve_status=1">예약완료</option>
 						<option
-							value="${pageContext.request.contextPath}/member/myOrders.do?rent_status=2">예약</option>
+							value="${pageContext.request.contextPath}/member/myOrderS.do?speech_reserve_status=2">취소신청</option>
 						<option
-							value="${pageContext.request.contextPath}/member/myOrders.do?rent_status=3">대여대기</option>
-						<option
-							value="${pageContext.request.contextPath}/member/myOrders.do?rent_status=4">취소</option>
-						<option
-							value="${pageContext.request.contextPath}/member/myOrders.do?rent_status=5">무인대여</option>
+							value="${pageContext.request.contextPath}/member/myOrderS.do?speech_reserve_status=3">취소완료</option>
 					</select>
 					<br>
 					<br>
@@ -58,7 +54,7 @@
 							location.href=$(this).val();
 						});	
 	 					$(function() {
-	 						$('#selectBox').val('${pageContext.request.contextPath}/member/myOrders.do?rent_status=${param.rent_status}');
+	 						$('#selectBox').val('${pageContext.request.contextPath}/member/myOrderS.do?speech_reserve_status=${param.speech_reserve_status}');
 	 					});
 				</script>
 				</c:if>
@@ -69,7 +65,7 @@
 							location.href=$(this).val();
 						});	
 	 					$(function() {
- 							$('#selectBox').val('${pageContext.request.contextPath}/member/myOrders.do?rent_status=9');
+ 							$('#selectBox').val('${pageContext.request.contextPath}/member/myOrderS.do?speech_reserve_status=9');
 	 					});
 				</script>
 				</c:if>
@@ -126,6 +122,7 @@
 									없습니다.</p>
 							</c:if>
 							<div style="text-align: center;">${pagingHtml }</div>
+						</div>
 						</div>
 				</form:form>
 			</div>
