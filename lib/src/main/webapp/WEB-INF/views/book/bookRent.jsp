@@ -23,7 +23,7 @@
 	<div class="content-wrap">
 		<div class="container clearfix">
 			<form:form action="rent.do" commandName="command" id="rent-form" class="nobottommargin" method="post">
-				<label>도서 대여정보</label>
+				<label style = "font-size:18px;">도서 대여정보</label>
 				<div class="panel-group">
 					<div class="panel panel-default">
 						<div class="panel-body">
