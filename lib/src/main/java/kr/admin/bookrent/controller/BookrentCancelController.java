@@ -20,17 +20,29 @@ public class BookrentCancelController {
 
 	@RequestMapping("/admin/bookrent/updateCancel.do")
 	public ModelAndView process(@RequestParam("rent_num") int rent_num,
-								@RequestParam("rent_status") int rent_status){
+								@RequestParam("rent_status") int rent_status,
+								@RequestParam("list_num") int list_num){
 
 		if(log.isDebugEnabled()){
 			log.debug("rent_num : " +rent_num);
 			log.debug("rent_status : " +rent_status);
+			log.debug("list_num : " +list_num);
 		}
-
+		
+		int reserveCount= bookrentService.getReserveCount(list_num);
+		
+		if(reserveCount>0){//대여취소 & 예약중 -> 대여대기
 		AdminBookrentCommand bookrent = new AdminBookrentCommand();
 		bookrent.setRent_num(rent_num);
 		bookrent.setRent_status(rent_status);
 		bookrentService.updateRentCancel(bookrent);
+		bookrentService.reserveToWaiting(list_num);
+		}else{//도서 대여
+			AdminBookrentCommand bookrent = new AdminBookrentCommand();
+			bookrent.setRent_num(rent_num);
+			bookrent.setRent_status(rent_status);
+			bookrentService.updateRentCancel(bookrent);
+		}
 
 		return new ModelAndView("redirect:/admin/bookrent/list.do");
 	}

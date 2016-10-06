@@ -31,7 +31,7 @@ public class BookrentReturnController {
 		
 		int reserveCount= bookrentService.getReserveCount(list_num);
 
-		if(reserveCount>0){//도서반납 & 예약중 -> 대출대기
+		if(reserveCount>0){//도서반납 & 예약중 -> 대여대기
 			AdminBookrentCommand bookrent = new AdminBookrentCommand();
 			bookrent.setRent_num(rent_num);
 			bookrent.setRent_status(rent_status);
